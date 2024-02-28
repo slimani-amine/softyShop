@@ -34,8 +34,8 @@ export function getUsersApiRouter(
     getMeController: ControllerType;
   } = defaults,
 ) {
-  router.route('/me').get(controllers.getMeController);
   router.use(isAuthentictedMiddleware);
+  router.route('/me').get(controllers.getMeController);
 
   router
     .route('/update-me')

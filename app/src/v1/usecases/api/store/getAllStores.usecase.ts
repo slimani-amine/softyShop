@@ -9,7 +9,6 @@ export type GetAllStoreUseCaseType = (queryParams: {
 export const getAllStoreUseCaseBase =
   (dependencies: { storeRepo: IStoreRepository }) =>
   async (queryParams: { [key: string]: any }) => {
-    console.log("🚀 ~ queryParams:", queryParams)
     const storesFound = await dependencies.storeRepo.findByQuery(queryParams);
 
     return storesFound;

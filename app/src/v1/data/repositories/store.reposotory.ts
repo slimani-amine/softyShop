@@ -1,45 +1,74 @@
-import { DataSource, DeepPartial, FindManyOptions, FindOneOptions, QueryRunner } from 'typeorm';
-import { StoreEntity, StoresUpdateDataPayload } from '../orm_models/store.entity';
-import { ICreateStoreInput, IStore, Store } from '../../domain/store/store';
-import dataSource from '../connection';
-import { ApiFeatures, QueryResult } from '../../utils/querying/apiFeatures.util';
+import {
+  DataSource,
+  DeepPartial,
+  FindManyOptions,
+  FindOneOptions,
+  QueryRunner,
+} from "typeorm";
+import {
+  StoreEntity,
+  StoresUpdateDataPayload,
+} from "../orm_models/store.entity";
+import { ICreateStoreInput, IStore, Store } from "../../domain/store/store";
+import dataSource from "../connection";
+import {
+  ApiFeatures,
+  QueryResult,
+} from "../../utils/querying/apiFeatures.util";
+import { UserEntity } from "../orm_models/user.entity";
+import { IUser } from "../../domain/users/user";
 
 export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   manager: dbConnection.manager,
   async findOne(findData: FindOneOptions<StoreEntity>): Promise<IStore> {
-    console.log('🚀 ~ findOne ~ findData:', findData);
     const store = await this.manager.findOne(StoreEntity, findData);
     return this.toDomainStore(store);
   },
 
   async findAll(findData: FindManyOptions<StoreEntity>): Promise<IStore[]> {
-    console.log('🚀 ~ findAll ~ findData:', findData);
     const stores = await this.manager.find(StoreEntity, findData);
     return this.toDomainStores(stores);
   },
 
+  async findMyStores(findOptions: FindManyOptions<StoreEntity>): Promise<IStore[]> {
+    const stores = await this.manager.find(StoreEntity, findOptions);
+    return this.toDomainStores(stores);
+  },
+
   async createStore(payload: ICreateStoreInput): Promise<IStore> {
+    const vendor = await this.manager.findOne(UserEntity, {
+      where: { id: parseInt(payload.vendor_id, 10) },
+    });
+
+    if (!vendor) {
+      throw new Error("Vendor not found");
+    }
+
     const store = this.manager.create(StoreEntity, {
       storeName: payload.storeName,
+      storePhone: payload.storePhone,
       logo: payload.logo,
       foundedAt: payload.foundedAt,
       isPublished: payload.isPublished,
       position: payload.position,
       socialMediaLinks: payload.socialMediaLinks,
-      vendor_id: payload.vendor_id,
+      user: vendor,
     } as DeepPartial<StoreEntity>);
 
     const result = await this.manager.save(StoreEntity, store);
     return this.toDomainStore(result);
   },
 
-  async updateStore(store: IStore, payload: Partial<StoreEntity>): Promise<IStore> {
+  async updateStore(
+    store: IStore,
+    payload: Partial<StoreEntity>
+  ): Promise<IStore> {
     await this.manager.update(
       StoreEntity,
       {
         id: store.getIdAsNumber(),
       },
-      payload,
+      payload
     );
     const updatedStore = await this.manager.findOne(StoreEntity, {
       where: {
@@ -53,7 +82,11 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     where: FindManyOptions<StoreEntity>;
     data: StoresUpdateDataPayload;
   }): Promise<number> {
-    const result = await this.manager.update(StoreEntity, updatePayload.where, updatePayload.data);
+    const result = await this.manager.update(
+      StoreEntity,
+      updatePayload.where,
+      updatePayload.data
+    );
     return result.affected;
   },
 
@@ -69,8 +102,17 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     return result.affected;
   },
 
-  async findByQuery(queryParams: { [key: string]: string }): Promise<QueryResult<IStore>> {
-    const result = await ApiFeatures.generateSqlQuery(dataSource, 'stores', queryParams, {});
+  async findByQuery(queryParams: {
+    [key: string]: string;
+  }): Promise<QueryResult<IStore>> {
+    console.log("🚀 ~ storeRepoBase ~ queryParams:", queryParams)
+
+    const result = await ApiFeatures.generateSqlQuery(
+      dataSource,
+      "stores",
+      queryParams,
+      {}
+    );
     return {
       docs: this.toDomainStores(result.docs),
       meta: result.meta,
@@ -78,7 +120,9 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   },
 
   toDomainStores(stores: StoreEntity[]): IStore[] {
-    const domainStore = stores.map((prismaStore) => this.toDomainStore(prismaStore));
+    const domainStore = stores.map((prismaStore) =>
+      this.toDomainStore(prismaStore)
+    );
     return domainStore;
   },
 
@@ -105,7 +149,11 @@ export const storeRepo = storeRepoBase(dataSource);
 export interface IStoreRepository {
   findOne(findData: FindOneOptions<StoreEntity>): Promise<IStore>;
   findAll(findData: FindManyOptions<StoreEntity>): Promise<IStore[]>;
-  findByQuery(queryParams: { [key: string]: string }): Promise<QueryResult<IStore>>;
+  findMyStores(findOptions: FindManyOptions<StoreEntity>): Promise<IStore[]>;
+  findByQuery(queryParams: {
+    [key: string]: string;
+  }): Promise<QueryResult<IStore>>;
+
   createStore(payload: ICreateStoreInput): Promise<IStore>;
   updateStore(store: IStore, payload: Partial<StoreEntity>): Promise<IStore>;
   updateMany(updatePayload: {

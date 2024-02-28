@@ -44,6 +44,7 @@ import {
   
     @Column({
       type: 'boolean', 
+      default: false,
     })
     isPublished: boolean;
   

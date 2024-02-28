@@ -18,7 +18,6 @@ export const createStoreUseCaseBase =
     const storeFound = await dependencies.storeRepo.findAll({
       where: [{ storeName: payload.storeName }],
     });
-    console.log("🚀 ~ storeFound:", storeFound)
     if (storeFound.length>0) {
       exceptionService.badRequestException({
         message: "A store With The Given Name Already Exists",

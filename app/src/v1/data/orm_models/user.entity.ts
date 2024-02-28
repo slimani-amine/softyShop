@@ -46,6 +46,7 @@ export class UserEntity {
   @Column({
     type: 'enum',
     enum: ['admin', 'vendor', 'user'],
+    default: 'user',
   })
   role: string;
 
