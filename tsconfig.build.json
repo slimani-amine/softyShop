@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "app/tests",
+    "dist",
+    "**/*spec.ts",
+    "migrations",
+    "./ormconnection.js",
+    "./testormconnection.js",
+    "commitlint.config.js"
+  ]
+}

@@ -1,0 +1,52 @@
+components:
+  schemas:
+    RegisterValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                password:
+                  type: string
+                verifyPassword:
+                  type: string
+                email:
+                  type: string
+    LoginValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                password:
+                  type: string
+                email:
+                  type: string
+    UpdateProfileValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string

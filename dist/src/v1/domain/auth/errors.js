@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE = exports.USERNAME_TOO_SHORT_ERROR_MESSAGE = exports.ACCOUNT_VERIFICATION_ERROR_MESSAGE = exports.ACCOUNT_ALREADY_EXISTS_ERROR_MESSAGE = exports.RESET_PASSWORD_EXPIRED_ERROR_MESSAGE = exports.RESET_PASSWORD_UNAUTHORIZED_ERROR_MESSAGE = exports.BAD_LOGIN_CREDENTIALS_ERROR_MESSAGE = exports.ACCOUNT_NOT_FOUND_ERROR_MESSAGE = exports.ACCOUNT_ALREADY_VERIFIED_ERROR_MESSAGE = exports.INVALID_TOKEN_ERROR_MESSAGE = exports.ACCOUNT_VERIFICATION_REQUIRED_ERROR_MESSAGE = exports.LOGIN_REQUIRED_ERROR_MESSAGE = exports.INVALID_ACCOUNT_VERIFICATION_CODE_ERROR_MESSAGE = exports.LAST_NAME_TOO_SHORT_ERROR_MESSAGE = exports.FIRST_NAME_TOO_SHORT_ERROR_MESSAGE = exports.INVALID_PASSWORD_ERROR_MESSAGE = exports.PASSWORD_TOO_SHORT_ERROR_MESSAGE = exports.INVALID_EMAIL_ERROR_MESSAGE = void 0;
+exports.INVALID_EMAIL_ERROR_MESSAGE = `This email is invalid`;
+exports.PASSWORD_TOO_SHORT_ERROR_MESSAGE = `Passwords must be longer than 8 characters`;
+exports.INVALID_PASSWORD_ERROR_MESSAGE = 'Passwords need to have at least one special character, one digit, one uppercase letter and one lower case letter';
+exports.FIRST_NAME_TOO_SHORT_ERROR_MESSAGE = 'First name needs to be longer than 2 characters';
+exports.LAST_NAME_TOO_SHORT_ERROR_MESSAGE = 'Last name needs to be longer than 2 characters';
+exports.INVALID_ACCOUNT_VERIFICATION_CODE_ERROR_MESSAGE = 'Account verification code is not valid, Please check your email';
+exports.LOGIN_REQUIRED_ERROR_MESSAGE = 'Please login first';
+exports.ACCOUNT_VERIFICATION_REQUIRED_ERROR_MESSAGE = 'Please verify your account first';
+exports.INVALID_TOKEN_ERROR_MESSAGE = 'This token is not valid';
+exports.ACCOUNT_ALREADY_VERIFIED_ERROR_MESSAGE = 'Account Already Verified';
+exports.ACCOUNT_NOT_FOUND_ERROR_MESSAGE = "This Account Doesn't Exist";
+exports.BAD_LOGIN_CREDENTIALS_ERROR_MESSAGE = 'Wrong Login Information, Please Verify Again';
+exports.RESET_PASSWORD_UNAUTHORIZED_ERROR_MESSAGE = 'Cannot Reset Your Password, Please use the link sent to your email';
+exports.RESET_PASSWORD_EXPIRED_ERROR_MESSAGE = 'Cannot Reset Your Password, Link Expired.';
+exports.ACCOUNT_ALREADY_EXISTS_ERROR_MESSAGE = 'An Account With The Given Email Already Exists';
+exports.ACCOUNT_VERIFICATION_ERROR_MESSAGE = "Couldn't verify your account, please use the link sent to your email";
+exports.USERNAME_TOO_SHORT_ERROR_MESSAGE = 'Username must be longer than 4 characters';
+exports.PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE = 'Passwords Do Not Match';
+//# sourceMappingURL=errors.js.map

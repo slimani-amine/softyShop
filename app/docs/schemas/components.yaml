@@ -1,0 +1,184 @@
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - email
+        - isVerified
+        - firstName
+        - lastName
+      properties:
+        email:
+          type: string
+        isVerified:
+          type: boolean
+        firstName:
+          type: string
+        lastName:
+          type: string
+    UserLogin:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          description: The email of the user
+        password:
+          type: string
+          description: The password of the user
+
+    UserRegister:
+      type: object
+      required:
+        - firstName
+        - lastname
+        - email
+        - password
+      properties:
+        firstName:
+          type: string
+          description: The name of the user
+        lastName:
+          type: string
+          description: The last name of the user
+        email:
+          type: string
+          description: The email of the user
+        password:
+          type: string
+          description: The password of the user (must at least be 12 characters long)
+
+    UpdateUser:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: The name of the user
+        lastName:
+          type: string
+          description: The last name of the user
+        email:
+          type: string
+          description: The email of the user
+
+    UpdateUserPassword:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+          description: The oldPassword of the user
+        password:
+          type: string
+          description: The new password of the user
+        confirmPassword:
+          type: string
+          description: The confirmPassword of the user
+
+    UserPasswordForgot:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          description: The email of the user
+          default: jack@gmail.com
+
+    UserPasswordReset:
+      type: object
+      required:
+        - token
+        - newPassword
+        - verifyNewPassword
+      properties:
+        newPassword:
+          type: string
+          description: The password of the user
+        verifyNewPassword:
+          type: string
+          description: The confirmPassword of the user
+        token:
+          type: string
+          description: The token of the user
+
+    Success:
+      type: object
+      properties:
+        message:
+          type: string
+          default: success
+        data:
+          type: object
+
+    SuccessMsg:
+      type: object
+      properties:
+        message:
+          type: string
+          default: success
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+
+    NotFound:
+      type: object
+      properties:
+        error:
+          type: string
+          example: Not Found
+        message:
+          type: string
+          example: Entity not found or may be deleted
+
+    AccessToken:
+      type: string
+      description: access token of user returned when logged in successfully
+      example: eyJhbGciOiJSciOiJSUzI1NaWZpRMEKCfNrNISYbAZH82FXLVN5RW5voC1na_kiNPhyCRmX3OQ5hdDQrJpQjvHx8mrEvStpg7D3-NmEE
+
+    Forbidden:
+      type: object
+      properties:
+        error:
+          type: string
+          example: Not Found
+        message:
+          type: string
+          example: You Cannot Perform This Action
+
+    ValidationErrorBase:
+      type: object
+      properties:
+        error:
+          type: string
+          example: 'bad request'
+        message:
+          type: string
+          example: 'user error'
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      properties:
+        id:
+          type: number
+          default: 1
+        firstName:
+          type: string
+          default: jack
+        lastName:
+          type: string
+          default: michelle
+        email:
+          type: string
+          default: jack@gmail.com
+        isVerified:
+          type: boolean
+          default: false

@@ -1,0 +1,38 @@
+paths:
+  /v1/auth/tknr:
+    get:
+      security:
+        - BearerAuth: []
+      tags:
+        - Auth
+      summary: Refresh User Tokens
+      description: get new user tokens.
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          user:
+                            $ref: '#/components/schemas/User'
+                          accessToken:
+                            $ref: '#/components/schemas/AccessToken'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

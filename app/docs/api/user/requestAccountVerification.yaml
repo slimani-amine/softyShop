@@ -1,0 +1,30 @@
+paths:
+  /v1/auth/verification/request:
+    get:
+      security:
+        - BearerAuth: []
+      tags:
+        - Verification
+      summary: Request Account Verification Email
+      description: Request Account Verification Email
+      responses:
+        200:
+          description: Success
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

@@ -1,0 +1,17 @@
+tags:
+  - name: Users
+    description: Everything about Users
+
+  - name: Auth
+    description: Auth Flow
+
+  - name: Category
+    description: Category Cruds
+
+  - name: Project
+    description: Project Cruds
+
+  - name: Element
+    description: Element Cruds
+  - name: Verification
+    description: Account Verification

@@ -1,0 +1,3 @@
+docker stop starterprodapi
+docker stop starterproddb
+docker stop starterprodadminer

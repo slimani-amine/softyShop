@@ -1,0 +1,30 @@
+import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
+import { StoreEntity } from './store.entity';
+import { ProductCreatorEntity } from './productCreator.entity';
+import { CategoryEntity } from './category.entity';
+import { BrandEntity } from './productBrand.entity';
+import { ReviewsEntity } from './reviews.entity';
+import { WishlistEntity } from './wishlist.entity';
+import { CartProductEntity } from './cartProduct.entity';
+export declare class ProductEntity {
+    id: number;
+    name: string;
+    price: number;
+    stockNumber: number;
+    publishedAt: Date;
+    availability: boolean;
+    isPublished: boolean;
+    creator: ProductCreatorEntity[];
+    category: CategoryEntity[];
+    brand: BrandEntity[];
+    review: ReviewsEntity[];
+    wishlist: WishlistEntity[];
+    cartProduct: CartProductEntity[];
+    store: StoreEntity;
+    deletedAt: Date;
+    createdAt: Date;
+    updatedAt: Date;
+}
+export type ProductWherePayload = WhereEntityOptions<ProductEntity>;
+export type ProductUpdateDataPayload = QueryDeepPartialEntity<ProductEntity>;
+export type ProductFindPayload = findManyType<ProductEntity>;

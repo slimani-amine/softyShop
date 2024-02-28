@@ -1,0 +1,14 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "../../../",
+  "testEnvironment": "node",
+  "setupFiles": ["<rootDir>/app/tests/e2e/jest.setup.ts"],
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^app/(.*)": "<rootDir>/app/$1",
+    "^test/(.*)": "<rootDir>/app/tests/$1"
+  }
+}

@@ -1,0 +1,115 @@
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - email
+        - isVerified
+        - firstName
+        - lastName
+        - picture
+      properties:
+        email:
+          type: string
+        isVerified:
+          type: boolean
+        firstName:
+          type: string
+        lastName:
+          type: string
+        picture:
+          type: string
+          description: profile picture link
+    UserLogin:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          description: The email of the user
+        password:
+          type: string
+          description: The password of the user
+
+    UserRegister:
+      type: object
+      required:
+        - firstName
+        - lastName
+        - email
+        - password
+        - verifyPassword
+      properties:
+        firstName:
+          type: string
+          description: The name of the user
+        lastName:
+          type: string
+          description: The name of the user
+        email:
+          type: string
+          description: The email of the user
+        password:
+          type: string
+          description: The password of the user (must at least be 12 characters long)
+        picture:
+          type: file
+          description: profile picture
+
+    UpdateUser:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: The name of the user
+        lastName:
+          type: string
+          description: The last name of the user
+        email:
+          type: string
+          description: The email of the user
+        picture:
+          type: file
+          description: profile picture
+
+    UpdateUserPassword:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+          description: The oldPassword of the user
+        password:
+          type: string
+          description: The new password of the user
+        confirmPassword:
+          type: string
+          description: The confirmPassword of the user
+
+    UserPasswordForgot:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          description: The email of the user
+          default: jack@gmail.com
+
+    UserPasswordReset:
+      type: object
+      required:
+        - token
+        - newPassword
+        - verifyNewPassword
+      properties:
+        newPassword:
+          type: string
+          description: The password of the user
+        verifyNewPassword:
+          type: string
+          description: The confirmPassword of the user
+        token:
+          type: string
+          description: The token of the user
