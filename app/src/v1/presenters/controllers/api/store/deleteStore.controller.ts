@@ -8,7 +8,6 @@ import { NextFunction, Request, Response } from 'express';
 export const deleteStoresControllerBase =
   (deleteStoreUseCase: DeleteStoreUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req?.params);
 
     try {
       const result = await deleteStoreUseCase(req?.params);

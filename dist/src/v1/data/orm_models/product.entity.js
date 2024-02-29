@@ -55,12 +55,13 @@ __decorate([
     __metadata("design:type", Boolean)
 ], ProductEntity.prototype, "isPublished", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => productCreator_entity_1.ProductCreatorEntity, (productCretor) => productCretor.name),
+    (0, typeorm_1.OneToMany)(() => productCreator_entity_1.ProductCreatorEntity, (productCreator) => productCreator.name),
     __metadata("design:type", Array)
 ], ProductEntity.prototype, "creator", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => category_entity_1.CategoryEntity, (productCretor) => productCretor.name),
-    __metadata("design:type", Array)
+    (0, typeorm_1.ManyToOne)(() => category_entity_1.CategoryEntity, (category) => category.product),
+    (0, typeorm_1.JoinColumn)({ name: "category_id" }),
+    __metadata("design:type", category_entity_1.CategoryEntity)
 ], ProductEntity.prototype, "category", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => productBrand_entity_1.BrandEntity, (productCretor) => productCretor.name),

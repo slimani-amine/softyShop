@@ -26,8 +26,14 @@ __decorate([
     __metadata("design:type", String)
 ], PaymentMethodEntity.prototype, "name", void 0);
 __decorate([
+    (0, typeorm_1.Column)({
+        type: 'varchar',
+    }),
+    __metadata("design:type", String)
+], PaymentMethodEntity.prototype, "icon", void 0);
+__decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.paymentMethods),
-    (0, typeorm_1.JoinColumn)({ name: 'user_id' }),
+    (0, typeorm_1.JoinColumn)({ name: 'admin_id' }),
     __metadata("design:type", user_entity_1.UserEntity)
 ], PaymentMethodEntity.prototype, "user", void 0);
 __decorate([

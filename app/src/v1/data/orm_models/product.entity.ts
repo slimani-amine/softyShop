@@ -48,11 +48,12 @@ export class ProductEntity {
   @Column()
   isPublished: boolean;
 
-  @OneToMany(() => ProductCreatorEntity, (productCretor) => productCretor.name)
+  @OneToMany(() => ProductCreatorEntity, (productCreator) => productCreator.name)
   creator: ProductCreatorEntity[];
 
-  @OneToMany(() => CategoryEntity, (productCretor) => productCretor.name)
-  category: CategoryEntity[];
+  @ManyToOne(() => CategoryEntity, (category) => category.product)
+  @JoinColumn({ name: "category_id" })
+  category: CategoryEntity;
 
   @OneToMany(() => BrandEntity, (productCretor) => productCretor.name)
   brand: BrandEntity[];

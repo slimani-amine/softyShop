@@ -1,5 +1,5 @@
-import { IStore } from 'app/src/v1/domain/store/store';
-import { IStoreRepository, storeRepo } from '../../../data/repositories/store.reposotory';
+import { IStore } from "app/src/v1/domain/store/store";
+import { IStoreRepository, storeRepo } from "../../../data/repositories/store.repository";
 export type GetOneStoreUseCaseType = (queryParams: {
     [id: string]: any;
 }) => Promise<IStore>;

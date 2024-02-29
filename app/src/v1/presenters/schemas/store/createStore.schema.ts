@@ -15,14 +15,12 @@ const createStoreSchema = z.object({
   logo: z.string().min(1, {
     message: "Le logo du boutique est obligatoire",
   }),
-  foundedAt: z.string().min(1, {
-    message: "La date de création du boutique est obligatoire",
+  isPublished: z.boolean().optional(),
+  position: z.array(z.number()).refine((data) => data.length === 2, {
+    message:
+      "La position du boutique est obligatoire et doit contenir exactement deux nombres",
   }),
-  isPublished: z.boolean(),
-  position: z.string().min(1, {
-    message: "La position du boutique est obligatoire",
-  }),
-  socialMediaLinks: z.string(),
+  socialMediaLinks: z.array(z.string()),
   vendor_id: z.string().min(1, {
     message: "L'utilisateur du boutique est obligatoire",
   }),

@@ -3,6 +3,7 @@ import { UserEntity } from './user.entity';
 export declare class PaymentMethodEntity {
     id: number;
     name: string;
+    icon: string;
     user: UserEntity;
     deletedAt: Date;
     createdAt: Date;

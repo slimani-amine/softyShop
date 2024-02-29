@@ -1,27 +1,27 @@
-import { z } from 'zod';
+import { z } from "zod";
 declare const createStoreSchema: z.ZodObject<{
     storeName: z.ZodString;
+    storePhone: z.ZodString;
     logo: z.ZodString;
-    foundedAt: z.ZodString;
-    isPublished: z.ZodBoolean;
-    position: z.ZodString;
-    socialMediaLinks: z.ZodString;
+    isPublished: z.ZodOptional<z.ZodBoolean>;
+    position: z.ZodEffects<z.ZodArray<z.ZodNumber, "many">, number[], number[]>;
+    socialMediaLinks: z.ZodArray<z.ZodString, "many">;
     vendor_id: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     storeName?: string;
+    storePhone?: string;
     logo?: string;
-    foundedAt?: string;
     isPublished?: boolean;
-    position?: string;
-    socialMediaLinks?: string;
+    position?: number[];
+    socialMediaLinks?: string[];
     vendor_id?: string;
 }, {
     storeName?: string;
+    storePhone?: string;
     logo?: string;
-    foundedAt?: string;
     isPublished?: boolean;
-    position?: string;
-    socialMediaLinks?: string;
+    position?: number[];
+    socialMediaLinks?: string[];
     vendor_id?: string;
 }>;
 export default createStoreSchema;

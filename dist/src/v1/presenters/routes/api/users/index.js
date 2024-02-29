@@ -18,8 +18,8 @@ const defaults = {
     getMeController: getMe_controller_1.getMeController,
 };
 function getUsersApiRouter(controllers = defaults) {
-    router.route('/me').get(controllers.getMeController);
     router.use(isAuthenticated_middleware_1.isAuthentictedMiddleware);
+    router.route('/me').get(controllers.getMeController);
     router
         .route('/update-me')
         .patch(multerUpload_middleware_1.multerImageUpload.single('picture'), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)('picture', transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), (0, validateSchema_middleware_1.validateSchemaMiddleware)(updateProfile_schema_1.default, validateSchema_middleware_1.VALIDATION_PATHS.BODY), controllers.updateMyProfileController);

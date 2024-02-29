@@ -17,34 +17,39 @@ let CategoryEntity = class CategoryEntity {
 exports.CategoryEntity = CategoryEntity;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], CategoryEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
     __metadata("design:type", String)
 ], CategoryEntity.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => product_entity_1.ProductEntity, (product) => product.category),
-    (0, typeorm_1.JoinColumn)({ name: 'product_id' }),
-    __metadata("design:type", product_entity_1.ProductEntity)
+    (0, typeorm_1.Column)({
+        type: "varchar",
+    }),
+    __metadata("design:type", String)
+], CategoryEntity.prototype, "icon", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => product_entity_1.ProductEntity, (productcategory) => productcategory.name),
+    __metadata("design:type", Array)
 ], CategoryEntity.prototype, "product", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], CategoryEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], CategoryEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], CategoryEntity.prototype, "updatedAt", void 0);
 exports.CategoryEntity = CategoryEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'Category',
+        name: "Category",
     })
 ], CategoryEntity);
 //# sourceMappingURL=category.entity.js.map

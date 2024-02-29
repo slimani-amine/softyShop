@@ -27,27 +27,28 @@ __decorate([
 ], UserEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
         unique: true,
     }),
     __metadata("design:type", String)
 ], UserEntity.prototype, "email", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
     __metadata("design:type", String)
 ], UserEntity.prototype, "username", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
     __metadata("design:type", String)
 ], UserEntity.prototype, "password", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'enum',
-        enum: ['admin', 'vendor', 'user'],
+        type: "enum",
+        enum: ["admin", "vendor", "user"],
+        default: "user",
     }),
     __metadata("design:type", String)
 ], UserEntity.prototype, "role", void 0);
@@ -57,27 +58,27 @@ __decorate([
 ], UserEntity.prototype, "phoneNumber", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
         nullable: true,
     }),
     __metadata("design:type", String)
 ], UserEntity.prototype, "confirmation_token", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
     __metadata("design:type", String)
 ], UserEntity.prototype, "picture", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'boolean',
+        type: "boolean",
         default: true,
     }),
     __metadata("design:type", Boolean)
 ], UserEntity.prototype, "confirmed_email", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'boolean',
+        type: "boolean",
         default: true,
     }),
     __metadata("design:type", Boolean)
@@ -112,20 +113,20 @@ __decorate([
     __metadata("design:type", cart_entity_1.CartEntity)
 ], UserEntity.prototype, "cart", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], UserEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], UserEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], UserEntity.prototype, "updatedAt", void 0);
 exports.UserEntity = UserEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'Users',
+        name: "Users",
     })
 ], UserEntity);
 //# sourceMappingURL=user.entity.js.map

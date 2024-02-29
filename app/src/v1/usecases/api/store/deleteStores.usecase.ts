@@ -2,7 +2,7 @@ import { exceptionService } from "../../../core/errors/exceptions";
 import {
   IStoreRepository,
   storeRepo,
-} from "../../../data/repositories/store.reposotory";
+} from "../../../data/repositories/store.repository";
 
 export type DeleteStoreUseCaseType = (queryParams: {
   [id: string]: any;

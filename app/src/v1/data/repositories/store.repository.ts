@@ -16,7 +16,6 @@ import {
   QueryResult,
 } from "../../utils/querying/apiFeatures.util";
 import { UserEntity } from "../orm_models/user.entity";
-import { IUser } from "../../domain/users/user";
 
 export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   manager: dbConnection.manager,
@@ -30,7 +29,9 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     return this.toDomainStores(stores);
   },
 
-  async findMyStores(findOptions: FindManyOptions<StoreEntity>): Promise<IStore[]> {
+  async findMyStores(
+    findOptions: FindManyOptions<StoreEntity>
+  ): Promise<IStore[]> {
     const stores = await this.manager.find(StoreEntity, findOptions);
     return this.toDomainStores(stores);
   },
@@ -48,10 +49,9 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       storeName: payload.storeName,
       storePhone: payload.storePhone,
       logo: payload.logo,
-      foundedAt: payload.foundedAt,
       isPublished: payload.isPublished,
-      position: payload.position,
-      socialMediaLinks: payload.socialMediaLinks,
+      position: JSON.stringify(payload.position),
+      socialMediaLinks: JSON.stringify(payload.socialMediaLinks),
       user: vendor,
     } as DeepPartial<StoreEntity>);
 
@@ -105,8 +105,6 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   async findByQuery(queryParams: {
     [key: string]: string;
   }): Promise<QueryResult<IStore>> {
-    console.log("🚀 ~ storeRepoBase ~ queryParams:", queryParams)
-
     const result = await ApiFeatures.generateSqlQuery(
       dataSource,
       "stores",
@@ -135,7 +133,6 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       storeName: prismaStore.storeName,
       storePhone: prismaStore.storePhone,
       logo: prismaStore.logo,
-      foundedAt: prismaStore.foundedAt,
       isPublished: prismaStore.isPublished,
       position: prismaStore.position,
       socialMediaLinks: prismaStore.socialMediaLinks,

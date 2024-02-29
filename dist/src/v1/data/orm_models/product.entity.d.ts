@@ -15,7 +15,7 @@ export declare class ProductEntity {
     availability: boolean;
     isPublished: boolean;
     creator: ProductCreatorEntity[];
-    category: CategoryEntity[];
+    category: CategoryEntity;
     brand: BrandEntity[];
     review: ReviewsEntity[];
     wishlist: WishlistEntity[];

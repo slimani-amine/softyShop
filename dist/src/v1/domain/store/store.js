@@ -7,7 +7,6 @@ class Store extends idAsNumber_1.NumberId {
         super(payload.id);
         this.storeName = payload.storeName;
         this.logo = payload.logo;
-        this.foundedAt = payload.foundedAt;
         this.isPublished = payload.isPublished;
         this.position = payload.position;
         this.socialMediaLinks = payload.socialMediaLinks;

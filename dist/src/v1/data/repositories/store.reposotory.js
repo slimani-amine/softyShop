@@ -5,27 +5,44 @@ const store_entity_1 = require("../orm_models/store.entity");
 const store_1 = require("../../domain/store/store");
 const connection_1 = require("../connection");
 const apiFeatures_util_1 = require("../../utils/querying/apiFeatures.util");
+const user_entity_1 = require("../orm_models/user.entity");
+const socialMedia_entity_1 = require("../orm_models/socialMedia.entity");
 const storeRepoBase = (dbConnection) => ({
     manager: dbConnection.manager,
     async findOne(findData) {
-        console.log('🚀 ~ findOne ~ findData:', findData);
         const store = await this.manager.findOne(store_entity_1.StoreEntity, findData);
         return this.toDomainStore(store);
     },
     async findAll(findData) {
-        console.log('🚀 ~ findAll ~ findData:', findData);
         const stores = await this.manager.find(store_entity_1.StoreEntity, findData);
         return this.toDomainStores(stores);
     },
+    async findMyStores(findOptions) {
+        const stores = await this.manager.find(store_entity_1.StoreEntity, findOptions);
+        return this.toDomainStores(stores);
+    },
     async createStore(payload) {
+        const vendor = await this.manager.findOne(user_entity_1.UserEntity, {
+            where: { id: parseInt(payload.vendor_id, 10) },
+        });
+        const socialMediaLinks = await this.manager.findOne(socialMedia_entity_1.SocialMediaLinksEntity, {
+            where: { id: payload.socialMediaLinkId },
+        });
+        if (!vendor) {
+            throw new Error("Vendor not found");
+        }
+        if (!socialMediaLinks) {
+            throw new Error("socialMediaLink not found");
+        }
         const store = this.manager.create(store_entity_1.StoreEntity, {
             storeName: payload.storeName,
+            storePhone: payload.storePhone,
             logo: payload.logo,
             foundedAt: payload.foundedAt,
             isPublished: payload.isPublished,
             position: payload.position,
-            socialMediaLinks: payload.socialMediaLinks,
-            vendor_id: payload.vendor_id,
+            socialMediaLinks: [socialMediaLinks],
+            user: vendor,
         });
         const result = await this.manager.save(store_entity_1.StoreEntity, store);
         return this.toDomainStore(result);
@@ -56,7 +73,8 @@ const storeRepoBase = (dbConnection) => ({
         return result.affected;
     },
     async findByQuery(queryParams) {
-        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, 'stores', queryParams, {});
+        console.log("🚀 ~ storeRepoBase ~ queryParams:", queryParams);
+        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "stores", queryParams, {});
         return {
             docs: this.toDomainStores(result.docs),
             meta: result.meta,

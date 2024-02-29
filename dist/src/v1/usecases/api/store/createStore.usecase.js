@@ -2,16 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createStoreUseCase = exports.validatecreateStorePayload = exports.createStoreUseCaseBase = void 0;
 const exceptions_1 = require("../../../core/errors/exceptions");
-const store_reposotory_1 = require("../../../data/repositories/store.reposotory");
+const store_repository_1 = require("../../../data/repositories/store.repository");
 const createStore_schema_1 = require("../../../presenters/schemas/store/createStore.schema");
 const validate_schema_1 = require("../../../utils/validation/validate.schema");
 const createStoreUseCaseBase = (dependencies = {
-    storeRepo: store_reposotory_1.storeRepo,
+    storeRepo: store_repository_1.storeRepo,
 }) => async (payload) => {
     const storeFound = await dependencies.storeRepo.findAll({
         where: [{ storeName: payload.storeName }],
     });
-    console.log("🚀 ~ storeFound:", storeFound);
     if (storeFound.length > 0) {
         exceptions_1.exceptionService.badRequestException({
             message: "A store With The Given Name Already Exists",
@@ -22,7 +21,6 @@ const createStoreUseCaseBase = (dependencies = {
         storeName: payload.storeName,
         storePhone: payload.storePhone,
         logo: payload.logo,
-        foundedAt: payload.foundedAt,
         isPublished: payload.isPublished,
         position: payload.position,
         socialMediaLinks: payload.socialMediaLinks,
@@ -39,6 +37,6 @@ function validatecreateStorePayload(payload) {
 }
 exports.validatecreateStorePayload = validatecreateStorePayload;
 exports.createStoreUseCase = (0, exports.createStoreUseCaseBase)({
-    storeRepo: store_reposotory_1.storeRepo,
+    storeRepo: store_repository_1.storeRepo,
 });
 //# sourceMappingURL=createStore.usecase.js.map

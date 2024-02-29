@@ -1,5 +1,5 @@
-import { IStoreRepository, storeRepo } from '../../../data/repositories/store.reposotory';
-import { ICreateStoreInput, IStore } from '../../../domain/store/store';
+import { IStoreRepository, storeRepo } from "../../../data/repositories/store.repository";
+import { ICreateStoreInput, IStore } from "../../../domain/store/store";
 export type createStoreUseCaseType = (payload: ICreateStoreInput) => Promise<{
     store: IStore;
 }>;

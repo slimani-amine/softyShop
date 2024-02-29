@@ -5,40 +5,44 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { ProductEntity } from './product.entity';
+} from "typeorm";
+import {
+  QueryDeepPartialEntity,
+  WhereEntityOptions,
+  findManyType,
+} from "../../../types/repos";
+import { ProductEntity } from "./product.entity";
 
 @Entity({
-  name: 'Category',
+  name: "Category",
 })
 export class CategoryEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column({
-    type: 'varchar',
+    type: "varchar",
   })
   name: string;
 
   @Column({
-    type: 'varchar',
+    type: "varchar",
   })
   icon: string;
 
-  @ManyToOne(() => ProductEntity, (product) => product.category)
-  @JoinColumn({ name: 'product_id' })
-  product: ProductEntity;
+  @OneToMany(() => ProductEntity, (productcategory) => productcategory.name)
+  product: ProductEntity[];
 
-  @DeleteDateColumn({ name: 'deletedAt' })
+  @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;
 
-  @CreateDateColumn({ name: 'createdAt' })
+  @CreateDateColumn({ name: "createdAt" })
   createdAt: Date;
 
-  @UpdateDateColumn({ name: 'updatedAt' })
+  @UpdateDateColumn({ name: "updatedAt" })
   updatedAt: Date;
 }
 

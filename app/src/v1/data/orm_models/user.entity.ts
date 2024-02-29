@@ -8,45 +8,48 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
+} from "typeorm";
 
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { StoreEntity } from './store.entity';
-import { PaymentMethodEntity } from './paymentMethod.entity';
-import { AddressesEntity } from './addresses.entity';
-import { ReviewsEntity } from './reviews.entity';
-import { WishlistEntity } from './wishlist.entity';
-import { CartEntity } from './cart.entity';
-import { ResetPasswordEntity } from './resetpassword.entity';
-import { SocialMediaLinksEntity } from './socialMedia.entity';
+import {
+  QueryDeepPartialEntity,
+  WhereEntityOptions,
+  findManyType,
+} from "../../../types/repos";
+import { StoreEntity } from "./store.entity";
+import { PaymentMethodEntity } from "./paymentMethod.entity";
+import { AddressesEntity } from "./addresses.entity";
+import { ReviewsEntity } from "./reviews.entity";
+import { WishlistEntity } from "./wishlist.entity";
+import { CartEntity } from "./cart.entity";
+import { ResetPasswordEntity } from "./resetpassword.entity";
 
 @Entity({
-  name: 'Users',
+  name: "Users",
 })
 export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({
-    type: 'varchar',
+    type: "varchar",
     unique: true,
   })
   email: string;
 
   @Column({
-    type: 'varchar',
+    type: "varchar",
   })
   username: string;
 
   @Column({
-    type: 'varchar',
+    type: "varchar",
   })
   password: string;
 
   @Column({
-    type: 'enum',
-    enum: ['admin', 'vendor', 'user'],
-    default: 'user',
+    type: "enum",
+    enum: ["admin", "vendor", "user"],
+    default: "user",
   })
   role: string;
 
@@ -54,24 +57,24 @@ export class UserEntity {
   phoneNumber: string;
 
   @Column({
-    type: 'varchar',
+    type: "varchar",
     nullable: true,
   })
   confirmation_token: string;
 
   @Column({
-    type: 'varchar',
+    type: "varchar",
   })
   picture: string;
 
   @Column({
-    type: 'boolean',
+    type: "boolean",
     default: true,
   })
   confirmed_email: boolean;
 
   @Column({
-    type: 'boolean',
+    type: "boolean",
     default: true,
   })
   isVerified: boolean;
@@ -81,9 +84,6 @@ export class UserEntity {
 
   @OneToMany(() => PaymentMethodEntity, (paymentMethod) => paymentMethod.user)
   paymentMethods: PaymentMethodEntity[];
-
-  @OneToMany(() => SocialMediaLinksEntity, (socialMediaLinks) => socialMediaLinks.user)
-  socialMediaLinks: SocialMediaLinksEntity[];
 
   @OneToMany(() => AddressesEntity, (address) => address.user)
   addresses: AddressesEntity[];
@@ -101,13 +101,13 @@ export class UserEntity {
   @JoinColumn()
   cart: CartEntity;
 
-  @DeleteDateColumn({ name: 'deletedAt' })
+  @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;
 
-  @CreateDateColumn({ name: 'createdAt' })
+  @CreateDateColumn({ name: "createdAt" })
   createdAt: Date;
 
-  @UpdateDateColumn({ name: 'updatedAt' })
+  @UpdateDateColumn({ name: "updatedAt" })
   updatedAt: Date;
 }
 

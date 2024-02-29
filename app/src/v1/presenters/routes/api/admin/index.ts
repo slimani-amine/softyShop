@@ -12,6 +12,11 @@ import createStoreSchema from "../../../schemas/store/createStore.schema";
 import { restrictToMiddleware } from "../../../middlewares/auth/restrictTo.middleware";
 import { isAuthentictedMiddleware } from "../../../middlewares/auth/isAuthenticated.middleware";
 import { getVendorStoresController } from "../../../controllers/api/store/getVendorStores.controller";
+import { updateStoreController } from "../../../controllers/api/store/updateStore.controller";
+import { createCategoryController } from "../../../controllers/api/category/createCategory.controller";
+import { deleteCategoryController } from "../../../controllers/api/category/deleteCategory.controller";
+import { getAllCategoryController } from "../../../controllers/api/category/getAllCategories.controller";
+import { updatecategoryController } from "../../../controllers/api/category/updateCategory.controller";
 
 const router = express.Router();
 
@@ -21,6 +26,11 @@ const defaults = {
   deleteStore: deleteStoresController,
   getOneStore: getOneStoreController,
   getVendorStores: getVendorStoresController,
+  updateStore: updateStoreController,
+  createCategory: createCategoryController,
+  deleteCategory: deleteCategoryController,
+  getCategories: getAllCategoryController,
+  updateCategory: updatecategoryController,
 };
 
 export function getStoresApiRouter(
@@ -30,6 +40,11 @@ export function getStoresApiRouter(
     deleteStore: ControllerType;
     getOneStore: ControllerType;
     getVendorStores: ControllerType;
+    updateStore: ControllerType;
+    createCategory: ControllerType;
+    deleteCategory: ControllerType;
+    getCategories: ControllerType;
+    updateCategory: ControllerType;
   } = defaults
 ) {
   router.use(isAuthentictedMiddleware);
@@ -42,13 +57,26 @@ export function getStoresApiRouter(
       restrictToMiddleware("admin", "vendor"),
       controllers.createStore
     );
-  router.route("/my-stores").get(restrictToMiddleware("vendor","admin"),controllers.getVendorStores);
+  router
+    .route("/my-stores")
+    .get(restrictToMiddleware("vendor", "admin"), controllers.getVendorStores);
 
   router.use(restrictToMiddleware("admin", "vendor"));
   router
     .route("/store/:id")
     .delete(controllers.deleteStore)
-    .get(controllers.getOneStore);
+    .get(controllers.getOneStore)
+    .patch(controllers.updateStore);
+
+  router
+    .route("/category")
+    .post(restrictToMiddleware("admin"), controllers.createCategory)
+    .get(restrictToMiddleware("admin", "vendor"), controllers.getCategories);
+
+  router
+    .route("/category/:id")
+    .patch(restrictToMiddleware("admin"), controllers.updateCategory)
+    .delete(restrictToMiddleware("admin"), controllers.deleteCategory);
 
   return router;
 }

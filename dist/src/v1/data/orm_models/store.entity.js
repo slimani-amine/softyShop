@@ -22,47 +22,42 @@ __decorate([
 ], StoreEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
         unique: true,
     }),
     __metadata("design:type", String)
 ], StoreEntity.prototype, "storeName", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
         unique: true,
     }),
     __metadata("design:type", String)
 ], StoreEntity.prototype, "storePhone", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
     __metadata("design:type", String)
 ], StoreEntity.prototype, "logo", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'date',
-    }),
-    __metadata("design:type", Date)
-], StoreEntity.prototype, "foundedAt", void 0);
-__decorate([
-    (0, typeorm_1.Column)({
-        type: 'boolean',
+        type: "boolean",
+        default: false,
     }),
     __metadata("design:type", Boolean)
 ], StoreEntity.prototype, "isPublished", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], StoreEntity.prototype, "position", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], StoreEntity.prototype, "socialMediaLinks", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => product_entity_1.ProductEntity, (product) => product.store),
@@ -70,24 +65,24 @@ __decorate([
 ], StoreEntity.prototype, "products", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.store),
-    (0, typeorm_1.JoinColumn)({ name: 'vendor_id' }),
+    (0, typeorm_1.JoinColumn)({ name: "vendor_id" }),
     __metadata("design:type", user_entity_1.UserEntity)
 ], StoreEntity.prototype, "user", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], StoreEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], StoreEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], StoreEntity.prototype, "updatedAt", void 0);
 exports.StoreEntity = StoreEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'Stores',
+        name: "Stores",
     })
 ], StoreEntity);
 //# sourceMappingURL=store.entity.js.map

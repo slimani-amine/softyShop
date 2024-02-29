@@ -3,19 +3,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const zod_1 = require("zod");
 const createStoreSchema = zod_1.z.object({
     storeName: zod_1.z.string().min(1, {
-        message: 'Le nom du boutique est obligatoire',
+        message: "Le nom du boutique est obligatoire",
+    }),
+    storePhone: zod_1.z
+        .string()
+        .min(8, {
+        message: "Le telephone du boutique est obligatoire (8 chiffres)",
+    })
+        .max(8, {
+        message: "Le telephone du boutique est obligatoire (8 chiffres)",
     }),
     logo: zod_1.z.string().min(1, {
-        message: 'Le logo du boutique est obligatoire',
+        message: "Le logo du boutique est obligatoire",
     }),
-    foundedAt: zod_1.z.string().min(1, {
-        message: 'La date de création du boutique est obligatoire',
+    isPublished: zod_1.z.boolean().optional(),
+    position: zod_1.z.array(zod_1.z.number()).refine((data) => data.length === 2, {
+        message: "La position du boutique est obligatoire et doit contenir exactement deux nombres",
     }),
-    isPublished: zod_1.z.boolean(),
-    position: zod_1.z.string().min(1, {
-        message: 'La position du boutique est obligatoire',
-    }),
-    socialMediaLinks: zod_1.z.string(),
+    socialMediaLinks: zod_1.z.array(zod_1.z.string()),
     vendor_id: zod_1.z.string().min(1, {
         message: "L'utilisateur du boutique est obligatoire",
     }),
