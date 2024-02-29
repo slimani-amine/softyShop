@@ -1,6 +1,5 @@
 import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from "../../../types/repos";
 import { StoreEntity } from "./store.entity";
-import { PaymentMethodEntity } from "./paymentMethod.entity";
 import { AddressesEntity } from "./addresses.entity";
 import { ReviewsEntity } from "./reviews.entity";
 import { WishlistEntity } from "./wishlist.entity";
@@ -18,7 +17,6 @@ export declare class UserEntity {
     confirmed_email: boolean;
     isVerified: boolean;
     resetPasswords: ResetPasswordEntity[];
-    paymentMethods: PaymentMethodEntity[];
     addresses: AddressesEntity[];
     store: StoreEntity[];
     reviews: ReviewsEntity[];

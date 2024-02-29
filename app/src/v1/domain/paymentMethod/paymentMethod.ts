@@ -1,0 +1,27 @@
+import { IIdAsNumber, NumberId } from "../types/idAsNumber";
+
+export interface IPaymentMethod extends IIdAsNumber {
+  id: string;
+  name: string;
+  icon: string;
+}
+
+export class PaymentMethod extends NumberId implements IPaymentMethod {
+  id: string;
+  name: string;
+  icon: string;
+  deletedAt: Date;
+  createdAt: Date;
+  updatedAt: Date;
+
+  constructor(payload: { id: string; name: string; icon: string }) {
+    super(payload.id);
+    this.name = payload.name;
+    this.icon = payload.icon;
+  }
+}
+
+export interface ICreatePaymentMethodInput {
+  name: string;
+  icon: string;
+}

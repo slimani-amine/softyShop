@@ -28,22 +28,22 @@ const categoryRepoBase = (dbConnection) => ({
         return result !== null ? 1 : 0;
     },
     async findByQuery(queryParams) {
-        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "categories", queryParams, {});
+        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "category", queryParams, {});
         return {
             docs: this.toDomainCategories(result.docs),
             meta: result.meta,
         };
     },
-    async updateCategory(category, payload) {
+    async updateCategory(store, payload) {
         await this.manager.update(category_entity_1.CategoryEntity, {
-            id: category.getIdAsNumber(),
+            id: store.getIdAsNumber(),
         }, payload);
-        const updatedcategory = await this.manager.findOne(category_entity_1.CategoryEntity, {
+        const updatedStore = await this.manager.findOne(category_entity_1.CategoryEntity, {
             where: {
-                id: category.getIdAsNumber().toString(),
+                id: store.getIdAsNumber().toString(),
             },
         });
-        return this.toDomainCategory(updatedcategory);
+        return this.toDomainCategory(updatedStore);
     },
     toDomainCategories(categories) {
         const domainCategory = categories.map((prismaCategory) => this.toDomainCategory(prismaCategory));

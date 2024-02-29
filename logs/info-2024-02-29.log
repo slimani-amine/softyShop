@@ -738,3 +738,130 @@
 {"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/2 in 25ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category in 8ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category in 37ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/payement-method"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/payement-method in 65ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/payement-method"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/payement-method in 56ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/payement-method"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/payement-method in 29ms"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/admin/payement-method/1"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/admin/payement-method/1 in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/payement-method"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/payement-method in 7ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/payement-method/2"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/payement-method/2 in 12ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/payement-method"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/payement-method in 8ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/admin/payment-method/1"}
+{"level":"error","message":"[ERROR] Payment Method not found","trace":"Error: Payment Method not found\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:62:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/paymentMethod/deleteMethod.usecase.ts:28:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/paymentMethod/deleteMethod.controller.ts:11:22"}
+{"level":"error","message":"[ERROR] Payment Method not found"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/admin/payment-method/1 in 15ms"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/admin/payment-method/2"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/admin/payment-method/2 in 19ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/payement-method/2"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/payment-method/2"}
+{"level":"error","message":"[ERROR] Cannot read properties of null (reading 'getIdAsNumber')","trace":"TypeError: Cannot read properties of null (reading 'getIdAsNumber')\n    at Object.updatePaymentMethod (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/paymentMethod.repository.ts:74:29)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/paymentMethod/updateMethod.usecase.ts:15:64\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/paymentMethod/updateMethod.controller.ts:20:28\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/payment-method/2 in 10ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/payment-method/2"}
+{"level":"error","message":"[ERROR] No payment method found with id undefined","trace":"Error: No payment method found with id undefined\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:62:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/paymentMethod/updateMethod.controller.ts:19:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] No payment method found with id undefined"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/payment-method/2 in 16ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/payment-method"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/payment-method in 11ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/payment-method"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/payment-method in 20ms"}

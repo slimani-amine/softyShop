@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserEntity = void 0;
 const typeorm_1 = require("typeorm");
 const store_entity_1 = require("./store.entity");
-const paymentMethod_entity_1 = require("./paymentMethod.entity");
 const addresses_entity_1 = require("./addresses.entity");
 const reviews_entity_1 = require("./reviews.entity");
 const wishlist_entity_1 = require("./wishlist.entity");
@@ -87,10 +86,6 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => resetpassword_entity_1.ResetPasswordEntity, (resetPassword) => resetPassword.user),
     __metadata("design:type", Array)
 ], UserEntity.prototype, "resetPasswords", void 0);
-__decorate([
-    (0, typeorm_1.OneToMany)(() => paymentMethod_entity_1.PaymentMethodEntity, (paymentMethod) => paymentMethod.user),
-    __metadata("design:type", Array)
-], UserEntity.prototype, "paymentMethods", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => addresses_entity_1.AddressesEntity, (address) => address.user),
     __metadata("design:type", Array)

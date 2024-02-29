@@ -11,13 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaymentMethodEntity = void 0;
 const typeorm_1 = require("typeorm");
-const user_entity_1 = require("./user.entity");
+const cart_entity_1 = require("./cart.entity");
 let PaymentMethodEntity = class PaymentMethodEntity {
 };
 exports.PaymentMethodEntity = PaymentMethodEntity;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], PaymentMethodEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
@@ -32,10 +32,9 @@ __decorate([
     __metadata("design:type", String)
 ], PaymentMethodEntity.prototype, "icon", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.paymentMethods),
-    (0, typeorm_1.JoinColumn)({ name: 'admin_id' }),
-    __metadata("design:type", user_entity_1.UserEntity)
-], PaymentMethodEntity.prototype, "user", void 0);
+    (0, typeorm_1.OneToMany)(() => cart_entity_1.CartEntity, (cart) => cart.paymentMethod),
+    __metadata("design:type", Array)
+], PaymentMethodEntity.prototype, "paymentMethods", void 0);
 __decorate([
     (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
     __metadata("design:type", Date)

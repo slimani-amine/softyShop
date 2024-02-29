@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteStoresController = exports.deleteStoresControllerBase = void 0;
-const deleteStores_usecase_1 = require("../../../../usecases/api/store/deleteStores.usecase");
-const deleteStoresControllerBase = (deleteStoreUseCase) => async (req, res, next) => {
-    console.log(req === null || req === void 0 ? void 0 : req.params);
+exports.deleteCategoryController = exports.deleteCategoryControllerBase = void 0;
+const deleteCategory_usecase_1 = require("../../../../usecases/api/category/deleteCategory.usecase");
+const deleteCategoryControllerBase = (deleteCategoryUseCase) => async (req, res, next) => {
     try {
-        const result = await deleteStoreUseCase(req === null || req === void 0 ? void 0 : req.params);
+        const result = await deleteCategoryUseCase(req === null || req === void 0 ? void 0 : req.params);
         res.status(200).send({
-            message: 'success',
+            message: "success",
             data: result,
         });
     }
@@ -15,6 +14,6 @@ const deleteStoresControllerBase = (deleteStoreUseCase) => async (req, res, next
         next(err);
     }
 };
-exports.deleteStoresControllerBase = deleteStoresControllerBase;
-exports.deleteStoresController = (0, exports.deleteStoresControllerBase)(deleteStores_usecase_1.deleteStoreUseCase);
+exports.deleteCategoryControllerBase = deleteCategoryControllerBase;
+exports.deleteCategoryController = (0, exports.deleteCategoryControllerBase)(deleteCategory_usecase_1.deleteCategoryUseCase);
 //# sourceMappingURL=deleteCategory.controller.js.map

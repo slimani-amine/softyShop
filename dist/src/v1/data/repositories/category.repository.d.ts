@@ -11,7 +11,7 @@ export declare const categoryRepoBase: (dbConnection: DataSource | QueryRunner) 
     findByQuery(queryParams: {
         [key: string]: string;
     }): Promise<QueryResult<ICategory>>;
-    updateCategory(category: ICategory, payload: Partial<CategoryEntity>): Promise<ICategory>;
+    updateCategory(store: ICategory, payload: Partial<CategoryEntity>): Promise<ICategory>;
     toDomainCategories(categories: CategoryEntity[]): ICategory[];
     toDomainCategory(prismaCategory: CategoryEntity): ICategory;
 };
@@ -24,7 +24,7 @@ export declare const categoryRepo: {
     findByQuery(queryParams: {
         [key: string]: string;
     }): Promise<QueryResult<ICategory>>;
-    updateCategory(category: ICategory, payload: Partial<CategoryEntity>): Promise<ICategory>;
+    updateCategory(store: ICategory, payload: Partial<CategoryEntity>): Promise<ICategory>;
     toDomainCategories(categories: CategoryEntity[]): ICategory[];
     toDomainCategory(prismaCategory: CategoryEntity): ICategory;
 };
@@ -35,6 +35,6 @@ export interface ICategoryRepository {
         [key: string]: string;
     }): Promise<QueryResult<ICategory>>;
     createCategory(payload: ICreateCategoryInput): Promise<ICategory>;
-    updateCategory(category: ICategory, payload: Partial<CategoryEntity>): Promise<ICategory>;
-    deleteCategory(category: CategoryEntity): Promise<number>;
+    updateCategory(store: ICategory, payload: Partial<CategoryEntity>): Promise<ICategory>;
+    deleteCategory(category: ICategory): Promise<number>;
 }

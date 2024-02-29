@@ -1,22 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteStoreUseCase = exports.deleteStoreUseCaseBase = void 0;
+exports.deleteCategoryUseCase = exports.deleteCategoryUseCaseBase = void 0;
 const exceptions_1 = require("../../../core/errors/exceptions");
-const store_repository_1 = require("../../../data/repositories/store.repository");
-const deleteStoreUseCaseBase = (dependencies) => async (queryParams) => {
-    const store = await dependencies.storeRepo.findOne({
-        where: { id: queryParams.id },
+const category_repository_1 = require("../../../data/repositories/category.repository");
+const deleteCategoryUseCaseBase = (dependencies = {
+    categoryRepo: category_repository_1.categoryRepo,
+}) => async (params) => {
+    const category = await dependencies.categoryRepo.findOne({
+        where: { id: params.id },
     });
-    if (!store) {
+    if (!category) {
         exceptions_1.exceptionService.notFoundException({
-            message: "Store not found",
+            message: "Category not found",
         });
     }
-    const storesFound = await dependencies.storeRepo.deleteStore(store);
-    return storesFound;
+    const result = await dependencies.categoryRepo.deleteCategory(category);
+    return {
+        success: result === 1,
+    };
 };
-exports.deleteStoreUseCaseBase = deleteStoreUseCaseBase;
-exports.deleteStoreUseCase = (0, exports.deleteStoreUseCaseBase)({
-    storeRepo: store_repository_1.storeRepo,
+exports.deleteCategoryUseCaseBase = deleteCategoryUseCaseBase;
+exports.deleteCategoryUseCase = (0, exports.deleteCategoryUseCaseBase)({
+    categoryRepo: category_repository_1.categoryRepo,
 });
 //# sourceMappingURL=deleteCategory.usecase.js.map

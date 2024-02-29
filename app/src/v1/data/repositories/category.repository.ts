@@ -113,6 +113,5 @@ export interface ICategoryRepository {
   }): Promise<QueryResult<ICategory>>;
   createCategory(payload: ICreateCategoryInput): Promise<ICategory>;
   updateCategory(store: ICategory, payload: Partial<CategoryEntity>): Promise<ICategory>;
-
   deleteCategory(category: ICategory): Promise<number>;
 }

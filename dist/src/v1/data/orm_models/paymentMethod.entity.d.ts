@@ -1,10 +1,10 @@
 import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { UserEntity } from './user.entity';
+import { CartEntity } from './cart.entity';
 export declare class PaymentMethodEntity {
-    id: number;
+    id: string;
     name: string;
     icon: string;
-    user: UserEntity;
+    paymentMethods: CartEntity[];
     deletedAt: Date;
     createdAt: Date;
     updatedAt: Date;

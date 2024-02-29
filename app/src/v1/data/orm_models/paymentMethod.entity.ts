@@ -3,20 +3,20 @@ import {
     CreateDateColumn,
     DeleteDateColumn,
     Entity,
-    JoinColumn,
-    ManyToOne,
+    OneToMany,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
   } from 'typeorm';
   import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
   import { UserEntity } from './user.entity';
+import { CartEntity } from './cart.entity';
   
   @Entity({
     name: 'PaymentMethod',
   })
   export class PaymentMethodEntity {
     @PrimaryGeneratedColumn()
-    id: number;
+    id: string;
   
     @Column({
       type: 'varchar',
@@ -27,10 +27,9 @@ import {
       type: 'varchar',
     })
     icon: string
-  
-    @ManyToOne(() => UserEntity, (user) => user.paymentMethods) 
-    @JoinColumn({ name: 'admin_id' })
-    user: UserEntity;
+
+    @OneToMany(() => CartEntity, (cart) => cart.paymentMethod)
+    paymentMethods: CartEntity[];
   
     @DeleteDateColumn({ name: 'deletedAt' })
     deletedAt: Date;

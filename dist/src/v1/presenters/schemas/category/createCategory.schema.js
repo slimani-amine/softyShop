@@ -8,9 +8,6 @@ const createCategorySchema = zod_1.z.object({
     icon: zod_1.z.string().min(1, {
         message: "L'icône de la catégorie est obligatoire",
     }),
-    productId: zod_1.z.string().min(1, {
-        message: "Le produit de la catégorie est obligatoire",
-    }),
 });
 exports.default = createCategorySchema;
 //# sourceMappingURL=createCategory.schema.js.map

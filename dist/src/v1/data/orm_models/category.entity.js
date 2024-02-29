@@ -32,7 +32,7 @@ __decorate([
     __metadata("design:type", String)
 ], CategoryEntity.prototype, "icon", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => product_entity_1.ProductEntity, (productcategory) => productcategory.name),
+    (0, typeorm_1.OneToMany)(() => product_entity_1.ProductEntity, (productCategory) => productCategory.name),
     __metadata("design:type", Array)
 ], CategoryEntity.prototype, "product", void 0);
 __decorate([

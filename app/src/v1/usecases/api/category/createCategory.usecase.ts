@@ -1,6 +1,12 @@
 import { exceptionService } from "../../../core/errors/exceptions";
-import { ICategoryRepository, categoryRepo } from "../../../data/repositories/category.repository";
-import {  ICategory, ICreateCategoryInput } from "../../../domain/category/category";
+import {
+  ICategoryRepository,
+  categoryRepo,
+} from "../../../data/repositories/category.repository";
+import {
+  ICategory,
+  ICreateCategoryInput,
+} from "../../../domain/category/category";
 import createCategorySchema from "../../../presenters/schemas/category/createCategory.schema";
 import { trimAndValidateSchemaPayload } from "../../../utils/validation/validate.schema";
 
@@ -41,7 +47,10 @@ export const createCategoryUseCaseBase =
 export function validateCreateCategoryPayload(
   payload: ICreateCategoryInput
 ): ICreateCategoryInput {
-  trimAndValidateSchemaPayload<ICreateCategoryInput>(createCategorySchema, payload);
+  trimAndValidateSchemaPayload<ICreateCategoryInput>(
+    createCategorySchema,
+    payload
+  );
   return payload;
 }
 

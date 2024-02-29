@@ -1,14 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getVendorStoresController = exports.getVendorStoresControllerBase = void 0;
-const getVendorStores_usecase_1 = require("../../../../usecases/api/store/getVendorStores.usecase");
-const getVendorStoresControllerBase = (getVendorStoresUseCase) => async (req, res, next) => {
-    console.log(req === null || req === void 0 ? void 0 : req.params);
-    const userId = req.user.id;
+exports.updatecategoryController = exports.updatecategoryControllerBase = void 0;
+const category_repository_1 = require("../../../../data/repositories/category.repository");
+const updateCategory_usecase_1 = require("../../../../usecases/api/category/updateCategory.usecase");
+const updatecategoryControllerBase = (updatecategoryUseCase) => async (req, res, next) => {
     try {
-        const result = await getVendorStoresUseCase({ userId });
-        res.status(200).send({
-            message: "success",
+        const categoryId = req.params.categoryId;
+        const category = await category_repository_1.categoryRepo.findOne({
+            where: { id: categoryId },
+        });
+        const updatePayload = req.body;
+        const result = await updatecategoryUseCase(category, updatePayload);
+        res.status(201).send({
+            message: "category updated successfully",
             data: result,
         });
     }
@@ -16,6 +20,6 @@ const getVendorStoresControllerBase = (getVendorStoresUseCase) => async (req, re
         next(err);
     }
 };
-exports.getVendorStoresControllerBase = getVendorStoresControllerBase;
-exports.getVendorStoresController = (0, exports.getVendorStoresControllerBase)(getVendorStores_usecase_1.getVendorStoresUseCase);
+exports.updatecategoryControllerBase = updatecategoryControllerBase;
+exports.updatecategoryController = (0, exports.updatecategoryControllerBase)(updateCategory_usecase_1.updateCategoryUseCase);
 //# sourceMappingURL=updateCategory.controller.js.map

@@ -3,29 +3,36 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
+} from "typeorm";
+import {
+  QueryDeepPartialEntity,
+  WhereEntityOptions,
+  findManyType,
+} from "../../../types/repos";
 
-import { CartProductEntity } from './cartProduct.entity';
-import { OrderEntity } from './orders.entity';
+import { CartProductEntity } from "./cartProduct.entity";
+import { OrderEntity } from "./orders.entity";
+import { PaymentMethodEntity } from "./paymentMethod.entity";
 
 @Entity({
-  name: 'Cart',
+  name: "Cart",
 })
 export class CartEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({
-    type: 'int',
+    type: "int",
   })
   totalQuantity: number;
 
   @Column({
-    type: 'int',
+    type: "int",
   })
   totalAmount: number;
 
@@ -33,18 +40,12 @@ export class CartEntity {
   address: string;
 
   @Column({
-    type: 'enum',
-    enum: ['credit_cart', 'on_delivery'],
-  })
-  paymentMethod: string;
-
-  @Column({
-    type: 'date',
+    type: "date",
   })
   date: Date;
 
   @Column({
-    type: 'date',
+    type: "date",
   })
   estimatedDeliveryDate: Date;
 
@@ -54,13 +55,20 @@ export class CartEntity {
   @OneToMany(() => OrderEntity, (order) => order.cart)
   order: OrderEntity[];
 
-  @DeleteDateColumn({ name: 'deletedAt' })
+  @ManyToOne(
+    () => PaymentMethodEntity,
+    (paymentMethod) => paymentMethod.paymentMethods
+  )
+  @JoinColumn({ name: "paymentMethod_id" })
+  paymentMethod: PaymentMethodEntity;
+
+  @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;
 
-  @CreateDateColumn({ name: 'createdAt' })
+  @CreateDateColumn({ name: "createdAt" })
   createdAt: Date;
 
-  @UpdateDateColumn({ name: 'updatedAt' })
+  @UpdateDateColumn({ name: "updatedAt" })
   updatedAt: Date;
 }
 

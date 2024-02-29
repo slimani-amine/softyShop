@@ -33,7 +33,7 @@ export class CategoryEntity {
   })
   icon: string;
 
-  @OneToMany(() => ProductEntity, (productcategory) => productcategory.name)
+  @OneToMany(() => ProductEntity, (productCategory) => productCategory.name)
   product: ProductEntity[];
 
   @DeleteDateColumn({ name: "deletedAt" })

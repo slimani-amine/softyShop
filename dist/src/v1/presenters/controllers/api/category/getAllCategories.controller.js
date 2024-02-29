@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAllStoresController = exports.getAllStoresControllerBase = void 0;
-const getAllStores_usecase_1 = require("../../../../usecases/api/store/getAllStores.usecase");
-const getAllStoresControllerBase = (getAllStoreUseCase) => async (req, res, next) => {
+exports.getAllCategoryController = exports.getAllCategoriesControllerBase = void 0;
+const getAllCategories_usecase_1 = require("../../../../usecases/api/category/getAllCategories.usecase");
+const getAllCategoriesControllerBase = (getAllCategoriesUseCase) => async (req, res, next) => {
     try {
-        const result = await getAllStoreUseCase(req === null || req === void 0 ? void 0 : req.query);
+        const result = await getAllCategoriesUseCase(req === null || req === void 0 ? void 0 : req.query);
         res.status(200).send({
-            message: 'success',
+            message: "success",
             data: result.docs,
         });
     }
@@ -14,6 +14,6 @@ const getAllStoresControllerBase = (getAllStoreUseCase) => async (req, res, next
         next(err);
     }
 };
-exports.getAllStoresControllerBase = getAllStoresControllerBase;
-exports.getAllStoresController = (0, exports.getAllStoresControllerBase)(getAllStores_usecase_1.getAllStoreUseCase);
+exports.getAllCategoriesControllerBase = getAllCategoriesControllerBase;
+exports.getAllCategoryController = (0, exports.getAllCategoriesControllerBase)(getAllCategories_usecase_1.getAllCategoriesUseCase);
 //# sourceMappingURL=getAllCategories.controller.js.map

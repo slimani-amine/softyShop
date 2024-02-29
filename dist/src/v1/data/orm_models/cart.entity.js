@@ -13,6 +13,7 @@ exports.CartEntity = void 0;
 const typeorm_1 = require("typeorm");
 const cartProduct_entity_1 = require("./cartProduct.entity");
 const orders_entity_1 = require("./orders.entity");
+const paymentMethod_entity_1 = require("./paymentMethod.entity");
 let CartEntity = class CartEntity {
 };
 exports.CartEntity = CartEntity;
@@ -22,13 +23,13 @@ __decorate([
 ], CartEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'int',
+        type: "int",
     }),
     __metadata("design:type", Number)
 ], CartEntity.prototype, "totalQuantity", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'int',
+        type: "int",
     }),
     __metadata("design:type", Number)
 ], CartEntity.prototype, "totalAmount", void 0);
@@ -38,20 +39,13 @@ __decorate([
 ], CartEntity.prototype, "address", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'enum',
-        enum: ['credit_cart', 'on_delivery'],
-    }),
-    __metadata("design:type", String)
-], CartEntity.prototype, "paymentMethod", void 0);
-__decorate([
-    (0, typeorm_1.Column)({
-        type: 'date',
+        type: "date",
     }),
     __metadata("design:type", Date)
 ], CartEntity.prototype, "date", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'date',
+        type: "date",
     }),
     __metadata("design:type", Date)
 ], CartEntity.prototype, "estimatedDeliveryDate", void 0);
@@ -64,20 +58,25 @@ __decorate([
     __metadata("design:type", Array)
 ], CartEntity.prototype, "order", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.ManyToOne)(() => paymentMethod_entity_1.PaymentMethodEntity, (paymentMethod) => paymentMethod.paymentMethods),
+    (0, typeorm_1.JoinColumn)({ name: "paymentMethod_id" }),
+    __metadata("design:type", paymentMethod_entity_1.PaymentMethodEntity)
+], CartEntity.prototype, "paymentMethod", void 0);
+__decorate([
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], CartEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], CartEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], CartEntity.prototype, "updatedAt", void 0);
 exports.CartEntity = CartEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'Cart',
+        name: "Cart",
     })
 ], CartEntity);
 //# sourceMappingURL=cart.entity.js.map

@@ -5,6 +5,7 @@ import {
   UpdateCategoryUseCaseType,
   updateCategoryUseCase,
 } from "../../../../usecases/api/category/updateCategory.usecase";
+import { exceptionService } from "../../../../core/errors/exceptions";
 
 export const updatecategoryControllerBase =
   (updatecategoryUseCase: UpdateCategoryUseCaseType) =>
@@ -14,6 +15,11 @@ export const updatecategoryControllerBase =
       const category = await categoryRepo.findOne({
         where: { id: categoryId },
       });
+      if (!category) {
+        exceptionService.notFoundException({
+          message: "No payment method found with id " + categoryId,
+        });
+      }
 
       const updatePayload = req.body;
 

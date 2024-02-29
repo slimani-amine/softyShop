@@ -82,9 +82,6 @@ export class UserEntity {
   @OneToMany(() => ResetPasswordEntity, (resetPassword) => resetPassword.user)
   resetPasswords: ResetPasswordEntity[];
 
-  @OneToMany(() => PaymentMethodEntity, (paymentMethod) => paymentMethod.user)
-  paymentMethods: PaymentMethodEntity[];
-
   @OneToMany(() => AddressesEntity, (address) => address.user)
   addresses: AddressesEntity[];
 

@@ -6,4 +6,8 @@ export declare function getStoresApiRouter(controllers?: {
     getOneStore: ControllerType;
     getVendorStores: ControllerType;
     updateStore: ControllerType;
+    createCategory: ControllerType;
+    deleteCategory: ControllerType;
+    getCategories: ControllerType;
+    updateCategory: ControllerType;
 }): import("express-serve-static-core").Router;
