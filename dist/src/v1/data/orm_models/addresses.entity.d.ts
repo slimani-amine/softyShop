@@ -1,7 +1,7 @@
 import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
 import { UserEntity } from './user.entity';
 export declare class AddressesEntity {
-    id: number;
+    id: string;
     address: string;
     city: string;
     state: string;

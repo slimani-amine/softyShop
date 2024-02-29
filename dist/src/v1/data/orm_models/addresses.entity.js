@@ -17,7 +17,7 @@ let AddressesEntity = class AddressesEntity {
 exports.AddressesEntity = AddressesEntity;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], AddressesEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({

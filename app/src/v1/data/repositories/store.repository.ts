@@ -157,6 +157,7 @@ export interface IStoreRepository {
     where: FindManyOptions<StoreEntity>;
     data: StoresUpdateDataPayload;
   }): Promise<number>;
+  
   deleteStore(store: IStore): Promise<number>;
   deleteMany(payload: Array<number>): Promise<number>;
 }

@@ -1,14 +1,14 @@
 import { QueryResult } from "../../../utils/querying/apiFeatures.util";
-import { ICategoryRepository, categoryRepo } from "../../../data/repositories/category.repository";
-import { ICategory } from "../../../domain/category/category";
-export type getAllCategoriesUseCaseType = (queryParams: {
+import { IPaymentMethodRepository, paymentMethodRepo } from "../../../data/repositories/paymentMethod.repository";
+import { IPaymentMethod } from "../../../domain/paymentMethod/paymentMethod";
+export type getAllPaymentMethodsUseCaseType = (queryParams: {
     [key: string]: any;
-}) => Promise<QueryResult<ICategory>>;
-export declare const getAllCategoriesUseCaseBase: (dependencies: {
-    categoryRepo: ICategoryRepository;
+}) => Promise<QueryResult<IPaymentMethod>>;
+export declare const getAllPaymentMethodsUseCaseBase: (dependencies: {
+    paymentMethodRepo: IPaymentMethodRepository;
 }) => (queryParams: {
     [key: string]: any;
-}) => Promise<QueryResult<ICategory>>;
-export declare const getAllCategoriesUseCase: (queryParams: {
+}) => Promise<QueryResult<IPaymentMethod>>;
+export declare const getAllPaymentMethodsUseCase: (queryParams: {
     [key: string]: any;
-}) => Promise<QueryResult<ICategory>>;
+}) => Promise<QueryResult<IPaymentMethod>>;

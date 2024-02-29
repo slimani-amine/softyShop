@@ -10,4 +10,8 @@ export declare function getStoresApiRouter(controllers?: {
     deleteCategory: ControllerType;
     getCategories: ControllerType;
     updateCategory: ControllerType;
+    createPaymentMethod: ControllerType;
+    deletePaymentMethod: ControllerType;
+    getPaymentMethods: ControllerType;
+    updatePaymentMethod: ControllerType;
 }): import("express-serve-static-core").Router;

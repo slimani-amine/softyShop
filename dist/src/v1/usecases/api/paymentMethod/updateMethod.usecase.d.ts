@@ -1,5 +1,5 @@
-import { ICategoryRepository } from "../../../data/repositories/category.repository";
-import { ICategory } from "../../../domain/Category/Category";
-export type UpdateCategoryUseCaseType = (Category: ICategory, updatePayload: Partial<ICategory>) => Promise<ICategory>;
-export declare const updateCategoryUseCaseBase: (CategoryRepository: ICategoryRepository) => (Category: ICategory, updatePayload: Partial<ICategory>) => Promise<ICategory>;
-export declare const updateCategoryUseCase: UpdateCategoryUseCaseType;
+import { IPaymentMethodRepository } from "../../../data/repositories/paymentMethod.repository";
+import { IPaymentMethod } from "../../../domain/paymentMethod/paymentMethod";
+export type UpdatePaymentMethodUseCaseType = (paymentMethod: IPaymentMethod, updatePayload: Partial<IPaymentMethod>) => Promise<IPaymentMethod>;
+export declare const updatePaymentMethodUseCaseBase: (paymentMethodRepository: IPaymentMethodRepository) => (paymentMethod: IPaymentMethod, updatePayload: Partial<IPaymentMethod>) => Promise<IPaymentMethod>;
+export declare const updatePaymentMethodUseCase: UpdatePaymentMethodUseCaseType;

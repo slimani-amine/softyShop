@@ -6,9 +6,9 @@ const validate_schema_1 = require("../../../utils/validation/validate.schema");
 const paymentMethod_repository_1 = require("../../../data/repositories/paymentMethod.repository");
 const createMethod_schema_1 = require("../../../presenters/schemas/payementMethod/createMethod.schema");
 const createMethodUseCaseBase = (dependencies = {
-    methodRepo: paymentMethod_repository_1.paymentMethodRepo,
+    paymentMethodRepo: paymentMethod_repository_1.paymentMethodRepo,
 }) => async (payload) => {
-    const methodFound = await dependencies.methodRepo.findAll({
+    const methodFound = await dependencies.paymentMethodRepo.findAll({
         where: [{ name: payload.name }],
     });
     if (methodFound.length > 0) {
@@ -17,7 +17,7 @@ const createMethodUseCaseBase = (dependencies = {
         });
     }
     validateCreateMethodPayload(payload);
-    const methodCreated = await dependencies.methodRepo.createPaymentMethod({
+    const methodCreated = await dependencies.paymentMethodRepo.createPaymentMethod({
         name: payload.name,
         icon: payload.icon,
     });
@@ -32,6 +32,6 @@ function validateCreateMethodPayload(payload) {
 }
 exports.validateCreateMethodPayload = validateCreateMethodPayload;
 exports.createMethodUseCase = (0, exports.createMethodUseCaseBase)({
-    methodRepo,
+    paymentMethodRepo: paymentMethod_repository_1.paymentMethodRepo,
 });
 //# sourceMappingURL=createMethod.usecase.js.map

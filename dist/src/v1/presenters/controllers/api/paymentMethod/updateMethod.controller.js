@@ -1,18 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updatecategoryController = exports.updatecategoryControllerBase = void 0;
-const category_repository_1 = require("../../../../data/repositories/category.repository");
-const updateCategory_usecase_1 = require("../../../../usecases/api/category/updateCategory.usecase");
-const updatecategoryControllerBase = (updatecategoryUseCase) => async (req, res, next) => {
+exports.updatepaymentMethodController = exports.updatepaymentMethodControllerBase = void 0;
+const paymentMethod_repository_1 = require("../../../../data/repositories/paymentMethod.repository");
+const updateMethod_usecase_1 = require("../../../../usecases/api/paymentMethod/updateMethod.usecase");
+const exceptions_1 = require("../../../../core/errors/exceptions");
+const updatepaymentMethodControllerBase = (updatepaymentMethodUseCase) => async (req, res, next) => {
     try {
-        const categoryId = req.params.categoryId;
-        const category = await category_repository_1.categoryRepo.findOne({
-            where: { id: categoryId },
+        const paymentMethodId = req.params.paymentMethodId;
+        const paymentMethod = await paymentMethod_repository_1.paymentMethodRepo.findOne({
+            where: { id: paymentMethodId },
         });
+        if (!paymentMethod) {
+            exceptions_1.exceptionService.notFoundException({
+                message: "No payment method found with id " + paymentMethodId,
+            });
+        }
         const updatePayload = req.body;
-        const result = await updatecategoryUseCase(category, updatePayload);
+        const result = await updatepaymentMethodUseCase(paymentMethod, updatePayload);
         res.status(201).send({
-            message: "category updated successfully",
+            message: "paymentMethod updated successfully",
             data: result,
         });
     }
@@ -20,6 +26,6 @@ const updatecategoryControllerBase = (updatecategoryUseCase) => async (req, res,
         next(err);
     }
 };
-exports.updatecategoryControllerBase = updatecategoryControllerBase;
-exports.updatecategoryController = (0, exports.updatecategoryControllerBase)(updateCategory_usecase_1.updateCategoryUseCase);
+exports.updatepaymentMethodControllerBase = updatepaymentMethodControllerBase;
+exports.updatepaymentMethodController = (0, exports.updatepaymentMethodControllerBase)(updateMethod_usecase_1.updatePaymentMethodUseCase);
 //# sourceMappingURL=updateMethod.controller.js.map

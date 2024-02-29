@@ -16,6 +16,10 @@ const createCategory_controller_1 = require("../../../controllers/api/category/c
 const deleteCategory_controller_1 = require("../../../controllers/api/category/deleteCategory.controller");
 const getAllCategories_controller_1 = require("../../../controllers/api/category/getAllCategories.controller");
 const updateCategory_controller_1 = require("../../../controllers/api/category/updateCategory.controller");
+const createMethod_controller_1 = require("../../../controllers/api/paymentMethod/createMethod.controller");
+const deleteMethod_controller_1 = require("../../../controllers/api/paymentMethod/deleteMethod.controller");
+const getAllMethods_controller_1 = require("../../../controllers/api/paymentMethod/getAllMethods.controller");
+const updateMethod_controller_1 = require("../../../controllers/api/paymentMethod/updateMethod.controller");
 const router = express.Router();
 const defaults = {
     createStore: createStore_controller_1.createStoreController,
@@ -28,6 +32,10 @@ const defaults = {
     deleteCategory: deleteCategory_controller_1.deleteCategoryController,
     getCategories: getAllCategories_controller_1.getAllCategoryController,
     updateCategory: updateCategory_controller_1.updatecategoryController,
+    createPaymentMethod: createMethod_controller_1.createMethodController,
+    deletePaymentMethod: deleteMethod_controller_1.deletePayementMethodController,
+    updatePaymentMethod: updateMethod_controller_1.updatepaymentMethodController,
+    getPaymentMethods: getAllMethods_controller_1.getAllPayementMethodsController,
 };
 function getStoresApiRouter(controllers = defaults) {
     router.use(isAuthenticated_middleware_1.isAuthentictedMiddleware);
@@ -52,6 +60,14 @@ function getStoresApiRouter(controllers = defaults) {
         .route("/category/:id")
         .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.updateCategory)
         .delete((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.deleteCategory);
+    router
+        .route("/payment-method")
+        .post((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.createPaymentMethod)
+        .get((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"), controllers.getPaymentMethods);
+    router
+        .route("/payment-method/:id")
+        .delete((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.deletePaymentMethod)
+        .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"), controllers.updatePaymentMethod);
     return router;
 }
 exports.getStoresApiRouter = getStoresApiRouter;

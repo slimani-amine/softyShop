@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteCategoryController = exports.deleteCategoryControllerBase = void 0;
-const deleteCategory_usecase_1 = require("../../../../usecases/api/category/deleteCategory.usecase");
-const deleteCategoryControllerBase = (deleteCategoryUseCase) => async (req, res, next) => {
+exports.deletePayementMethodController = exports.deletePayementMethodControllerBase = void 0;
+const deleteMethod_usecase_1 = require("../../../../usecases/api/paymentMethod/deleteMethod.usecase");
+const deletePayementMethodControllerBase = (deletePayementMethodUseCase) => async (req, res, next) => {
     try {
-        const result = await deleteCategoryUseCase(req === null || req === void 0 ? void 0 : req.params);
+        const result = await deletePayementMethodUseCase(req === null || req === void 0 ? void 0 : req.params);
         res.status(200).send({
             message: "success",
             data: result,
@@ -14,6 +14,6 @@ const deleteCategoryControllerBase = (deleteCategoryUseCase) => async (req, res,
         next(err);
     }
 };
-exports.deleteCategoryControllerBase = deleteCategoryControllerBase;
-exports.deleteCategoryController = (0, exports.deleteCategoryControllerBase)(deleteCategory_usecase_1.deleteCategoryUseCase);
+exports.deletePayementMethodControllerBase = deletePayementMethodControllerBase;
+exports.deletePayementMethodController = (0, exports.deletePayementMethodControllerBase)(deleteMethod_usecase_1.deletePaymentMethodUseCase);
 //# sourceMappingURL=deleteMethod.controller.js.map

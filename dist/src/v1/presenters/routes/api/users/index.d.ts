@@ -1,6 +1,10 @@
-import { ControllerType } from '../../../../../types/controller';
+import { ControllerType } from "../../../../../types/controller";
 export declare function getUsersApiRouter(controllers?: {
     getUsers: ControllerType;
     updateMyProfileController: ControllerType;
     getMeController: ControllerType;
+    createAddress: ControllerType;
+    deleteAddress: ControllerType;
+    userAddresses: ControllerType;
+    oneAdress: ControllerType;
 }): import("express-serve-static-core").Router;

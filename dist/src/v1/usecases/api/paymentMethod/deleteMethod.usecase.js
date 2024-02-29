@@ -1,26 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteCategoryUseCase = exports.deleteCategoryUseCaseBase = void 0;
+exports.deletePaymentMethodUseCase = exports.deletePaymentMethodUseCaseBase = void 0;
 const exceptions_1 = require("../../../core/errors/exceptions");
-const category_repository_1 = require("../../../data/repositories/category.repository");
-const deleteCategoryUseCaseBase = (dependencies = {
-    categoryRepo: category_repository_1.categoryRepo,
+const paymentMethod_repository_1 = require("../../../data/repositories/paymentMethod.repository");
+const deletePaymentMethodUseCaseBase = (dependencies = {
+    paymentMethodRepo: paymentMethod_repository_1.paymentMethodRepo,
 }) => async (params) => {
-    const category = await dependencies.categoryRepo.findOne({
+    const paymentMethod = await dependencies.paymentMethodRepo.findOne({
         where: { id: params.id },
     });
-    if (!category) {
+    if (!paymentMethod) {
         exceptions_1.exceptionService.notFoundException({
-            message: "Category not found",
+            message: "Payment Method not found",
         });
     }
-    const result = await dependencies.categoryRepo.deleteCategory(category);
+    const result = await dependencies.paymentMethodRepo.deletePaymentMethod(paymentMethod);
     return {
         success: result === 1,
     };
 };
-exports.deleteCategoryUseCaseBase = deleteCategoryUseCaseBase;
-exports.deleteCategoryUseCase = (0, exports.deleteCategoryUseCaseBase)({
-    categoryRepo: category_repository_1.categoryRepo,
+exports.deletePaymentMethodUseCaseBase = deletePaymentMethodUseCaseBase;
+exports.deletePaymentMethodUseCase = (0, exports.deletePaymentMethodUseCaseBase)({
+    paymentMethodRepo: paymentMethod_repository_1.paymentMethodRepo,
 });
 //# sourceMappingURL=deleteMethod.usecase.js.map

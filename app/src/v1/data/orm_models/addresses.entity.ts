@@ -16,7 +16,7 @@ import { UserEntity } from './user.entity';
 })
 export class AddressesEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column({
     type: 'varchar',

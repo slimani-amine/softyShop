@@ -3,12 +3,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.updatecategoryController = exports.updatecategoryControllerBase = void 0;
 const category_repository_1 = require("../../../../data/repositories/category.repository");
 const updateCategory_usecase_1 = require("../../../../usecases/api/category/updateCategory.usecase");
+const exceptions_1 = require("../../../../core/errors/exceptions");
 const updatecategoryControllerBase = (updatecategoryUseCase) => async (req, res, next) => {
     try {
         const categoryId = req.params.categoryId;
         const category = await category_repository_1.categoryRepo.findOne({
             where: { id: categoryId },
         });
+        if (!category) {
+            exceptions_1.exceptionService.notFoundException({
+                message: "No payment method found with id " + categoryId,
+            });
+        }
         const updatePayload = req.body;
         const result = await updatecategoryUseCase(category, updatePayload);
         res.status(201).send({

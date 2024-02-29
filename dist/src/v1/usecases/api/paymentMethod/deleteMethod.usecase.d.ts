@@ -1,10 +1,10 @@
-import { ICategoryRepository, categoryRepo } from "../../../data/repositories/category.repository";
-export type DeleteCategoryUseCaseType = (params: {
+import { IPaymentMethodRepository, paymentMethodRepo } from "../../../data/repositories/paymentMethod.repository";
+export type DeletePaymentMethodUseCaseType = (params: {
     [id: string]: any;
 }) => Promise<{
     success: boolean;
 }>;
-export declare const deleteCategoryUseCaseBase: (dependencies?: {
-    categoryRepo: ICategoryRepository;
-}) => DeleteCategoryUseCaseType;
-export declare const deleteCategoryUseCase: DeleteCategoryUseCaseType;
+export declare const deletePaymentMethodUseCaseBase: (dependencies?: {
+    paymentMethodRepo: IPaymentMethodRepository;
+}) => DeletePaymentMethodUseCaseType;
+export declare const deletePaymentMethodUseCase: DeletePaymentMethodUseCaseType;
