@@ -23,18 +23,22 @@ export const createBrandUseCaseBase =
     }
   ): createBrandUseCaseType =>
   async (payload: ICreateBrandInput) => {
-    // const product = await productsRepo.findOne({ where: { id: payload.product_id } });
-    // if (!product) {
-    //   exceptionService.notFoundException({
-    //     message: "product nor found",
-    //   });
-    // }
+    console.log("🚀 ~ payload:", payload)
+    const brandFound = await dependencies.brandRepo.findAll({
+      where: [{ name: payload.name }],
+    });
+
+    if (brandFound.length > 0) {
+      exceptionService.badRequestException({
+        message: "A brand with the given name already exists",
+      });
+    }
 
     validateCreateBrandPayload(payload);
     const brandCreated = await dependencies.brandRepo.createBrand({
       name: payload.name,
       logo: payload.logo,
-      product_id: payload.product_id,
+      store_id: payload.store_id,
     });
 
     return {

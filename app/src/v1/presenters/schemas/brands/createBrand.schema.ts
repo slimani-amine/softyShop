@@ -7,9 +7,6 @@ const createBrandSchema = z.object({
   logo: z.string().min(1, {
     message: "The logo of the brand is required",
   }),
-  productId: z.number().min(1, {
-    message: "The product ID is required",
-  }),
 });
 
 export default createBrandSchema;

@@ -35,10 +35,14 @@ export class ProductEntity {
   })
   name: string;
 
-  @Column()
+  @Column({
+    type: "float",
+  })
   price: number;
 
-  @Column()
+  @Column({
+    type: "int",
+  })
   stockNumber: number;
 
   @Column({
@@ -46,20 +50,23 @@ export class ProductEntity {
   })
   publishedAt: Date;
 
-  @Column()
+  @Column({
+    type: "boolean",
+    default: false,
+  })
   availability: boolean;
 
-  @Column()
+  @Column({
+    type: "boolean",
+    default: false,
+  })
   isPublished: boolean;
 
-  @OneToMany(
-    () => ProductCreatorEntity,
-    (productCreator) => productCreator.name
-  )
-  creator: ProductCreatorEntity[];
-
-  @OneToMany(() => BrandEntity, (productCretor) => productCretor.name)
-  brand: BrandEntity[];
+  @Column({
+    type: "boolean",
+    default: false,
+  })
+  isAccepted: boolean;
 
   @OneToMany(() => ReviewsEntity, (review) => review.product)
   review: ReviewsEntity[];
@@ -69,6 +76,14 @@ export class ProductEntity {
 
   @OneToMany(() => CartProductEntity, (cartProduct) => cartProduct.product)
   cartProduct: CartProductEntity[];
+
+  @ManyToOne(() => BrandEntity, (brand) => brand.products)
+  @JoinColumn({ name: "brand_id" })
+  brand: BrandEntity;
+
+  @ManyToOne(() => ProductCreatorEntity, (creator) => creator.products)
+  @JoinColumn({ name: "creator_id" })
+  creator: ProductCreatorEntity;
 
   @ManyToOne(() => StoreEntity, (store) => store.products)
   @JoinColumn({ name: "store_id" })

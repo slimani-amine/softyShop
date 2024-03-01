@@ -17,7 +17,7 @@ import { ProductEntity } from './product.entity';
 })
 export class WishlistEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @ManyToOne(() => UserEntity, (user) => user.reviews)
   @JoinColumn({ name: 'user_id' })

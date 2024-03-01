@@ -37,7 +37,7 @@ export const userPasswordResetInformationRepositoryBase = (
     );
     const updatedUserResetPasswordInformation = await this.manager.findOne(ResetPasswordEntity, {
       where: {
-        id: userResetPasswordInformation.getIdAsNumber(),
+        id: userResetPasswordInformation.getIdAsNumber().toString(),
       },
     });
     return this.toDomainUserResetPasswordInformation(updatedUserResetPasswordInformation);

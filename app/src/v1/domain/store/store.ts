@@ -1,3 +1,4 @@
+import { IProduct } from "../product/product";
 import { IIdAsNumber, NumberId } from "../types/idAsNumber";
 import { IUser } from "../users/user";
 
@@ -53,11 +54,4 @@ export interface ICreateStoreInput {
   position: string;
   socialMediaLinks: string;
   vendor_id?: string;
-}
-
-export interface IProduct {
-  id: number;
-  logo: string;
-  isPublished: boolean;
-  position: string;
 }

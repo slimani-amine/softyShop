@@ -16,6 +16,8 @@ import {
 } from "../../../types/repos";
 import { UserEntity } from "./user.entity";
 import { ProductEntity } from "./product.entity";
+import { BrandEntity } from "./productBrand.entity";
+import { ProductCreatorEntity } from "./productCreator.entity";
 
 @Entity({
   name: "Stores",
@@ -59,6 +61,12 @@ export class StoreEntity {
 
   @OneToMany(() => ProductEntity, (product) => product.store)
   products: ProductEntity[];
+
+  @OneToMany(() => BrandEntity, (brand) => brand.store)
+  brands: BrandEntity[];
+
+  @OneToMany(() => ProductCreatorEntity, (productCreator) => productCreator.store)
+  productCreators: ProductCreatorEntity[];
 
   @ManyToOne(() => UserEntity, (user) => user.store)
   @JoinColumn({ name: "vendor_id" })

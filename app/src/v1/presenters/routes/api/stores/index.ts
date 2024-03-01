@@ -14,9 +14,14 @@ import { restrictToMiddleware } from "../../../middlewares/auth/restrictTo.middl
 import { isAuthentictedMiddleware } from "../../../middlewares/auth/isAuthenticated.middleware";
 import { getVendorStoresController } from "../../../controllers/api/store/getVendorStores.controller";
 import { updateStoreController } from "../../../controllers/api/store/updateStore.controller";
-import { getProductBrandsController } from "../../../controllers/api/brands/getProductBrands.controller";
+import { getStoreBrandsController } from "../../../controllers/api/brands/getStoreBrands.controller";
 import { deleteBrandController } from "../../../controllers/api/brands/deleteBrand.controller";
 import { updateBrandController } from "../../../controllers/api/brands/updateBrand.controller";
+import { createProductCreatorController } from "../../../controllers/api/productCreator/createProductCreator.controller";
+import { deleteProductCreatorController } from "../../../controllers/api/productCreator/deleteProductCreator.controller";
+import { updateProductCreatorController } from "../../../controllers/api/productCreator/updateProductCreator..controller";
+import { getStoreProductCreatorController } from "../../../controllers/api/productCreator/getStoreProductCreators.controller";
+import { createProductController } from "../../../controllers/api/product/createProduct.controller";
 
 const router = express.Router();
 
@@ -27,10 +32,15 @@ const defaults = {
   getOneStore: getOneStoreController,
   getVendorStores: getVendorStoresController,
   updateStore: updateStoreController,
-  creatBrand: createBrandController,
-  getProductBrands: getProductBrandsController,
+  createProduct: createProductController,
+  createBrand: createBrandController,
+  getStoreBrands: getStoreBrandsController,
   deleteBrand: deleteBrandController,
   updateBrand: updateBrandController,
+  createProductCreator: createProductCreatorController,
+  getStoreProductCreators: getStoreProductCreatorController,
+  deleteProductCreator: deleteProductCreatorController,
+  updateProductCreator: updateProductCreatorController,
 };
 
 export function getStoresApiRouter(
@@ -41,10 +51,15 @@ export function getStoresApiRouter(
     getOneStore: ControllerType;
     getVendorStores: ControllerType;
     updateStore: ControllerType;
-    creatBrand: ControllerType;
-    getProductBrands: ControllerType;
+    createProduct: ControllerType;
+    createBrand: ControllerType;
+    getStoreBrands: ControllerType;
     deleteBrand: ControllerType;
     updateBrand: ControllerType;
+    createProductCreator: ControllerType;
+    getStoreProductCreators: ControllerType;
+    deleteProductCreator: ControllerType;
+    updateProductCreator: ControllerType;
   } = defaults
 ) {
   router.use(isAuthentictedMiddleware);
@@ -70,25 +85,33 @@ export function getStoresApiRouter(
 
   router.route("/:id/products"); //get all products of the store
 
-  router.route("/:id/product"); // get all product / post a product (only for vendor)
+  router
+    .route("/:id/product")
+    .post(restrictToMiddleware("vendor", "admin"), controllers.createProduct); // get all product / post a product (only for vendor)
 
   router.route("/:id/product/:id"); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
 
   router.use(restrictToMiddleware("admin", "vendor"));
 
   router
-    .route("/:id/product/:id/brand")
-    .post(controllers.creatBrand) // post brand (only for admin or vendor)
-    .get(controllers.getProductBrands); // get all brands (only for admin or vendor)
+    .route("/:id/brand")
+    .post(controllers.createBrand) // post brand (only for admin or vendor)
+    .get(controllers.getStoreBrands); // get all brands (only for admin or vendor)
 
   router
-    .route("/:id/product/:id/brand/:brandId")
+    .route("/:id/brand/:brandId")
     .delete(controllers.deleteBrand) // delete a brand (only for vendor)
     .patch(controllers.updateBrand); // update a brand (only for admin or vendor)
 
-  router.route("/:id/product/:id/productCreator"); // post productCreator (only for vendor) / get all productCreators (only for admin or vendor)
+  router
+    .route("/:id/productCreator")
+    .post(controllers.createProductCreator) // post productCreator (only for vendor)
+    .get(controllers.getStoreProductCreators); // get all productCreators (only for admin or vendor)
 
-  router.route("/:id/product/:id/productCreator/:productCreatorId"); // delete a productCreator (only for vendor) / update a productCreator (only for admin or vendor)
+  router
+    .route("/:id/productCreator/:productCreatorId")
+    .delete(controllers.deleteProductCreator) // delete a productCreator (only for vendor)
+    .patch(controllers.updateProductCreator); //  update a productCreator (only for admin or vendor)
 
   return router;
 }

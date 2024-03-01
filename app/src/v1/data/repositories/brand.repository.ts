@@ -11,12 +11,13 @@ import {
   ApiFeatures,
   QueryResult,
 } from "../../utils/querying/apiFeatures.util";
-import { ProductEntity } from "../orm_models/product.entity";
 import {
   BrandEntity,
   BrandUpdateDataPayload,
 } from "../orm_models/productBrand.entity";
 import { Brand, IBrand, ICreateBrandInput } from "../../domain/brand/brand";
+import { storeRepo } from "./store.repository";
+import { exceptionService } from "../../core/errors/exceptions";
 
 export const brandRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   manager: dbConnection.manager,
@@ -32,34 +33,35 @@ export const brandRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   },
 
   async createBrand(payload: ICreateBrandInput): Promise<IBrand> {
-    const product = await this.manager.findOne(ProductEntity, {
-      where: { id: payload.product_id },
+    const store = await storeRepo.findOne({
+      where: { id: payload.store_id },
     });
 
-    if (!product) {
-      throw new Error("Product not found");
+    if (!store) {
+      exceptionService.badRequestException({
+        message: "Store not found",
+      });
     }
 
     const brand = this.manager.create(BrandEntity, {
       name: payload.name,
       logo: payload.logo,
-      product: product,
+      store: store,
     } as DeepPartial<BrandEntity>);
 
     const result = await this.manager.save(BrandEntity, brand);
     return this.toDomainBrand(result);
   },
-  async getProductBrands(queryParams: {
+
+  async getStoreBrands(queryParams: {
     storeId: string;
-    productId: string;
   }): Promise<BrandEntity[]> {
-    const { storeId, productId } = queryParams;
+    const { storeId } = queryParams;
 
     const brands = await this.manager.find(BrandEntity, {
       where: {
-        product: {
-          store: { id: storeId },
-          id: productId,
+        store: {
+          id: storeId,
         },
       },
     });
@@ -153,10 +155,7 @@ export interface IBrandRepository {
   findByQuery(queryParams: {
     [key: string]: string;
   }): Promise<QueryResult<IBrand>>;
-  getProductBrands(queryParams: {
-    storeId: string;
-    productId: string;
-  }): Promise<BrandEntity[]>;
+  getStoreBrands(queryParams: { storeId: string }): Promise<BrandEntity[]>;
 
   createBrand(payload: ICreateBrandInput): Promise<IBrand>;
   updateBrand(brand: IBrand, payload: Partial<BrandEntity>): Promise<IBrand>;

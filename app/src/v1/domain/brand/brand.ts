@@ -1,40 +1,36 @@
+import { IProduct } from "../product/product";
+import { IStore } from "../store/store";
 import { IIdAsNumber, NumberId } from "../types/idAsNumber";
 
 export interface IBrand extends IIdAsNumber {
     id: string;
     name: string;
     logo: string;
-    product?: IProduct;
+    store?: IStore;
   }
   
   export class Brand extends NumberId implements IBrand {
     id: string;
     name: string;
     logo: string;
-    product?: IProduct;
+    store?: IStore;
   
     constructor(payload: {
       id: string;
       name: string;
       logo: string;
-      product?: IProduct;
+      store?: IStore;
     }) {
       super(payload.id);
       this.name = payload.name;
       this.logo = payload.logo;
-      this.product = payload.product;
+      this.store = payload.store;
     }
   }
   
   export interface ICreateBrandInput {
     name: string;
     logo: string;
-    product_id?: string;
+    store_id?: string;
   }
   
-  export interface IProduct {
-    id: number;
-    logo: string;
-    isPublished: boolean;
-    position: string;
-  }

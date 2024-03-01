@@ -17,7 +17,7 @@ import { CartEntity } from './cart.entity';
   })
   export class CartProductEntity {
     @PrimaryGeneratedColumn()
-    id: number;
+    id: string;;
   
     @Column({
       type: 'int',

@@ -17,7 +17,7 @@ import { ProductEntity } from './product.entity';
   })
   export class ReviewsEntity {
     @PrimaryGeneratedColumn()
-    id: number;
+    id: string;
   
     @Column({
       type: 'varchar',

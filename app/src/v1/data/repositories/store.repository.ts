@@ -63,6 +63,7 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     store: IStore,
     payload: Partial<StoreEntity>
   ): Promise<IStore> {
+
     await this.manager.update(
       StoreEntity,
       {
@@ -136,7 +137,7 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       isPublished: prismaStore.isPublished,
       position: prismaStore.position,
       socialMediaLinks: prismaStore.socialMediaLinks,
-    });
+    });    
     return store;
   },
 });

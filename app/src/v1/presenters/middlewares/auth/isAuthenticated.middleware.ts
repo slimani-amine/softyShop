@@ -22,7 +22,6 @@ export const isAuthentictedMiddleware = (
     ) {
       accessToken = req.headers.authorization.split(' ')[1];
     }
-    console.log(accessToken);
 
     // const accessToken = req.cookies[TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME] || "";
     if (!accessToken) {
@@ -63,7 +62,6 @@ export const isAuthentictedMiddlewareNoVerificationNeeded = (
     ) {
       token = req.headers.authorization.split(' ')[1];
     }
-    console.log(token);
     
     const accessToken = req.cookies[TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME] || "";
 
@@ -81,7 +79,6 @@ export const isAuthentictedMiddlewareNoVerificationNeeded = (
       }
     ) as IJwtAccessPayload;
 
-    console.log("🚀 ~ accessTokenPayload:", accessTokenPayload);
     validateAccessToken(accessTokenPayload);
     req.user = accessTokenPayload.user;
     next();

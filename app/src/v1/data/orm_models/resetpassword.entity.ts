@@ -15,7 +15,7 @@ import { QueryDeepPartialEntity, findManyType, WhereEntityOptions } from '../../
 })
 export class ResetPasswordEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column({
     type: 'varchar',

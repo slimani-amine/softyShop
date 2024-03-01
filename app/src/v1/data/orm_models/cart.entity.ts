@@ -24,7 +24,7 @@ import { PaymentMethodEntity } from "./paymentMethod.entity";
 })
 export class CartEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column({
     type: "int",

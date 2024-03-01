@@ -4,9 +4,6 @@ import { NextFunction, Request, Response } from "express";
 export const getVendorStoresControllerBase =
   (getVendorStoresUseCase: GetVendorStoresUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req?.params);
-
-    // Assuming req.user.id is a string
     const userId = req.user.id;
 
     try {

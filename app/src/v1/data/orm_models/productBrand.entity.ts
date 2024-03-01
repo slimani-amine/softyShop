@@ -5,6 +5,7 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
@@ -14,6 +15,7 @@ import {
   findManyType,
 } from "../../../types/repos";
 import { ProductEntity } from "./product.entity";
+import { StoreEntity } from "./store.entity";
 
 @Entity({
   name: "Brand",
@@ -32,9 +34,12 @@ export class BrandEntity {
   })
   logo: string;
 
-  @ManyToOne(() => ProductEntity, (product) => product.brand)
-  @JoinColumn({ name: "product_id" })
-  product: ProductEntity;
+  @OneToMany(() => ProductEntity, (product) => product.brand)
+  products: ProductEntity[];
+
+  @ManyToOne(() => StoreEntity, (store) => store.brands)
+  @JoinColumn({ name: "store_id" })
+  store: StoreEntity;
 
   @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;
