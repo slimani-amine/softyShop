@@ -4,7 +4,7 @@ import {
 } from "../../../../usecases/api/brands/deleteBrand.usecase";
 import { NextFunction, Request, Response } from "express";
 
-export const deleteBrandsControllerBase =
+export const deleteBrandControllerBase =
   (deleteBrandUseCase: DeleteBrandUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -18,5 +18,5 @@ export const deleteBrandsControllerBase =
     }
   };
 
-export const deleteBrandsController =
-  deleteBrandsControllerBase(deleteBrandUseCase);
+export const deleteBrandController =
+  deleteBrandControllerBase(deleteBrandUseCase);
