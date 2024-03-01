@@ -1,8 +1,9 @@
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { ProductEntity } from './product.entity';
+import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from "../../../types/repos";
+import { ProductEntity } from "./product.entity";
 export declare class BrandEntity {
-    id: number;
+    id: string;
     name: string;
+    logo: string;
     product: ProductEntity;
     deletedAt: Date;
     createdAt: Date;

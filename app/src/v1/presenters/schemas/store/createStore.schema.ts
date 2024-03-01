@@ -1,19 +1,29 @@
 import { z } from "zod";
 
-const createAddressSchema = z.object({
-  address: z.string().min(1, {
-    message: "The address is required",
+const createStoreSchema = z.object({
+  storeName: z.string().min(1, {
+    message: "Le nom du boutique est obligatoire",
   }),
-  city: z.string().min(1, {
-    message: "The city is required",
+  storePhone: z
+    .string()
+    .min(8, {
+      message: "Le telephone du boutique est obligatoire (8 chiffres)",
+    })
+    .max(8, {
+      message: "Le telephone du boutique est obligatoire (8 chiffres)",
+    }),
+  logo: z.string().min(1, {
+    message: "Le logo du boutique est obligatoire",
   }),
-  state: z.string().min(1, {
-    message: "The state is required",
+  isPublished: z.boolean().optional(),
+  position: z.array(z.number()).refine((data) => data.length === 2, {
+    message:
+      "La position du boutique est obligatoire et doit contenir exactement deux nombres",
   }),
-  zipCode: z.number(),
-  user_id: z.string().min(1, {
-    message: "The user is required",
+  socialMediaLinks: z.array(z.string()),
+  vendor_id: z.string().min(1, {
+    message: "L'utilisateur du boutique est obligatoire",
   }),
 });
 
-export default createAddressSchema;
+export default createStoreSchema;

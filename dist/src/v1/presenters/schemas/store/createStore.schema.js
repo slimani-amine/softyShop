@@ -1,20 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const zod_1 = require("zod");
-const createAddressSchema = zod_1.z.object({
-    address: zod_1.z.string().min(1, {
-        message: "The address is required",
+const createStoreSchema = zod_1.z.object({
+    storeName: zod_1.z.string().min(1, {
+        message: "Le nom du boutique est obligatoire",
     }),
-    city: zod_1.z.string().min(1, {
-        message: "The city is required",
+    storePhone: zod_1.z
+        .string()
+        .min(8, {
+        message: "Le telephone du boutique est obligatoire (8 chiffres)",
+    })
+        .max(8, {
+        message: "Le telephone du boutique est obligatoire (8 chiffres)",
     }),
-    state: zod_1.z.string().min(1, {
-        message: "The state is required",
+    logo: zod_1.z.string().min(1, {
+        message: "Le logo du boutique est obligatoire",
     }),
-    zipCode: zod_1.z.number(),
-    user_id: zod_1.z.string().min(1, {
-        message: "The user is required",
+    isPublished: zod_1.z.boolean().optional(),
+    position: zod_1.z.array(zod_1.z.number()).refine((data) => data.length === 2, {
+        message: "La position du boutique est obligatoire et doit contenir exactement deux nombres",
+    }),
+    socialMediaLinks: zod_1.z.array(zod_1.z.string()),
+    vendor_id: zod_1.z.string().min(1, {
+        message: "L'utilisateur du boutique est obligatoire",
     }),
 });
-exports.default = createAddressSchema;
+exports.default = createStoreSchema;
 //# sourceMappingURL=createStore.schema.js.map

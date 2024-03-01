@@ -23,11 +23,11 @@ let ProductEntity = class ProductEntity {
 exports.ProductEntity = ProductEntity;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], ProductEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
         unique: true,
     }),
     __metadata("design:type", String)
@@ -42,7 +42,7 @@ __decorate([
 ], ProductEntity.prototype, "stockNumber", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'date',
+        type: "date",
     }),
     __metadata("design:type", Date)
 ], ProductEntity.prototype, "publishedAt", void 0);
@@ -58,11 +58,6 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => productCreator_entity_1.ProductCreatorEntity, (productCreator) => productCreator.name),
     __metadata("design:type", Array)
 ], ProductEntity.prototype, "creator", void 0);
-__decorate([
-    (0, typeorm_1.ManyToOne)(() => category_entity_1.CategoryEntity, (category) => category.product),
-    (0, typeorm_1.JoinColumn)({ name: "category_id" }),
-    __metadata("design:type", category_entity_1.CategoryEntity)
-], ProductEntity.prototype, "category", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => productBrand_entity_1.BrandEntity, (productCretor) => productCretor.name),
     __metadata("design:type", Array)
@@ -81,24 +76,29 @@ __decorate([
 ], ProductEntity.prototype, "cartProduct", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => store_entity_1.StoreEntity, (store) => store.products),
-    (0, typeorm_1.JoinColumn)({ name: 'store_id' }),
+    (0, typeorm_1.JoinColumn)({ name: "store_id" }),
     __metadata("design:type", store_entity_1.StoreEntity)
 ], ProductEntity.prototype, "store", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.ManyToOne)(() => category_entity_1.CategoryEntity, (category) => category.product),
+    (0, typeorm_1.JoinColumn)({ name: "category_id" }),
+    __metadata("design:type", category_entity_1.CategoryEntity)
+], ProductEntity.prototype, "category", void 0);
+__decorate([
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], ProductEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], ProductEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], ProductEntity.prototype, "updatedAt", void 0);
 exports.ProductEntity = ProductEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'Products',
+        name: "Products",
     })
 ], ProductEntity);
 //# sourceMappingURL=product.entity.js.map

@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { getUsersApiRouter } from './users';
-import { getStoresApiRouter } from './admin';
+import { getAdminApiRouter } from './admin';
+import { getStoresApiRouter } from './stores';
 
 const v1ApiRouter = Router();
 const date = new Date();
@@ -9,6 +10,8 @@ v1ApiRouter.route('/healthcheck').get(async (req: Request, res: Response) => {
 });
 v1ApiRouter.use('/users', getUsersApiRouter());
 
-v1ApiRouter.use('/admin', getStoresApiRouter());
+v1ApiRouter.use('/admin', getAdminApiRouter());
+
+v1ApiRouter.use('/store', getStoresApiRouter());
 
 export default v1ApiRouter;

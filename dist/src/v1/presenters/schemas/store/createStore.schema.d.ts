@@ -1,21 +1,27 @@
 import { z } from "zod";
-declare const createAddressSchema: z.ZodObject<{
-    address: z.ZodString;
-    city: z.ZodString;
-    state: z.ZodString;
-    zipCode: z.ZodNumber;
-    user_id: z.ZodString;
+declare const createStoreSchema: z.ZodObject<{
+    storeName: z.ZodString;
+    storePhone: z.ZodString;
+    logo: z.ZodString;
+    isPublished: z.ZodOptional<z.ZodBoolean>;
+    position: z.ZodEffects<z.ZodArray<z.ZodNumber, "many">, number[], number[]>;
+    socialMediaLinks: z.ZodArray<z.ZodString, "many">;
+    vendor_id: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    address?: string;
-    city?: string;
-    state?: string;
-    zipCode?: number;
-    user_id?: string;
+    storeName?: string;
+    storePhone?: string;
+    logo?: string;
+    isPublished?: boolean;
+    position?: number[];
+    socialMediaLinks?: string[];
+    vendor_id?: string;
 }, {
-    address?: string;
-    city?: string;
-    state?: string;
-    zipCode?: number;
-    user_id?: string;
+    storeName?: string;
+    storePhone?: string;
+    logo?: string;
+    isPublished?: boolean;
+    position?: number[];
+    socialMediaLinks?: string[];
+    vendor_id?: string;
 }>;
-export default createAddressSchema;
+export default createStoreSchema;

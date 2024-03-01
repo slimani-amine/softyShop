@@ -18,7 +18,7 @@ export function getTestDatasource(dbName: string) {
 }
 
 export const defaultTestDataSource = new DataSource({
-  type: 'mariadb',
+  type: 'mysql',
   host: process.env.TEST_DATABASE_HOST,
   port: parseInt(process.env.TEST_DATABASE_PORT),
   username: process.env.TEST_DATABASE_USERNAME,

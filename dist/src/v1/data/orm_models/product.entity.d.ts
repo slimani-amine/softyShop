@@ -1,13 +1,13 @@
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { StoreEntity } from './store.entity';
-import { ProductCreatorEntity } from './productCreator.entity';
-import { CategoryEntity } from './category.entity';
-import { BrandEntity } from './productBrand.entity';
-import { ReviewsEntity } from './reviews.entity';
-import { WishlistEntity } from './wishlist.entity';
-import { CartProductEntity } from './cartProduct.entity';
+import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from "../../../types/repos";
+import { StoreEntity } from "./store.entity";
+import { ProductCreatorEntity } from "./productCreator.entity";
+import { CategoryEntity } from "./category.entity";
+import { BrandEntity } from "./productBrand.entity";
+import { ReviewsEntity } from "./reviews.entity";
+import { WishlistEntity } from "./wishlist.entity";
+import { CartProductEntity } from "./cartProduct.entity";
 export declare class ProductEntity {
-    id: number;
+    id: string;
     name: string;
     price: number;
     stockNumber: number;
@@ -15,12 +15,12 @@ export declare class ProductEntity {
     availability: boolean;
     isPublished: boolean;
     creator: ProductCreatorEntity[];
-    category: CategoryEntity;
     brand: BrandEntity[];
     review: ReviewsEntity[];
     wishlist: WishlistEntity[];
     cartProduct: CartProductEntity[];
     store: StoreEntity;
+    category: CategoryEntity;
     deletedAt: Date;
     createdAt: Date;
     updatedAt: Date;

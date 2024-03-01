@@ -15,6 +15,7 @@ const createAddresse_controller_1 = require("../../../controllers/api/addresses/
 const deleteAddresse_controller_1 = require("../../../controllers/api/addresses/deleteAddresse.controller");
 const getUserAddresses_controller_1 = require("../../../controllers/api/addresses/getUserAddresses.controller");
 const getOneAddresse_controller_1 = require("../../../controllers/api/addresses/getOneAddresse.controller");
+const updateAddresse_controller_1 = require("../../../controllers/api/addresses/updateAddresse.controller");
 const router = express.Router();
 const defaults = {
     getUsers: getUsers_controller_1.getUsersController,
@@ -24,6 +25,7 @@ const defaults = {
     deleteAddress: deleteAddresse_controller_1.deleteAddressesController,
     userAddresses: getUserAddresses_controller_1.getUserAddressesController,
     oneAdress: getOneAddresse_controller_1.getOneAddressController,
+    updateAddress: updateAddresse_controller_1.updateAddressController,
 };
 function getUsersApiRouter(controllers = defaults) {
     router.use(isAuthenticated_middleware_1.isAuthentictedMiddleware);
@@ -39,7 +41,8 @@ function getUsersApiRouter(controllers = defaults) {
     router
         .route("/addresses/:id")
         .delete(controllers.deleteAddress)
-        .get(controllers.oneAdress);
+        .get(controllers.oneAdress)
+        .patch(controllers.updateAddress);
     return router;
 }
 exports.getUsersApiRouter = getUsersApiRouter;

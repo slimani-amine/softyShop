@@ -7,4 +7,5 @@ export declare function getUsersApiRouter(controllers?: {
     deleteAddress: ControllerType;
     userAddresses: ControllerType;
     oneAdress: ControllerType;
+    updateAddress: ControllerType;
 }): import("express-serve-static-core").Router;

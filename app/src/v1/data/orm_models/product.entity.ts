@@ -8,25 +8,29 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { StoreEntity } from './store.entity';
-import { ProductCreatorEntity } from './productCreator.entity';
-import { CategoryEntity } from './category.entity';
-import { BrandEntity } from './productBrand.entity';
-import { ReviewsEntity } from './reviews.entity';
-import { WishlistEntity } from './wishlist.entity';
-import { CartProductEntity } from './cartProduct.entity';
+} from "typeorm";
+import {
+  QueryDeepPartialEntity,
+  WhereEntityOptions,
+  findManyType,
+} from "../../../types/repos";
+import { StoreEntity } from "./store.entity";
+import { ProductCreatorEntity } from "./productCreator.entity";
+import { CategoryEntity } from "./category.entity";
+import { BrandEntity } from "./productBrand.entity";
+import { ReviewsEntity } from "./reviews.entity";
+import { WishlistEntity } from "./wishlist.entity";
+import { CartProductEntity } from "./cartProduct.entity";
 
 @Entity({
-  name: 'Products',
+  name: "Products",
 })
 export class ProductEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column({
-    type: 'varchar',
+    type: "varchar",
     unique: true,
   })
   name: string;
@@ -38,7 +42,7 @@ export class ProductEntity {
   stockNumber: number;
 
   @Column({
-    type: 'date',
+    type: "date",
   })
   publishedAt: Date;
 
@@ -48,12 +52,11 @@ export class ProductEntity {
   @Column()
   isPublished: boolean;
 
-  @OneToMany(() => ProductCreatorEntity, (productCreator) => productCreator.name)
+  @OneToMany(
+    () => ProductCreatorEntity,
+    (productCreator) => productCreator.name
+  )
   creator: ProductCreatorEntity[];
-
-  @ManyToOne(() => CategoryEntity, (category) => category.product)
-  @JoinColumn({ name: "category_id" })
-  category: CategoryEntity;
 
   @OneToMany(() => BrandEntity, (productCretor) => productCretor.name)
   brand: BrandEntity[];
@@ -66,18 +69,22 @@ export class ProductEntity {
 
   @OneToMany(() => CartProductEntity, (cartProduct) => cartProduct.product)
   cartProduct: CartProductEntity[];
-  
+
   @ManyToOne(() => StoreEntity, (store) => store.products)
-  @JoinColumn({ name: 'store_id' })
+  @JoinColumn({ name: "store_id" })
   store: StoreEntity;
 
-  @DeleteDateColumn({ name: 'deletedAt' })
+  @ManyToOne(() => CategoryEntity, (category) => category.product)
+  @JoinColumn({ name: "category_id" })
+  category: CategoryEntity;
+
+  @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;
 
-  @CreateDateColumn({ name: 'createdAt' })
+  @CreateDateColumn({ name: "createdAt" })
   createdAt: Date;
 
-  @UpdateDateColumn({ name: 'updatedAt' })
+  @UpdateDateColumn({ name: "updatedAt" })
   updatedAt: Date;
 }
 
