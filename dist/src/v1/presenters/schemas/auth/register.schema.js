@@ -21,16 +21,19 @@ const registerSchema = zod_1.z
     })
         .regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/, errors_1.PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE),
     picture: zod_1.z.string(),
-    username: zod_1.z.string().min(4, {
-        message: errors_1.USERNAME_TOO_SHORT_ERROR_MESSAGE,
+    firstName: zod_1.z.string().min(4, {
+        message: errors_1.FirstNAME_TOO_SHORT_ERROR_MESSAGE,
     }),
-    role: zod_1.z.enum(['admin', 'vendor', 'user']),
+    lastName: zod_1.z.string().min(4, {
+        message: errors_1.LAST_NAME_TOO_SHORT_ERROR_MESSAGE,
+    }),
+    role: zod_1.z.enum(["admin", "vendor", "user"]),
     phoneNumber: zod_1.z.string(),
 })
     .strict(`${errors_common_1.ZodValidationMessageCommon.FIELDS_UNEXPECTED_MESSAGE}`)
     .refine((data) => data.password === data.verifyPassword, {
     message: errors_1.PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE,
-    path: ['verifyPassword'],
+    path: ["verifyPassword"],
 });
 exports.default = registerSchema;
 //# sourceMappingURL=register.schema.js.map

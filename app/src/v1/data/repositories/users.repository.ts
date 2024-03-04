@@ -1,8 +1,21 @@
-import { DataSource, DeepPartial, FindManyOptions, FindOneOptions, QueryRunner } from 'typeorm';
-import { UserEntity,  UsersUpdateDataPayload,  UsersWherePayload } from '../orm_models/user.entity';
-import { ApiFeatures, QueryResult } from '../../utils/querying/apiFeatures.util';
-import { ICreateUserInput, IUser, User } from '../../domain/users/user';
-import dataSource from '../connection';
+import {
+  DataSource,
+  DeepPartial,
+  FindManyOptions,
+  FindOneOptions,
+  QueryRunner,
+} from "typeorm";
+import {
+  UserEntity,
+  UsersUpdateDataPayload,
+  UsersWherePayload,
+} from "../orm_models/user.entity";
+import {
+  ApiFeatures,
+  QueryResult,
+} from "../../utils/querying/apiFeatures.util";
+import { ICreateUserInput, IUser, User } from "../../domain/users/user";
+import dataSource from "../connection";
 
 type DeepPartialWithIsVerified<T> = DeepPartial<T> & { isVerified?: boolean };
 
@@ -20,17 +33,20 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     where: UsersWherePayload;
     data: UsersUpdateDataPayload;
   }): Promise<number> {
-    const result = await this.manager.update(UserEntity, updatePayload.where, updatePayload.data);
+    const result = await this.manager.update(
+      UserEntity,
+      updatePayload.where,
+      updatePayload.data
+    );
     return result.affected;
   },
   async updateOne(user: IUser, payload: Partial<UserEntity>): Promise<IUser> {
-    console.log("🚀 ~ updateOne ~ payload:", payload)
     await this.manager.update(
       UserEntity,
       {
         id: user.getIdAsNumber(),
       },
-      payload,
+      payload
     );
     const updatedUser = await this.manager.findOne(UserEntity, {
       where: {
@@ -65,7 +81,8 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       email: payload.email,
       isVerified: payload.isVerified,
       picture: payload.picture,
-      username: payload.username,
+      firstName: payload.firstName,
+      lastName: payload.lastName,
       password: payload.password,
       role: payload.role,
       phoneNumber: payload.phoneNumber,
@@ -77,30 +94,39 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     return this.toDomainUser(result);
   },
 
-  async findByQuery(queryParams: { [key: string]: string }): Promise<QueryResult<IUser>> {
-    const result = await ApiFeatures.generateSqlQuery(dataSource, 'users', queryParams, {
-      id: {
-        operator: 'eq',
-      },
-      email: {
-        operator: 'eq',
-      },
-      'resetPassword.id': {
-        operator: 'injoin',
-        joinTables: {
-          ResetPasswords: {
-            selectedFields: ['id', 'token'],
+  async findByQuery(queryParams: {
+    [key: string]: string;
+  }): Promise<QueryResult<IUser>> {
+    const result = await ApiFeatures.generateSqlQuery(
+      dataSource,
+      "users",
+      queryParams,
+      {
+        id: {
+          operator: "eq",
+        },
+        email: {
+          operator: "eq",
+        },
+        "resetPassword.id": {
+          operator: "injoin",
+          joinTables: {
+            ResetPasswords: {
+              selectedFields: ["id", "token"],
+            },
           },
         },
-      },
-    });
+      }
+    );
     return {
       docs: this.toDomainUsers(result.docs),
       meta: result.meta,
     };
   },
   toDomainUsers(users: UserEntity[]): IUser[] {
-    const domainUsers = users.map((prismaUser) => this.toDomainUser(prismaUser));
+    const domainUsers = users.map((prismaUser) =>
+      this.toDomainUser(prismaUser)
+    );
     return domainUsers;
   },
   toDomainUser(prismaUser: UserEntity): IUser {
@@ -112,7 +138,8 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       email: prismaUser.email,
       isVerified: prismaUser.isVerified,
       picture: prismaUser.picture,
-      username: prismaUser.username,
+      firstName: prismaUser.firstName,
+      lastName: prismaUser.lastName,
       password: prismaUser.password,
       role: prismaUser.role,
       phoneNumber: prismaUser.phoneNumber,
@@ -137,5 +164,7 @@ export interface IUsersRepository {
   deleteMany(payload: Array<number>): Promise<number>;
   getUserPassword(user: IUser): Promise<string>;
   create(payload: ICreateUserInput): Promise<IUser>;
-  findByQuery(queryParams: { [key: string]: string }): Promise<QueryResult<IUser>>;
+  findByQuery(queryParams: {
+    [key: string]: string;
+  }): Promise<QueryResult<IUser>>;
 }

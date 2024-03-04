@@ -8,7 +8,8 @@ class User extends idAsNumber_1.NumberId {
         this.email = payload.email;
         this.isVerified = payload.isVerified;
         this.picture = payload.picture;
-        this.username = payload.username;
+        this.firstName = payload.firstName;
+        this.lastName = payload.lastName;
         this.password = payload.password;
         this.role = payload.role;
         this.phoneNumber = payload.phoneNumber;

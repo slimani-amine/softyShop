@@ -49,6 +49,11 @@
             "date": 1709458546856,
             "name": "logs\\verbose-2024-03-03.log",
             "hash": "512cfb398b7c5a1c90b9cbedbf0278186baf7fdfbe19a60f3d8839db33699b0b"
+        },
+        {
+            "date": 1709536314009,
+            "name": "logs/verbose-2024-03-04.log",
+            "hash": "6cfb1fe09891e6ec35953b0459f1a4b1b3a275f447a467519ec88a9667de9391"
         }
     ],
     "hashType": "sha256"

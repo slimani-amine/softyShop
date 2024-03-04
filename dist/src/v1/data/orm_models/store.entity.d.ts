@@ -1,6 +1,8 @@
 import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from "../../../types/repos";
 import { UserEntity } from "./user.entity";
 import { ProductEntity } from "./product.entity";
+import { BrandEntity } from "./productBrand.entity";
+import { ProductCreatorEntity } from "./productCreator.entity";
 export declare class StoreEntity {
     id: string;
     storeName: string;
@@ -10,6 +12,8 @@ export declare class StoreEntity {
     position: string;
     socialMediaLinks: string;
     products: ProductEntity[];
+    brands: BrandEntity[];
+    productCreators: ProductCreatorEntity[];
     user: UserEntity;
     deletedAt: Date;
     createdAt: Date;

@@ -15,7 +15,6 @@ export const updateProductCreatorUseCaseBase =
     productCreator: IProductCreator,
     updatePayload: Partial<IProductCreator>
   ) => {
-    console.log("🚀 ~ updatePayload:", updatePayload);
 
     const updatedProductCreator =
       await productCreatorRepository.updateProductCreator(

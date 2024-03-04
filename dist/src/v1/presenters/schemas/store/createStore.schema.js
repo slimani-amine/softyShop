@@ -17,7 +17,7 @@ const createStoreSchema = zod_1.z.object({
         message: "Le logo du boutique est obligatoire",
     }),
     isPublished: zod_1.z.boolean().optional(),
-    position: zod_1.z.array(zod_1.z.number()).refine((data) => data.length === 2, {
+    position: zod_1.z.array(zod_1.z.string()).refine((data) => data.length === 3, {
         message: "La position du boutique est obligatoire et doit contenir exactement deux nombres",
     }),
     socialMediaLinks: zod_1.z.array(zod_1.z.string()),

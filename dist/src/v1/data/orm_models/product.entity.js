@@ -33,11 +33,15 @@ __decorate([
     __metadata("design:type", String)
 ], ProductEntity.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        type: "float",
+    }),
     __metadata("design:type", Number)
 ], ProductEntity.prototype, "price", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        type: "int",
+    }),
     __metadata("design:type", Number)
 ], ProductEntity.prototype, "stockNumber", void 0);
 __decorate([
@@ -47,21 +51,26 @@ __decorate([
     __metadata("design:type", Date)
 ], ProductEntity.prototype, "publishedAt", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        type: "boolean",
+        default: true,
+    }),
     __metadata("design:type", Boolean)
 ], ProductEntity.prototype, "availability", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        type: "boolean",
+        default: false,
+    }),
     __metadata("design:type", Boolean)
 ], ProductEntity.prototype, "isPublished", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => productCreator_entity_1.ProductCreatorEntity, (productCreator) => productCreator.name),
-    __metadata("design:type", Array)
-], ProductEntity.prototype, "creator", void 0);
-__decorate([
-    (0, typeorm_1.OneToMany)(() => productBrand_entity_1.BrandEntity, (productCretor) => productCretor.name),
-    __metadata("design:type", Array)
-], ProductEntity.prototype, "brand", void 0);
+    (0, typeorm_1.Column)({
+        type: "boolean",
+        default: false,
+    }),
+    __metadata("design:type", Boolean)
+], ProductEntity.prototype, "isAccepted", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => reviews_entity_1.ReviewsEntity, (review) => review.product),
     __metadata("design:type", Array)
@@ -74,6 +83,16 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => cartProduct_entity_1.CartProductEntity, (cartProduct) => cartProduct.product),
     __metadata("design:type", Array)
 ], ProductEntity.prototype, "cartProduct", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => productBrand_entity_1.BrandEntity, (brand) => brand.products),
+    (0, typeorm_1.JoinColumn)({ name: "brand_id" }),
+    __metadata("design:type", productBrand_entity_1.BrandEntity)
+], ProductEntity.prototype, "brand", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => productCreator_entity_1.ProductCreatorEntity, (creator) => creator.products),
+    (0, typeorm_1.JoinColumn)({ name: "creator_id" }),
+    __metadata("design:type", productCreator_entity_1.ProductCreatorEntity)
+], ProductEntity.prototype, "creator", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => store_entity_1.StoreEntity, (store) => store.products),
     (0, typeorm_1.JoinColumn)({ name: "store_id" }),

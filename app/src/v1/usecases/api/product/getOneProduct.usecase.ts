@@ -1,23 +1,27 @@
-import { IStore } from "app/src/v1/domain/store/store";
+import { IProduct } from "app/src/v1/domain/product/product";
 import {
-  IStoreRepository,
-  storeRepo,
-} from "../../../data/repositories/store.repository";
+  IProductRepository,
+  productRepo,
+} from "../../../data/repositories/product.repository";
 
-export type GetOneStoreUseCaseType = (queryParams: {
+export type GetOneProductUseCaseType = (queryParams: {
   [id: string]: any;
-}) => Promise<IStore>;
+}) => Promise<IProduct>;
 
-export const getOneStoreUseCaseBase =
-  (dependencies: { storeRepo: IStoreRepository }) =>
+export const getOneProductUseCaseBase =
+  (dependencies: { productRepo: IProductRepository }) =>
   async (queryParams: { [id: string]: any }) => {
-    const storesFound = await dependencies.storeRepo.findOne({
-      where: { id: queryParams.id },
+    const productFound = await dependencies.productRepo.findOne({
+      where: { id: queryParams.productId },
     });
 
-    return storesFound;
+    if (!productFound) {
+      throw new Error("Product not found");
+    }
+
+    return productFound;
   };
 
-export const getOneStoreUseCase = getOneStoreUseCaseBase({
-  storeRepo: storeRepo,
+export const getOneProductUseCase = getOneProductUseCaseBase({
+  productRepo: productRepo,
 });

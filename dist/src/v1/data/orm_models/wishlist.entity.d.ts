@@ -2,7 +2,7 @@ import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../
 import { UserEntity } from './user.entity';
 import { ProductEntity } from './product.entity';
 export declare class WishlistEntity {
-    id: number;
+    id: string;
     user: UserEntity;
     product: ProductEntity;
     deletedAt: Date;

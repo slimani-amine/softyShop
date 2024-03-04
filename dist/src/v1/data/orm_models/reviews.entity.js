@@ -18,7 +18,7 @@ let ReviewsEntity = class ReviewsEntity {
 exports.ReviewsEntity = ReviewsEntity;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], ReviewsEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({

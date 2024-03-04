@@ -1,7 +1,7 @@
 import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
 import { CartEntity } from './cart.entity';
 export declare class OrderEntity {
-    id: number;
+    id: string;
     status: string;
     cart: CartEntity;
     deletedAt: Date;

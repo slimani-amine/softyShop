@@ -32,14 +32,15 @@ const registerUseCaseBase = (dependencies = {
         email: payload.email,
         isVerified: payload.isVerified,
         picture: payload.picture,
-        username: payload.username,
+        firstName: payload.firstName,
+        lastName: payload.lastName,
         password: password,
         role: payload.role,
         phoneNumber: payload.phoneNumber,
         confirmation_token: payload.confirmation_token,
         confirmed_email: payload.confirmed_email,
     });
-    logger_1.logger.log('REGISTER USE CASE', JSON.stringify(userCreated));
+    logger_1.logger.log("REGISTER USE CASE", JSON.stringify(userCreated));
     const tokens = await dependencies.createUserTokensUseCase(userCreated);
     return Object.assign({ user: userCreated }, tokens);
 };

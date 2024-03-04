@@ -7,7 +7,7 @@ class Brand extends idAsNumber_1.NumberId {
         super(payload.id);
         this.name = payload.name;
         this.logo = payload.logo;
-        this.product = payload.product;
+        this.store = payload.store;
     }
 }
 exports.Brand = Brand;

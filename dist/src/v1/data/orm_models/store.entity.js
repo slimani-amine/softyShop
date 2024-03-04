@@ -13,6 +13,8 @@ exports.StoreEntity = void 0;
 const typeorm_1 = require("typeorm");
 const user_entity_1 = require("./user.entity");
 const product_entity_1 = require("./product.entity");
+const productBrand_entity_1 = require("./productBrand.entity");
+const productCreator_entity_1 = require("./productCreator.entity");
 let StoreEntity = class StoreEntity {
 };
 exports.StoreEntity = StoreEntity;
@@ -63,6 +65,14 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => product_entity_1.ProductEntity, (product) => product.store),
     __metadata("design:type", Array)
 ], StoreEntity.prototype, "products", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => productBrand_entity_1.BrandEntity, (brand) => brand.store),
+    __metadata("design:type", Array)
+], StoreEntity.prototype, "brands", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => productCreator_entity_1.ProductCreatorEntity, (productCreator) => productCreator.store),
+    __metadata("design:type", Array)
+], StoreEntity.prototype, "productCreators", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.store),
     (0, typeorm_1.JoinColumn)({ name: "vendor_id" }),

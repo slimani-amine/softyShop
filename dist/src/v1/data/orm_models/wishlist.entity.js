@@ -18,7 +18,7 @@ let WishlistEntity = class WishlistEntity {
 exports.WishlistEntity = WishlistEntity;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], WishlistEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.reviews),

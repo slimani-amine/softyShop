@@ -1,18 +1,16 @@
 import {
-  DeleteStoreUseCaseType,
-  deleteStoreUseCase,
-} from '../../../../usecases/api/store/deleteStores.usecase';
+  DeleteProductUseCaseType,
+  deleteProductUseCase,
+} from "../../../../usecases/api/product/deleteProduct.usecase";
+import { NextFunction, Request, Response } from "express";
 
-import { NextFunction, Request, Response } from 'express';
-
-export const deleteStoresControllerBase =
-  (deleteStoreUseCase: DeleteStoreUseCaseType) =>
+export const deleteProductControllerBase =
+  (deleteProductUseCase: DeleteProductUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
-
     try {
-      const result = await deleteStoreUseCase(req?.params);
+      const result = await deleteProductUseCase(req?.params);
       res.status(200).send({
-        message: 'success',
+        message: "success",
         data: result,
       });
     } catch (err) {
@@ -20,4 +18,5 @@ export const deleteStoresControllerBase =
     }
   };
 
-export const deleteStoresController = deleteStoresControllerBase(deleteStoreUseCase);
+export const deleteProductController =
+  deleteProductControllerBase(deleteProductUseCase);

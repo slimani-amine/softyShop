@@ -14,11 +14,12 @@ const typeorm_1 = require("typeorm");
 const product_entity_1 = require("./product.entity");
 const cart_entity_1 = require("./cart.entity");
 let CartProductEntity = class CartProductEntity {
+    ;
 };
 exports.CartProductEntity = CartProductEntity;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], CartProductEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({

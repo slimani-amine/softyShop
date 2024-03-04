@@ -8,9 +8,6 @@ const createBrandSchema = zod_1.z.object({
     logo: zod_1.z.string().min(1, {
         message: "The logo of the brand is required",
     }),
-    productId: zod_1.z.number().min(1, {
-        message: "The product ID is required",
-    }),
 });
 exports.default = createBrandSchema;
 //# sourceMappingURL=createBrand.schema.js.map

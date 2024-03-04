@@ -14,7 +14,6 @@ export class ApiException<T extends IExceptionPayload> extends Error {
 }
 class BadRequestException<T extends IExceptionPayload> extends ApiException<T> {
   constructor(payload: any) {
-    console.log("🚀 ~ BadRequestException<T ~ constructor ~ payload:", payload)
     super(payload, 400, 'Bad Request');
   }
 }

@@ -43,7 +43,7 @@ export const pagination = {
   page: process.env.PAGE || 1,
   perPage: process.env.PERPAGE || 1,
 };
-export function extractLongestKeys(arr: string[]): Set<string> {
+export function extractLongestKeys(arr: string[]): Set<string> {  
   const sortedKeys = arr.sort((a, b) => b.length - a.length);
   // Example sortedKeys =[ "model.brand.rentableType","model.rentableType.brand","model.brand","model"]
   const longestKeys = new Set<string>();

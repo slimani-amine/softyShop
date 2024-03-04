@@ -1,33 +1,47 @@
-import { IStore } from "../../../domain/store/store";
+import { IProduct } from "../../../domain/Product/Product";
 import {
-  IStoreRepository,
-  storeRepo,
-} from "../../../data/repositories/store.repository";
-import { usersRepo } from "../../../data/repositories/users.repository";
-import { IUser } from "app/src/v1/domain/users/user";
+  IProductRepository,
+  productRepo,
+} from "../../../data/repositories/Product.repository";
+import { storeRepo } from "../../../data/repositories/store.repository";
+import { exceptionService } from "../../../core/errors/exceptions";
 
-export type GetVendorStoresUseCaseType = (queryParams: {
-  userId: string;
-}) => Promise<IStore[]>;
+export type GetStoreProductUseCaseType = (queryParams: {
+  storeId: string;
+}) => Promise<IProduct[]>;
 
-export const getVendorStoresUseCaseBase =
-  (dependencies: { storeRepo: IStoreRepository }) =>
-  async (queryParams: { userId: string }): Promise<IStore[]> => {
-    console.log("🚀 ~ queryParams:", queryParams);
-
-    const vendor = (await usersRepo.findOne({
-      where: { id: parseInt(queryParams.userId, 10) },
-    })) as any;
-
-    console.log("🚀 ~ vendor:", vendor);
-
-    const storesFound = await dependencies.storeRepo.findMyStores({
-      where: { user: vendor },
+export const getStoreProductUseCaseBase =
+  (dependencies: { productRepo: IProductRepository }) =>
+  async (queryParams: { storeId: string }) => {
+    const store = await storeRepo.findOne({
+      where: { id: queryParams.storeId },
+    });
+    if (!store) {
+      exceptionService.notFoundException({
+        message: "store not found",
+      });
+    }
+    const productsFound = await dependencies.productRepo.findAll({
+      where: { store: store },
+      // select: {
+      //   name: true,
+      //   price: true,
+      //   stockNumber: true,
+      //   isPublished: true,
+      //   isAccepted: true,
+      //   publishedAt: true,
+      //   availability: true,
+      // },
+      // relations: {
+      //   store: true,
+      //   review: true,
+      // },
+      cache: true
     });
 
-    return storesFound;
+    return productsFound;
   };
 
-export const getVendorStoresUseCase = getVendorStoresUseCaseBase({
-  storeRepo: storeRepo,
+export const getStoreProductUseCase = getStoreProductUseCaseBase({
+  productRepo: productRepo,
 });

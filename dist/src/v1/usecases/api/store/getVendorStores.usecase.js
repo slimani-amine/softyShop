@@ -12,6 +12,7 @@ const getVendorStoresUseCaseBase = (dependencies) => async (queryParams) => {
     const storesFound = await dependencies.storeRepo.findMyStores({
         where: { user: vendor },
     });
+    console.log("🚀 ~ storesFound:", storesFound);
     return storesFound;
 };
 exports.getVendorStoresUseCaseBase = getVendorStoresUseCaseBase;

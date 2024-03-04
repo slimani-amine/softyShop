@@ -3,9 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.brandRepo = exports.brandRepoBase = void 0;
 const connection_1 = require("../connection");
 const apiFeatures_util_1 = require("../../utils/querying/apiFeatures.util");
-const product_entity_1 = require("../orm_models/product.entity");
 const productBrand_entity_1 = require("../orm_models/productBrand.entity");
 const brand_1 = require("../../domain/brand/brand");
+const store_repository_1 = require("./store.repository");
+const exceptions_1 = require("../../core/errors/exceptions");
 const brandRepoBase = (dbConnection) => ({
     manager: dbConnection.manager,
     async findOne(findData) {
@@ -17,27 +18,28 @@ const brandRepoBase = (dbConnection) => ({
         return this.toDomainBrands(brands);
     },
     async createBrand(payload) {
-        const product = await this.manager.findOne(product_entity_1.ProductEntity, {
-            where: { id: payload.product_id },
+        const store = await store_repository_1.storeRepo.findOne({
+            where: { id: payload.store_id },
         });
-        if (!product) {
-            throw new Error("Product not found");
+        if (!store) {
+            exceptions_1.exceptionService.badRequestException({
+                message: "Store not found",
+            });
         }
         const brand = this.manager.create(productBrand_entity_1.BrandEntity, {
             name: payload.name,
             logo: payload.logo,
-            product: product,
+            store: store,
         });
         const result = await this.manager.save(productBrand_entity_1.BrandEntity, brand);
         return this.toDomainBrand(result);
     },
-    async getProductBrands(queryParams) {
-        const { storeId, productId } = queryParams;
+    async getStoreBrands(queryParams) {
+        const { storeId } = queryParams;
         const brands = await this.manager.find(productBrand_entity_1.BrandEntity, {
             where: {
-                product: {
-                    store: { id: storeId },
-                    id: productId,
+                store: {
+                    id: storeId,
                 },
             },
         });

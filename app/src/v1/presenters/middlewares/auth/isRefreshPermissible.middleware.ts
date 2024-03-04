@@ -14,6 +14,7 @@ export const isRefreshPermissibledMiddleware = (
   next: NextFunction,
 ) => {
   const refreshToken = req?.cookies[TOKENS_INFO.REFRESH_TOKEN_COOKIE_NAME];
+  console.log("🚀 ~ refreshToken:", refreshToken)
   if (!refreshToken) {
     exceptionService.unauthorizedException({
       message: LOGIN_REQUIRED_ERROR_MESSAGE,

@@ -1,7 +1,7 @@
-import { IUsersRepository, usersRepo } from '../../data/repositories/users.repository';
-import { ICreateUserInput, IUser } from '../../domain/users/user';
-import { generateAndSendUserAccountVerificationEmail } from './requestAccountVerification.usecase';
-import { CreateUserTokensUseCaseType, createUserTokensUseCase } from './createUserTokens.usecase';
+import { IUsersRepository, usersRepo } from "../../data/repositories/users.repository";
+import { ICreateUserInput, IUser } from "../../domain/users/user";
+import { generateAndSendUserAccountVerificationEmail } from "./requestAccountVerification.usecase";
+import { CreateUserTokensUseCaseType, createUserTokensUseCase } from "./createUserTokens.usecase";
 export type RegisterUseCase = (payload: ICreateUserInput) => Promise<{
     user: IUser;
     accessToken: string;

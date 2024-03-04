@@ -14,11 +14,12 @@ export declare class ProductEntity {
     publishedAt: Date;
     availability: boolean;
     isPublished: boolean;
-    creator: ProductCreatorEntity[];
-    brand: BrandEntity[];
+    isAccepted: boolean;
     review: ReviewsEntity[];
     wishlist: WishlistEntity[];
     cartProduct: CartProductEntity[];
+    brand: BrandEntity;
+    creator: ProductCreatorEntity;
     store: StoreEntity;
     category: CategoryEntity;
     deletedAt: Date;

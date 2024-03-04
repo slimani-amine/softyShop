@@ -1,16 +1,19 @@
-import { getVendorStoresUseCase, GetVendorStoresUseCaseType } from "../../../../usecases/api/store/getVendorStores.usecase";
+import {
+  GetStoreProductUseCaseType,
+  getStoreProductUseCase,
+} from "../../../../usecases/api/product/getStoreProducts.usecase";
+
 import { NextFunction, Request, Response } from "express";
-
-export const getVendorStoresControllerBase =
-  (getVendorStoresUseCase: GetVendorStoresUseCaseType) =>
+import { getVendorStoresUseCase } from "../../../../usecases/api/store/getVendorStores.usecase";
+export const getStoreProductsControllerBase =
+  (getStoreProductUseCase: GetStoreProductUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req?.params);
-
-    // Assuming req.user.id is a string
+    const storeId = req.params.id;
     const userId = req.user.id;
 
     try {
-      const result = await getVendorStoresUseCase({ userId });
+
+      const result = await getStoreProductUseCase({ storeId });
       res.status(200).send({
         message: "success",
         data: result,
@@ -20,6 +23,6 @@ export const getVendorStoresControllerBase =
     }
   };
 
-export const getVendorStoresController = getVendorStoresControllerBase(
-  getVendorStoresUseCase
+export const getStoreProductsController = getStoreProductsControllerBase(
+  getStoreProductUseCase
 );

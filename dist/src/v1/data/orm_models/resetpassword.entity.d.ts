@@ -1,7 +1,7 @@
 import { UserEntity } from './user.entity';
 import { QueryDeepPartialEntity, findManyType, WhereEntityOptions } from '../../../types/repos';
 export declare class ResetPasswordEntity {
-    id: number;
+    id: string;
     token: string;
     user_id: number;
     user: UserEntity;

@@ -1,0 +1,48 @@
+paths:
+  /v1/api/products:
+    get:
+      security:
+        - BearerAuth: []
+      tags:
+        - Products
+      summary: Products
+      description: Returns All products.
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          product:
+                            $ref: '#/components/schemas/Product'
+        422:
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginValidationError'
+        404:
+          description: User doesn't exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        400:
+          description: Wrong credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

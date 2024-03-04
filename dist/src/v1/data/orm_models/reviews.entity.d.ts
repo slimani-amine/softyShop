@@ -2,7 +2,7 @@ import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../
 import { UserEntity } from './user.entity';
 import { ProductEntity } from './product.entity';
 export declare class ReviewsEntity {
-    id: number;
+    id: string;
     review: string;
     rating: number;
     user: UserEntity;

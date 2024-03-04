@@ -1,18 +1,16 @@
 import {
   getOneStoreUseCase,
   GetOneStoreUseCaseType,
-} from '../../../../usecases/api/store/getOneStore.usecase';
-import { NextFunction, Request, Response } from 'express';
+} from "../../../../usecases/api/store/getOneStore.usecase";
+import { NextFunction, Request, Response } from "express";
 
 export const getOneStoreControllerBase =
   (getOneStoreUseCase: GetOneStoreUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req?.params);
-
     try {
       const result = await getOneStoreUseCase(req?.params);
       res.status(200).send({
-        message: 'success',
+        message: "success",
         data: result,
       });
     } catch (err) {
@@ -20,4 +18,5 @@ export const getOneStoreControllerBase =
     }
   };
 
-export const getOneStoreController = getOneStoreControllerBase(getOneStoreUseCase);
+export const getOneStoreController =
+  getOneStoreControllerBase(getOneStoreUseCase);

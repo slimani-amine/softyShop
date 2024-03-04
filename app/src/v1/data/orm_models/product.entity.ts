@@ -52,7 +52,7 @@ export class ProductEntity {
 
   @Column({
     type: "boolean",
-    default: false,
+    default: true,
   })
   availability: boolean;
 

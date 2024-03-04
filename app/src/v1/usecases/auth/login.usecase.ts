@@ -1,19 +1,25 @@
-import { exceptionService } from '../../core/errors/exceptions';
-import { logger } from '../../core/logger/logger';
-import { IUsersRepository, usersRepo } from '../../data/repositories/users.repository';
-import * as bcryptjs from 'bcryptjs';
-import { IUser } from '../../domain/users/user';
-import { CreateUserTokensUseCaseType, createUserTokensUseCase } from './createUserTokens.usecase';
-import { ILoginPayload } from '../../domain/auth/login';
-import { trimAndValidateSchemaPayload } from '../../utils/validation/validate.schema';
-import loginSchema from '../../presenters/schemas/auth/login.schema';
+import { exceptionService } from "../../core/errors/exceptions";
+import { logger } from "../../core/logger/logger";
+import {
+  IUsersRepository,
+  usersRepo,
+} from "../../data/repositories/users.repository";
+import * as bcryptjs from "bcryptjs";
+import { IUser } from "../../domain/users/user";
+import {
+  CreateUserTokensUseCaseType,
+  createUserTokensUseCase,
+} from "./createUserTokens.usecase";
+import { ILoginPayload } from "../../domain/auth/login";
+import { trimAndValidateSchemaPayload } from "../../utils/validation/validate.schema";
+import loginSchema from "../../presenters/schemas/auth/login.schema";
 import {
   ACCOUNT_NOT_FOUND_ERROR_MESSAGE,
   BAD_LOGIN_CREDENTIALS_ERROR_MESSAGE,
-} from '../../domain/auth/errors';
+} from "../../domain/auth/errors";
 
 export type LoginUseCaseType = (
-  payload: ILoginPayload,
+  payload: ILoginPayload
 ) => Promise<{ user: IUser; accessToken: string; refreshToken: string }>;
 
 export const loginUseCaseBase =
@@ -39,8 +45,9 @@ export const loginUseCaseBase =
         message: BAD_LOGIN_CREDENTIALS_ERROR_MESSAGE,
       });
     }
-    logger.log('LOGIN USE CASE', JSON.stringify(userFound));
+    logger.log("LOGIN USE CASE", JSON.stringify(userFound));
     const tokens = await dependencies.createUserTokensUseCase(userFound);
+
     return {
       user: userFound,
       ...tokens,

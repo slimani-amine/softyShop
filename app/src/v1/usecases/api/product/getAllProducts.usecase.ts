@@ -1,22 +1,22 @@
-import { IStore } from "app/src/v1/domain/store/store";
+import { IProduct } from "app/src/v1/domain/product/product";
 import {
-  IStoreRepository,
-  storeRepo,
-} from "../../../data/repositories/store.repository";
+  IProductRepository,
+  productRepo,
+} from "../../../data/repositories/product.repository";
 import { QueryResult } from "../../../utils/querying/apiFeatures.util";
 
-export type GetAllStoreUseCaseType = (queryParams: {
+export type GetAllProductUseCaseType = (queryParams: {
   [key: string]: any;
-}) => Promise<QueryResult<IStore>>;
+}) => Promise<QueryResult<IProduct>>;
 
-export const getAllStoreUseCaseBase =
-  (dependencies: { storeRepo: IStoreRepository }) =>
-  async (queryParams: { [key: string]: any }) => {
-    const storesFound = await dependencies.storeRepo.findByQuery(queryParams);
+export const getAllProductUseCaseBase = (
+  dependencies: { productRepo: IProductRepository }
+): GetAllProductUseCaseType => async (queryParams: { [key: string]: any }) => {
+  const productsFound = await dependencies.productRepo.findByQuery(queryParams);
 
-    return storesFound;
-  };
+  return productsFound;
+};
 
-export const getAllStoreUseCase = getAllStoreUseCaseBase({
-  storeRepo: storeRepo,
+export const getAllProductUseCase = getAllProductUseCaseBase({
+  productRepo: productRepo,
 });

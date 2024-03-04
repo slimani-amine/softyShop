@@ -1,11 +1,12 @@
-import { IStore } from '../store/store';
-import { IIdAsNumber, NumberId } from '../types/idAsNumber';
+import { IStore } from "../store/store";
+import { IIdAsNumber, NumberId } from "../types/idAsNumber";
 export interface IUser extends IIdAsNumber {
     id: string;
     email: string;
     isVerified: boolean;
     picture?: string;
-    username: string;
+    firstName: string;
+    lastName: string;
     password: string;
     role: string;
     phoneNumber?: string;
@@ -18,7 +19,8 @@ export declare class User extends NumberId implements IUser {
     email: string;
     isVerified: boolean;
     picture: string;
-    username: string;
+    firstName: string;
+    lastName: string;
     password: string;
     role: string;
     phoneNumber: string;
@@ -29,7 +31,8 @@ export declare class User extends NumberId implements IUser {
         email: string;
         isVerified: boolean;
         picture: string;
-        username: string;
+        firstName: string;
+        lastName: string;
         password: string;
         role: string;
         phoneNumber: string;
@@ -42,7 +45,8 @@ export interface ICreateUserInput {
     email: string;
     isVerified: boolean;
     picture: string;
-    username: string;
+    firstName: string;
+    lastName: string;
     password: string;
     role: string;
     phoneNumber: string;

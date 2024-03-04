@@ -22,6 +22,12 @@ import { deleteProductCreatorController } from "../../../controllers/api/product
 import { updateProductCreatorController } from "../../../controllers/api/productCreator/updateProductCreator..controller";
 import { getStoreProductCreatorController } from "../../../controllers/api/productCreator/getStoreProductCreators.controller";
 import { createProductController } from "../../../controllers/api/product/createProduct.controller";
+import { deleteProductController } from "../../../controllers/api/product/deleteProduct.controller";
+import { getStoreProductsController } from "../../../controllers/api/product/getStoreProducts.controller";
+import { getOneProductController } from "../../../controllers/api/product/getOneProducts.controller";
+import { getAllProductsController } from "../../../controllers/api/product/getAllProducts.controller";
+import { updateProductController } from "../../../controllers/api/product/updateProduct.controller";
+import { myStoreMiddleware } from "../../../middlewares/controllers/myStore.middleware";
 
 const router = express.Router();
 
@@ -33,6 +39,11 @@ const defaults = {
   getVendorStores: getVendorStoresController,
   updateStore: updateStoreController,
   createProduct: createProductController,
+  getAllProducts: getAllProductsController,
+  getStoreProduct: getStoreProductsController,
+  getOneProduct: getOneProductController,
+  deleteProduct: deleteProductController,
+  updateProduct: updateProductController,
   createBrand: createBrandController,
   getStoreBrands: getStoreBrandsController,
   deleteBrand: deleteBrandController,
@@ -52,6 +63,11 @@ export function getStoresApiRouter(
     getVendorStores: ControllerType;
     updateStore: ControllerType;
     createProduct: ControllerType;
+    getAllProducts: ControllerType;
+    getStoreProduct: ControllerType;
+    getOneProduct: ControllerType;
+    deleteProduct: ControllerType;
+    updateProduct: ControllerType;
     createBrand: ControllerType;
     getStoreBrands: ControllerType;
     deleteBrand: ControllerType;
@@ -77,21 +93,24 @@ export function getStoresApiRouter(
     .get(restrictToMiddleware("vendor", "admin"), controllers.getVendorStores); // get vendor stores (only for admin or vendors)
 
   router.use(restrictToMiddleware("admin", "vendor"));
+
+
   router
     .route("/:id")
     .delete(controllers.deleteStore) // delete a store
     .get(controllers.getOneStore) // get one store
     .patch(controllers.updateStore); // update a store
 
-  router.route("/:id/products"); //get all products of the store
-
   router
     .route("/:id/product")
-    .post(restrictToMiddleware("vendor", "admin"), controllers.createProduct); // get all product / post a product (only for vendor)
+    .post(restrictToMiddleware("vendor", "admin"), controllers.createProduct)
+    .get(myStoreMiddleware,controllers.getStoreProduct); // get all product / post a product (only for vendor)
 
-  router.route("/:id/product/:profuctId"); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
-
-  router.use(restrictToMiddleware("admin", "vendor"));
+  router
+    .route("/:id/product/:productId")
+    .delete(restrictToMiddleware("vendor"), controllers.deleteProduct)
+    .get(controllers.getOneProduct)
+    .patch(controllers.updateProduct); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
 
   router
     .route("/:id/brand")

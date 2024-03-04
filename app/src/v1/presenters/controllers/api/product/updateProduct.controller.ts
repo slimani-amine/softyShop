@@ -1,24 +1,23 @@
 import { Request, Response, NextFunction } from "express";
-
-import { storeRepo } from "../../../../data/repositories/store.repository";
+import { productRepo } from "../../../../data/repositories/product.repository";
 import {
-  UpdateStoreUseCaseType,
-  updateStoreUseCase,
-} from "../../../../usecases/api/store/updateStore.usecase";
+  UpdateProductUseCaseType,
+  updateProductUseCase,
+} from "../../../../usecases/api/product/updateProduct.usecase";
 
-export const updateStoreControllerBase =
-  (updateStoreUseCase: UpdateStoreUseCaseType) =>
+export const updateProductControllerBase =
+  (updateProductUseCase: UpdateProductUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const storeId = req.params.storeId;
-      const store = await storeRepo.findOne({ where: { id: storeId } });
+      const productId = req.params.productId;
+      const product = await productRepo.findOne({ where: { id: productId } });
 
       const updatePayload = req.body;
 
-      const result = await updateStoreUseCase(store, updatePayload);
+      const result = await updateProductUseCase(product, updatePayload);
 
       res.status(201).send({
-        message: "Store updated successfully",
+        message: "Product updated successfully",
         data: result,
       });
     } catch (err) {
@@ -26,5 +25,5 @@ export const updateStoreControllerBase =
     }
   };
 
-export const updateStoreController =
-  updateStoreControllerBase(updateStoreUseCase);
+export const updateProductController =
+  updateProductControllerBase(updateProductUseCase);

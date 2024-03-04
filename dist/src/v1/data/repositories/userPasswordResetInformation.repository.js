@@ -21,7 +21,7 @@ const userPasswordResetInformationRepositoryBase = (dbConnection = connection_1.
         });
         const updatedUserResetPasswordInformation = await this.manager.findOne(resetpassword_entity_1.ResetPasswordEntity, {
             where: {
-                id: userResetPasswordInformation.getIdAsNumber(),
+                id: userResetPasswordInformation.getIdAsNumber().toString(),
             },
         });
         return this.toDomainUserResetPasswordInformation(updatedUserResetPasswordInformation);

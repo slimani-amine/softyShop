@@ -14,8 +14,6 @@ export type UpdateAddressUseCaseType = (
 export const updateAddressUseCaseBase =
   (addressRepository: IAddressRepository) =>
   async (address: IAddress, updatePayload: Partial<IAddress>) => {
-    console.log("🚀 ~ updatePayload:", updatePayload);
-
     const updatedAddress = await addressRepository.updateAddress(
       address,
       updatePayload as any

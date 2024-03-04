@@ -13,13 +13,9 @@ export type GetVendorStoresUseCaseType = (queryParams: {
 export const getVendorStoresUseCaseBase =
   (dependencies: { storeRepo: IStoreRepository }) =>
   async (queryParams: { userId: string }): Promise<IStore[]> => {
-    console.log("🚀 ~ queryParams:", queryParams);
-
     const vendor = (await usersRepo.findOne({
       where: { id: parseInt(queryParams.userId, 10) },
     })) as any;
-
-    console.log("🚀 ~ vendor:", vendor);
 
     const storesFound = await dependencies.storeRepo.findMyStores({
       where: { user: vendor },

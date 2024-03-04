@@ -11,8 +11,6 @@ export type DeleteBrandUseCaseType = (queryParams: {
 export const deleteBrandUseCaseBase =
   (dependencies: { brandRepo: IBrandRepository }) =>
   async (queryParams: { [id: string]: any }) => {
-  console.log("🚀 ~ queryParams:", queryParams)
-
     const brand = await dependencies.brandRepo.findOne({
       where: { id: queryParams.brandId },
     });

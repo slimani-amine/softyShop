@@ -8,7 +8,8 @@ import { ResetPasswordEntity } from "./resetpassword.entity";
 export declare class UserEntity {
     id: number;
     email: string;
-    username: string;
+    firstName: string;
+    lastName: string;
     password: string;
     role: string;
     phoneNumber: string;

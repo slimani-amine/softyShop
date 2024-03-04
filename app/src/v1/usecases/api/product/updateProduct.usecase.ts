@@ -1,33 +1,24 @@
 import {
-  IStoreRepository,
-  storeRepo,
-} from "../../../data/repositories/store.repository";
-import { IStore } from "../../../domain/store/store";
+  IProductRepository,
+  productRepo,
+} from "../../../data/repositories/product.repository";
+import { IProduct } from "../../../domain/product/product";
 
-export type UpdateStoreUseCaseType = (
-  store: IStore,
-  updatePayload: Partial<IStore>
-) => Promise<IStore>;
+export type UpdateProductUseCaseType = (
+  product: IProduct,
+  updatePayload: Partial<IProduct>
+) => Promise<IProduct>;
 
-export const updateStoreUseCaseBase =
-  (storeRepository: IStoreRepository) =>
-  async (store: IStore, updatePayload: Partial<IStore>) => {
-    console.log("🚀 ~ updatePayload:", updatePayload);
-    if (updatePayload.socialMediaLinks) {
-      updatePayload.socialMediaLinks = JSON.stringify(
-        updatePayload.socialMediaLinks
-      );
-    }
-    if (updatePayload.position) {
-      updatePayload.position = JSON.stringify(updatePayload.position);
-    }
+export const updateProductUseCaseBase =
+  (productRepository: IProductRepository) =>
+  async (product: IProduct, updatePayload: Partial<IProduct>) => {
 
-    const updatedStore = await storeRepository.updateStore(
-      store,
+    const updatedProduct = await productRepository.updateProduct(
+      product,
       updatePayload
     );
-    return updatedStore;
+    return updatedProduct;
   };
 
-export const updateStoreUseCase: UpdateStoreUseCaseType =
-  updateStoreUseCaseBase(storeRepo);
+export const updateProductUseCase: UpdateProductUseCaseType =
+  updateProductUseCaseBase(productRepo);

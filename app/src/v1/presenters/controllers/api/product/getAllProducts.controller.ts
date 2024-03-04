@@ -1,17 +1,18 @@
 import {
-  GetAllStoreUseCaseType,
-  getAllStoreUseCase,
-} from '../../../../usecases/api/store/getAllStores.usecase';
+  GetAllProductUseCaseType,
+  getAllProductUseCase,
+} from '../../../../usecases/api/product/getAllProducts.usecase';
 
 import { NextFunction, Request, Response } from 'express';
 
-export const getAllStoresControllerBase =
-  (getAllStoreUseCase: GetAllStoreUseCaseType) =>
+export const getAllProductsControllerBase =
+  (getAllProductUseCase: GetAllProductUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const result = await getAllStoreUseCase(req?.query);
+      
+      const result = await getAllProductUseCase(req?.query);
       res.status(200).send({
-        message: 'success',
+        message: 'Success',
         data: result.docs,
       });
     } catch (err) {
@@ -19,4 +20,4 @@ export const getAllStoresControllerBase =
     }
   };
 
-export const getAllStoresController = getAllStoresControllerBase(getAllStoreUseCase);
+export const getAllProductsController = getAllProductsControllerBase(getAllProductUseCase);

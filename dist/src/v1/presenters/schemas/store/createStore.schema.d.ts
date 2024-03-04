@@ -4,7 +4,7 @@ declare const createStoreSchema: z.ZodObject<{
     storePhone: z.ZodString;
     logo: z.ZodString;
     isPublished: z.ZodOptional<z.ZodBoolean>;
-    position: z.ZodEffects<z.ZodArray<z.ZodNumber, "many">, number[], number[]>;
+    position: z.ZodEffects<z.ZodArray<z.ZodString, "many">, string[], string[]>;
     socialMediaLinks: z.ZodArray<z.ZodString, "many">;
     vendor_id: z.ZodString;
 }, "strip", z.ZodTypeAny, {
@@ -12,7 +12,7 @@ declare const createStoreSchema: z.ZodObject<{
     storePhone?: string;
     logo?: string;
     isPublished?: boolean;
-    position?: number[];
+    position?: string[];
     socialMediaLinks?: string[];
     vendor_id?: string;
 }, {
@@ -20,7 +20,7 @@ declare const createStoreSchema: z.ZodObject<{
     storePhone?: string;
     logo?: string;
     isPublished?: boolean;
-    position?: number[];
+    position?: string[];
     socialMediaLinks?: string[];
     vendor_id?: string;
 }>;

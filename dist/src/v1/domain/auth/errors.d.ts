@@ -14,5 +14,6 @@ export declare const RESET_PASSWORD_UNAUTHORIZED_ERROR_MESSAGE = "Cannot Reset Y
 export declare const RESET_PASSWORD_EXPIRED_ERROR_MESSAGE = "Cannot Reset Your Password, Link Expired.";
 export declare const ACCOUNT_ALREADY_EXISTS_ERROR_MESSAGE = "An Account With The Given Email Already Exists";
 export declare const ACCOUNT_VERIFICATION_ERROR_MESSAGE = "Couldn't verify your account, please use the link sent to your email";
-export declare const USERNAME_TOO_SHORT_ERROR_MESSAGE = "Username must be longer than 4 characters";
+export declare const FirstNAME_TOO_SHORT_ERROR_MESSAGE = "Firstname must be longer than 4 characters";
+export declare const LastAME_TOO_SHORT_ERROR_MESSAGE = "Lastame must be longer than 4 characters";
 export declare const PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE = "Passwords Do Not Match";

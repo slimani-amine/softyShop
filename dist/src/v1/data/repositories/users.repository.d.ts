@@ -1,7 +1,7 @@
-import { DataSource, FindManyOptions, FindOneOptions, QueryRunner } from 'typeorm';
-import { UserEntity, UsersUpdateDataPayload, UsersWherePayload } from '../orm_models/user.entity';
-import { QueryResult } from '../../utils/querying/apiFeatures.util';
-import { ICreateUserInput, IUser } from '../../domain/users/user';
+import { DataSource, FindManyOptions, FindOneOptions, QueryRunner } from "typeorm";
+import { UserEntity, UsersUpdateDataPayload, UsersWherePayload } from "../orm_models/user.entity";
+import { QueryResult } from "../../utils/querying/apiFeatures.util";
+import { ICreateUserInput, IUser } from "../../domain/users/user";
 export declare const usersRepoBase: (dbConnection: DataSource | QueryRunner) => {
     manager: import("typeorm").EntityManager;
     findOne(findData: FindOneOptions<UserEntity>): Promise<IUser>;

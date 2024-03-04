@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BrandEntity = void 0;
 const typeorm_1 = require("typeorm");
 const product_entity_1 = require("./product.entity");
+const store_entity_1 = require("./store.entity");
 let BrandEntity = class BrandEntity {
 };
 exports.BrandEntity = BrandEntity;
@@ -32,10 +33,14 @@ __decorate([
     __metadata("design:type", String)
 ], BrandEntity.prototype, "logo", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => product_entity_1.ProductEntity, (product) => product.brand),
-    (0, typeorm_1.JoinColumn)({ name: "product_id" }),
-    __metadata("design:type", product_entity_1.ProductEntity)
-], BrandEntity.prototype, "product", void 0);
+    (0, typeorm_1.OneToMany)(() => product_entity_1.ProductEntity, (product) => product.brand),
+    __metadata("design:type", Array)
+], BrandEntity.prototype, "products", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => store_entity_1.StoreEntity, (store) => store.brands),
+    (0, typeorm_1.JoinColumn)({ name: "store_id" }),
+    __metadata("design:type", store_entity_1.StoreEntity)
+], BrandEntity.prototype, "store", void 0);
 __decorate([
     (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)

@@ -47,7 +47,7 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     }
 
     const brand = await this.manager.findOne(BrandEntity, {
-      where: { id: payload.brand_id, store },
+      where: { id: payload.brand_id },
     });
 
     if (!brand) {
@@ -55,7 +55,7 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     }
 
     const creator = await this.manager.findOne(ProductCreatorEntity, {
-      where: { id: payload.creator_id, store },
+      where: { id: payload.creator_id },
     });
 
     if (!creator) {
@@ -122,8 +122,16 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       dataSource,
       "products",
       queryParams,
-      {}
+      {
+        id: {
+          operator: "eq",
+        },
+        name: {
+          operator: "like",
+        },
+      }
     );
+
     return {
       docs: this.toDomainProducts(result.docs),
       meta: result.meta,
@@ -166,7 +174,7 @@ export interface IProductRepository {
   createProduct(payload: ICreateProductInput): Promise<IProduct>;
   updateProduct(
     product: IProduct,
-    payload: Partial<ProductEntity>
+    payload: any
   ): Promise<IProduct>;
   deleteProduct(product: IProduct): Promise<number>;
   deleteMany(payload: Array<number>): Promise<number>;

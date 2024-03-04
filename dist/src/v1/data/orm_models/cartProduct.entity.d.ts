@@ -2,7 +2,7 @@ import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../
 import { ProductEntity } from './product.entity';
 import { CartEntity } from './cart.entity';
 export declare class CartProductEntity {
-    id: number;
+    id: string;
     quantity: number;
     product: ProductEntity;
     cart: CartEntity;

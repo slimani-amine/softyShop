@@ -12,7 +12,6 @@ export type UpdateStoreUseCaseType = (
 export const updateStoreUseCaseBase =
   (storeRepository: IStoreRepository) =>
   async (store: IStore, updatePayload: Partial<IStore>) => {
-    console.log("🚀 ~ updatePayload:", updatePayload);
     if (updatePayload.socialMediaLinks) {
       updatePayload.socialMediaLinks = JSON.stringify(
         updatePayload.socialMediaLinks

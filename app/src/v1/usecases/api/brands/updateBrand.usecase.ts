@@ -13,8 +13,6 @@ export type UpdateBrandUseCaseType = (
 export const updateBrandUseCaseBase =
   (brandRepository: IBrandRepository) =>
   async (brand: IBrand, updatePayload: Partial<IBrand>) => {
-    console.log("🚀 ~ updatePayload:", updatePayload);
-
     const updatedBrand = await brandRepository.updateBrand(
       brand,
       updatePayload as any

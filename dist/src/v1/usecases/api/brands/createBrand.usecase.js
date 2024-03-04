@@ -1,17 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createBrandUseCase = exports.validateCreateBrandPayload = exports.createBrandUseCaseBase = void 0;
+const exceptions_1 = require("../../../core/errors/exceptions");
 const validate_schema_1 = require("../../../utils/validation/validate.schema");
 const brand_repository_1 = require("../../../data/repositories/brand.repository");
 const createBrand_schema_1 = require("../../../presenters/schemas/brands/createBrand.schema");
 const createBrandUseCaseBase = (dependencies = {
     brandRepo: brand_repository_1.brandRepo,
 }) => async (payload) => {
+    console.log("🚀 ~ payload:", payload);
+    const brandFound = await dependencies.brandRepo.findAll({
+        where: [{ name: payload.name }],
+    });
+    if (brandFound.length > 0) {
+        exceptions_1.exceptionService.badRequestException({
+            message: "A brand with the given name already exists",
+        });
+    }
     validateCreateBrandPayload(payload);
     const brandCreated = await dependencies.brandRepo.createBrand({
         name: payload.name,
         logo: payload.logo,
-        product_id: payload.product_id,
+        store_id: payload.store_id,
     });
     return {
         brand: brandCreated,

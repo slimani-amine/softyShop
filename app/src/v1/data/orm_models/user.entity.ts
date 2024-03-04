@@ -39,7 +39,12 @@ export class UserEntity {
   @Column({
     type: "varchar",
   })
-  username: string;
+  firstName: string;
+
+  @Column({
+    type: "varchar",
+  })
+  lastName: string;
 
   @Column({
     type: "varchar",

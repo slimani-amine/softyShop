@@ -3,7 +3,7 @@ import { CartProductEntity } from "./cartProduct.entity";
 import { OrderEntity } from "./orders.entity";
 import { PaymentMethodEntity } from "./paymentMethod.entity";
 export declare class CartEntity {
-    id: number;
+    id: string;
     totalQuantity: number;
     totalAmount: number;
     address: string;

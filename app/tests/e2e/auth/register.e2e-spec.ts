@@ -28,7 +28,8 @@ describe("POST /v1/auth/register", () => {
       email: "testemail@gmail.com",
       password: "testpassword123@A",
       verifyPassword: "testpassword123@A",
-      username: "testusername",
+      firstName: "testfirstName",
+      lastName: "testlastName",
       phoneNumber:"56251081",
     });
     expect(res.statusCode).toBe(201);
@@ -38,20 +39,22 @@ describe("POST /v1/auth/register", () => {
       email: "testemail@gmail.com",
       password: "testpassword123@A",
       verifyPassword: "testpassword123@A",
-      username: "testusername1",
+      firstName: "testfirstName1",
+      lastName: "testlastName1",
     });
     expect(res.statusCode).toBe(400);
     expect(res.body.message).toEqual(ACCOUNT_ALREADY_EXISTS_ERROR_MESSAGE);
   });
-  it("should return 400 when username is already used", async () => {
-    const res = await request(testserver).post("/v1/auth/register").send({
-      email: "testemail1@gmail.com",
-      password: "testpassword123@A",
-      verifyPassword: "testpassword123@A",
-      username: "testusername",
-      phoneNumber:"56251081",
-    });
-    expect(res.statusCode).toBe(400);
-    expect(res.body.message).toEqual(ACCOUNT_ALREADY_EXISTS_ERROR_MESSAGE);
-  });
+  // it("should return 400 when username is already used", async () => {
+  //   const res = await request(testserver).post("/v1/auth/register").send({
+  //     email: "testemail1@gmail.com",
+  //     password: "testpassword123@A",
+  //     verifyPassword: "testpassword123@A",
+  //     firstName: "testfirstName",
+  //     lastName: "testlastName",
+  //     phoneNumber:"56251081",
+  //   });
+  //   expect(res.statusCode).toBe(400);
+  //   expect(res.body.message).toEqual(ACCOUNT_ALREADY_EXISTS_ERROR_MESSAGE);
+  // });
 });

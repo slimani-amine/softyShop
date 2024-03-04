@@ -9,7 +9,9 @@ export type CreateUserTokensUseCaseType = (
 export const createUserTokensUseCaseBase =
   (): CreateUserTokensUseCaseType => async (user: IUser) => {
     const accessToken = createUserAccessToken(user);
+    console.log("🚀 ~ accessToken:", accessToken)
     const refreshToken = createUserRefreshToken(user);
+    console.log("🚀 ~ refreshToken:", refreshToken)
     return {
       accessToken: accessToken,
       refreshToken: refreshToken,

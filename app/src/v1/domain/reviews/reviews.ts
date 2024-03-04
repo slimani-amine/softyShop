@@ -1,4 +1,4 @@
-import { IProduct } from "../store/store";
+import { IProduct } from "../product/product";
 import { IIdAsNumber, NumberId } from "../types/idAsNumber";
 import { IUser } from "../users/user";
 

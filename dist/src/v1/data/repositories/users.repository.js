@@ -57,7 +57,8 @@ const usersRepoBase = (dbConnection) => ({
             email: payload.email,
             isVerified: payload.isVerified,
             picture: payload.picture,
-            username: payload.username,
+            firstName: payload.firstName,
+            lastName: payload.lastName,
             password: payload.password,
             role: payload.role,
             phoneNumber: payload.phoneNumber,
@@ -68,18 +69,18 @@ const usersRepoBase = (dbConnection) => ({
         return this.toDomainUser(result);
     },
     async findByQuery(queryParams) {
-        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, 'users', queryParams, {
+        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "users", queryParams, {
             id: {
-                operator: 'eq',
+                operator: "eq",
             },
             email: {
-                operator: 'eq',
+                operator: "eq",
             },
-            'resetPassword.id': {
-                operator: 'injoin',
+            "resetPassword.id": {
+                operator: "injoin",
                 joinTables: {
                     ResetPasswords: {
-                        selectedFields: ['id', 'token'],
+                        selectedFields: ["id", "token"],
                     },
                 },
             },
@@ -102,7 +103,8 @@ const usersRepoBase = (dbConnection) => ({
             email: prismaUser.email,
             isVerified: prismaUser.isVerified,
             picture: prismaUser.picture,
-            username: prismaUser.username,
+            firstName: prismaUser.firstName,
+            lastName: prismaUser.lastName,
             password: prismaUser.password,
             role: prismaUser.role,
             phoneNumber: prismaUser.phoneNumber,

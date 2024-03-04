@@ -1,11 +1,11 @@
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { ProductEntity } from './product.entity';
+import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from "../../../types/repos";
+import { ProductEntity } from "./product.entity";
+import { StoreEntity } from "./store.entity";
 export declare class ProductCreatorEntity {
-    id: number;
+    id: string;
     name: string;
-    nationality: string;
-    dateOfBirth: Date;
-    product: ProductEntity;
+    products: ProductEntity[];
+    store: StoreEntity;
     deletedAt: Date;
     createdAt: Date;
     updatedAt: Date;

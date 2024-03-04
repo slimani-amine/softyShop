@@ -23,7 +23,6 @@ export const createBrandUseCaseBase =
     }
   ): createBrandUseCaseType =>
   async (payload: ICreateBrandInput) => {
-    console.log("🚀 ~ payload:", payload)
     const brandFound = await dependencies.brandRepo.findAll({
       where: [{ name: payload.name }],
     });

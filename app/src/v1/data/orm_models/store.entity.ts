@@ -34,7 +34,6 @@ export class StoreEntity {
 
   @Column({
     type: "varchar",
-    unique: true,
   })
   storePhone: string;
 

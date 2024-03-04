@@ -7,9 +7,8 @@ export declare const brandRepoBase: (dbConnection: DataSource | QueryRunner) => 
     findOne(findData: FindOneOptions<BrandEntity>): Promise<IBrand>;
     findAll(findData: FindManyOptions<BrandEntity>): Promise<IBrand[]>;
     createBrand(payload: ICreateBrandInput): Promise<IBrand>;
-    getProductBrands(queryParams: {
+    getStoreBrands(queryParams: {
         storeId: string;
-        productId: string;
     }): Promise<BrandEntity[]>;
     updateBrand(brand: IBrand, payload: Partial<BrandEntity>): Promise<IBrand>;
     updateMany(updatePayload: {
@@ -29,9 +28,8 @@ export declare const brandRepo: {
     findOne(findData: FindOneOptions<BrandEntity>): Promise<IBrand>;
     findAll(findData: FindManyOptions<BrandEntity>): Promise<IBrand[]>;
     createBrand(payload: ICreateBrandInput): Promise<IBrand>;
-    getProductBrands(queryParams: {
+    getStoreBrands(queryParams: {
         storeId: string;
-        productId: string;
     }): Promise<BrandEntity[]>;
     updateBrand(brand: IBrand, payload: Partial<BrandEntity>): Promise<IBrand>;
     updateMany(updatePayload: {
@@ -52,9 +50,8 @@ export interface IBrandRepository {
     findByQuery(queryParams: {
         [key: string]: string;
     }): Promise<QueryResult<IBrand>>;
-    getProductBrands(queryParams: {
+    getStoreBrands(queryParams: {
         storeId: string;
-        productId: string;
     }): Promise<BrandEntity[]>;
     createBrand(payload: ICreateBrandInput): Promise<IBrand>;
     updateBrand(brand: IBrand, payload: Partial<BrandEntity>): Promise<IBrand>;

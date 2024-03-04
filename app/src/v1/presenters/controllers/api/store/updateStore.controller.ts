@@ -12,9 +12,7 @@ export const updateStoreControllerBase =
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const storeId = req.params.id;
-      console.log("🚀 ~ storeId:", storeId);
       const store = await storeRepo.findOne({ where: { id: storeId } });
-      console.log("🚀 ~ store:", store);
 
       if (!store) {
         exceptionService.badRequestException({

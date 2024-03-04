@@ -5,13 +5,26 @@ tags:
   - name: Auth
     description: Auth Flow
 
+  - name: Verification
+    description: Account Verification
+
   - name: Category
     description: Category Cruds
 
-  - name: Project
-    description: Project Cruds
+  - name: Store
+    description: Store Cruds
 
-  - name: Element
-    description: Element Cruds
-  - name: Verification
-    description: Account Verification
+  - name: Payment methods
+    description: Payment methods Cruds
+
+  - name: User addresses
+    description: User addresses Cruds
+
+  - name: Products
+    description: Products Cruds
+
+  - name: Product creators
+    description: Products creators Cruds
+
+  - name: Brands
+    description: Brands Cruds

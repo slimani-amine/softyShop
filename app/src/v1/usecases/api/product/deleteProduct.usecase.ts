@@ -1,31 +1,38 @@
+import { storeRepo } from "../../../data/repositories/store.repository";
 import { exceptionService } from "../../../core/errors/exceptions";
 import {
-  IStoreRepository,
-  storeRepo,
-} from "../../../data/repositories/store.repository";
+  IProductRepository,
+  productRepo,
+} from "../../../data/repositories/product.repository";
 
-export type DeleteStoreUseCaseType = (queryParams: {
+export type DeleteProductUseCaseType = (queryParams: {
   [id: string]: any;
 }) => Promise<number>;
 
-export const deleteStoreUseCaseBase =
-  (dependencies: { storeRepo: IStoreRepository }) =>
+export const deleteProductUseCaseBase =
+  (dependencies: { productRepo: IProductRepository }) =>
   async (queryParams: { [id: string]: any }) => {
-    const store = await dependencies.storeRepo.findOne({
-      where: { id: queryParams.id },
-    });
-
+    const store = await storeRepo.findOne({ where: { id: queryParams.id } });
     if (!store) {
       exceptionService.notFoundException({
-        message: "Store not found",
+        message: "store not found",
+      });
+    }
+    const product = await dependencies.productRepo.findOne({
+      where: { id: queryParams.productId },
+    });
+
+    if (!product) {
+      exceptionService.notFoundException({
+        message: "product not found",
       });
     }
 
-    const storesFound = await dependencies.storeRepo.deleteStore(store);
+    const productFound = await dependencies.productRepo.deleteProduct(product);
 
-    return storesFound;
+    return productFound;
   };
 
-export const deleteStoreUseCase = deleteStoreUseCaseBase({
-  storeRepo: storeRepo,
+export const deleteProductUseCase = deleteProductUseCaseBase({
+  productRepo: productRepo,
 });

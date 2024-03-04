@@ -12,7 +12,6 @@ const isAuthentictedMiddleware = (req, res, next) => {
             req.headers.authorization.startsWith('Bearer')) {
             accessToken = req.headers.authorization.split(' ')[1];
         }
-        console.log(accessToken);
         if (!accessToken) {
             exceptions_1.exceptionService.unauthorizedException({
                 message: errors_1.LOGIN_REQUIRED_ERROR_MESSAGE,
@@ -37,7 +36,6 @@ const isAuthentictedMiddlewareNoVerificationNeeded = (req, res, next) => {
             req.headers.authorization.startsWith('Bearer')) {
             token = req.headers.authorization.split(' ')[1];
         }
-        console.log(token);
         const accessToken = req.cookies[config_1.TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME] || "";
         if (!accessToken) {
             exceptions_1.exceptionService.unauthorizedException({
@@ -47,7 +45,6 @@ const isAuthentictedMiddlewareNoVerificationNeeded = (req, res, next) => {
         const accessTokenPayload = jwtService.verify(accessToken, config_1.JWT_KEYS.PUBLIC_KEY, {
             algorithms: ["RS256"],
         });
-        console.log("🚀 ~ accessTokenPayload:", accessTokenPayload);
         (0, exports.validateAccessToken)(accessTokenPayload);
         req.user = accessTokenPayload.user;
         next();

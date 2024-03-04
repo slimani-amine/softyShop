@@ -16,7 +16,7 @@ const createStoreSchema = z.object({
     message: "Le logo du boutique est obligatoire",
   }),
   isPublished: z.boolean().optional(),
-  position: z.array(z.number()).refine((data) => data.length === 2, {
+  position: z.array(z.string()).refine((data) => data.length === 3, {
     message:
       "La position du boutique est obligatoire et doit contenir exactement deux nombres",
   }),
