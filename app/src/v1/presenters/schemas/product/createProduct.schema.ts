@@ -15,7 +15,9 @@ const createProductSchema = z.object({
   brand_id: z.string().min(1, {
     message: "The brand of the product is required",
   }),
-  creators: z.array(z.string()),
+  creator_id: z.string().min(1, {
+    message: "The creator of the product is required",
+  }),
 });
 
 export default createProductSchema;

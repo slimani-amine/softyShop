@@ -1030,3 +1030,10 @@
 {"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
 {"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
 {"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"1\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"username\":\"admin\",\"password\":\"$2a$10$UscXVxTJEKI.HAHhDTDGm.Kd6LmLlF/N1tGUGuDrpIKIdnw7cUZ4.\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 185ms"}

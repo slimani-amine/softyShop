@@ -89,7 +89,7 @@ export function getStoresApiRouter(
     .route("/:id/product")
     .post(restrictToMiddleware("vendor", "admin"), controllers.createProduct); // get all product / post a product (only for vendor)
 
-  router.route("/:id/product/:id"); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
+  router.route("/:id/product/:profuctId"); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
 
   router.use(restrictToMiddleware("admin", "vendor"));
 

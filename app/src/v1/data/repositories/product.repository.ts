@@ -19,6 +19,10 @@ import {
   ApiFeatures,
   QueryResult,
 } from "../../utils/querying/apiFeatures.util";
+import { BrandEntity } from "../orm_models/productBrand.entity";
+import { ProductCreatorEntity } from "../orm_models/productCreator.entity";
+import { CategoryEntity } from "../orm_models/category.entity";
+import { StoreEntity } from "../orm_models/store.entity";
 
 export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   manager: dbConnection.manager,
@@ -34,6 +38,38 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   },
 
   async createProduct(payload: ICreateProductInput): Promise<IProduct> {
+    const store = await this.manager.findOne(StoreEntity, {
+      where: { id: payload.store_id },
+    });
+
+    if (!store) {
+      throw new Error("store not found");
+    }
+
+    const brand = await this.manager.findOne(BrandEntity, {
+      where: { id: payload.brand_id, store },
+    });
+
+    if (!brand) {
+      throw new Error("brand not found");
+    }
+
+    const creator = await this.manager.findOne(ProductCreatorEntity, {
+      where: { id: payload.creator_id, store },
+    });
+
+    if (!creator) {
+      throw new Error("creator not found");
+    }
+
+    const category = await this.manager.findOne(CategoryEntity, {
+      where: { id: payload.category_id },
+    });
+
+    if (!category) {
+      throw new Error("category not found");
+    }
+
     const product = this.manager.create(ProductEntity, {
       name: payload.name,
       price: payload.price,
@@ -41,8 +77,10 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       publishedAt: payload.publishedAt,
       availability: payload.availability,
       isPublished: payload.isPublished,
-      creators: payload.creatorIds,
-      brands: payload.brand_id,
+      creator: creator,
+      brand: brand,
+      store: store,
+      category: category,
       reviews: payload.reviewIds,
     } as DeepPartial<ProductEntity>);
 

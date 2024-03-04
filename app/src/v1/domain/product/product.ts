@@ -16,8 +16,8 @@ export interface IProduct extends IIdAsNumber {
   availability: boolean;
   isPublished: boolean;
   isAccepted: boolean;
-  creators?: IProductCreator[];
-  brands?: IBrand[];
+  creator?: IProductCreator;
+  brand?: IBrand;
   reviews?: IReview[];
   wishlist?: IWishlist[];
   cartProducts?: ICartProduct[];
@@ -34,8 +34,8 @@ export class Product extends NumberId implements IProduct {
   availability: boolean;
   isPublished: boolean;
   isAccepted: boolean;
-  creators?: IProductCreator[];
-  brands?: IBrand[];
+  creator?: IProductCreator;
+  brand?: IBrand;
   reviews?: IReview[];
   wishlist?: IWishlist[];
   cartProducts?: ICartProduct[];
@@ -51,8 +51,8 @@ export class Product extends NumberId implements IProduct {
     availability: boolean;
     isPublished: boolean;
     isAccepted: boolean;
-    creators?: IProductCreator[];
-    brands?: IBrand[];
+    creator?: IProductCreator;
+    brand?: IBrand;
     reviews?: IReview[];
     wishlist?: IWishlist[];
     cartProducts?: ICartProduct[];
@@ -67,8 +67,8 @@ export class Product extends NumberId implements IProduct {
     this.availability = payload.availability;
     this.isPublished = payload.isPublished;
     this.isAccepted = payload.isAccepted;
-    this.creators = payload.creators || [];
-    this.brands = payload.brands || [];
+    this.creator = payload.creator;
+    this.brand = payload.brand;
     this.reviews = payload.reviews || [];
     this.wishlist = payload.wishlist || [];
     this.cartProducts = payload.cartProducts || [];
@@ -85,11 +85,11 @@ export interface ICreateProductInput {
   availability: boolean;
   isPublished: boolean;
   isAccepted: boolean;
-  creatorIds?: string[];
+  creator_id?: string;
   brand_id?: string;
   reviewIds?: string[];
   wishlistIds?: string[];
   cartProductIds?: string[];
-  storeId?: string;
-  categoryId?: string;
+  store_id?: string;
+  category_id?: string;
 }

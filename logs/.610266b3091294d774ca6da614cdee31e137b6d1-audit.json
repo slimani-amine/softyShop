@@ -34,6 +34,21 @@
             "date": 1709276745669,
             "name": "logs/debug-2024-03-01.log",
             "hash": "b7f2571f171b2db7c98da230590293e44c88b8983883d59589a47d06bbd3734a"
+        },
+        {
+            "date": 1709308127175,
+            "name": "logs\\debug-2024-03-01.log",
+            "hash": "7dd18f8999e86462846284cc7c5b0940d7061d0c8baac97110285cd9d6ec0f92"
+        },
+        {
+            "date": 1709378212861,
+            "name": "logs\\debug-2024-03-02.log",
+            "hash": "8464611211ced6e6db019eda011622e152ed9e687cfa7779d58cb10664beb681"
+        },
+        {
+            "date": 1709458546854,
+            "name": "logs\\debug-2024-03-03.log",
+            "hash": "a2066077d143ba0324287988d055f1de3445b7ecd40d53bc4dbc727ec6f12006"
         }
     ],
     "hashType": "sha256"

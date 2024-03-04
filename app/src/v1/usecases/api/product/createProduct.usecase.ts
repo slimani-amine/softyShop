@@ -29,9 +29,10 @@ export const createProductUseCaseBase =
       availability: payload.availability,
       isPublished: payload.isPublished,
       isAccepted: payload.isAccepted,
-      creatorIds: payload.creatorIds,
+      creator_id: payload.creator_id,
       brand_id: payload.brand_id,
-      storeId: payload.storeId,
+      category_id: payload.category_id,
+      store_id: payload.store_id,
     });
 
     return {

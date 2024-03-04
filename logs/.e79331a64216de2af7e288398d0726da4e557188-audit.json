@@ -34,6 +34,21 @@
             "date": 1709276745669,
             "name": "logs/verbose-2024-03-01.log",
             "hash": "e9f72558210bd1db81dc2daba9a478dd1a6496bfd9853157c8f7a4571075e296"
+        },
+        {
+            "date": 1709308127177,
+            "name": "logs\\verbose-2024-03-01.log",
+            "hash": "79a119821fc2639cc1556aa0fa6c51339c1d8acc4d9db01e279faa03a345f255"
+        },
+        {
+            "date": 1709378212863,
+            "name": "logs\\verbose-2024-03-02.log",
+            "hash": "2de8819b080fd3f6bcbdd3febc8f985d682a8856c0479931ddf56bfb35c5e571"
+        },
+        {
+            "date": 1709458546856,
+            "name": "logs\\verbose-2024-03-03.log",
+            "hash": "512cfb398b7c5a1c90b9cbedbf0278186baf7fdfbe19a60f3d8839db33699b0b"
         }
     ],
     "hashType": "sha256"
