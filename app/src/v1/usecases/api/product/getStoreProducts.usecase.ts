@@ -21,6 +21,7 @@ export const getStoreProductUseCaseBase =
         message: "store not found",
       });
     }
+    console.log("🚀 ~ store:", store);
     const productsFound = await dependencies.productRepo.findAll({
       where: { store: store },
       // select: {
@@ -36,7 +37,7 @@ export const getStoreProductUseCaseBase =
       //   store: true,
       //   review: true,
       // },
-      cache: true
+      cache: true,
     });
 
     return productsFound;

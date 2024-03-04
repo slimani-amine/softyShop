@@ -23,7 +23,7 @@ export class WishlistEntity {
   @JoinColumn({ name: 'user_id' })
   user: UserEntity;
 
-  @ManyToOne(() => ProductEntity, (product) => product.review)
+  @ManyToOne(() => ProductEntity, (product) => product.reviews)
   @JoinColumn({ name: 'product_id' })
   product: ProductEntity;
 

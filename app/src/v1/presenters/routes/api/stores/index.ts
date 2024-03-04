@@ -92,26 +92,27 @@ export function getStoresApiRouter(
     .route("/my-stores")
     .get(restrictToMiddleware("vendor", "admin"), controllers.getVendorStores); // get vendor stores (only for admin or vendors)
 
-  router.use(restrictToMiddleware("admin", "vendor"));
-
-
-  router
+    
+    
+    router
     .route("/:id")
     .delete(controllers.deleteStore) // delete a store
     .get(controllers.getOneStore) // get one store
     .patch(controllers.updateStore); // update a store
-
-  router
+    
+    router
     .route("/:id/product")
     .post(restrictToMiddleware("vendor", "admin"), controllers.createProduct)
     .get(myStoreMiddleware,controllers.getStoreProduct); // get all product / post a product (only for vendor)
 
-  router
+    router
     .route("/:id/product/:productId")
     .delete(restrictToMiddleware("vendor"), controllers.deleteProduct)
     .get(controllers.getOneProduct)
-    .patch(controllers.updateProduct); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
-
+    .patch(restrictToMiddleware("admin", "vendor","user"),controllers.updateProduct); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
+    
+    router.use(restrictToMiddleware("admin", "vendor"));
+    
   router
     .route("/:id/brand")
     .post(controllers.createBrand) // post brand (only for admin or vendor)

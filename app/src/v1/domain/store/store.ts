@@ -28,7 +28,6 @@ export class Store extends NumberId implements IStore {
     storeName: string;
     storePhone: string;
     logo: string;
-
     isPublished: boolean;
     position: string;
     socialMediaLinks: string;

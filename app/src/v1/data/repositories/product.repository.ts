@@ -81,7 +81,6 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       brand: brand,
       store: store,
       category: category,
-      reviews: payload.reviewIds,
     } as DeepPartial<ProductEntity>);
 
     const result = await this.manager.save(ProductEntity, product);

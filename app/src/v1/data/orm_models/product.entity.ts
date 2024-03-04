@@ -69,7 +69,7 @@ export class ProductEntity {
   isAccepted: boolean;
 
   @OneToMany(() => ReviewsEntity, (review) => review.product)
-  review: ReviewsEntity[];
+  reviews: ReviewsEntity[];
 
   @OneToMany(() => WishlistEntity, (wishlist) => wishlist.product)
   wishlist: WishlistEntity[];
