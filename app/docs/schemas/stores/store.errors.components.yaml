@@ -1,0 +1,32 @@
+components:
+  schemas:
+    StoreEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                storeName:
+                  type: string
+                storePhone:
+                  type: string
+                logo:
+                  type: string
+                isPublished:
+                  type: string
+                position:
+                  type: string
+                socialMediaLinks:
+                  type: string
+                user:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string

@@ -1,4 +1,4 @@
-import { IProduct } from "app/src/v1/domain/product/product";
+import { IProduct } from "../../../domain/product/product";
 import { IProductRepository, productRepo } from "../../../data/repositories/product.repository";
 export type GetOneProductUseCaseType = (queryParams: {
     [id: string]: any;

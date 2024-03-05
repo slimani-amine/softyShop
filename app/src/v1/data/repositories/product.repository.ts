@@ -23,6 +23,7 @@ import { BrandEntity } from "../orm_models/productBrand.entity";
 import { ProductCreatorEntity } from "../orm_models/productCreator.entity";
 import { CategoryEntity } from "../orm_models/category.entity";
 import { StoreEntity } from "../orm_models/store.entity";
+import { exceptionService } from "../../core/errors/exceptions";
 
 export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   manager: dbConnection.manager,
@@ -43,7 +44,9 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     });
 
     if (!store) {
-      throw new Error("store not found");
+      exceptionService.notFoundException({
+        message: "store not found",
+      });
     }
 
     const brand = await this.manager.findOne(BrandEntity, {
@@ -51,7 +54,9 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     });
 
     if (!brand) {
-      throw new Error("brand not found");
+      exceptionService.notFoundException({
+        message: "brand not found",
+      });
     }
 
     const creator = await this.manager.findOne(ProductCreatorEntity, {
@@ -59,7 +64,9 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     });
 
     if (!creator) {
-      throw new Error("creator not found");
+      exceptionService.notFoundException({
+        message: "creator not found",
+      });
     }
 
     const category = await this.manager.findOne(CategoryEntity, {
@@ -67,7 +74,9 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     });
 
     if (!category) {
-      throw new Error("category not found");
+      exceptionService.notFoundException({
+        message: "category not found",
+      });
     }
 
     const product = this.manager.create(ProductEntity, {

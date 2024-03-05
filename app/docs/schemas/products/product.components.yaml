@@ -1,0 +1,35 @@
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - name
+        - price
+        - stockNumber
+        - isPublished
+        - brand_id
+        - creator_id
+      properties:
+        name:
+          type: string
+          minLength: 1
+          description: The name of the product is required
+        price:
+          type: number
+          minimum: 0
+          description: The price of the product should be greater than or equal to 0
+        stockNumber:
+          type: number
+          minimum: 0
+          description: The stock number of the product should be greater than or equal to 0
+        isPublished:
+          type: boolean
+          description: Whether the product is published or not
+        brand_id:
+          type: string
+          minLength: 1
+          description: The brand of the product is required
+        creator_id:
+          type: string
+          minLength: 1
+          description: The creator of the product is required

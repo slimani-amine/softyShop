@@ -27,7 +27,9 @@ const registerSchema = zod_1.z
     lastName: zod_1.z.string().min(4, {
         message: errors_1.LAST_NAME_TOO_SHORT_ERROR_MESSAGE,
     }),
-    role: zod_1.z.enum(["admin", "vendor", "user"]),
+    role: zod_1.z.enum(["admin", "vendor", "user"], {
+        errorMap: (issue, ctx) => ({ message: "role should be admin/vendor or user " }),
+    }),
     phoneNumber: zod_1.z.string(),
 })
     .strict(`${errors_common_1.ZodValidationMessageCommon.FIELDS_UNEXPECTED_MESSAGE}`)

@@ -1,10 +1,10 @@
-import { IProduct } from "../../../domain/Product/Product";
 import {
   IProductRepository,
   productRepo,
 } from "../../../data/repositories/Product.repository";
 import { storeRepo } from "../../../data/repositories/store.repository";
 import { exceptionService } from "../../../core/errors/exceptions";
+import { IProduct } from "app/src/v1/domain/product/product";
 
 export type GetStoreProductUseCaseType = (queryParams: {
   storeId: string;

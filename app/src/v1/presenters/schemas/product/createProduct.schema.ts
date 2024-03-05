@@ -1,18 +1,23 @@
 import { z } from "zod";
 
-const createReviewSchema = z.object({
-  review: z.string().min(1, {
-    message: "The review content is required",
+const createProductSchema = z.object({
+  name: z.string().min(1, {
+    message: "The name of the product is required",
   }),
-  rating: z.number().min(0).max(5, {
-    message: "The rating should be between 0 and 5",
+  price: z.number().min(0, {
+    message: "The price of the product should be greater than or equal to 0",
   }),
-  userId: z.string().min(1, {
-    message: "The user ID is required",
+  stockNumber: z.number().min(0, {
+    message:
+      "The stock number of the product should be greater than or equal to 0",
   }),
-  productId: z.string().min(1, {
-    message: "The product ID is required",
+  isPublished: z.boolean().optional(),
+  brand_id: z.string().min(1, {
+    message: "The brand of the product is required",
+  }),
+  creator_id: z.string().min(1, {
+    message: "The creator of the product is required",
   }),
 });
 
-export default createReviewSchema;
+export default createProductSchema;

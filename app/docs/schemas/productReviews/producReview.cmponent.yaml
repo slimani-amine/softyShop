@@ -1,0 +1,26 @@
+components:
+  schemas:
+    ProductReview:
+      type: object
+      required:
+        - rating
+        - comment
+        - user_id
+        - product_id
+      properties:
+        rating:
+          type: number
+          minimum: 1
+          maximum: 5
+          description: The rating of the product review (between 1 and 5)
+        comment:
+          type: string
+          description: The comment of the product review
+        user_id:
+          type: string
+          minLength: 1
+          description: The user ID who created the review
+        product_id:
+          type: string
+          minLength: 1
+          description: The product ID for which the review is created

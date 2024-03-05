@@ -1,0 +1,20 @@
+components:
+  schemas:
+    ProductReviewValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                rating:
+                  type: string
+                comment:
+                  type: string
+                user_id:
+                  type: string
+                product_id:
+                  type: string

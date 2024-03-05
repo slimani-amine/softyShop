@@ -18,6 +18,7 @@ import {
 } from "../../utils/querying/apiFeatures.util";
 import { UserEntity } from "../orm_models/user.entity";
 import { ProductEntity } from "../orm_models/product.entity";
+import { exceptionService } from "../../core/errors/exceptions";
 
 export const reviewRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   manager: dbConnection.manager,
@@ -40,7 +41,9 @@ export const reviewRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     });
 
     if (!user) {
-      throw new Error("User not found");
+      exceptionService.notFoundException({
+        message: "User not found",
+      });
     }
 
     const product = await this.manager.findOne(ProductEntity, {
@@ -48,7 +51,9 @@ export const reviewRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     });
 
     if (!product) {
-      throw new Error("Product not found");
+      exceptionService.notFoundException({
+        message: "Product not found",
+      });
     }
 
     const review = this.manager.create(ReviewsEntity, {

@@ -7,6 +7,7 @@ const connection_1 = require("../connection");
 const apiFeatures_util_1 = require("../../utils/querying/apiFeatures.util");
 const user_entity_1 = require("../orm_models/user.entity");
 const product_entity_1 = require("../orm_models/product.entity");
+const exceptions_1 = require("../../core/errors/exceptions");
 const reviewRepoBase = (dbConnection) => ({
     manager: dbConnection.manager,
     async findOne(findData) {
@@ -24,13 +25,17 @@ const reviewRepoBase = (dbConnection) => ({
             where: { id: parseInt(payload.userId, 10) },
         });
         if (!user) {
-            throw new Error("User not found");
+            exceptions_1.exceptionService.notFoundException({
+                message: "User not found",
+            });
         }
         const product = await this.manager.findOne(product_entity_1.ProductEntity, {
             where: { id: payload.productId },
         });
         if (!product) {
-            throw new Error("Product not found");
+            exceptions_1.exceptionService.notFoundException({
+                message: "Product not found",
+            });
         }
         const review = this.manager.create(reviews_entity_1.ReviewsEntity, {
             review: payload.review,

@@ -9,6 +9,7 @@ const productBrand_entity_1 = require("../orm_models/productBrand.entity");
 const productCreator_entity_1 = require("../orm_models/productCreator.entity");
 const category_entity_1 = require("../orm_models/category.entity");
 const store_entity_1 = require("../orm_models/store.entity");
+const exceptions_1 = require("../../core/errors/exceptions");
 const productRepoBase = (dbConnection) => ({
     manager: dbConnection.manager,
     async findOne(findData) {
@@ -24,25 +25,33 @@ const productRepoBase = (dbConnection) => ({
             where: { id: payload.store_id },
         });
         if (!store) {
-            throw new Error("store not found");
+            exceptions_1.exceptionService.notFoundException({
+                message: "store not found",
+            });
         }
         const brand = await this.manager.findOne(productBrand_entity_1.BrandEntity, {
             where: { id: payload.brand_id },
         });
         if (!brand) {
-            throw new Error("brand not found");
+            exceptions_1.exceptionService.notFoundException({
+                message: "brand not found",
+            });
         }
         const creator = await this.manager.findOne(productCreator_entity_1.ProductCreatorEntity, {
             where: { id: payload.creator_id },
         });
         if (!creator) {
-            throw new Error("creator not found");
+            exceptions_1.exceptionService.notFoundException({
+                message: "creator not found",
+            });
         }
         const category = await this.manager.findOne(category_entity_1.CategoryEntity, {
             where: { id: payload.category_id },
         });
         if (!category) {
-            throw new Error("category not found");
+            exceptions_1.exceptionService.notFoundException({
+                message: "category not found",
+            });
         }
         const product = this.manager.create(product_entity_1.ProductEntity, {
             name: payload.name,

@@ -27,6 +27,8 @@ const getOneProducts_controller_1 = require("../../../controllers/api/product/ge
 const getAllProducts_controller_1 = require("../../../controllers/api/product/getAllProducts.controller");
 const updateProduct_controller_1 = require("../../../controllers/api/product/updateProduct.controller");
 const myStore_middleware_1 = require("../../../middlewares/controllers/myStore.middleware");
+const multerUpload_middleware_1 = require("../../../middlewares/uploads/multerUpload.middleware");
+const transferFilePathToBody_middleware_1 = require("../../../middlewares/uploads/transferFilePathToBody.middleware");
 const router = express.Router();
 const defaults = {
     createStore: createStore_controller_1.createStoreController,
@@ -55,41 +57,40 @@ function getStoresApiRouter(controllers = defaults) {
     router
         .route("/")
         .get((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "user"), controllers.getStore)
-        .post((0, validateSchema_middleware_1.validateSchemaMiddleware)(createStore_schema_1.default, validateSchema_middleware_1.VALIDATION_PATHS.BODY), (0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"), controllers.createStore);
+        .post((0, validateSchema_middleware_1.validateSchemaMiddleware)(createStore_schema_1.default, validateSchema_middleware_1.VALIDATION_PATHS.BODY), (0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"), multerUpload_middleware_1.multerImageUpload.single("picture"), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)("picture", transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), controllers.createStore);
     router
         .route("/my-stores")
         .get((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), controllers.getVendorStores);
     router
         .route("/:id")
-        .delete(controllers.deleteStore)
+        .delete((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "user"), controllers.deleteStore)
         .get(controllers.getOneStore)
-        .patch(controllers.updateStore);
+        .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "user"), controllers.updateStore);
     router
         .route("/:id/product")
-        .post((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), controllers.createProduct)
+        .post((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), multerUpload_middleware_1.multerImageUpload.single("picture"), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)("picture", transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), myStore_middleware_1.myStoreMiddleware, controllers.createProduct)
         .get(myStore_middleware_1.myStoreMiddleware, controllers.getStoreProduct);
     router
         .route("/:id/product/:productId")
-        .delete((0, restrictTo_middleware_1.restrictToMiddleware)("vendor"), controllers.deleteProduct)
+        .delete((0, restrictTo_middleware_1.restrictToMiddleware)("vendor"), myStore_middleware_1.myStoreMiddleware, controllers.deleteProduct)
         .get(controllers.getOneProduct)
-        .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor", "user"), controllers.updateProduct);
-    router.use((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"));
+        .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"), myStore_middleware_1.myStoreMiddleware, controllers.updateProduct);
     router
         .route("/:id/brand")
-        .post(controllers.createBrand)
+        .post((0, restrictTo_middleware_1.restrictToMiddleware)("vendor"), multerUpload_middleware_1.multerImageUpload.single("picture"), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)("picture", transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), controllers.createBrand)
         .get(controllers.getStoreBrands);
     router
         .route("/:id/brand/:brandId")
-        .delete(controllers.deleteBrand)
-        .patch(controllers.updateBrand);
+        .delete((0, restrictTo_middleware_1.restrictToMiddleware)("vendor"), controllers.deleteBrand)
+        .patch((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), controllers.updateBrand);
     router
         .route("/:id/productCreator")
-        .post(controllers.createProductCreator)
+        .post((0, restrictTo_middleware_1.restrictToMiddleware)("vendor"), controllers.createProductCreator)
         .get(controllers.getStoreProductCreators);
     router
         .route("/:id/productCreator/:productCreatorId")
-        .delete(controllers.deleteProductCreator)
-        .patch(controllers.updateProductCreator);
+        .delete((0, restrictTo_middleware_1.restrictToMiddleware)("vendor"), controllers.deleteProductCreator)
+        .patch((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), controllers.updateProductCreator);
     return router;
 }
 exports.getStoresApiRouter = getStoresApiRouter;

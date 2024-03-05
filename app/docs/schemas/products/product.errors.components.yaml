@@ -1,0 +1,24 @@
+components:
+  schemas:
+    ProductValidationError:
+      allOf:
+        - $ref: "#/components/schemas/ValidationErrorBase"
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: string
+                stockNumber:
+                  type: string
+                isPublished:
+                  type: string
+                brand_id:
+                  type: string
+                creator_id:
+                  type: string

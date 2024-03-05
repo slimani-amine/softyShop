@@ -6,6 +6,7 @@ const store_1 = require("../../domain/store/store");
 const connection_1 = require("../connection");
 const apiFeatures_util_1 = require("../../utils/querying/apiFeatures.util");
 const user_entity_1 = require("../orm_models/user.entity");
+const exceptions_1 = require("../../core/errors/exceptions");
 const storeRepoBase = (dbConnection) => ({
     manager: dbConnection.manager,
     async findOne(findData) {
@@ -25,7 +26,9 @@ const storeRepoBase = (dbConnection) => ({
             where: { id: parseInt(payload.vendor_id, 10) },
         });
         if (!vendor) {
-            throw new Error("Vendor not found");
+            exceptions_1.exceptionService.notFoundException({
+                message: "Vendor not found",
+            });
         }
         const store = this.manager.create(store_entity_1.StoreEntity, {
             storeName: payload.storeName,

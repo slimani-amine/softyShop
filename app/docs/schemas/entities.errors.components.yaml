@@ -1,0 +1,289 @@
+components:
+  schemas:
+    StoreEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                storeName:
+                  type: string
+                storePhone:
+                  type: string
+                logo:
+                  type: string
+                isPublished:
+                  type: string
+                position:
+                  type: string
+                socialMediaLinks:
+                  type: string
+                user:
+                  $ref: '#/components/schemas/UserEntity'
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    ProductEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                productName:
+                  type: string
+                description:
+                  type: string
+                price:
+                  type: string
+                stockQuantity:
+                  type: string
+                isPublished:
+                  type: string
+                store:
+                  $ref: '#/components/schemas/StoreEntity'
+                brand:
+                  $ref: '#/components/schemas/BrandEntity'
+                productCreator:
+                  $ref: '#/components/schemas/ProductCreatorEntity'
+                reviews:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    BrandEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                brandName:
+                  type: string
+                description:
+                  type: string
+                store:
+                  $ref: '#/components/schemas/StoreEntity'
+                products:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    ProductCreatorEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                creatorName:
+                  type: string
+                description:
+                  type: string
+                store:
+                  $ref: '#/components/schemas/StoreEntity'
+                products:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    ReviewsEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                rating:
+                  type: string
+                comment:
+                  type: string
+                user:
+                  $ref: '#/components/schemas/UserEntity'
+                product:
+                  $ref: '#/components/schemas/ProductEntity'
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    UserEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                email:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+                phoneNumber:
+                  type: string
+                confirmation_token:
+                  type: string
+                picture:
+                  type: string
+                confirmed_email:
+                  type: string
+                isVerified:
+                  type: string
+                resetPasswords:
+                  type: string
+                addresses:
+                  type: string
+                store:
+                  type: string
+                reviews:
+                  type: string
+                wishlist:
+                  type: string
+                cart:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    ResetPasswordEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                token:
+                  type: string
+                expiresAt:
+                  type: string
+                used:
+                  type: string
+                user:
+                  $ref: '#/components/schemas/UserEntity'
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    AddressesEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                addressLine1:
+                  type: string
+                addressLine2:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                country:
+                  type: string
+                postalCode:
+                  type: string
+                user:
+                  $ref: '#/components/schemas/UserEntity'
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    WishlistEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/UserEntity'
+                products:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string
+
+    CartEntityValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                user:
+                  $ref: '#/components/schemas/UserEntity'
+                products:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string

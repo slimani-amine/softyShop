@@ -8,6 +8,7 @@ components:
         - firstName
         - lastName
         - picture
+        - role
       properties:
         email:
           type: string
@@ -20,6 +21,13 @@ components:
         picture:
           type: string
           description: profile picture link
+        role:
+          type: string
+          enum:
+            - admin
+            - user
+            - vendor
+        
     UserLogin:
       type: object
       required:
@@ -41,6 +49,7 @@ components:
         - email
         - password
         - verifyPassword
+        - role
       properties:
         firstName:
           type: string
@@ -57,7 +66,13 @@ components:
         picture:
           type: file
           description: profile picture
-
+        role:
+          type: string
+          enum:
+            - admin
+            - user
+            - vendor
+        
     UpdateUser:
       type: object
       properties:
@@ -73,6 +88,12 @@ components:
         picture:
           type: file
           description: profile picture
+        role:
+          type: string
+          enum:
+            - admin
+            - user
+            - vendor
 
     UpdateUserPassword:
       type: object

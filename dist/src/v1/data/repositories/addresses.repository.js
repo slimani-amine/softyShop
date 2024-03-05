@@ -6,6 +6,7 @@ const addresses_1 = require("../../domain/addresses/addresses");
 const connection_1 = require("../connection");
 const apiFeatures_util_1 = require("../../utils/querying/apiFeatures.util");
 const user_entity_1 = require("../orm_models/user.entity");
+const exceptions_1 = require("../../core/errors/exceptions");
 const addressRepoBase = (dbConnection) => ({
     manager: dbConnection.manager,
     async findOne(findData) {
@@ -25,7 +26,9 @@ const addressRepoBase = (dbConnection) => ({
             where: { id: payload.user_id },
         });
         if (!user) {
-            throw new Error("User not found");
+            exceptions_1.exceptionService.notFoundException({
+                message: "User not found",
+            });
         }
         const address = this.manager.create(addresses_entity_1.AddressesEntity, {
             address: payload.address,

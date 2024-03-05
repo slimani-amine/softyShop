@@ -2,12 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOneProductUseCase = exports.getOneProductUseCaseBase = void 0;
 const product_repository_1 = require("../../../data/repositories/product.repository");
+const exceptions_1 = require("../../../core/errors/exceptions");
 const getOneProductUseCaseBase = (dependencies) => async (queryParams) => {
     const productFound = await dependencies.productRepo.findOne({
         where: { id: queryParams.productId },
     });
     if (!productFound) {
-        throw new Error("Product not found");
+        exceptions_1.exceptionService.notFoundException({
+            message: "Product not found",
+        });
     }
     return productFound;
 };

@@ -17,6 +17,7 @@ import {
   QueryResult,
 } from "../../utils/querying/apiFeatures.util";
 import { UserEntity } from "../orm_models/user.entity";
+import { exceptionService } from "../../core/errors/exceptions";
 
 export const addressRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   manager: dbConnection.manager,
@@ -46,7 +47,9 @@ export const addressRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     });
 
     if (!user) {
-      throw new Error("User not found");
+      exceptionService.notFoundException({
+        message: "User not found",
+      });
     }
 
     const address = this.manager.create(AddressesEntity, {

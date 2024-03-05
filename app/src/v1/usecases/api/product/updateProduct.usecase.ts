@@ -1,8 +1,8 @@
+import { IProduct } from "app/src/v1/domain/product/product";
 import {
   IProductRepository,
   productRepo,
 } from "../../../data/repositories/product.repository";
-import { IProduct } from "../../../domain/product/product";
 
 export type UpdateProductUseCaseType = (
   product: IProduct,

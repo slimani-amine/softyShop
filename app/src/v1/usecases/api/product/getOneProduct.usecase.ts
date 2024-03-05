@@ -1,8 +1,9 @@
-import { IProduct } from "app/src/v1/domain/product/product";
+import { IProduct } from "../../../domain/product/product";
 import {
   IProductRepository,
   productRepo,
 } from "../../../data/repositories/product.repository";
+import { exceptionService } from "../../../core/errors/exceptions";
 
 export type GetOneProductUseCaseType = (queryParams: {
   [id: string]: any;
@@ -16,7 +17,9 @@ export const getOneProductUseCaseBase =
     });
 
     if (!productFound) {
-      throw new Error("Product not found");
+      exceptionService.notFoundException({
+        message: "Product not found",
+      });
     }
 
     return productFound;

@@ -28,6 +28,12 @@ import { getOneProductController } from "../../../controllers/api/product/getOne
 import { getAllProductsController } from "../../../controllers/api/product/getAllProducts.controller";
 import { updateProductController } from "../../../controllers/api/product/updateProduct.controller";
 import { myStoreMiddleware } from "../../../middlewares/controllers/myStore.middleware";
+import { multerImageUpload } from "../../../middlewares/uploads/multerUpload.middleware";
+import {
+  FilePathTypes,
+  transferFilePathToBodyMiddlewareBuilder,
+} from "../../../middlewares/uploads/transferFilePathToBody.middleware";
+import { setDefaultProfilePicIfNotGiven } from "../../../middlewares/auth/setDefaultProfilePicIfNotGiven";
 
 const router = express.Router();
 
@@ -86,6 +92,8 @@ export function getStoresApiRouter(
     .post(
       validateSchemaMiddleware(createStoreSchema, VALIDATION_PATHS.BODY),
       restrictToMiddleware("admin", "vendor"),
+      multerImageUpload.single("picture"),
+      transferFilePathToBodyMiddlewareBuilder("picture", FilePathTypes.IMAGES),
       controllers.createStore
     ); // create a new store (only for admin or vendors)
   router
@@ -94,45 +102,54 @@ export function getStoresApiRouter(
 
   router
     .route("/:id")
-    .delete(controllers.deleteStore) // delete a store
+    .delete(restrictToMiddleware("admin", "user"),controllers.deleteStore) // delete a store
     .get(controllers.getOneStore) // get one store
-    .patch(controllers.updateStore); // update a store
+    .patch(restrictToMiddleware("admin", "user"),controllers.updateStore); // update a store
 
   router
     .route("/:id/product")
-    .post(restrictToMiddleware("vendor", "admin"), controllers.createProduct)
+    .post(
+      restrictToMiddleware("vendor", "admin"),
+      multerImageUpload.single("picture"),
+      transferFilePathToBodyMiddlewareBuilder("picture", FilePathTypes.IMAGES),
+      myStoreMiddleware,
+      controllers.createProduct
+    )
     .get(myStoreMiddleware, controllers.getStoreProduct); // get all product / post a product (only for vendor)
 
   router
     .route("/:id/product/:productId")
-    .delete(restrictToMiddleware("vendor"), controllers.deleteProduct)
-    .get(controllers.getOneProduct)
-    .patch(
-      restrictToMiddleware("admin", "vendor", "user"),
-      controllers.updateProduct
-    ); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
-
-  router.use(restrictToMiddleware("admin", "vendor"));
+    .delete(restrictToMiddleware("vendor"),myStoreMiddleware, controllers.deleteProduct) // delete a product (only for vendor)
+    .get(controllers.getOneProduct) // get one product
+    .patch(restrictToMiddleware("admin", "vendor"),myStoreMiddleware, controllers.updateProduct); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
 
   router
     .route("/:id/brand")
-    .post(controllers.createBrand) // post brand (only for admin or vendor)
-    .get(controllers.getStoreBrands); // get all brands (only for admin or vendor)
+    .post(
+      restrictToMiddleware("vendor"),
+      multerImageUpload.single("picture"),
+      transferFilePathToBodyMiddlewareBuilder("picture", FilePathTypes.IMAGES),
+      controllers.createBrand
+    ) // post brand (only for vendor)
+    .get(controllers.getStoreBrands); // get all brands
 
   router
     .route("/:id/brand/:brandId")
-    .delete(controllers.deleteBrand) // delete a brand (only for vendor)
-    .patch(controllers.updateBrand); // update a brand (only for admin or vendor)
+    .delete(restrictToMiddleware("vendor"), controllers.deleteBrand) // delete a brand (only for vendor)
+    .patch(restrictToMiddleware("vendor", "admin"), controllers.updateBrand); // update a brand (only for admin or vendor)
 
   router
     .route("/:id/productCreator")
-    .post(controllers.createProductCreator) // post productCreator (only for vendor)
-    .get(controllers.getStoreProductCreators); // get all productCreators (only for admin or vendor)
+    .post(restrictToMiddleware("vendor"), controllers.createProductCreator) // post productCreator (only for vendor)
+    .get(controllers.getStoreProductCreators); // get all productCreators
 
   router
     .route("/:id/productCreator/:productCreatorId")
-    .delete(controllers.deleteProductCreator) // delete a productCreator (only for vendor)
-    .patch(controllers.updateProductCreator); //  update a productCreator (only for admin or vendor)
+    .delete(restrictToMiddleware("vendor"), controllers.deleteProductCreator) // delete a productCreator (only for vendor)
+    .patch(
+      restrictToMiddleware("vendor", "admin"),
+      controllers.updateProductCreator
+    ); //  update a productCreator (only for admin or vendor)
 
   return router;
 }

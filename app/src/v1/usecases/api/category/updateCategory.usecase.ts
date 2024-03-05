@@ -1,8 +1,9 @@
+import { ICategory } from "app/src/v1/domain/category/category";
 import {
   ICategoryRepository,
   categoryRepo,
 } from "../../../data/repositories/category.repository";
-import { ICategory } from "../../../domain/Category/Category";
+
 
 export type UpdateCategoryUseCaseType = (
   Category: ICategory,
