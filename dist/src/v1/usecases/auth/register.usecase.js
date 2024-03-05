@@ -19,7 +19,6 @@ const registerUseCaseBase = (dependencies = {
     const userFound = await dependencies.usersRepo.findOne({
         where: [{ email: payload.email }],
     });
-    console.log("🚀 ~ userFound:", userFound);
     if (userFound) {
         exceptions_1.exceptionService.badRequestException({
             message: errors_1.ACCOUNT_ALREADY_EXISTS_ERROR_MESSAGE,

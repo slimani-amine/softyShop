@@ -28,3 +28,6 @@ tags:
 
   - name: Brands
     description: Brands Cruds
+
+  - name: reviews
+    description: reviews Cruds

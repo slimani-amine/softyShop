@@ -1,0 +1,50 @@
+paths:
+  /v1/store/{id}:
+    patch:
+      tags:
+        - Store
+      summary: Update a store
+      description: Update a store.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the store to update
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStoreInput'
+      responses:
+        '201':
+          description: Store updated successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Store'
+        '404':
+          description: Store not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

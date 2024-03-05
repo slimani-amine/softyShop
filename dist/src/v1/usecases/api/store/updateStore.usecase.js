@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateStoreUseCase = exports.updateStoreUseCaseBase = void 0;
 const store_repository_1 = require("../../../data/repositories/store.repository");
 const updateStoreUseCaseBase = (storeRepository) => async (store, updatePayload) => {
-    console.log("🚀 ~ updatePayload:", updatePayload);
     if (updatePayload.socialMediaLinks) {
         updatePayload.socialMediaLinks = JSON.stringify(updatePayload.socialMediaLinks);
     }

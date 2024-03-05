@@ -4,7 +4,6 @@ exports.deleteBrandUseCase = exports.deleteBrandUseCaseBase = void 0;
 const brand_repository_1 = require("../../../data/repositories/brand.repository");
 const exceptions_1 = require("../../../core/errors/exceptions");
 const deleteBrandUseCaseBase = (dependencies) => async (queryParams) => {
-    console.log("🚀 ~ queryParams:", queryParams);
     const brand = await dependencies.brandRepo.findOne({
         where: { id: queryParams.brandId },
     });

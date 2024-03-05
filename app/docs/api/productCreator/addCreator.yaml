@@ -1,0 +1,37 @@
+paths:
+  /v1/store/{id}/productCreator:
+    post:
+      tags:
+        - Product creators
+      summary: Create a product creator
+      description: Create a product creator for a specific store.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProductCreatorInput'
+      responses:
+        '201':
+          description: Product creator created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/ProductCreator'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

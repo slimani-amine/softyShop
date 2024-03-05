@@ -38,7 +38,7 @@ __decorate([
     __metadata("design:type", user_entity_1.UserEntity)
 ], ReviewsEntity.prototype, "user", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => product_entity_1.ProductEntity, (product) => product.review),
+    (0, typeorm_1.ManyToOne)(() => product_entity_1.ProductEntity, (product) => product.reviews),
     (0, typeorm_1.JoinColumn)({ name: 'product_id' }),
     __metadata("design:type", product_entity_1.ProductEntity)
 ], ReviewsEntity.prototype, "product", void 0);

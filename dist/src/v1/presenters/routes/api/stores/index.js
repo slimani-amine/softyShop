@@ -26,6 +26,7 @@ const getStoreProducts_controller_1 = require("../../../controllers/api/product/
 const getOneProducts_controller_1 = require("../../../controllers/api/product/getOneProducts.controller");
 const getAllProducts_controller_1 = require("../../../controllers/api/product/getAllProducts.controller");
 const updateProduct_controller_1 = require("../../../controllers/api/product/updateProduct.controller");
+const myStore_middleware_1 = require("../../../middlewares/controllers/myStore.middleware");
 const router = express.Router();
 const defaults = {
     createStore: createStore_controller_1.createStoreController,
@@ -58,7 +59,6 @@ function getStoresApiRouter(controllers = defaults) {
     router
         .route("/my-stores")
         .get((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), controllers.getVendorStores);
-    router.use((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"));
     router
         .route("/:id")
         .delete(controllers.deleteStore)
@@ -67,12 +67,12 @@ function getStoresApiRouter(controllers = defaults) {
     router
         .route("/:id/product")
         .post((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), controllers.createProduct)
-        .get(controllers.getStoreProduct);
+        .get(myStore_middleware_1.myStoreMiddleware, controllers.getStoreProduct);
     router
         .route("/:id/product/:productId")
         .delete((0, restrictTo_middleware_1.restrictToMiddleware)("vendor"), controllers.deleteProduct)
         .get(controllers.getOneProduct)
-        .patch(controllers.updateProduct);
+        .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor", "user"), controllers.updateProduct);
     router.use((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"));
     router
         .route("/:id/brand")

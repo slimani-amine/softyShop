@@ -1,0 +1,52 @@
+paths:
+  /v1/admin/payment-method/{id}:
+    patch:
+      summary: Update a payment method
+      description: Update a payment method (only for admin or vendor).
+      security:
+        - cookieAuth: []
+      tags:
+        - Payment methods
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the payment method to update
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePaymentMethodInput'
+      responses:
+        '201':
+          description: Payment method updated successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/PaymentMethod'
+        '404':
+          description: Payment method not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

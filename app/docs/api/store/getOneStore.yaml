@@ -1,0 +1,38 @@
+paths:
+  /v1/store/{id}:
+    get:
+      tags:
+        - Store
+      summary: Get one store
+      description: Get one store.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the store to retrieve
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/Success"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Store"
+        "404":
+          description: Store not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+        "500":
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"

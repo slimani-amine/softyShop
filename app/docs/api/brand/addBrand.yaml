@@ -1,0 +1,37 @@
+paths:
+  /v1/store/{id}/brand:
+    post:
+      tags:
+        - Brands
+      summary: Create a brand
+      description: Create a brand for a specific store.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBrandInput'
+      responses:
+        '201':
+          description: Brand created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Brand'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

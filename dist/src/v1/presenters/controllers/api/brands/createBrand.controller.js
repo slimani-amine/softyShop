@@ -6,7 +6,6 @@ const createBrandControllerBase = (createBrandUseCase) => async (req, res, next)
     req.body.store_id = req.params.id;
     try {
         const result = await createBrandUseCase(req === null || req === void 0 ? void 0 : req.body);
-        console.log("🚀 ~ result:", result);
         return res.status(201).json({
             message: "Brand added successfully",
             data: {

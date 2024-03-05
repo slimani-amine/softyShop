@@ -6,11 +6,23 @@ const transactional_controller_1 = require("../../middlewares/controllers/transa
 const users_repository_1 = require("../../../data/repositories/users.repository");
 const requestAccountVerification_usecase_1 = require("../../../usecases/auth/requestAccountVerification.usecase");
 const createUserTokens_usecase_1 = require("../../../usecases/auth/createUserTokens.usecase");
+const config_1 = require("../../../../config");
 const registerControllerBase = (registerUserCase) => async (req, res) => {
     const result = await registerUserCase(req === null || req === void 0 ? void 0 : req.body);
-    console.log('🚀 ~ result:', result);
+    res.cookie(config_1.TOKENS_INFO.REFRESH_TOKEN_COOKIE_NAME, result.refreshToken, {
+        sameSite: "none",
+        httpOnly: true,
+        secure: true,
+        maxAge: config_1.TOKENS_INFO.REFRESH_TOKEN_EXPIRATION_IN_MILLISECONDS,
+    });
+    res.cookie(config_1.TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME, result.accessToken, {
+        sameSite: "none",
+        httpOnly: true,
+        secure: true,
+        maxAge: config_1.TOKENS_INFO.ACCESS_TOKEN_EXPIRATION_IN_MILLISECONDS,
+    });
     return res.status(201).json({
-        message: 'inscrit avec succès',
+        message: "inscrit avec succès",
         data: {
             user: result.user,
             accessToken: result.accessToken,

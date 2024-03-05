@@ -1,0 +1,28 @@
+paths:
+  /v1/store/{id}/productCreator/{productCreatorId}:
+    delete:
+      tags:
+        - Product creators
+      summary: Delete a product creator
+      description: Delete a product creator for a specific store.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          success:
+                            type: boolean
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

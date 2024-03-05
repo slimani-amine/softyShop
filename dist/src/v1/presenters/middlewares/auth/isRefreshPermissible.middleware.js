@@ -7,6 +7,7 @@ const exceptions_1 = require("../../../core/errors/exceptions");
 const jwtService = require("jsonwebtoken");
 const isRefreshPermissibledMiddleware = (req, res, next) => {
     const refreshToken = req === null || req === void 0 ? void 0 : req.cookies[config_1.TOKENS_INFO.REFRESH_TOKEN_COOKIE_NAME];
+    console.log("🚀 ~ refreshToken:", refreshToken);
     if (!refreshToken) {
         exceptions_1.exceptionService.unauthorizedException({
             message: errors_1.LOGIN_REQUIRED_ERROR_MESSAGE,

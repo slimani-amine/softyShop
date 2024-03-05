@@ -7,9 +7,7 @@ const exceptions_1 = require("../../../../core/errors/exceptions");
 const updateStoreControllerBase = (updateStoreUseCase) => async (req, res, next) => {
     try {
         const storeId = req.params.id;
-        console.log("🚀 ~ storeId:", storeId);
         const store = await store_repository_1.storeRepo.findOne({ where: { id: storeId } });
-        console.log("🚀 ~ store:", store);
         if (!store) {
             exceptions_1.exceptionService.badRequestException({
                 message: "Store not found",

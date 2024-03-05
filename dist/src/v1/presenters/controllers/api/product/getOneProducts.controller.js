@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOneProductController = exports.getOneProductControllerBase = void 0;
 const getOneProduct_usecase_1 = require("../../../../usecases/api/product/getOneProduct.usecase");
 const getOneProductControllerBase = (getOneProductUseCase) => async (req, res, next) => {
-    console.log(req === null || req === void 0 ? void 0 : req.params);
     try {
         const result = await getOneProductUseCase(req === null || req === void 0 ? void 0 : req.params);
         res.status(200).send({

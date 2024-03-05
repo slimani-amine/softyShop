@@ -1,0 +1,39 @@
+paths:
+  /v1/admin/payment-method:
+    post:
+      summary: Create a payment method
+      description: Create a payment method (only for admin).
+      security:
+        - cookieAuth: []
+      tags:
+        - Payment methods
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreatePaymentMethodInput"
+      responses:
+        "201":
+          description: Payment method created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/Success"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/PaymentMethod"
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationError"
+        "500":
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"

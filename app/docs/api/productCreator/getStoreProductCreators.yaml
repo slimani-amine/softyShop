@@ -1,0 +1,27 @@
+paths:
+  /v1/store/{id}/productCreator:
+    get:
+      tags:
+        - Product creators
+      summary: Get store product creators
+      description: Get all product creators for a specific store.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/ProductCreator'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

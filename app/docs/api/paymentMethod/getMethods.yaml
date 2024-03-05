@@ -1,0 +1,29 @@
+paths:
+  /v1/admin/payment-method:
+    get:
+      summary: Get payment methods
+      description: Get payment methods (only for admin or vendor).
+      security:
+        - cookieAuth: []
+      tags:
+        - Payment methods
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/PaymentMethod'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

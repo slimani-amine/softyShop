@@ -29,7 +29,6 @@ const productRepoBase = (dbConnection) => ({
         const brand = await this.manager.findOne(productBrand_entity_1.BrandEntity, {
             where: { id: payload.brand_id },
         });
-        console.log("🚀 ~ createProduct ~ brand:", brand);
         if (!brand) {
             throw new Error("brand not found");
         }
@@ -56,7 +55,6 @@ const productRepoBase = (dbConnection) => ({
             brand: brand,
             store: store,
             category: category,
-            reviews: payload.reviewIds,
         });
         const result = await this.manager.save(product_entity_1.ProductEntity, product);
         return this.toDomainProduct(result);

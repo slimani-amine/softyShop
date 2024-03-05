@@ -1,7 +1,7 @@
-import { IUsersRepository, usersRepo } from '../../data/repositories/users.repository';
-import { IUser } from '../../domain/users/user';
-import { CreateUserTokensUseCaseType, createUserTokensUseCase } from './createUserTokens.usecase';
-import { ILoginPayload } from '../../domain/auth/login';
+import { IUsersRepository, usersRepo } from "../../data/repositories/users.repository";
+import { IUser } from "../../domain/users/user";
+import { CreateUserTokensUseCaseType, createUserTokensUseCase } from "./createUserTokens.usecase";
+import { ILoginPayload } from "../../domain/auth/login";
 export type LoginUseCaseType = (payload: ILoginPayload) => Promise<{
     user: IUser;
     accessToken: string;

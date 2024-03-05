@@ -1,0 +1,28 @@
+paths:
+  /v1/products/{id}/review:
+    get:
+      tags:
+       - reviews
+      summary: Get product reviews
+      description: Get reviews for a specific product.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/ProductReview'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+

@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllProductsController = exports.getAllProductsControllerBase = void 0;
 const getAllProducts_usecase_1 = require("../../../../usecases/api/product/getAllProducts.usecase");
 const getAllProductsControllerBase = (getAllProductUseCase) => async (req, res, next) => {
-    console.log("heloo");
     try {
         const result = await getAllProductUseCase(req === null || req === void 0 ? void 0 : req.query);
         res.status(200).send({

@@ -21,6 +21,11 @@ const isAuthentictedMiddleware = (req, res, next) => {
             algorithms: ["RS256"],
         });
         (0, exports.validateAccessToken)(accessTokenPayload);
+        if (accessTokenPayload.user.isVerified !== true) {
+            exceptions_1.exceptionService.unauthorizedException({
+                message: errors_1.ACCOUNT_VERIFICATION_REQUIRED_ERROR_MESSAGE,
+            });
+        }
         req.user = accessTokenPayload.user;
         next();
     }
@@ -31,12 +36,7 @@ const isAuthentictedMiddleware = (req, res, next) => {
 exports.isAuthentictedMiddleware = isAuthentictedMiddleware;
 const isAuthentictedMiddlewareNoVerificationNeeded = (req, res, next) => {
     try {
-        let token;
-        if (req.headers.authorization &&
-            req.headers.authorization.startsWith('Bearer')) {
-            token = req.headers.authorization.split(' ')[1];
-        }
-        const accessToken = req.cookies[config_1.TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME] || "";
+        const accessToken = req.cookies[config_1.TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME];
         if (!accessToken) {
             exceptions_1.exceptionService.unauthorizedException({
                 message: errors_1.LOGIN_REQUIRED_ERROR_MESSAGE,

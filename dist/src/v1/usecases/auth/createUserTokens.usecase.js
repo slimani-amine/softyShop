@@ -5,7 +5,9 @@ const jwtService = require("jsonwebtoken");
 const index_1 = require("../../../config/index");
 const createUserTokensUseCaseBase = () => async (user) => {
     const accessToken = (0, exports.createUserAccessToken)(user);
+    console.log("🚀 ~ accessToken:", accessToken);
     const refreshToken = (0, exports.createUserRefreshToken)(user);
+    console.log("🚀 ~ refreshToken:", refreshToken);
     return {
         accessToken: accessToken,
         refreshToken: refreshToken,

@@ -8,7 +8,6 @@ const createBrand_schema_1 = require("../../../presenters/schemas/brands/createB
 const createBrandUseCaseBase = (dependencies = {
     brandRepo: brand_repository_1.brandRepo,
 }) => async (payload) => {
-    console.log("🚀 ~ payload:", payload);
     const brandFound = await dependencies.brandRepo.findAll({
         where: [{ name: payload.name }],
     });

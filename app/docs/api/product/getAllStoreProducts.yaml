@@ -1,0 +1,40 @@
+paths:
+  /v1/store/{id}/product:
+    get:
+      tags:
+        - Products
+      summary: Get all products for a store
+      description: Get all products for a store.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the store to get products for
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Product'
+        '404':
+          description: Store not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

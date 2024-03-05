@@ -1,0 +1,25 @@
+paths:
+ /v1/store/{id}/product/{productId}:
+    get:
+      tags:
+       - Products
+      summary: Get one product
+      description: Get details of a specific product for a specific store.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Product'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

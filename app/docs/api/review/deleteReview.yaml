@@ -1,0 +1,28 @@
+paths:
+  /v1/products/review/{id}:
+    delete:
+      tags:
+        - reviews
+      summary: Delete a review
+      description: Delete a review for a product.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          success:
+                            type: boolean
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

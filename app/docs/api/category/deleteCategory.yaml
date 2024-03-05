@@ -1,0 +1,40 @@
+paths:
+  /v1/admin/category/{id}:
+    delete:
+      summary: Delete a category
+      description: Delete a category (only for admin).
+      security:
+        - cookieAuth: []
+      tags:
+        - Category
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the category to delete
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Category deleted successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/Success"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Category"
+        "404":
+          description: Category not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"

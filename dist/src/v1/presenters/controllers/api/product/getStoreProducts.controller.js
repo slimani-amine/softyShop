@@ -4,6 +4,7 @@ exports.getStoreProductsController = exports.getStoreProductsControllerBase = vo
 const getStoreProducts_usecase_1 = require("../../../../usecases/api/product/getStoreProducts.usecase");
 const getStoreProductsControllerBase = (getStoreProductUseCase) => async (req, res, next) => {
     const storeId = req.params.id;
+    const userId = req.user.id;
     try {
         const result = await getStoreProductUseCase({ storeId });
         res.status(200).send({

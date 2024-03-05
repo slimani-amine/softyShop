@@ -1,0 +1,32 @@
+paths:
+  /v1/admin/category:
+    get:
+      summary: Get all categories
+      description: Get all categories (only for admin or vendor).
+      security:
+        - cookieAuth: []
+      tags:
+        - Category
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          categories:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Category'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

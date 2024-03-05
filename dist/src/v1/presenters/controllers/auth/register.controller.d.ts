@@ -1,5 +1,5 @@
-import { RegisterUseCase } from '../../../usecases/auth/register.usecase';
-import { Request, Response } from 'express';
+import { RegisterUseCase } from "../../../usecases/auth/register.usecase";
+import { Request, Response } from "express";
 declare const registerControllerBase: (registerUserCase: RegisterUseCase) => (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
 declare const registerController: (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
 export { registerControllerBase, registerController };

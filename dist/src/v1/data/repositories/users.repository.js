@@ -20,7 +20,6 @@ const usersRepoBase = (dbConnection) => ({
         return result.affected;
     },
     async updateOne(user, payload) {
-        console.log("🚀 ~ updateOne ~ payload:", payload);
         await this.manager.update(user_entity_1.UserEntity, {
             id: user.getIdAsNumber(),
         }, payload);

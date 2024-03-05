@@ -74,7 +74,7 @@ __decorate([
 __decorate([
     (0, typeorm_1.OneToMany)(() => reviews_entity_1.ReviewsEntity, (review) => review.product),
     __metadata("design:type", Array)
-], ProductEntity.prototype, "review", void 0);
+], ProductEntity.prototype, "reviews", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => wishlist_entity_1.WishlistEntity, (wishlist) => wishlist.product),
     __metadata("design:type", Array)
@@ -82,7 +82,7 @@ __decorate([
 __decorate([
     (0, typeorm_1.OneToMany)(() => cartProduct_entity_1.CartProductEntity, (cartProduct) => cartProduct.product),
     __metadata("design:type", Array)
-], ProductEntity.prototype, "cartProduct", void 0);
+], ProductEntity.prototype, "cartProducts", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => productBrand_entity_1.BrandEntity, (brand) => brand.products),
     (0, typeorm_1.JoinColumn)({ name: "brand_id" }),

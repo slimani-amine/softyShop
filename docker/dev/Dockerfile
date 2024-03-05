@@ -14,6 +14,6 @@ COPY ../../ ./
 
 RUN mv ./docker/dev/.env.server.docker .env
 
-EXPOSE 6001
+EXPOSE 3000
 
 ENTRYPOINT ["npm","run","start:dev"]

@@ -27,7 +27,7 @@ const loginUseCaseBase = (dependencies) => async (loginData) => {
             message: errors_1.BAD_LOGIN_CREDENTIALS_ERROR_MESSAGE,
         });
     }
-    logger_1.logger.log('LOGIN USE CASE', JSON.stringify(userFound));
+    logger_1.logger.log("LOGIN USE CASE", JSON.stringify(userFound));
     const tokens = await dependencies.createUserTokensUseCase(userFound);
     return Object.assign({ user: userFound }, tokens);
 };

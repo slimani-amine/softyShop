@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateBrandUseCase = exports.updateBrandUseCaseBase = void 0;
 const brand_repository_1 = require("../../../data/repositories/brand.repository");
 const updateBrandUseCaseBase = (brandRepository) => async (brand, updatePayload) => {
-    console.log("🚀 ~ updatePayload:", updatePayload);
     const updatedBrand = await brandRepository.updateBrand(brand, updatePayload);
     return updatedBrand;
 };

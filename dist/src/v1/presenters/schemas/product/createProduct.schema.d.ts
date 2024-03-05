@@ -1,24 +1,18 @@
 import { z } from "zod";
-declare const createProductSchema: z.ZodObject<{
-    name: z.ZodString;
-    price: z.ZodNumber;
-    stockNumber: z.ZodNumber;
-    isPublished: z.ZodOptional<z.ZodBoolean>;
-    brand_id: z.ZodString;
-    creator_id: z.ZodString;
+declare const createReviewSchema: z.ZodObject<{
+    review: z.ZodString;
+    rating: z.ZodNumber;
+    userId: z.ZodString;
+    productId: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    name?: string;
-    price?: number;
-    stockNumber?: number;
-    isPublished?: boolean;
-    brand_id?: string;
-    creator_id?: string;
+    review?: string;
+    rating?: number;
+    userId?: string;
+    productId?: string;
 }, {
-    name?: string;
-    price?: number;
-    stockNumber?: number;
-    isPublished?: boolean;
-    brand_id?: string;
-    creator_id?: string;
+    review?: string;
+    rating?: number;
+    userId?: string;
+    productId?: string;
 }>;
-export default createProductSchema;
+export default createReviewSchema;

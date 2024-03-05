@@ -1,23 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const zod_1 = require("zod");
-const createProductSchema = zod_1.z.object({
-    name: zod_1.z.string().min(1, {
-        message: "The name of the product is required",
+const createReviewSchema = zod_1.z.object({
+    review: zod_1.z.string().min(1, {
+        message: "The review content is required",
     }),
-    price: zod_1.z.number().min(0, {
-        message: "The price of the product should be greater than or equal to 0",
+    rating: zod_1.z.number().min(0).max(5, {
+        message: "The rating should be between 0 and 5",
     }),
-    stockNumber: zod_1.z.number().min(0, {
-        message: "The stock number of the product should be greater than or equal to 0",
+    userId: zod_1.z.string().min(1, {
+        message: "The user ID is required",
     }),
-    isPublished: zod_1.z.boolean().optional(),
-    brand_id: zod_1.z.string().min(1, {
-        message: "The brand of the product is required",
-    }),
-    creator_id: zod_1.z.string().min(1, {
-        message: "The creator of the product is required",
+    productId: zod_1.z.string().min(1, {
+        message: "The product ID is required",
     }),
 });
-exports.default = createProductSchema;
+exports.default = createReviewSchema;
 //# sourceMappingURL=createProduct.schema.js.map

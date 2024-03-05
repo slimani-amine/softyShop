@@ -1,9 +1,5 @@
 import * as express from "express";
 import { ControllerType } from "../../../../../types/controller";
-import {
-  VALIDATION_PATHS,
-  validateSchemaMiddleware,
-} from "../../../middlewares/schemas/validateSchema.middleware";
 import { restrictToMiddleware } from "../../../middlewares/auth/restrictTo.middleware";
 import { isAuthentictedMiddleware } from "../../../middlewares/auth/isAuthenticated.middleware";
 import { createCategoryController } from "../../../controllers/api/category/createCategory.controller";
@@ -18,7 +14,6 @@ import { updatepaymentMethodController } from "../../../controllers/api/paymentM
 const router = express.Router();
 
 const defaults = {
-
   createCategory: createCategoryController,
   deleteCategory: deleteCategoryController,
   getCategories: getAllCategoryController,
@@ -31,7 +26,6 @@ const defaults = {
 
 export function getAdminApiRouter(
   controllers: {
-
     createCategory: ControllerType;
     deleteCategory: ControllerType;
     getCategories: ControllerType;

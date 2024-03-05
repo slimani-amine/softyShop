@@ -5,7 +5,6 @@ const Product_repository_1 = require("../../../data/repositories/Product.reposit
 const store_repository_1 = require("../../../data/repositories/store.repository");
 const exceptions_1 = require("../../../core/errors/exceptions");
 const getStoreProductUseCaseBase = (dependencies) => async (queryParams) => {
-    console.log("🚀 ~ queryParams:", queryParams);
     const store = await store_repository_1.storeRepo.findOne({
         where: { id: queryParams.storeId },
     });
@@ -14,8 +13,10 @@ const getStoreProductUseCaseBase = (dependencies) => async (queryParams) => {
             message: "store not found",
         });
     }
+    console.log("🚀 ~ store:", store);
     const productsFound = await dependencies.productRepo.findAll({
-        where: { store },
+        where: { store: store },
+        cache: true,
     });
     return productsFound;
 };

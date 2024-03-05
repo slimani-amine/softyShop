@@ -4,15 +4,12 @@ exports.getVendorStoresUseCase = exports.getVendorStoresUseCaseBase = void 0;
 const store_repository_1 = require("../../../data/repositories/store.repository");
 const users_repository_1 = require("../../../data/repositories/users.repository");
 const getVendorStoresUseCaseBase = (dependencies) => async (queryParams) => {
-    console.log("🚀 ~ queryParams:", queryParams);
     const vendor = (await users_repository_1.usersRepo.findOne({
         where: { id: parseInt(queryParams.userId, 10) },
     }));
-    console.log("🚀 ~ vendor:", vendor);
     const storesFound = await dependencies.storeRepo.findMyStores({
         where: { user: vendor },
     });
-    console.log("🚀 ~ storesFound:", storesFound);
     return storesFound;
 };
 exports.getVendorStoresUseCaseBase = getVendorStoresUseCaseBase;

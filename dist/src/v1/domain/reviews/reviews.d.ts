@@ -5,11 +5,6 @@ export interface IReview extends IIdAsNumber {
     id: string;
     review: string;
     rating: number;
-    user?: IUser;
-    product?: IProduct;
-    deletedAt: Date;
-    createdAt: Date;
-    updatedAt: Date;
 }
 export declare class Review extends NumberId implements IReview {
     id: string;
@@ -17,23 +12,17 @@ export declare class Review extends NumberId implements IReview {
     rating: number;
     user?: IUser;
     product?: IProduct;
-    deletedAt: Date;
-    createdAt: Date;
-    updatedAt: Date;
     constructor(payload: {
         id: string;
         review: string;
         rating: number;
         user?: IUser;
         product?: IProduct;
-        deletedAt: Date;
-        createdAt: Date;
-        updatedAt: Date;
     });
 }
 export interface ICreateReviewInput {
     review: string;
     rating: number;
-    userId?: string;
-    productId?: string;
+    userId: string;
+    productId: string;
 }

@@ -13,9 +13,8 @@ const createProductControllerBase = (createProductUseCase) => async (req, res, n
                 message: "Invalid vendor store add a store first",
             });
         }
-        req.body.storeId = req.params.id;
+        req.body.store_id = req.params.id;
         const result = await createProductUseCase(req === null || req === void 0 ? void 0 : req.body);
-        console.log("🚀 ~ result:", result);
         return res.status(201).json({
             message: "Product added successfully",
             data: {
