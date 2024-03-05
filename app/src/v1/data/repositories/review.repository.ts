@@ -30,6 +30,7 @@ export const reviewRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   async findAll(findData: FindManyOptions<ReviewsEntity>): Promise<IReview[]> {
     console.log("🚀 ~ findAll ~ findData:", findData)
     const reviews = await this.manager.find(ReviewsEntity, findData);
+    console.log("🚀 ~ findAll ~ reviews:", reviews)
     return this.toDomainReviews(reviews);
   },
 

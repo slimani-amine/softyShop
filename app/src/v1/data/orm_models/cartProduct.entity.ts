@@ -24,7 +24,7 @@ import { CartEntity } from './cart.entity';
     })
     quantity: number;
   
-    @ManyToOne(() => ProductEntity, (product) => product.cartProduct)
+    @ManyToOne(() => ProductEntity, (product) => product.cartProducts)
     @JoinColumn({ name: 'product_id' })
     product: ProductEntity;
 

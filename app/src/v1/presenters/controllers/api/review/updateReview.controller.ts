@@ -1,32 +1,32 @@
 import { Request, Response, NextFunction } from "express";
-
-import { categoryRepo } from "../../../../data/repositories/category.repository";
 import {
-  UpdateCategoryUseCaseType,
-  updateCategoryUseCase,
-} from "../../../../usecases/api/category/updateCategory.usecase";
+  updateReviewUseCase,
+  UpdateReviewUseCaseType,
+} from "../../../../usecases/api/review/updateReview.usecase";
 import { exceptionService } from "../../../../core/errors/exceptions";
+import { reviewRepo } from "../../../../data/repositories/review.repository";
 
-export const updatecategoryControllerBase =
-  (updatecategoryUseCase: UpdateCategoryUseCaseType) =>
+export const updateReviewControllerBase =
+  (updateReviewUseCase: UpdateReviewUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const categoryId = req.params.categoryId;
-      const category = await categoryRepo.findOne({
-        where: { id: categoryId },
+      const reviewId = req.params.id;
+      const review = await reviewRepo.findOne({
+        where: { id: reviewId },
       });
-      if (!category) {
+
+      if (!review) {
         exceptionService.notFoundException({
-          message: "No payment method found with id " + categoryId,
+          message: "Review not found with id " + reviewId,
         });
       }
 
       const updatePayload = req.body;
 
-      const result = await updatecategoryUseCase(category, updatePayload);
+      const result = await updateReviewUseCase(review, updatePayload);
 
       res.status(201).send({
-        message: "category updated successfully",
+        message: "Review updated successfully",
         data: result,
       });
     } catch (err) {
@@ -34,6 +34,5 @@ export const updatecategoryControllerBase =
     }
   };
 
-export const updatecategoryController = updatecategoryControllerBase(
-  updateCategoryUseCase
-);
+export const updateReviewController =
+  updateReviewControllerBase(updateReviewUseCase);

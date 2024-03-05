@@ -75,7 +75,7 @@ export class ProductEntity {
   wishlist: WishlistEntity[];
 
   @OneToMany(() => CartProductEntity, (cartProduct) => cartProduct.product)
-  cartProduct: CartProductEntity[];
+  cartProducts: CartProductEntity[];
 
   @ManyToOne(() => BrandEntity, (brand) => brand.products)
   @JoinColumn({ name: "brand_id" })
@@ -90,7 +90,7 @@ export class ProductEntity {
   store: StoreEntity;
 
   @ManyToOne(() => CategoryEntity, (category) => category.product)
-  @JoinColumn({ name: "category_id" })
+  @JoinColumn({ name: "category_id" })  
   category: CategoryEntity;
 
   @DeleteDateColumn({ name: "deletedAt" })

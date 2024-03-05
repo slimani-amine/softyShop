@@ -1,23 +1,23 @@
 import {
-  ICategoryRepository,
-  categoryRepo,
-} from "../../../data/repositories/category.repository";
-import { ICategory } from "../../../domain/Category/Category";
+  IReviewRepository,
+  reviewRepo,
+} from "../../../data/repositories/review.repository";
+import { IReview } from "../../../domain/reviews/reviews";
 
-export type UpdateCategoryUseCaseType = (
-  Category: ICategory,
-  updatePayload: Partial<ICategory>
-) => Promise<ICategory>;
+export type UpdateReviewUseCaseType = (
+  review: IReview,
+  updatePayload: Partial<IReview>
+) => Promise<IReview>;
 
-export const updateCategoryUseCaseBase =
-  (CategoryRepository: ICategoryRepository) =>
-  async (Category: ICategory, updatePayload: Partial<ICategory>) => {
-    const updatedCategory = await CategoryRepository.updateCategory(
-      Category,
+export const updateReviewUseCaseBase =
+  (reviewRepository: IReviewRepository) =>
+  async (review: IReview, updatePayload: Partial<IReview>) => {
+    const updatedReview = await reviewRepository.updateReview(
+      review,
       updatePayload
     );
-    return updatedCategory;
+    return updatedReview;
   };
 
-export const updateCategoryUseCase: UpdateCategoryUseCaseType =
-  updateCategoryUseCaseBase(categoryRepo);
+export const updateReviewUseCase: UpdateReviewUseCaseType =
+  updateReviewUseCaseBase(reviewRepo);

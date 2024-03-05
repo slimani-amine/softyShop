@@ -21,16 +21,6 @@ export const createReviewUseCaseBase =
     }
   ): CreateReviewUseCaseType =>
   async (payload: ICreateReviewInput) => {
-    const existingReviews = await dependencies.reviewRepo.findAll({
-      where: [{ review: payload.review }],
-    });
-
-    if (existingReviews.length > 0) {
-      exceptionService.badRequestException({
-        message: "A review with the same content already exists",
-      });
-    }
-
     validateCreateReviewPayload(payload);
 
     const reviewCreated = await dependencies.reviewRepo.createReview({
