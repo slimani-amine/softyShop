@@ -7,19 +7,19 @@ const refreshTokensControllerBase = (refreshUserTokensUseCase) => async (req, re
     try {
         const result = await refreshUserTokensUseCase(req === null || req === void 0 ? void 0 : req.user);
         res.cookie(config_1.TOKENS_INFO.REFRESH_TOKEN_COOKIE_NAME, result.refreshToken, {
-            sameSite: 'none',
+            sameSite: "none",
             httpOnly: true,
             secure: true,
             maxAge: config_1.TOKENS_INFO.REFRESH_TOKEN_EXPIRATION_IN_MILLISECONDS,
         });
         res.cookie(config_1.TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME, result.accessToken, {
-            sameSite: 'none',
+            sameSite: "none",
             httpOnly: true,
             secure: true,
             maxAge: config_1.TOKENS_INFO.ACCESS_TOKEN_EXPIRATION_IN_MILLISECONDS,
         });
         return res.status(201).json({
-            message: 'succès',
+            message: "succès",
             data: {
                 user: result.user,
                 accessToken: result.accessToken,

@@ -25,7 +25,7 @@ const registerControllerBase =
       httpOnly: true,
       secure: true,
       maxAge: TOKENS_INFO.ACCESS_TOKEN_EXPIRATION_IN_MILLISECONDS,
-    });    
+    });
     return res.status(201).json({
       message: "inscrit avec succès",
       data: {

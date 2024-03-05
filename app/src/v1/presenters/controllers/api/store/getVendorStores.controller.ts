@@ -1,4 +1,7 @@
-import { getVendorStoresUseCase, GetVendorStoresUseCaseType } from "../../../../usecases/api/store/getVendorStores.usecase";
+import {
+  getVendorStoresUseCase,
+  GetVendorStoresUseCaseType,
+} from "../../../../usecases/api/store/getVendorStores.usecase";
 import { NextFunction, Request, Response } from "express";
 
 export const getVendorStoresControllerBase =

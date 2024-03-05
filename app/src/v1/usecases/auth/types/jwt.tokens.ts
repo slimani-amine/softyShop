@@ -1,12 +1,15 @@
 export interface IJwtPayload {
   iat: number;
   exp?: number;
-  user: {
-    id: string;
-    isVerified: boolean;
-    email: string;
-    role:string
-  };
+  // user: {
+  //   id: string;
+  //   isVerified: boolean;
+  //   email: string;
+  //   role:string
+  // };
+  isVerified: boolean;  
+  sub: string;
+  role: string;
   iss: string;
   aud: string;
 }

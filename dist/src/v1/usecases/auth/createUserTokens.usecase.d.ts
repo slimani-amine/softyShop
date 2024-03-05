@@ -1,4 +1,4 @@
-import { IUser } from '../../domain/users/user';
+import { IUser } from "../../domain/users/user";
 export type CreateUserTokensUseCaseType = (payload: IUser) => Promise<{
     accessToken: string;
     refreshToken: string;

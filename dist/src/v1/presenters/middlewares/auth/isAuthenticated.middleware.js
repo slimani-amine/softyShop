@@ -9,8 +9,8 @@ const isAuthentictedMiddleware = (req, res, next) => {
     try {
         let accessToken;
         if (req.headers.authorization &&
-            req.headers.authorization.startsWith('Bearer')) {
-            accessToken = req.headers.authorization.split(' ')[1];
+            req.headers.authorization.startsWith("Bearer")) {
+            accessToken = req.headers.authorization.split(" ")[1];
         }
         if (!accessToken) {
             exceptions_1.exceptionService.unauthorizedException({
@@ -21,12 +21,16 @@ const isAuthentictedMiddleware = (req, res, next) => {
             algorithms: ["RS256"],
         });
         (0, exports.validateAccessToken)(accessTokenPayload);
-        if (accessTokenPayload.user.isVerified !== true) {
+        if (accessTokenPayload.isVerified !== true) {
             exceptions_1.exceptionService.unauthorizedException({
                 message: errors_1.ACCOUNT_VERIFICATION_REQUIRED_ERROR_MESSAGE,
             });
         }
-        req.user = accessTokenPayload.user;
+        req.user = {
+            id: accessTokenPayload.sub,
+            isVerified: accessTokenPayload.isVerified,
+            role: accessTokenPayload.role,
+        };
         next();
     }
     catch (err) {
@@ -36,17 +40,25 @@ const isAuthentictedMiddleware = (req, res, next) => {
 exports.isAuthentictedMiddleware = isAuthentictedMiddleware;
 const isAuthentictedMiddlewareNoVerificationNeeded = (req, res, next) => {
     try {
-        const accessToken = req.cookies[config_1.TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME];
-        if (!accessToken) {
+        let token;
+        if (req.headers.authorization &&
+            req.headers.authorization.startsWith("Bearer")) {
+            token = req.headers.authorization.split(" ")[1];
+        }
+        if (!token) {
             exceptions_1.exceptionService.unauthorizedException({
                 message: errors_1.LOGIN_REQUIRED_ERROR_MESSAGE,
             });
         }
-        const accessTokenPayload = jwtService.verify(accessToken, config_1.JWT_KEYS.PUBLIC_KEY, {
+        const accessTokenPayload = jwtService.verify(token, config_1.JWT_KEYS.PUBLIC_KEY, {
             algorithms: ["RS256"],
         });
         (0, exports.validateAccessToken)(accessTokenPayload);
-        req.user = accessTokenPayload.user;
+        req.user = {
+            id: accessTokenPayload.sub,
+            isVerified: accessTokenPayload.isVerified,
+            role: accessTokenPayload.role,
+        };
         next();
     }
     catch (err) {
@@ -57,7 +69,9 @@ exports.isAuthentictedMiddlewareNoVerificationNeeded = isAuthentictedMiddlewareN
 const validateAccessToken = (tokenPayload) => {
     if (!tokenPayload ||
         !tokenPayload.iss ||
-        !tokenPayload.user ||
+        !tokenPayload.sub ||
+        !tokenPayload.role ||
+        !tokenPayload.isVerified ||
         !tokenPayload.aud ||
         tokenPayload.iss !== config_1.TOKENS_INFO.ISSUER ||
         tokenPayload.aud !== config_1.TOKENS_INFO.AUDIENCE)

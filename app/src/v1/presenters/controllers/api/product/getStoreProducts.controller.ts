@@ -12,7 +12,6 @@ export const getStoreProductsControllerBase =
     const userId = req.user.id;
 
     try {
-
       const result = await getStoreProductUseCase({ storeId });
       res.status(200).send({
         message: "success",

@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from "path";
 
 export const ENVIRONMENT = process.env.NODE_ENV;
 export const PORT = process.env.SERVER_PORT;
@@ -10,20 +10,21 @@ export const JWT_KEYS = {
   SECRET_KEY: process.env.JWT_SECRET_KEY,
   PUBLIC_KEY: process.env.JWT_PUBLIC_KEY,
 };
-export const STATIC_FILES_PATH = resolve(__dirname, '../../../public');
-export const DEFAULT_USER_PROFILE_PICTURE_LINK = API_BASE_URL + '/images/default.png';
+export const STATIC_FILES_PATH = resolve(__dirname, "../../../public");
+export const DEFAULT_USER_PROFILE_PICTURE_LINK =
+  API_BASE_URL + "/images/default.png";
 export const TOKENS_INFO = {
   ACCESS_TOKEN_VALIDATION_PERIOD: process.env.ACCESS_TOKEN_VALIDITY_PERIOD,
   REFRESH_TOKEN_VALIDATION_PERIOD: process.env.REFRESH_TOKEN_VALIDITY_PERIOD,
-  ISSUER: process.env.TOKEN_ISSUER || 'StarterTeam',
-  AUDIENCE: process.env.TOKEN_AUDIENCE || 'StarterTeam',
+  ISSUER: process.env.TOKEN_ISSUER || "SoftyShopTeam",
+  AUDIENCE: process.env.TOKEN_AUDIENCE || "SoftyShopTeam",
   REFRESH_TOKEN_COOKIE_NAME: process.env.JWT_REFRESH_COOKIE_NAME,
   ACCESS_TOKEN_COOKIE_NAME: process.env.JWT_ACCESS_COOKIE_NAME,
   REFRESH_TOKEN_EXPIRATION_IN_MILLISECONDS: parseInt(
-    process.env.REFRESH_TOKEN_EXPIRATION_IN_MILLISECONDS,
+    process.env.REFRESH_TOKEN_EXPIRATION_IN_MILLISECONDS
   ),
   ACCESS_TOKEN_EXPIRATION_IN_MILLISECONDS: parseInt(
-    process.env.ACCESS_TOKEN_EXPIRATION_IN_MILLISECONDS,
+    process.env.ACCESS_TOKEN_EXPIRATION_IN_MILLISECONDS
   ),
 };
 export const MAILING_CONFIG = {

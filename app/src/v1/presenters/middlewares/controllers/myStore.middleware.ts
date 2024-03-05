@@ -8,7 +8,7 @@ export const myStoreMiddleware = async (
 ) => {
   const storeId = req.params.id;
   const userId = req.user.id;
-  const role = req.user.role;
+  const role = req.user?.role;
 
   try {
     const myStores = await getVendorStoresUseCase({ userId });

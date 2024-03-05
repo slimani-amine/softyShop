@@ -11,13 +11,13 @@ exports.JWT_KEYS = {
     SECRET_KEY: process.env.JWT_SECRET_KEY,
     PUBLIC_KEY: process.env.JWT_PUBLIC_KEY,
 };
-exports.STATIC_FILES_PATH = (0, path_1.resolve)(__dirname, '../../../public');
-exports.DEFAULT_USER_PROFILE_PICTURE_LINK = exports.API_BASE_URL + '/images/default.png';
+exports.STATIC_FILES_PATH = (0, path_1.resolve)(__dirname, "../../../public");
+exports.DEFAULT_USER_PROFILE_PICTURE_LINK = exports.API_BASE_URL + "/images/default.png";
 exports.TOKENS_INFO = {
     ACCESS_TOKEN_VALIDATION_PERIOD: process.env.ACCESS_TOKEN_VALIDITY_PERIOD,
     REFRESH_TOKEN_VALIDATION_PERIOD: process.env.REFRESH_TOKEN_VALIDITY_PERIOD,
-    ISSUER: process.env.TOKEN_ISSUER || 'StarterTeam',
-    AUDIENCE: process.env.TOKEN_AUDIENCE || 'StarterTeam',
+    ISSUER: process.env.TOKEN_ISSUER || "SoftyShopTeam",
+    AUDIENCE: process.env.TOKEN_AUDIENCE || "SoftyShopTeam",
     REFRESH_TOKEN_COOKIE_NAME: process.env.JWT_REFRESH_COOKIE_NAME,
     ACCESS_TOKEN_COOKIE_NAME: process.env.JWT_ACCESS_COOKIE_NAME,
     REFRESH_TOKEN_EXPIRATION_IN_MILLISECONDS: parseInt(process.env.REFRESH_TOKEN_EXPIRATION_IN_MILLISECONDS),

@@ -16,12 +16,10 @@ export const getAllProductReviewsUseCaseBase =
     const product = (await productRepo.findOne({
       where: { id: productId },
     })) as any;
-    console.log("🚀 ~ product:", product)
 
     const reviews = await dependencies.reviewRepo.findAll({
       where: { product:product },
     });
-    console.log("🚀 ~ reviews:", reviews)
 
     return reviews;
   };

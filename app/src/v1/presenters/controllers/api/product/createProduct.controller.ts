@@ -11,8 +11,6 @@ const createProductControllerBase =
   (createProductUseCase: createProductUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-
-
       const userId = req.user.id;
       const myStores = await getVendorStoresUseCase({ userId });
       if (!myStores.length) {

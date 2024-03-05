@@ -18,11 +18,11 @@ export const isAuthentictedMiddleware = (
     let accessToken;
     if (
       req.headers.authorization &&
-      req.headers.authorization.startsWith('Bearer')
+      req.headers.authorization.startsWith("Bearer")
     ) {
-      accessToken = req.headers.authorization.split(' ')[1];
+      accessToken = req.headers.authorization.split(" ")[1];
     }
-        
+
     // const accessToken = req.cookies[TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME] ;
     if (!accessToken) {
       exceptionService.unauthorizedException({
@@ -37,12 +37,18 @@ export const isAuthentictedMiddleware = (
       }
     ) as IJwtAccessPayload;
     validateAccessToken(accessTokenPayload);
-    if (accessTokenPayload.user.isVerified !== true) {
+    if (accessTokenPayload.isVerified !== true) {
       exceptionService.unauthorizedException({
         message: ACCOUNT_VERIFICATION_REQUIRED_ERROR_MESSAGE,
       });
     }
-    req.user = accessTokenPayload.user;
+
+    req.user = {
+      id: accessTokenPayload.sub,
+      isVerified: accessTokenPayload.isVerified,
+      role: accessTokenPayload.role,
+    };
+
     next();
   } catch (err) {
     throw err;
@@ -55,32 +61,32 @@ export const isAuthentictedMiddlewareNoVerificationNeeded = (
   next: NextFunction
 ) => {
   try {
-    // let token;
-    // if (
-    //   req.headers.authorization &&
-    //   req.headers.authorization.startsWith("Bearer")
-    // ) {
-    //   token = req.headers.authorization.split(" ")[1];
-    // }
+    let token;
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith("Bearer")
+    ) {
+      token = req.headers.authorization.split(" ")[1];
+    }
 
-    const accessToken = req.cookies[TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME];
+    // const accessToken = req.cookies[TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME];
 
-    if (!accessToken) {
+    if (!token) {
       exceptionService.unauthorizedException({
         message: LOGIN_REQUIRED_ERROR_MESSAGE,
       });
     }
 
-    const accessTokenPayload = jwtService.verify(
-      accessToken,
-      JWT_KEYS.PUBLIC_KEY,
-      {
-        algorithms: ["RS256"],
-      }
-    ) as IJwtAccessPayload;
+    const accessTokenPayload = jwtService.verify(token, JWT_KEYS.PUBLIC_KEY, {
+      algorithms: ["RS256"],
+    }) as IJwtAccessPayload;
 
     validateAccessToken(accessTokenPayload);
-    req.user = accessTokenPayload.user;
+    req.user = {
+      id: accessTokenPayload.sub,
+      isVerified: accessTokenPayload.isVerified,
+      role: accessTokenPayload.role,
+    };
     next();
   } catch (err) {
     throw err;
@@ -91,7 +97,9 @@ export const validateAccessToken = (tokenPayload: IJwtAccessPayload) => {
   if (
     !tokenPayload ||
     !tokenPayload.iss ||
-    !tokenPayload.user ||
+    !tokenPayload.sub ||
+    !tokenPayload.role ||
+    !tokenPayload.isVerified ||
     !tokenPayload.aud ||
     tokenPayload.iss !== TOKENS_INFO.ISSUER ||
     tokenPayload.aud !== TOKENS_INFO.AUDIENCE

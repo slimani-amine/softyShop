@@ -126,6 +126,8 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   async findByQuery(queryParams: {
     [key: string]: string;
   }): Promise<QueryResult<IProduct>> {
+    console.log(queryParams);
+
     const result = await ApiFeatures.generateSqlQuery(
       dataSource,
       "products",
@@ -180,10 +182,7 @@ export interface IProductRepository {
     [key: string]: string;
   }): Promise<QueryResult<IProduct>>;
   createProduct(payload: ICreateProductInput): Promise<IProduct>;
-  updateProduct(
-    product: IProduct,
-    payload: any
-  ): Promise<IProduct>;
+  updateProduct(product: IProduct, payload: any): Promise<IProduct>;
   deleteProduct(product: IProduct): Promise<number>;
   deleteMany(payload: Array<number>): Promise<number>;
 }

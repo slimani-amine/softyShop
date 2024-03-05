@@ -9,7 +9,6 @@ declare global {
     export interface RequestUser {
       id?: string;
       isVerified: boolean;
-      email: string;
       role: string;
     }
     export interface User extends RequestUser {}

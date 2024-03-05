@@ -14,21 +14,29 @@ const isRefreshPermissibledMiddleware = (req, res, next) => {
         });
     }
     const refreshTokenPayload = jwtService.verify(refreshToken, config_1.JWT_KEYS.PUBLIC_KEY, {
-        algorithms: ['RS256'],
+        algorithms: ["RS256"],
     });
     (0, exports.validateRefreshToken)(refreshTokenPayload);
-    req.user = refreshTokenPayload.user;
+    req.user = {
+        id: refreshTokenPayload.sub,
+        isVerified: refreshTokenPayload.isVerified,
+        role: refreshTokenPayload.role,
+    };
     next();
 };
 exports.isRefreshPermissibledMiddleware = isRefreshPermissibledMiddleware;
 const validateRefreshToken = (tokenPayload) => {
     if (!tokenPayload ||
         !tokenPayload.iss ||
-        !tokenPayload.user ||
+        !tokenPayload.sub ||
+        !tokenPayload.role ||
+        !tokenPayload.isVerified ||
         !tokenPayload.aud ||
         tokenPayload.iss !== config_1.TOKENS_INFO.ISSUER ||
         tokenPayload.aud !== config_1.TOKENS_INFO.AUDIENCE)
-        exceptions_1.exceptionService.unauthorizedException({ message: errors_1.INVALID_TOKEN_ERROR_MESSAGE });
+        exceptions_1.exceptionService.unauthorizedException({
+            message: errors_1.INVALID_TOKEN_ERROR_MESSAGE,
+        });
     return true;
 };
 exports.validateRefreshToken = validateRefreshToken;

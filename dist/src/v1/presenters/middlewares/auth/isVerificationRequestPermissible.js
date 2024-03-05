@@ -14,15 +14,19 @@ const isVerificationRequestPermissibledMiddleware = (req, res, next) => {
         });
     }
     const accessTokenPayload = jwtService.verify(accessToken, config_1.JWT_KEYS.PUBLIC_KEY, {
-        algorithms: ['RS256'],
+        algorithms: ["RS256"],
     });
     (0, isAuthenticated_middleware_1.validateAccessToken)(accessTokenPayload);
-    if (accessTokenPayload.user.isVerified === true) {
+    if (accessTokenPayload.isVerified === true) {
         exceptions_1.exceptionService.forbiddenException({
             message: errors_1.ACCOUNT_ALREADY_VERIFIED_ERROR_MESSAGE,
         });
     }
-    req.user = accessTokenPayload.user;
+    req.user = {
+        id: accessTokenPayload.sub,
+        isVerified: accessTokenPayload.isVerified,
+        role: accessTokenPayload.role,
+    };
     next();
 };
 exports.isVerificationRequestPermissibledMiddleware = isVerificationRequestPermissibledMiddleware;
