@@ -12,7 +12,7 @@ export const requestAccountVerificationControllerBase =
       logger.log('REQUEST ACCOUNT VERIFICATION CONTROLLER', `USER ${req?.user.id}`);
       const result = await requestUserAccountVerificationUseCase(req?.user);
       res.status(200).send({
-        message: 'un e-mail a été envoyé pour vérifier votre compte',
+        message: 'An email was sent to check your account',
         data: result.user,
       });
     } catch (err) {

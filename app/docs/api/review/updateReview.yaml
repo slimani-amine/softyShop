@@ -1,5 +1,5 @@
 paths:
-  /v1/products/review/{id}:
+  /api/products/review/{id}:
     patch:
       tags:
         - reviews

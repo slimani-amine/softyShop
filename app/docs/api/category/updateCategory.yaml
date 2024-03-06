@@ -1,5 +1,5 @@
 paths:
-  /v1/admin/category/{id}:
+  /api/admin/category/{id}:
     patch:
       summary: Update a category
       description: Update a category (only for admin).
@@ -19,28 +19,28 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateCategoryInput'
+              $ref: "#/components/schemas/UpdateCategoryInput"
       responses:
-        '201':
+        "201":
           description: Category updated successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
-                        $ref: '#/components/schemas/Category'
-        '404':
+                        $ref: "#/components/schemas/Category"
+        "404":
           description: Category not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-        '500':
+                $ref: "#/components/schemas/Error"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

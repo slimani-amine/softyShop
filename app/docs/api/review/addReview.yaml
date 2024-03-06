@@ -1,5 +1,5 @@
 paths:
-  /v1/products/review:
+  /api/products/review:
     post:
       tags:
         - reviews
@@ -10,28 +10,28 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateReviewInput'
+              $ref: "#/components/schemas/CreateReviewInput"
       responses:
-        '201':
+        "201":
           description: Review created successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
-                        $ref: '#/components/schemas/Review'
-        '422':
+                        $ref: "#/components/schemas/Review"
+        "422":
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
+                $ref: "#/components/schemas/ValidationError"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

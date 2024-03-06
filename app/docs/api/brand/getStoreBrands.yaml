@@ -1,27 +1,27 @@
 paths:
-  /v1/store/{id}/brand:
+  /api/store/{id}/brand:
     get:
       tags:
         - Brands
       summary: Get store brands
       description: Get all brands for a specific store.
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Brand'
-        '500':
+                          $ref: "#/components/schemas/Brand"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

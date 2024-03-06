@@ -12,7 +12,9 @@ import { DOCS_API_BASE_URL, STATIC_FILES_PATH } from "./config";
 import { logger } from "./v1/core/logger/logger";
 
 const server = express();
-const allowedOrigins = ["http://localhost:3000"];
+
+const allowedOrigins = ["*"];
+
 server.use(function (
   req: express.Request,
   res: express.Response,
@@ -22,18 +24,29 @@ server.use(function (
   if (allowedOrigins.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
   }
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
   res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization, x-refresh"
   );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
+
   if (req.method === "OPTIONS") {
     res.sendStatus(200);
   } else {
     next();
   }
 });
+
+server.use((req, res, next) => {
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+  next();
+});
+
 server.use(express.json());
 server.use(cookieParser());
 server.use(requestInterceptor);

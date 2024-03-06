@@ -1,5 +1,5 @@
 paths:
-  /v1/store/{id}:
+  /api/store/{id}:
     delete:
       tags:
         - Store
@@ -13,13 +13,13 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
@@ -28,15 +28,15 @@ paths:
                           success:
                             type: boolean
                             description: Indicates if the deletion was successful
-        '404':
+        "404":
           description: Store not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
+                $ref: "#/components/schemas/NotFoundError"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

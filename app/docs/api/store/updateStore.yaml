@@ -1,5 +1,5 @@
 paths:
-  /v1/store/{id}:
+  /api/store/{id}:
     patch:
       tags:
         - Store
@@ -17,34 +17,34 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateStoreInput'
+              $ref: "#/components/schemas/UpdateStoreInput"
       responses:
-        '201':
+        "201":
           description: Store updated successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
-                        $ref: '#/components/schemas/Store'
-        '404':
+                        $ref: "#/components/schemas/Store"
+        "404":
           description: Store not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '422':
+                $ref: "#/components/schemas/NotFoundError"
+        "422":
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
+                $ref: "#/components/schemas/ValidationError"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

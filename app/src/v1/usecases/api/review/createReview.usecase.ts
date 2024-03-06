@@ -3,10 +3,9 @@ import {
   reviewRepo,
 } from "../../../data/repositories/review.repository";
 
-import { exceptionService } from "../../../core/errors/exceptions";
 import { trimAndValidateSchemaPayload } from "../../../utils/validation/validate.schema";
 import { ICreateReviewInput, IReview } from "../../../domain/reviews/reviews";
-import createReviewSchema from "../../../presenters/schemas/product/createProduct.schema";
+import createReviewSchema from "../../../presenters/schemas/review/createProduct.schema";
 
 export type CreateReviewUseCaseType = (
   payload: ICreateReviewInput

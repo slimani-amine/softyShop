@@ -1,5 +1,5 @@
 paths:
-  /v1/api/users/update-me:
+  /api/users/update-me:
     put:
       security:
         - BearerAuth: []
@@ -12,7 +12,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/UpdateUser'
+              $ref: "#/components/schemas/UpdateUser"
       responses:
         201:
           description: Success
@@ -20,34 +20,34 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     required:
                       - data
                     properties:
                       data:
-                        $ref: '#/components/schemas/User'
+                        $ref: "#/components/schemas/User"
         404:
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
         401:
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
         422:
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateProfileValidationError'
+                $ref: "#/components/schemas/UpdateProfileValidationError"
         500:
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

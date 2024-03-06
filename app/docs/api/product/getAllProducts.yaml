@@ -1,27 +1,27 @@
 paths:
-  /v1/products:
+  /api/products:
     get:
       tags:
         - Products
       summary: Get all products
       description: Get a list of all products.
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Product'
-        '500':
+                          $ref: "#/components/schemas/Product"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

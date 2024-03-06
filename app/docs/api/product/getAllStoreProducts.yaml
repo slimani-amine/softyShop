@@ -1,5 +1,5 @@
 paths:
-  /v1/store/{id}/product:
+  /api/store/{id}/product:
     get:
       tags:
         - Products
@@ -13,28 +13,28 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Product'
-        '404':
+                          $ref: "#/components/schemas/Product"
+        "404":
           description: Store not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
-        '500':
+                $ref: "#/components/schemas/NotFoundError"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

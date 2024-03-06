@@ -1,0 +1,27 @@
+paths:
+  /v1/users/addresses:
+    get:
+      tags:
+        - Addresses
+      summary: Get user addresses
+      description: Get all addresses for the user.
+      responses:
+        '200':
+          description: Addresses retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessMsg'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Address'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

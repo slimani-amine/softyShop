@@ -1,0 +1,32 @@
+paths:
+  /v1/users/addresses:
+    get:
+      tags:
+        - Addresses
+      summary: Get one address
+      description: Get details of a specific address.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The ID of the address to retrieve.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Address details retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessMsg'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Address'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

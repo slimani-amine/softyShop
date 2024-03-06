@@ -1,5 +1,5 @@
 paths:
-  /v1/store/{id}/product:
+  /api/store/{id}/product:
     post:
       tags:
         - Products
@@ -17,28 +17,28 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateProductInput'
+              $ref: "#/components/schemas/CreateProductInput"
       responses:
-        '201':
+        "201":
           description: Product created successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
-                        $ref: '#/components/schemas/Product'
-        '422':
+                        $ref: "#/components/schemas/Product"
+        "422":
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
+                $ref: "#/components/schemas/ValidationError"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

@@ -1,18 +1,18 @@
 paths:
- /v1/store/{id}/product/{productId}:
+  /api/store/{id}/product/{productId}:
     delete:
       tags:
         - Products
       summary: Delete a product
       description: Delete a product for a specific store.
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
@@ -20,9 +20,9 @@ paths:
                         properties:
                           success:
                             type: boolean
-        '500':
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

@@ -1,0 +1,38 @@
+paths:
+  /api/shopping/{userId}/wishlist/{productId}:
+    delete:
+      tags:
+        - Wishlist
+      summary: Delete product from wishlist
+      description: Delete a product from the user's wishlist.
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          description: The ID of the user.
+          schema:
+            type: string
+        - in: path
+          name: productId
+          required: true
+          description: The ID of the product to be deleted from the wishlist.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Product deleted from wishlist successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/SuccessMsg"
+                  - type: object
+                    properties:
+                      data:
+                        $ref: "#/components/schemas/Wishlist"
+        "500":
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"

@@ -1,0 +1,17 @@
+components:
+  schemas:
+    Wishlist:
+      type: object
+      required:
+        - userId
+        - productId
+      properties:
+        productId:
+          type: string
+          description: The ID of the product in the wishlist
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

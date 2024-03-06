@@ -10,7 +10,7 @@ const createStoreControllerBase =
     try {
       const result = await createStoreUseCase(req?.body);
       return res.status(201).json({
-        message: 'boutique ajouter avec succès',
+        message: 'Store Add successfully',
         data: {
           store: result.store,
         },

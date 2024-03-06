@@ -1,5 +1,5 @@
 paths:
-  /v1/store/{id}/productCreator:
+  /api/store/{id}/productCreator:
     post:
       tags:
         - Product creators
@@ -10,28 +10,28 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateProductCreatorInput'
+              $ref: "#/components/schemas/CreateProductCreatorInput"
       responses:
-        '201':
+        "201":
           description: Product creator created successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
-                        $ref: '#/components/schemas/ProductCreator'
-        '422':
+                        $ref: "#/components/schemas/ProductCreator"
+        "422":
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationError'
-        '500':
+                $ref: "#/components/schemas/ValidationError"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

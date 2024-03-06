@@ -1,8 +1,8 @@
 paths:
-  /v1/auth/login:
+  /auth/login:
     post:
       tags:
-        - Auth
+        - Auththentication
       summary: Login
       description: Returns user info and token.
       requestBody:
@@ -10,10 +10,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserLogin'
+              $ref: "#/components/schemas/UserLogin"
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/UserLogin'
+              $ref: "#/components/schemas/UserLogin"
         required: true
       responses:
         200:
@@ -22,37 +22,37 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
                         type: object
                         properties:
                           user:
-                            $ref: '#/components/schemas/User'
+                            $ref: "#/components/schemas/User"
                           accessToken:
-                            $ref: '#/components/schemas/AccessToken'
+                            $ref: "#/components/schemas/AccessToken"
         422:
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LoginValidationError'
+                $ref: "#/components/schemas/LoginValidationError"
         404:
           description: User doesn't exist
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
         400:
           description: Wrong credentials
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
         500:
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

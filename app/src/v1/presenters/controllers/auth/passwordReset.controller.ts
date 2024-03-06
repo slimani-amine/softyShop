@@ -15,7 +15,7 @@ export const passwordResetControllerBase =
       );
       const result = await passwordResetUseCase(req?.body);
       res.status(200).send({
-        message: 'réinitialiser le mot de passe avec succès',
+        message: 'Reset the password successfully',
         data: result.user,
       });
     } catch (err) {

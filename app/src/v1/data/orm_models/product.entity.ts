@@ -90,7 +90,7 @@ export class ProductEntity {
   store: StoreEntity;
 
   @ManyToOne(() => CategoryEntity, (category) => category.product)
-  @JoinColumn({ name: "category_id" })  
+  @JoinColumn({ name: "category_id" })
   category: CategoryEntity;
 
   @DeleteDateColumn({ name: "deletedAt" })

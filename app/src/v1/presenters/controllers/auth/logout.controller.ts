@@ -9,7 +9,7 @@ export const logoutControllerBase =
       res.clearCookie(TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME);
       res.clearCookie(TOKENS_INFO.REFRESH_TOKEN_COOKIE_NAME);
       res.status(200).send({
-        message: 'déconnecté avec succès',
+        message: 'successfully disconnected',
         data: {},
       });
     } catch (err) {

@@ -5,35 +5,43 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  PrimaryColumn,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-} from 'typeorm';
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { UserEntity } from './user.entity';
-import { ProductEntity } from './product.entity';
+} from "typeorm";
+import {
+  QueryDeepPartialEntity,
+  WhereEntityOptions,
+  findManyType,
+} from "../../../types/repos";
+import { UserEntity } from "./user.entity";
+import { ProductEntity } from "./product.entity";
 
 @Entity({
-  name: 'Wishlist',
+  name: "Wishlist",
 })
 export class WishlistEntity {
   @PrimaryGeneratedColumn()
   id: string;
 
-  @ManyToOne(() => UserEntity, (user) => user.reviews)
-  @JoinColumn({ name: 'user_id' })
+  @PrimaryColumn()
+  user_id: number;
+
+  @ManyToOne(() => UserEntity, (user) => user.wishlist)
+  @JoinColumn({ name: "user_id" })
   user: UserEntity;
 
-  @ManyToOne(() => ProductEntity, (product) => product.reviews)
-  @JoinColumn({ name: 'product_id' })
+  @ManyToOne(() => ProductEntity, (product) => product.wishlist)
+  @JoinColumn({ name: "product_id" })
   product: ProductEntity;
 
-  @DeleteDateColumn({ name: 'deletedAt' })
+  @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;
 
-  @CreateDateColumn({ name: 'createdAt' })
+  @CreateDateColumn({ name: "createdAt" })
   createdAt: Date;
 
-  @UpdateDateColumn({ name: 'updatedAt' })
+  @UpdateDateColumn({ name: "updatedAt" })
   updatedAt: Date;
 }
 

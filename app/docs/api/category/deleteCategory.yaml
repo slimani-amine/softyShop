@@ -1,5 +1,5 @@
 paths:
-  /v1/admin/category/{id}:
+  /api/admin/category/{id}:
     delete:
       summary: Delete a category
       description: Delete a category (only for admin).

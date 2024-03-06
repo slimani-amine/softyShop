@@ -2,8 +2,8 @@ tags:
   - name: Users
     description: Everything about Users
 
-  - name: Auth
-    description: Auth Flow
+  - name: Auththentication
+    description: auth Flow
 
   - name: Verification
     description: Account Verification
@@ -17,7 +17,7 @@ tags:
   - name: Payment methods
     description: Payment methods Cruds
 
-  - name: User addresses
+  - name: Addresses
     description: User addresses Cruds
 
   - name: Products
@@ -31,3 +31,6 @@ tags:
 
   - name: reviews
     description: reviews Cruds
+
+  - name: Wishlist
+    description: wishlist Cruds

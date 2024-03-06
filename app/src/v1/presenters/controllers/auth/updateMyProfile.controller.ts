@@ -17,7 +17,7 @@ export const updateMyProfileControllerBase =
       const result = await updateMyProfileUseCase(req?.user, req?.body);
 
       res.status(201).send({
-        message: 'votre profil a été mis à jour avec succès',
+        message: 'Your profile has been successfully updated',
         data: result,
       });
     } catch (err) {

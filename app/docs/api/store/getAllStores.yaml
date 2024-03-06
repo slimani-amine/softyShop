@@ -1,27 +1,27 @@
 paths:
-  /v1/store:
+  /api/store:
     get:
       tags:
         - Store
       summary: Get all stores
       description: Get all stores.
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Success'
+                  - $ref: "#/components/schemas/Success"
                   - type: object
                     properties:
                       data:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Store'
-        '500':
+                          $ref: "#/components/schemas/Store"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

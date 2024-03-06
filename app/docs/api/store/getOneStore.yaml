@@ -1,5 +1,5 @@
 paths:
-  /v1/store/{id}:
+  /api/store/{id}:
     get:
       tags:
         - Store

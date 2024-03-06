@@ -1,0 +1,34 @@
+paths:
+  /api/shopping/{userId}/wishlist:
+    get:
+      tags:
+        - Wishlist
+      summary: Get wishlists by user
+      description: Get all wishlists for a specific user.
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          description: The ID of the user.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Wishlists retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/SuccessMsg"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/Wishlist"
+        "500":
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"

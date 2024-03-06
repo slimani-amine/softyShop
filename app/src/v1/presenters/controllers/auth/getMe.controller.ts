@@ -12,7 +12,7 @@ export const getMeControllerBase =
       logger.log('GET ME CONTROLLER', `IN GET ME CONTROLLER ID ${req?.user?.id}`);
       const result = await getMyProfileUseCase(req?.user);
       res.status(200).send({
-        message: 'succès',
+        message: 'success',
         data: result,
       });
     } catch (err) {

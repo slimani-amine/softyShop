@@ -27,7 +27,7 @@ const registerControllerBase =
       maxAge: TOKENS_INFO.ACCESS_TOKEN_EXPIRATION_IN_MILLISECONDS,
     });
     return res.status(201).json({
-      message: "inscrit avec succès",
+      message: "successfully registered",
       data: {
         user: result.user,
         accessToken: result.accessToken,

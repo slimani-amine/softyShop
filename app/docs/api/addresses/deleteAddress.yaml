@@ -1,0 +1,32 @@
+paths:
+  /v1/addresses/{id}:
+    delete:
+      tags:
+        - Addresses
+      summary: Delete address
+      description: Delete an address.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The ID of the address to be deleted.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Address deleted successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessMsg'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Address'
+        '500':
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

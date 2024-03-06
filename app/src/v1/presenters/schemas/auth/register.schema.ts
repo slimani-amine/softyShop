@@ -15,24 +15,20 @@ const registerSchema = z
     email: z.string().email({
       message: INVALID_EMAIL_ERROR_MESSAGE,
     }),
-    password: z
-      .string()
-      .min(8, {
-        message: PASSWORD_TOO_SHORT_ERROR_MESSAGE,
-      })
-      .regex(
-        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/,
-        INVALID_PASSWORD_ERROR_MESSAGE
-      ),
-    verifyPassword: z
-      .string()
-      .min(8, {
-        message: PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE,
-      })
-      .regex(
-        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/,
-        PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE
-      ),
+    password: z.string().min(8, {
+      message: PASSWORD_TOO_SHORT_ERROR_MESSAGE,
+    }),
+    // .regex(
+    //   /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/,
+    //   INVALID_PASSWORD_ERROR_MESSAGE
+    // ),
+    verifyPassword: z.string().min(8, {
+      message: PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE,
+    }),
+    // .regex(
+    //   /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/,
+    //   PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE
+    // )
     picture: z.string(),
     firstName: z.string().min(4, {
       message: FirstNAME_TOO_SHORT_ERROR_MESSAGE,
@@ -44,7 +40,9 @@ const registerSchema = z
       ["admin", "vendor", "user"],
 
       {
-        errorMap: (issue, ctx) => ({ message: "role should be admin/vendor or user " }),
+        errorMap: (issue, ctx) => ({
+          message: "role should be admin / vendor or user ",
+        }),
       }
     ),
     phoneNumber: z.string(),

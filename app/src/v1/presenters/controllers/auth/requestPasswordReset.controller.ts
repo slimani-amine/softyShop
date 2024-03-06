@@ -15,7 +15,7 @@ export const requestPasswordResetControllerBase =
       );
       const result = await requestUserPasswordResetUseCase(req?.body);
       res.status(200).send({
-        message: 'un email a été envoyé pour réinitialiser votre mot de passe',
+        message: 'An email was sent to reset your password',
         data: result.user,
       });
     } catch (err) {

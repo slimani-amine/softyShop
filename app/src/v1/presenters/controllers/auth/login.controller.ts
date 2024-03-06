@@ -26,7 +26,7 @@ export const loginControllerBase =
       });
 
       res.status(200).send({
-        message: "connecté avec succès",
+        message: "successfully connected",
         data: {
           user: result.user,
           accessToken: result.accessToken,
