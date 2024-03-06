@@ -2055,3 +2055,26 @@
 {"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
 {"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
 {"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 92ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 8ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 8ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 11ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 110ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 25ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 77ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?page=2&perPage=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?page=2&perPage=1 in 84ms"}
