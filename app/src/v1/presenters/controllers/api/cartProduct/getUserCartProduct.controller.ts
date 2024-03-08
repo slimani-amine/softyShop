@@ -1,3 +1,4 @@
+import { usersRepo } from "../../../../data/repositories/users.repository";
 import {
   getUserCartProductUseCase,
   getUserCartProductUseCaseType,
@@ -7,8 +8,9 @@ import { NextFunction, Request, Response } from "express";
 export const getUserCartProductControllerBase =
   (getUserCartProductUseCase: getUserCartProductUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
+    const cartId = req.user.cartId;
+
     try {
-      const cartId = req.params.cartId;
       const result = await getUserCartProductUseCase({ cartId });
       res.status(200).send({
         message: "success",

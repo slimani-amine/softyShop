@@ -8,8 +8,8 @@ export const addProductToCartControllerBase =
   (addProductToCartUseCase: AddProductToCartUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      req.body.cartId = req.params.cartId;
-      
+      req.body.cartId = req.user.cartId;
+
       const result = await addProductToCartUseCase(req.body);
 
       res.status(201).send({

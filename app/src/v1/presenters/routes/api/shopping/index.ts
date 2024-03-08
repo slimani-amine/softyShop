@@ -43,15 +43,15 @@ export function getWishlistApiRouter(
     .route("/:userId/wishlist/:productId")
     .delete(controllers.deleteWishlist); //delete the product from Wishlist
 
-  router.route("/:userId/cart/:cartId").get(controllers.getUserCart); //get the cart + products
-  router.route("/:userId/cartProduct/:cartId").get(controllers.getUserCartProduct); //get the cart + products
+  router.route("/my-cart").get(controllers.getUserCart); //get the cart
+  router.route("/cart").get(controllers.getUserCartProduct); //get the cart + products
 
   router
-    .route("/:userId/cart/:cartId/product")
+    .route("/cart/product")
     .post(controllers.addProductToCart); //add product to a cart
 
   router
-    .route("/:userId/cart/:cartId/product/:cartProductId")
+    .route("/cart/product/:cartProductId")
     .delete(controllers.deleteProductFromCart); //delete the product from cart
 
   return router;

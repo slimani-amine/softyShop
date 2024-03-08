@@ -1,3 +1,4 @@
+import { usersRepo } from "../../../../data/repositories/users.repository";
 import {
   GetCartUseCaseType,
   getCartUseCase,
@@ -7,14 +8,20 @@ import { NextFunction, Request, Response } from "express";
 export const getCartControllerBase =
   (getCartUseCase: GetCartUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
-    const cartId = req.params.cartId; 
-
     try {
-      const result = await getCartUseCase({ cartId });
-      res.status(200).send({
-        message: "Success",
-        data: result,
-      });
+      const cartId = req.user.cartId;
+      console.log("🚀 ~ cartId:", cartId)
+      if (!cartId) {
+        res.status(404).send({
+          message: "you have not a cart ",
+        });
+      } else {
+        const result = await getCartUseCase({ cartId });
+        res.status(200).send({
+          message: "success",
+          data: result,
+        });
+      }
     } catch (err) {
       next(err);
     }

@@ -11,6 +11,7 @@ import { CartEntity } from "../orm_models/cart.entity";
 import { exceptionService } from "../../core/errors/exceptions";
 import dataSource from "../connection";
 import { cartRepo } from "./cart.repsitory";
+import { ICartProduct } from "../../domain/cartProduct/cartProduct";
 
 export const cartProductRepoBase = (
   dbConnection: DataSource | QueryRunner
@@ -70,22 +71,32 @@ export const cartProductRepoBase = (
     } as DeepPartial<CartProductEntity>);
 
     const result = await this.manager.save(CartProductEntity, cartProduct);
-    console.log("🚀 ~ cartProductRepoBase ~ result:", result);
     return result;
   },
 
   async deleteCartProduct(cartProduct: CartProductEntity): Promise<number> {
-    // const sommeQuantities = payload.quantity * 1 + cart.totalQuantity * 1;
-    // const sommePrice = product.price * 1 + cart.totalAmount * 1;
-
-    // await cartRepo.updateCart(cart, {
-    //   totalQuantity: sommeQuantities,
-    //   totalAmount: sommePrice,
-    // });
     const result = await this.manager.softDelete(CartProductEntity, {
       id: cartProduct.id,
     });
     return result !== null ? 1 : 0;
+  },
+  async updateCartProduct(
+    cartProduct: CartProductEntity,
+    payload: Partial<CartProductEntity>
+  ): Promise<any> {
+    await this.manager.update(
+      CartProductEntity,
+      {
+        id: cartProduct.id,
+      },
+      payload
+    );
+    const updatedProductCart = await this.manager.findOne(CartProductEntity, {
+      where: {
+        id: cartProduct.id,
+      },
+    });
+    return updatedProductCart;
   },
 });
 
@@ -104,4 +115,8 @@ export interface ICartProductRepository {
     cartId: string;
   }): Promise<CartProductEntity>;
   deleteCartProduct(cartProduct: CartProductEntity): Promise<number>;
+  updateCartProduct(
+    cartProduct: CartProductEntity,
+    payload: Partial<CartProductEntity>
+  ): Promise<any>;
 }

@@ -8,8 +8,9 @@ import { exceptionService } from "../../../core/errors/exceptions";
 import { IJwtAccessPayload } from "../../../usecases/auth/types/jwt.tokens";
 import { Request, Response, NextFunction } from "express";
 import * as jwtService from "jsonwebtoken";
+import { usersRepo } from "../../../data/repositories/users.repository";
 
-export const isAuthentictedMiddleware = (
+export const isAuthentictedMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -42,11 +43,25 @@ export const isAuthentictedMiddleware = (
         message: ACCOUNT_VERIFICATION_REQUIRED_ERROR_MESSAGE,
       });
     }
+    const me = await usersRepo.findOne({
+      relations: {
+        cart: true,
+      },
+      where: {
+        id: parseInt(accessTokenPayload.sub),
+      },
+      select: {
+        cart: {
+          id: true,
+        },
+      },
+    });
 
     req.user = {
       id: accessTokenPayload.sub,
       isVerified: accessTokenPayload.isVerified,
       role: accessTokenPayload.role,
+      cartId: me.cart.id,
     };
 
     next();

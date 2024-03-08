@@ -7,6 +7,7 @@ import { NextFunction, Request, Response } from "express";
 export const deleteProductFromCartControllerBase =
   (deleteProductFromCartUseCase: DeleteProductFromCartUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
+    req.params.cartId = req.user.cartId;
     try {
       const result = await deleteProductFromCartUseCase(req?.params);
       res.status(200).send({

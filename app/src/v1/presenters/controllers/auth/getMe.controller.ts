@@ -1,18 +1,22 @@
-import { logger } from '../../../core/logger/logger';
-import { Request, Response, NextFunction } from 'express';
+import { logger } from "../../../core/logger/logger";
+import { Request, Response, NextFunction } from "express";
 import {
   GetMyProfileUseCaseType,
   getMyProfileUseCase,
-} from '../../../usecases/api/users/getMyProfile.usecase';
+} from "../../../usecases/api/users/getMyProfile.usecase";
 
 export const getMeControllerBase =
   (getMyProfileUseCase: GetMyProfileUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      logger.log('GET ME CONTROLLER', `IN GET ME CONTROLLER ID ${req?.user?.id}`);
+      logger.log(
+        "GET ME CONTROLLER",
+        `IN GET ME CONTROLLER ID ${req?.user?.id}`
+      );
       const result = await getMyProfileUseCase(req?.user);
+
       res.status(200).send({
-        message: 'success',
+        message: "success",
         data: result,
       });
     } catch (err) {

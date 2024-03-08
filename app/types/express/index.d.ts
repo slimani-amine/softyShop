@@ -10,6 +10,7 @@ declare global {
       id?: string;
       isVerified: boolean;
       role: string;
+      cartId?: string;
     }
     export interface User extends RequestUser {}
   }

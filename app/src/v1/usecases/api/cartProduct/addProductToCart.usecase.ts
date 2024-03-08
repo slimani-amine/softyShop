@@ -10,7 +10,8 @@ import {
   ICartProduct,
   ICreateCartProductInput,
 } from "../../../domain/cartProduct/cartProduct";
-import { cartRepo } from "app/src/v1/data/repositories/cart.repsitory";
+import { cartRepo } from "../../../data/repositories/cart.repsitory";
+import { ICart } from "../../../domain/cart/cart";
 
 export type AddProductToCartUseCaseType = (
   payload: ICreateCartProductInput
@@ -27,30 +28,67 @@ export const addProductToCartUseCaseBase =
   async (payload: ICreateCartProductInput) => {
     validateCreateCartProductPayload(payload);
 
-    const existingCartProduct = await cartProductRepo.findOne({
+    const existingCart = (await cartRepo.findOne({
+      where: {
+        id: payload.cartId,
+      },
+    })) as any;
+
+    if (!existingCart) {
+      exceptionService.notFoundException({
+        message: "cart not found",
+      });
+    }
+    const existingCartProduct = (await cartProductRepo.findOne({
+      relations: {
+        product: true,
+      },
       where: {
         product: { id: payload.productId },
         cart: { id: payload.cartId },
       },
-    });
+    })) as any;
 
-    if (existingCartProduct) {
+    if (existingCartProduct?.quantity === payload?.quantity) {
       exceptionService.notFoundException({
         message: "This product is already in the cart",
       });
+    } else if (existingCartProduct?.quantity > payload?.quantity) {
+      const cartProductCreated =
+        await dependencies.cartProductRepo.updateCartProduct(
+          existingCartProduct,
+          {
+            quantity: payload?.quantity * 1,
+          }
+        );
+
+      return {
+        cartProduct: cartProductCreated,
+      };
+    } else if (existingCartProduct?.quantity < payload?.quantity) {
+      const cartProductCreated =
+        await dependencies.cartProductRepo.updateCartProduct(
+          existingCartProduct,
+          {
+            quantity: payload?.quantity * 1,
+          }
+        );
+
+      return {
+        cartProduct: cartProductCreated,
+      };
+    } else {
+      const cartProductCreated =
+        await dependencies.cartProductRepo.createCartProduct({
+          quantity: payload.quantity,
+          productId: payload.productId,
+          cartId: payload.cartId,
+        });
+
+      return {
+        cartProduct: cartProductCreated,
+      };
     }
-
-
-    const cartProductCreated =
-      await dependencies.cartProductRepo.createCartProduct({
-        quantity: payload.quantity,
-        productId: payload.productId,
-        cartId: payload.cartId,
-      });
-
-    return {
-      cartProduct: cartProductCreated,
-    };
   };
 
 export function validateCreateCartProductPayload(

@@ -26,13 +26,27 @@ export const getUserCartProductUseCaseBase =
       },
     });
 
-    const cart = await cartRepo.findOne({
+    let sommeQuantities = 0;
+    for (let i = 0; i < cartProduct.length; i++) {
+      sommeQuantities += cartProduct[i].quantity;
+    }
+    let sommePrice = 0;
+    for (let i = 0; i < cartProduct.length; i++) {
+      sommePrice += cartProduct[i].product.price*cartProduct[i].quantity;
+    }
+
+    const cart = (await cartRepo.findOne({
       where: {
         id: cartId.toString(),
       },
+    })) as any;
+
+    const newCart = await cartRepo.updateCart(cart, {
+      totalQuantity: sommeQuantities,
+      totalAmount: sommePrice,
     });
 
-    return [cart, cartProduct];
+    return [newCart, cartProduct];
   };
 
 export const getUserCartProductUseCase = getUserCartProductUseCaseBase({

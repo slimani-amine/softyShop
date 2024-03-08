@@ -8,7 +8,6 @@ export const getUserAddressesControllerBase =
   (getUserAddressesUseCase: GetUserAddressesUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     const userId = req.user.id;
-    console.log("🚀 ~ userId:", userId)
 
     try {
       const result = await getUserAddressesUseCase({ userId });
