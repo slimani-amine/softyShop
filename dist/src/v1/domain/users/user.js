@@ -15,6 +15,7 @@ class User extends idAsNumber_1.NumberId {
         this.phoneNumber = payload.phoneNumber;
         this.confirmation_token = payload.confirmation_token;
         this.confirmed_email = payload.confirmed_email;
+        this.cart = payload.cart;
     }
 }
 exports.User = User;

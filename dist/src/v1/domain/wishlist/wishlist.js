@@ -7,9 +7,6 @@ class Wishlist extends idAsNumber_1.NumberId {
         super(payload.id);
         this.user = payload.user;
         this.product = payload.product;
-        this.deletedAt = payload.deletedAt;
-        this.createdAt = payload.createdAt;
-        this.updatedAt = payload.updatedAt;
     }
 }
 exports.Wishlist = Wishlist;

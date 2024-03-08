@@ -10,9 +10,12 @@ export const JWT_KEYS = {
   SECRET_KEY: process.env.JWT_SECRET_KEY,
   PUBLIC_KEY: process.env.JWT_PUBLIC_KEY,
 };
-export const STATIC_FILES_PATH = resolve(__dirname, "../../../public");
+export const STATIC_FILES_PATH = resolve(__dirname, "../../../images");
 export const DEFAULT_USER_PROFILE_PICTURE_LINK =
   API_BASE_URL + "/images/default.png";
+
+export const DEFAULT_PRODUCT_IMAGE_LINK =
+  API_BASE_URL + "/images/defaultProduct.png";
 export const TOKENS_INFO = {
   ACCESS_TOKEN_VALIDATION_PERIOD: process.env.ACCESS_TOKEN_VALIDITY_PERIOD,
   REFRESH_TOKEN_VALIDATION_PERIOD: process.env.REFRESH_TOKEN_VALIDITY_PERIOD,

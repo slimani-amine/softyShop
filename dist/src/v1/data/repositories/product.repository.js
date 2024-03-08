@@ -64,11 +64,14 @@ const productRepoBase = (dbConnection) => ({
             brand: brand,
             store: store,
             category: category,
+            images: JSON.stringify(payload.images),
+            discount: payload.discount,
         });
         const result = await this.manager.save(product_entity_1.ProductEntity, product);
         return this.toDomainProduct(result);
     },
     async updateProduct(product, payload) {
+        console.log("🚀 ~ productRepoBase ~ payload:", payload);
         await this.manager.update(product_entity_1.ProductEntity, { id: product.getIdAsNumber() }, payload);
         const updatedProduct = await this.manager.findOne(product_entity_1.ProductEntity, {
             where: { id: product.getIdAsNumber().toString() },
@@ -86,6 +89,7 @@ const productRepoBase = (dbConnection) => ({
         return result.affected;
     },
     async findByQuery(queryParams) {
+        console.log(queryParams);
         const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "products", queryParams, {
             id: {
                 operator: "eq",
@@ -116,6 +120,9 @@ const productRepoBase = (dbConnection) => ({
             availability: prismaProduct.availability,
             isPublished: prismaProduct.isPublished,
             isAccepted: prismaProduct.isAccepted,
+            category: prismaProduct.category,
+            images: prismaProduct.images,
+            discount: prismaProduct.discount
         });
         return product;
     },

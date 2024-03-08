@@ -6,8 +6,8 @@ const getAllProductsControllerBase = (getAllProductUseCase) => async (req, res, 
     try {
         const result = await getAllProductUseCase(req === null || req === void 0 ? void 0 : req.query);
         res.status(200).send({
-            message: 'Success',
-            data: result.docs,
+            message: "Success",
+            data: result,
         });
     }
     catch (err) {

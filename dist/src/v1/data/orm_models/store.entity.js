@@ -53,7 +53,13 @@ __decorate([
         type: "varchar",
     }),
     __metadata("design:type", String)
-], StoreEntity.prototype, "position", void 0);
+], StoreEntity.prototype, "location", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        type: "varchar",
+    }),
+    __metadata("design:type", String)
+], StoreEntity.prototype, "address", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         type: "varchar",

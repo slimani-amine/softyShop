@@ -1,4 +1,4 @@
-import { IUser } from '../../../domain/users/user';
+import { IUser } from "../../../domain/users/user";
 export type MailUserUseCaseBuilderType = (payload: {
     subject: string;
     template: string;

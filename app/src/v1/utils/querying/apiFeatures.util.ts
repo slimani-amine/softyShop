@@ -1,7 +1,7 @@
-import { Project } from 'ts-morph';
-import * as sqlstring from 'sqlstring';
-import { exceptionService } from '../../core/errors/exceptions';
-import { DataSource } from 'typeorm';
+import { Project } from "ts-morph";
+import * as sqlstring from "sqlstring";
+import { exceptionService } from "../../core/errors/exceptions";
+import { DataSource } from "typeorm";
 export interface QueryResult<T> {
   docs: T[];
   meta: MetaData;
@@ -43,7 +43,7 @@ export const pagination = {
   page: process.env.PAGE || 1,
   perPage: process.env.PERPAGE || 1,
 };
-export function extractLongestKeys(arr: string[]): Set<string> {  
+export function extractLongestKeys(arr: string[]): Set<string> {
   const sortedKeys = arr.sort((a, b) => b.length - a.length);
   // Example sortedKeys =[ "model.brand.rentableType","model.rentableType.brand","model.brand","model"]
   const longestKeys = new Set<string>();
@@ -52,10 +52,10 @@ export function extractLongestKeys(arr: string[]): Set<string> {
     let longestKey = key;
     let included = false;
     for (const existingKey of longestKeys) {
-      if (key.startsWith(existingKey + '.') || key === existingKey) {
+      if (key.startsWith(existingKey + ".") || key === existingKey) {
         longestKey = key;
         longestKeys.delete(existingKey);
-      } else if (existingKey.startsWith(key + '.')) {
+      } else if (existingKey.startsWith(key + ".")) {
         included = true;
         break;
       }
@@ -69,15 +69,20 @@ export function extractLongestKeys(arr: string[]): Set<string> {
   return longestKeys;
 }
 export const parenthesesGenerator = (num: number): string => {
-  return ')'.repeat(num);
+  return ")".repeat(num);
 };
-export const concatenateTableAndFields = (table: string, fields: string[]): string =>
-  fields.map((field) => `${table}.${field}`).join();
+export const concatenateTableAndFields = (
+  table: string,
+  fields: string[]
+): string => fields.map((field) => `${table}.${field}`).join();
 
 export const Keys = (interfaceName: string): [string, string][] => {
   const project = new Project();
-  const sourceFile = project.addSourceFileAtPath(`./src/models/${interfaceName}Model.ts`);
-  interfaceName = interfaceName.charAt(0).toUpperCase() + interfaceName.slice(1);
+  const sourceFile = project.addSourceFileAtPath(
+    `./src/models/${interfaceName}Model.ts`
+  );
+  interfaceName =
+    interfaceName.charAt(0).toUpperCase() + interfaceName.slice(1);
 
   const node = sourceFile.getInterface(interfaceName)!;
 
@@ -102,7 +107,7 @@ export abstract class ApiFeatures {
   private static generateMetaData(
     rowsPerPage: number,
     currentPage: number,
-    totalRecords: number,
+    totalRecords: number
   ): MetaData {
     const totalPages = Math.ceil(Number(totalRecords) / rowsPerPage);
     const prevPage = currentPage > 1 ? currentPage - 1 : null;
@@ -126,7 +131,7 @@ export abstract class ApiFeatures {
      */
   public static searchDataParser(
     searchedData: any,
-    searchableFields: Record<string, SearchableFieldValue>,
+    searchableFields: Record<string, SearchableFieldValue>
   ): {
     [key: string]: string;
   } {
@@ -152,18 +157,24 @@ export abstract class ApiFeatures {
     columnAlias: string,
     column: string,
     value: string,
-    negated: boolean,
+    negated: boolean
   ): string {
     const values = value
-      .split(',')
+      .split(",")
       .map((el) => sqlstring.escape(el.trim()))
-      .join(',');
-    const operator = negated ? 'NOT IN' : 'IN';
+      .join(",");
+    const operator = negated ? "NOT IN" : "IN";
     return `${columnAlias}.${column} ${operator} (${values})`;
   }
 
-  private static formatLikeInJoin(columnAlias: string, column: string, value: string): string {
-    return `${columnAlias}.${column} LIKE CONCAT('%', ${sqlstring.escape(value)}, '%')`;
+  private static formatLikeInJoin(
+    columnAlias: string,
+    column: string,
+    value: string
+  ): string {
+    return `${columnAlias}.${column} LIKE CONCAT('%', ${sqlstring.escape(
+      value
+    )}, '%')`;
   }
 
   /**
@@ -180,50 +191,61 @@ export abstract class ApiFeatures {
     fieldName: string,
     operator: string,
     value: string,
-    joinInfo?: Record<string, JoinInfo>,
+    joinInfo?: Record<string, JoinInfo>
   ): string {
-    const joinedFields = fieldName.split('.').slice(-2);
+    const joinedFields = fieldName.split(".").slice(-2);
     const [table, column] = joinedFields;
     const columnAlias = joinInfo?.[table]?.tableAlias ?? table;
-    const formatBetween = (table: string, column: string, min: string, max: string): string => {
+    const formatBetween = (
+      table: string,
+      column: string,
+      min: string,
+      max: string
+    ): string => {
       return `${table}.${column} BETWEEN ${min} AND ${max}`;
     };
 
     switch (operator) {
-      case 'injoin':
+      case "injoin":
         return this.formatIn(columnAlias, column, value, false);
-      case 'notinjoin':
+      case "notinjoin":
         return this.formatIn(columnAlias, column, value, true);
-      case 'likeinjoin':
+      case "likeinjoin":
         return this.formatLikeInJoin(columnAlias, column, value);
-      case 'eqinjoin':
+      case "eqinjoin":
         return `${columnAlias}.${column} = '${value}'`;
-      case 'nullinjoin':
+      case "nullinjoin":
         return `${columnAlias}.${column} IS NULL`;
-      case 'in':
+      case "in":
         return this.formatIn(primaryTable, fieldName, value, false);
-      case 'between':
-        const [min, max] = value.split(',').map((val) => sqlstring.escape(val.trim()));
+      case "between":
+        const [min, max] = value
+          .split(",")
+          .map((val) => sqlstring.escape(val.trim()));
         return formatBetween(primaryTable, fieldName, min, max);
-      case 'betweeninjoin':
-        const [minVal, maxVal] = value.split(',').map((val) => sqlstring.escape(val.trim()));
+      case "betweeninjoin":
+        const [minVal, maxVal] = value
+          .split(",")
+          .map((val) => sqlstring.escape(val.trim()));
         return formatBetween(columnAlias, column, minVal, maxVal);
-      case 'gte':
+      case "gte":
         return `${primaryTable}.${fieldName} >= ${sqlstring.escape(value)}`;
-      case 'gt':
+      case "gt":
         return `${primaryTable}.${fieldName} > ${sqlstring.escape(value)}`;
-      case 'lte':
+      case "lte":
         return `${primaryTable}.${fieldName} <= ${sqlstring.escape(value)}`;
-      case 'lt':
+      case "lt":
         return `${primaryTable}.${fieldName} < ${sqlstring.escape(value)}`;
-      case 'diff':
+      case "diff":
         return `${primaryTable}.${fieldName} <> ${sqlstring.escape(value)}`;
-      case 'eq':
+      case "eq":
         return `${primaryTable}.${fieldName} = ${sqlstring.escape(value)}`;
-      case 'null':
+      case "null":
         return `${primaryTable}.${fieldName} IS NULL`;
       default:
-        return `${primaryTable}.${fieldName} LIKE ${sqlstring.escape('%' + value + '%')}`;
+        return `${primaryTable}.${fieldName} LIKE ${sqlstring.escape(
+          "%" + value + "%"
+        )}`;
     }
   }
 
@@ -233,13 +255,18 @@ export abstract class ApiFeatures {
    * @returns A string.
    */
 
-  private static generateJsonObject(tables: string[], joinInfo?: Record<string, JoinInfo>): string {
+  private static generateJsonObject(
+    tables: string[],
+    joinInfo?: Record<string, JoinInfo>
+  ): string {
     let isJsonArray = false;
     // ==> loop through tables array and generate a JSON object for each table
     const objectProperties = tables.map((table: string, index: number) => {
       const tableAlias = joinInfo?.[table]?.tableAlias ?? table;
       const properties = joinInfo?.[table]?.selectedFields ?? Keys(table);
-      joinInfo?.[table]?.foreignConditionField ? (isJsonArray = true) : isJsonArray;
+      joinInfo?.[table]?.foreignConditionField
+        ? (isJsonArray = true)
+        : isJsonArray;
 
       // Check the type of the first element in the properties array to decide how to process it
       let tableFields: string;
@@ -249,7 +276,7 @@ export abstract class ApiFeatures {
         tableFields = properties
           .map((field: string | string[]) => {
             return `"${field[0]}", ${
-              field[1].includes('Date')
+              field[1].includes("Date")
                 ? `CONCAT(SUBSTRING(${tableAlias}.${field[0]}, 1, 23), 'Z')`
                 : `${tableAlias}.${field[0]}`
             } `;
@@ -265,15 +292,21 @@ export abstract class ApiFeatures {
       }
 
       // ==> JSON_OBJECT("id",rentableType.id,"name",rentableType.name,"description",rentableType.description) AS rentableType
-      return index !== 0 ? `"${table}",JSON_OBJECT(${tableFields}` : tableFields;
+      return index !== 0
+        ? `"${table}",JSON_OBJECT(${tableFields}`
+        : tableFields;
     });
     // combine the JSON objects into one JSON object using the table name as the key and the JSON object as the value except for the first table in the array
     return isJsonArray
       ? `JSON_ARRAYAGG(JSON_OBJECT(${objectProperties.join()}${parenthesesGenerator(
-          tables.length,
+          tables.length
         )}) AS ${tables[0]}`
-      : `JSON_OBJECT(${objectProperties.join()}${parenthesesGenerator(tables.length)} AS ${
-          joinInfo?.[tables[0]]?.asTableAlias ? joinInfo?.[tables[0]]?.tableAlias : tables[0]
+      : `JSON_OBJECT(${objectProperties.join()}${parenthesesGenerator(
+          tables.length
+        )} AS ${
+          joinInfo?.[tables[0]]?.asTableAlias
+            ? joinInfo?.[tables[0]]?.tableAlias
+            : tables[0]
         }`;
     // ==> JSON_OBJECT("id",class.id,"name",class.name,"description",class.description,"rentableType",JSON_OBJECT("id",rentableType.id,"name",rentableType.name,"description",rentableType.description,"model",JSON_OBJECT("id",model.id,"name",model.name,"description",model.description))) AS class
   }
@@ -290,12 +323,12 @@ export abstract class ApiFeatures {
     primaryTable: string,
     searchedField: string,
     joinInfo?: Record<string, JoinInfo>,
-    defaultPopulate?: boolean,
+    defaultPopulate?: boolean
   ): string | undefined {
     // Split the searched field on dots to identify the necessary join tables. If the searched field does not contain dots but the `defaultPopulate` is true, the searched field is used as a single join table.
 
-    const joinTables: string[] = searchedField.includes('.')
-      ? searchedField.split('.').slice(0, -1)
+    const joinTables: string[] = searchedField.includes(".")
+      ? searchedField.split(".").slice(0, -1)
       : defaultPopulate
         ? [searchedField]
         : [];
@@ -309,17 +342,19 @@ export abstract class ApiFeatures {
       const foreignTable =
         index === 0
           ? primaryTable
-          : joinInfo?.[joinTables[index - 1]]?.tableAlias ?? joinTables[index - 1];
+          : joinInfo?.[joinTables[index - 1]]?.tableAlias ??
+            joinTables[index - 1];
       const conditionField = joinInfo?.[table]?.conditionField ?? `${table}Id`;
-      const joinType = joinInfo?.joinType ?? 'LEFT JOIN';
-      const foreignConditionField = joinInfo?.[table]?.foreignConditionField ?? 'id';
+      const joinType = joinInfo?.joinType ?? "LEFT JOIN";
+      const foreignConditionField =
+        joinInfo?.[table]?.foreignConditionField ?? "id";
 
       // Concatenate join statements as a single string, with the specified join type, or defaults to a "LEFT JOIN" if not specified.
 
       return `${joinType} ${tableAlias} ON ${conditionAlias}.${foreignConditionField} = ${foreignTable}.${conditionField}`;
     });
 
-    return joinStatements.join(' ');
+    return joinStatements.join(" ");
   }
 
   public static generateSqlStatement(
@@ -330,7 +365,7 @@ export abstract class ApiFeatures {
     jsonObject: string[],
     queryParams: any,
     pagination: Pagination,
-    apiOptions: ApiOptions,
+    apiOptions: ApiOptions
   ) {
     const deleted = !apiOptions?.isDeleted
       ? `${tableName}.deletedAt IS NULL`
@@ -340,25 +375,31 @@ export abstract class ApiFeatures {
     const jsonObj = [...new Set(jsonObject)];
 
     const orderBy = queryParams.orderBy
-      ? queryParams.orderBy.includes('.')
+      ? queryParams.orderBy.includes(".")
         ? queryParams.orderBy
         : `${tableName}.${queryParams.orderBy}`
-      : '';
-    const sortedBy = queryParams.sortedBy || 'ASC';
+      : "";
+    const sortedBy = queryParams.sortedBy || "ASC";
     const offset = (pagination.page - 1) * pagination.perPage;
     const toSelectFields =
       apiOptions.selectedFields && apiOptions.selectedFields.length > 0
         ? concatenateTableAndFields(tableName, apiOptions.selectedFields)
         : `${tableName}.*`;
 
-    return `SELECT ${toSelectFields}${apiOptions.isPaging ? `, COUNT(1) OVER() as count` : ''}${
-      jsonObj.join() ? `, ${jsonObj.join()}` : ''
-    } FROM ${tableName} ${joins.join(' ')}
-         WHERE ${deleted} ${filterWhereSql ? `AND (${filterWhereSql})` : ''} ${
-           whereSql ? `AND (${whereSql})` : ''
-         } ${apiOptions.isGroupedById ? `GROUP BY ${tableName}.id` : ''} ${
-           orderBy ? `ORDER BY ${orderBy} ${sortedBy}` : ''
-         } ${apiOptions.isPaging ? `LIMIT ${pagination.perPage} OFFSET ${offset}` : ''}`;
+    return `SELECT ${toSelectFields}${
+      apiOptions.isPaging ? `, COUNT(1) OVER() as count` : ""
+    }${
+      jsonObj.join() ? `, ${jsonObj.join()}` : ""
+    } FROM ${tableName} ${joins.join(" ")}
+         WHERE ${deleted} ${filterWhereSql ? `AND (${filterWhereSql})` : ""} ${
+           whereSql ? `AND (${whereSql})` : ""
+         } ${apiOptions.isGroupedById ? `GROUP BY ${tableName}.id` : ""} ${
+           orderBy ? `ORDER BY ${orderBy} ${sortedBy}` : ""
+         } ${
+           apiOptions.isPaging
+             ? `LIMIT ${pagination.perPage} OFFSET ${offset}`
+             : ""
+         }`;
   }
 
   /**
@@ -375,36 +416,36 @@ export abstract class ApiFeatures {
     value: SearchableFieldValue,
     join: string[],
     jsonObject: string[],
-    key: string,
+    key: string
   ) {
     const joinStatement = this.generateJoinStatement(
       tableName,
       key,
       value.joinTables,
-      value.defaultPopulate,
+      value.defaultPopulate
     );
     if (joinStatement) {
       join.push(joinStatement);
     }
-    const joinedTables = key.split('.').slice(0, -1);
+    const joinedTables = key.split(".").slice(0, -1);
     jsonObject.push(this.generateJsonObject(joinedTables, value.joinTables));
   }
 
   public static orderFields(
     parsedFields: Record<string, string>,
-    searchableFields: Record<string, SearchableFieldValue>,
+    searchableFields: Record<string, SearchableFieldValue>
   ): string[] {
     const joinFields = [];
     for (const [key] of Object.entries(parsedFields)) {
       // If the searchedField contains a dot, add the table name to the joinFields array.
-      if (key.includes('.')) {
-        joinFields.push(key.split('.').slice(0, -1).join('.'));
+      if (key.includes(".")) {
+        joinFields.push(key.split(".").slice(0, -1).join("."));
       }
     }
     for (const [key, value] of Object.entries(searchableFields)) {
       // If the searchableField contains a dot and has the defaultPopulate property set to true, add the table name to the joinFields array.
-      if (key.includes('.') && value.defaultPopulate) {
-        joinFields.push(key.split('.').slice(0, -1).join('.'));
+      if (key.includes(".") && value.defaultPopulate) {
+        joinFields.push(key.split(".").slice(0, -1).join("."));
       }
     }
     return joinFields;
@@ -414,7 +455,7 @@ export abstract class ApiFeatures {
     tableName: string,
     parsedData: Record<string, string>,
     searchableFields: Record<string, SearchableFieldValue>,
-    defaultPopulated: boolean = true,
+    defaultPopulated: boolean = true
   ) {
     const filterWhereClause: string[] = [];
     const whereClause: string[] = [];
@@ -425,8 +466,14 @@ export abstract class ApiFeatures {
     if (defaultPopulated) {
       for (const [key, value] of Object.entries(searchableFields)) {
         if (value.defaultPopulate) {
-          filteredObj.has(key.split('.').slice(0, -1).join('.')) &&
-            this.processSearchableField(tableName, value, joinClause, jsonObject, key);
+          filteredObj.has(key.split(".").slice(0, -1).join(".")) &&
+            this.processSearchableField(
+              tableName,
+              value,
+              joinClause,
+              jsonObject,
+              key
+            );
         }
       }
     }
@@ -438,7 +485,7 @@ export abstract class ApiFeatures {
         key,
         operator,
         value,
-        searchableFields[key].joinTables,
+        searchableFields[key].joinTables
       );
 
       if (fieldConditions) {
@@ -449,8 +496,17 @@ export abstract class ApiFeatures {
         }
       }
 
-      if (!defaultPopulate && filteredObj.has(key.split('.').slice(0, -1).join('.'))) {
-        this.processSearchableField(tableName, searchableFields[key], joinClause, jsonObject, key);
+      if (
+        !defaultPopulate &&
+        filteredObj.has(key.split(".").slice(0, -1).join("."))
+      ) {
+        this.processSearchableField(
+          tableName,
+          searchableFields[key],
+          joinClause,
+          jsonObject,
+          key
+        );
       }
     }
     return { whereClause, joinClause, jsonObject, filterWhereClause };
@@ -469,35 +525,41 @@ export abstract class ApiFeatures {
     tableName: string,
     queryParams: Record<string, string>,
     searchableFields: Record<string, SearchableFieldValue>,
-    apiOptions: ApiOptions = {},
+    apiOptions: ApiOptions = {}
   ): Promise<any> {
     apiOptions.isDeleted = apiOptions.isDeleted ?? false;
-    apiOptions.isPaging = queryParams.isPaging ? JSON.parse(queryParams.isPaging) : true;
+    apiOptions.isPaging = queryParams.isPaging
+      ? JSON.parse(queryParams.isPaging)
+      : true;
     const parsedData = this.searchDataParser(queryParams, searchableFields);
-    const { whereClause, joinClause, jsonObject, filterWhereClause } = this.groupSearchInfo(
-      tableName,
-      parsedData,
-      searchableFields,
-      apiOptions?.defaultPopulate,
-    );
+    const { whereClause, joinClause, jsonObject, filterWhereClause } =
+      this.groupSearchInfo(
+        tableName,
+        parsedData,
+        searchableFields,
+        apiOptions?.defaultPopulate
+      );
     const page = parseInt(queryParams.page, 10) || Number(pagination.page);
-    const perPage = parseInt(queryParams.perPage, 10) || Number(pagination.perPage);
+    const perPage =
+      parseInt(queryParams.perPage, 10) || Number(pagination.perPage);
     const sqlStatement = this.generateSqlStatement(
       tableName,
       joinClause,
-      whereClause.join(` ${queryParams.searchJoin ?? ' AND '} `),
-      filterWhereClause.join(' AND '),
+      whereClause.join(` ${queryParams.searchJoin ?? " AND "} `),
+      filterWhereClause.join(" AND "),
       jsonObject,
       queryParams,
       {
         page,
         perPage,
       },
-      apiOptions,
+      apiOptions
     );
     const rows: any = await dbConnection.query(sqlStatement);
     const count = rows.length > 0 && apiOptions.isPaging ? rows[0].count : 0;
-    const meta = apiOptions.isPaging ? this.generateMetaData(perPage, page, count) : false;
+    const meta = apiOptions.isPaging
+      ? this.generateMetaData(perPage, page, count)
+      : false;
     return { docs: rows, meta };
   }
 }

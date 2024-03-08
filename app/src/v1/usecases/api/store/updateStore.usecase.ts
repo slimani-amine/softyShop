@@ -17,10 +17,10 @@ export const updateStoreUseCaseBase =
         updatePayload.socialMediaLinks
       );
     }
-    if (updatePayload.position) {
-      updatePayload.position = JSON.stringify(updatePayload.position);
+    if (updatePayload.location) {
+      updatePayload.location = JSON.stringify(updatePayload.location);
     }
-    
+
     const updatedStore = await storeRepository.updateStore(
       store,
       updatePayload

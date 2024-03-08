@@ -90,6 +90,8 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       brand: brand,
       store: store,
       category: category,
+      images: JSON.stringify(payload.images),
+      discount: payload.discount,
     } as DeepPartial<ProductEntity>);
 
     const result = await this.manager.save(ProductEntity, product);
@@ -100,6 +102,7 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     product: IProduct,
     payload: Partial<ProductEntity>
   ): Promise<IProduct> {
+    console.log("🚀 ~ productRepoBase ~ payload:", payload);
     await this.manager.update(
       ProductEntity,
       { id: product.getIdAsNumber() },
@@ -139,6 +142,16 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
         name: {
           operator: "like",
         },
+        isPublished: {
+          operator: "eq",
+        },
+        availability: {
+          operator: "eq",
+        },
+        stockNumber: {
+          operator: "gte",
+        },
+
       }
     );
 
@@ -168,6 +181,9 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       availability: prismaProduct.availability,
       isPublished: prismaProduct.isPublished,
       isAccepted: prismaProduct.isAccepted,
+      category: prismaProduct.category,
+      images: prismaProduct.images,
+      discount: prismaProduct.discount,
     });
     return product;
   },

@@ -7,6 +7,9 @@ class Order extends idAsNumber_1.NumberId {
         super(payload.id);
         this.status = payload.status;
         this.cart = payload.cart;
+        this.address = payload.address;
+        this.date = payload.date;
+        this.estimatedDeliveryDate = payload.estimatedDeliveryDate;
         this.deletedAt = payload.deletedAt;
         this.createdAt = payload.createdAt;
         this.updatedAt = payload.updatedAt;

@@ -6,8 +6,16 @@ const exceptions_1 = require("../../../core/errors/exceptions");
 const users_repository_1 = require("../../../data/repositories/users.repository");
 const getMyProfileUseCaseBase = (dependencies) => async (user) => {
     const userFound = await dependencies.usersRepo.findOne({
+        relations: {
+            cart: true,
+        },
         where: {
             id: parseInt(user.id),
+        },
+        select: {
+            cart: {
+                id: true,
+            },
         },
     });
     if (!userFound) {

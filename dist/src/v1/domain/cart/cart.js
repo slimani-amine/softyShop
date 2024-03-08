@@ -7,15 +7,7 @@ class Cart extends idAsNumber_1.NumberId {
         super(payload.id);
         this.totalQuantity = payload.totalQuantity;
         this.totalAmount = payload.totalAmount;
-        this.address = payload.address;
-        this.date = payload.date;
-        this.estimatedDeliveryDate = payload.estimatedDeliveryDate;
-        this.cartProduct = payload.cartProduct;
-        this.order = payload.order;
-        this.paymentMethod = payload.paymentMethod;
-        this.deletedAt = payload.deletedAt;
-        this.createdAt = payload.createdAt;
-        this.updatedAt = payload.updatedAt;
+        this.cartProducts = payload.cartProducts;
     }
 }
 exports.Cart = Cart;

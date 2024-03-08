@@ -4,11 +4,12 @@ import {
 } from "../../../domain/wishlist/wishlist";
 import { trimAndValidateSchemaPayload } from "../../../utils/validation/validate.schema";
 import createWishlistSchema from "../../../presenters/schemas/wishlist/createWishlist.schema";
+
+import { exceptionService } from "../../../core/errors/exceptions";
 import {
   IWishlistRepository,
   wishlistRepo,
 } from "../../../data/repositories/wishlist.repository";
-import { exceptionService } from "../../../core/errors/exceptions";
 
 export type CreateWishlistUseCaseType = (
   payload: ICreateWishlistInput

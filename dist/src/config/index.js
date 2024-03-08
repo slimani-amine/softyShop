@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FRONT_END_BASE_URL = exports.MAILING_CONFIG = exports.TOKENS_INFO = exports.DEFAULT_USER_PROFILE_PICTURE_LINK = exports.STATIC_FILES_PATH = exports.JWT_KEYS = exports.CORS_URL = exports.DOCS_API_BASE_URL = exports.API_BASE_URL = exports.PORT = exports.ENVIRONMENT = void 0;
+exports.FRONT_END_BASE_URL = exports.MAILING_CONFIG = exports.TOKENS_INFO = exports.DEFAULT_PRODUCT_IMAGE_LINK = exports.DEFAULT_USER_PROFILE_PICTURE_LINK = exports.STATIC_FILES_PATH = exports.JWT_KEYS = exports.CORS_URL = exports.DOCS_API_BASE_URL = exports.API_BASE_URL = exports.PORT = exports.ENVIRONMENT = void 0;
 const path_1 = require("path");
 exports.ENVIRONMENT = process.env.NODE_ENV;
 exports.PORT = process.env.SERVER_PORT;
@@ -11,8 +11,9 @@ exports.JWT_KEYS = {
     SECRET_KEY: process.env.JWT_SECRET_KEY,
     PUBLIC_KEY: process.env.JWT_PUBLIC_KEY,
 };
-exports.STATIC_FILES_PATH = (0, path_1.resolve)(__dirname, "../../../public");
+exports.STATIC_FILES_PATH = (0, path_1.resolve)(__dirname, "../../../images");
 exports.DEFAULT_USER_PROFILE_PICTURE_LINK = exports.API_BASE_URL + "/images/default.png";
+exports.DEFAULT_PRODUCT_IMAGE_LINK = exports.API_BASE_URL + "/images/defaultProduct.png";
 exports.TOKENS_INFO = {
     ACCESS_TOKEN_VALIDATION_PERIOD: process.env.ACCESS_TOKEN_VALIDITY_PERIOD,
     REFRESH_TOKEN_VALIDATION_PERIOD: process.env.REFRESH_TOKEN_VALIDITY_PERIOD,

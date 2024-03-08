@@ -4,6 +4,7 @@ exports.getUserAddressesController = exports.getUserAddressesControllerBase = vo
 const getUserAddresses_usecase_1 = require("../../../../usecases/api/addresses/getUserAddresses.usecase");
 const getUserAddressesControllerBase = (getUserAddressesUseCase) => async (req, res, next) => {
     const userId = req.user.id;
+    console.log("🚀 ~ userId:", userId);
     try {
         const result = await getUserAddressesUseCase({ userId });
         res.status(200).send({

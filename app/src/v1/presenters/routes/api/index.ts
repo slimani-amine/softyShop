@@ -3,7 +3,7 @@ import { getUsersApiRouter } from "./users";
 import { getAdminApiRouter } from "./admin";
 import { getStoresApiRouter } from "./stores";
 import { getProductsApiRouter } from "./products";
-import { getWishlistApiRouter } from "./wishlist";
+import { getWishlistApiRouter } from "./shopping";
 
 const v1ApiRouter = Router();
 const date = new Date();
@@ -15,7 +15,7 @@ v1ApiRouter.use("/users", getUsersApiRouter());
 
 v1ApiRouter.use("/admin", getAdminApiRouter());
 
-v1ApiRouter.use("/store", getStoresApiRouter());
+v1ApiRouter.use("/stores", getStoresApiRouter());
 
 v1ApiRouter.use("/products", getProductsApiRouter());
 

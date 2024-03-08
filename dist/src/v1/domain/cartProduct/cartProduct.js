@@ -8,9 +8,6 @@ class CartProduct extends idAsNumber_1.NumberId {
         this.quantity = payload.quantity;
         this.product = payload.product;
         this.cart = payload.cart;
-        this.deletedAt = payload.deletedAt;
-        this.createdAt = payload.createdAt;
-        this.updatedAt = payload.updatedAt;
     }
 }
 exports.CartProduct = CartProduct;

@@ -7,9 +7,7 @@ import { Request, Response, NextFunction } from "express";
 export const createWishlistControllerBase =
   (createWishlistUseCase: CreateWishlistUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      console.log(req.url);
-      
+    try {      
       req.body.userId = req.params.userId;
       
       const result = await createWishlistUseCase(req.body);

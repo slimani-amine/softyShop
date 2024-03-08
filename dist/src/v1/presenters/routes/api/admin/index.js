@@ -30,7 +30,7 @@ function getAdminApiRouter(controllers = defaults) {
         .post((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.createCategory)
         .get((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "vendor"), controllers.getCategories);
     router
-        .route("/category/:id")
+        .route("/category/:categoryId")
         .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.updateCategory)
         .delete((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.deleteCategory);
     router

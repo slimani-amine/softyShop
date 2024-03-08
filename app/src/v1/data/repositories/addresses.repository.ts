@@ -102,7 +102,9 @@ export const addressRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       dataSource,
       "addresses",
       queryParams,
-      {}
+      {
+        
+      }
     );
     return {
       docs: this.toDomainAddresses(result.docs),

@@ -13,7 +13,6 @@ exports.CartEntity = void 0;
 const typeorm_1 = require("typeorm");
 const cartProduct_entity_1 = require("./cartProduct.entity");
 const orders_entity_1 = require("./orders.entity");
-const paymentMethod_entity_1 = require("./paymentMethod.entity");
 let CartEntity = class CartEntity {
 };
 exports.CartEntity = CartEntity;
@@ -24,44 +23,25 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)({
         type: "int",
+        default: 0,
     }),
     __metadata("design:type", Number)
 ], CartEntity.prototype, "totalQuantity", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         type: "int",
+        default: 0,
     }),
     __metadata("design:type", Number)
 ], CartEntity.prototype, "totalAmount", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], CartEntity.prototype, "address", void 0);
-__decorate([
-    (0, typeorm_1.Column)({
-        type: "date",
-    }),
-    __metadata("design:type", Date)
-], CartEntity.prototype, "date", void 0);
-__decorate([
-    (0, typeorm_1.Column)({
-        type: "date",
-    }),
-    __metadata("design:type", Date)
-], CartEntity.prototype, "estimatedDeliveryDate", void 0);
-__decorate([
     (0, typeorm_1.OneToMany)(() => cartProduct_entity_1.CartProductEntity, (wishlist) => wishlist.product),
     __metadata("design:type", Array)
-], CartEntity.prototype, "cartProduct", void 0);
+], CartEntity.prototype, "cartProducts", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => orders_entity_1.OrderEntity, (order) => order.cart),
     __metadata("design:type", Array)
 ], CartEntity.prototype, "order", void 0);
-__decorate([
-    (0, typeorm_1.ManyToOne)(() => paymentMethod_entity_1.PaymentMethodEntity, (paymentMethod) => paymentMethod.paymentMethods),
-    (0, typeorm_1.JoinColumn)({ name: "paymentMethod_id" }),
-    __metadata("design:type", paymentMethod_entity_1.PaymentMethodEntity)
-], CartEntity.prototype, "paymentMethod", void 0);
 __decorate([
     (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)

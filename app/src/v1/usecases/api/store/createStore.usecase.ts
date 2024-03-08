@@ -35,7 +35,8 @@ export const createStoreUseCaseBase =
       storePhone: payload.storePhone,
       logo: payload.logo,
       isPublished: payload.isPublished,
-      position: payload.position,
+      location: payload.location,
+      address: payload.address,
       socialMediaLinks: payload.socialMediaLinks,
       vendor_id: payload.vendor_id,
     });

@@ -34,6 +34,12 @@ __decorate([
 ], ProductEntity.prototype, "name", void 0);
 __decorate([
     (0, typeorm_1.Column)({
+        type: "varchar",
+    }),
+    __metadata("design:type", String)
+], ProductEntity.prototype, "images", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
         type: "float",
     }),
     __metadata("design:type", Number)
@@ -44,6 +50,13 @@ __decorate([
     }),
     __metadata("design:type", Number)
 ], ProductEntity.prototype, "stockNumber", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        type: "int",
+        default: 0,
+    }),
+    __metadata("design:type", Number)
+], ProductEntity.prototype, "discount", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         type: "date",

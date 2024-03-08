@@ -19,7 +19,7 @@ const refreshTokensControllerBase = (refreshUserTokensUseCase) => async (req, re
             maxAge: config_1.TOKENS_INFO.ACCESS_TOKEN_EXPIRATION_IN_MILLISECONDS,
         });
         return res.status(201).json({
-            message: "succès",
+            message: "success",
             data: {
                 user: result.user,
                 accessToken: result.accessToken,

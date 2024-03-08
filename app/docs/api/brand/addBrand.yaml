@@ -10,7 +10,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateBrandInput"
+              $ref: "#/components/schemas/Brand"
       responses:
         "201":
           description: Brand created successfully

@@ -1,6 +1,6 @@
+import { CategoryEntity } from "../../data/orm_models/category.entity";
 import { IBrand } from "../brand/brand";
 import { ICartProduct } from "../cartProduct/cartProduct";
-import { ICategory } from "../category/category";
 import { IProductCreator } from "../productCreator/productCreator";
 import { IReview } from "../reviews/reviews";
 import { IStore } from "../store/store";
@@ -21,7 +21,9 @@ export interface IProduct extends IIdAsNumber {
     wishlist?: IWishlist[];
     cartProducts?: ICartProduct[];
     store?: IStore;
-    category?: ICategory;
+    category?: CategoryEntity;
+    images?: string;
+    discount?: number;
 }
 export declare class Product extends NumberId implements IProduct {
     id: string;
@@ -38,7 +40,9 @@ export declare class Product extends NumberId implements IProduct {
     wishlist?: IWishlist[];
     cartProducts?: ICartProduct[];
     store?: IStore;
-    category?: ICategory;
+    category?: CategoryEntity;
+    images?: string;
+    discount?: number;
     constructor(payload: {
         id: string;
         name: string;
@@ -54,7 +58,9 @@ export declare class Product extends NumberId implements IProduct {
         wishlist?: IWishlist[];
         cartProducts?: ICartProduct[];
         store?: IStore;
-        category?: ICategory;
+        category?: CategoryEntity;
+        images?: string;
+        discount?: number;
     });
 }
 export interface ICreateProductInput {
@@ -72,4 +78,6 @@ export interface ICreateProductInput {
     cartProductIds?: string[];
     store_id?: string;
     category_id?: string;
+    images?: string;
+    discount?: number;
 }

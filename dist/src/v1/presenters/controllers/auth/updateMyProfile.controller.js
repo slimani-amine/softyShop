@@ -9,7 +9,7 @@ const updateMyProfileControllerBase = (updateMyProfileUseCase) => async (req, re
         logger_1.logger.log('UPDATE MY PROFILE CONTROLLER', `IN UPDATE MY PROFILE CONTROLLER ID ${(_a = req === null || req === void 0 ? void 0 : req.user) === null || _a === void 0 ? void 0 : _a.id}`);
         const result = await updateMyProfileUseCase(req === null || req === void 0 ? void 0 : req.user, req === null || req === void 0 ? void 0 : req.body);
         res.status(201).send({
-            message: 'votre profil a été mis à jour avec succès',
+            message: 'Your profile has been successfully updated',
             data: result,
         });
     }

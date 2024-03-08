@@ -9,6 +9,7 @@ export declare const JWT_KEYS: {
 };
 export declare const STATIC_FILES_PATH: string;
 export declare const DEFAULT_USER_PROFILE_PICTURE_LINK: string;
+export declare const DEFAULT_PRODUCT_IMAGE_LINK: string;
 export declare const TOKENS_INFO: {
     ACCESS_TOKEN_VALIDATION_PERIOD: string;
     REFRESH_TOKEN_VALIDATION_PERIOD: string;

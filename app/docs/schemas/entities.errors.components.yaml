@@ -2,7 +2,7 @@ components:
   schemas:
     StoreEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -18,12 +18,12 @@ components:
                   type: string
                 isPublished:
                   type: string
-                position:
+                location:
                   type: string
                 socialMediaLinks:
                   type: string
                 user:
-                  $ref: '#/components/schemas/UserEntity'
+                  $ref: "#/components/schemas/UserEntity"
                 deletedAt:
                   type: string
                 createdAt:
@@ -33,7 +33,7 @@ components:
 
     ProductEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -52,11 +52,11 @@ components:
                 isPublished:
                   type: string
                 store:
-                  $ref: '#/components/schemas/StoreEntity'
+                  $ref: "#/components/schemas/StoreEntity"
                 brand:
-                  $ref: '#/components/schemas/BrandEntity'
+                  $ref: "#/components/schemas/BrandEntity"
                 productCreator:
-                  $ref: '#/components/schemas/ProductCreatorEntity'
+                  $ref: "#/components/schemas/ProductCreatorEntity"
                 reviews:
                   type: string
                 deletedAt:
@@ -68,7 +68,7 @@ components:
 
     BrandEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -81,7 +81,7 @@ components:
                 description:
                   type: string
                 store:
-                  $ref: '#/components/schemas/StoreEntity'
+                  $ref: "#/components/schemas/StoreEntity"
                 products:
                   type: string
                 deletedAt:
@@ -93,7 +93,7 @@ components:
 
     ProductCreatorEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -106,7 +106,7 @@ components:
                 description:
                   type: string
                 store:
-                  $ref: '#/components/schemas/StoreEntity'
+                  $ref: "#/components/schemas/StoreEntity"
                 products:
                   type: string
                 deletedAt:
@@ -118,7 +118,7 @@ components:
 
     ReviewsEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -131,9 +131,9 @@ components:
                 comment:
                   type: string
                 user:
-                  $ref: '#/components/schemas/UserEntity'
+                  $ref: "#/components/schemas/UserEntity"
                 product:
-                  $ref: '#/components/schemas/ProductEntity'
+                  $ref: "#/components/schemas/ProductEntity"
                 deletedAt:
                   type: string
                 createdAt:
@@ -143,7 +143,7 @@ components:
 
     UserEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -192,7 +192,7 @@ components:
 
     ResetPasswordEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -207,7 +207,7 @@ components:
                 used:
                   type: string
                 user:
-                  $ref: '#/components/schemas/UserEntity'
+                  $ref: "#/components/schemas/UserEntity"
                 deletedAt:
                   type: string
                 createdAt:
@@ -217,7 +217,7 @@ components:
 
     AddressesEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -238,7 +238,7 @@ components:
                 postalCode:
                   type: string
                 user:
-                  $ref: '#/components/schemas/UserEntity'
+                  $ref: "#/components/schemas/UserEntity"
                 deletedAt:
                   type: string
                 createdAt:
@@ -248,7 +248,7 @@ components:
 
     WishlistEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -257,7 +257,7 @@ components:
               type: object
               properties:
                 user:
-                  $ref: '#/components/schemas/UserEntity'
+                  $ref: "#/components/schemas/UserEntity"
                 products:
                   type: string
                 deletedAt:
@@ -269,7 +269,7 @@ components:
 
     CartEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -278,7 +278,7 @@ components:
               type: object
               properties:
                 user:
-                  $ref: '#/components/schemas/UserEntity'
+                  $ref: "#/components/schemas/UserEntity"
                 products:
                   type: string
                 deletedAt:

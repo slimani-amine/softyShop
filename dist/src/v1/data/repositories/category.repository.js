@@ -19,6 +19,7 @@ const categoryRepoBase = (dbConnection) => ({
         const category = this.manager.create(category_entity_1.CategoryEntity, {
             name: payload.name,
             icon: payload.icon,
+            isPublished: payload.isPublished,
         });
         const result = await this.manager.save(category_entity_1.CategoryEntity, category);
         return this.toDomainCategory(result);
@@ -35,6 +36,7 @@ const categoryRepoBase = (dbConnection) => ({
         };
     },
     async updateCategory(store, payload) {
+        console.log("🚀 ~ categoryRepoBase ~ payload:", payload);
         await this.manager.update(category_entity_1.CategoryEntity, {
             id: store.getIdAsNumber(),
         }, payload);
@@ -57,6 +59,7 @@ const categoryRepoBase = (dbConnection) => ({
             id: prismaCategory.id,
             name: prismaCategory.name,
             icon: prismaCategory.icon,
+            isPublished: prismaCategory.isPublished,
         });
         return category;
     },

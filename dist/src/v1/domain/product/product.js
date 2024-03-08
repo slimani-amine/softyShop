@@ -19,6 +19,8 @@ class Product extends idAsNumber_1.NumberId {
         this.cartProducts = payload.cartProducts || [];
         this.store = payload.store;
         this.category = payload.category;
+        this.images = payload.images;
+        this.discount = payload.discount;
     }
 }
 exports.Product = Product;

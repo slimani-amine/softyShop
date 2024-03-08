@@ -6,8 +6,8 @@ const updateStoreUseCaseBase = (storeRepository) => async (store, updatePayload)
     if (updatePayload.socialMediaLinks) {
         updatePayload.socialMediaLinks = JSON.stringify(updatePayload.socialMediaLinks);
     }
-    if (updatePayload.position) {
-        updatePayload.position = JSON.stringify(updatePayload.position);
+    if (updatePayload.location) {
+        updatePayload.location = JSON.stringify(updatePayload.location);
     }
     const updatedStore = await storeRepository.updateStore(store, updatePayload);
     return updatedStore;

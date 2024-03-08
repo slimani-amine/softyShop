@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const createStoreSchema = z.object({
-  storeName: z.string().min(1, {
+  storeName: z.string().min(4, {
     message: "Le nom du boutique est obligatoire",
   }),
   storePhone: z
@@ -16,9 +16,12 @@ const createStoreSchema = z.object({
     message: "Le logo du boutique est obligatoire",
   }),
   isPublished: z.boolean().optional(),
-  position: z.array(z.string()).refine((data) => data.length === 3, {
+  location: z.array(z.number()).refine((data) => data.length === 2, {
     message:
-      "La position du boutique est obligatoire et doit contenir exactement deux nombres",
+      "La location du boutique est obligatoire et doit contenir exactement deux nombres",
+  }),
+  address: z.string().min(4, {
+    message: "L'address' du boutique est obligatoire",
   }),
   socialMediaLinks: z.array(z.string()),
   vendor_id: z.string().min(1, {

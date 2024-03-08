@@ -44,7 +44,7 @@ export function getAdminApiRouter(
     .get(restrictToMiddleware("admin", "vendor"), controllers.getCategories); // get all categories (only for admin or vendor)
 
   router
-    .route("/category/:id")
+    .route("/category/:categoryId")
     .patch(restrictToMiddleware("admin"), controllers.updateCategory) // update a category (only for admin)
     .delete(restrictToMiddleware("admin"), controllers.deleteCategory); // delete a category (only for admin)
 

@@ -51,7 +51,12 @@ export class StoreEntity {
   @Column({
     type: "varchar",
   })
-  position: string;
+  location: string;
+
+  @Column({
+    type: "varchar",
+  })
+  address: string;
 
   @Column({
     type: "varchar",
@@ -64,7 +69,10 @@ export class StoreEntity {
   @OneToMany(() => BrandEntity, (brand) => brand.store)
   brands: BrandEntity[];
 
-  @OneToMany(() => ProductCreatorEntity, (productCreator) => productCreator.store)
+  @OneToMany(
+    () => ProductCreatorEntity,
+    (productCreator) => productCreator.store
+  )
   productCreators: ProductCreatorEntity[];
 
   @ManyToOne(() => UserEntity, (user) => user.store)

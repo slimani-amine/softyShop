@@ -13,7 +13,6 @@ export const getAllStoreUseCaseBase =
   (dependencies: { storeRepo: IStoreRepository }) =>
   async (queryParams: { [key: string]: any }) => {
     const storesFound = await dependencies.storeRepo.findByQuery(queryParams);
-
     return storesFound;
   };
 

@@ -1,5 +1,5 @@
-import { exceptionService } from '../../../core/errors/exceptions';
-import { Request, Response, NextFunction } from 'express';
+import { exceptionService } from "../../../core/errors/exceptions";
+import { Request, Response, NextFunction } from "express";
 
 export const restrictToMiddleware =
   (...roles) =>
@@ -7,7 +7,7 @@ export const restrictToMiddleware =
     try {
       if (!roles.includes(req.user.role)) {
         exceptionService.unauthorizedException({
-          message: `RBAC! You Not Have Role to access this`,
+          message: `You Not Have Role to access this`,
         });
       }
       next();

@@ -53,7 +53,8 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       storePhone: payload.storePhone,
       logo: payload.logo,
       isPublished: payload.isPublished,
-      position: JSON.stringify(payload.position),
+      location: JSON.stringify(payload.location),
+      address: payload.address,
       socialMediaLinks: JSON.stringify(payload.socialMediaLinks),
       user: vendor,
     } as DeepPartial<StoreEntity>);
@@ -66,7 +67,6 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     store: IStore,
     payload: Partial<StoreEntity>
   ): Promise<IStore> {
-
     await this.manager.update(
       StoreEntity,
       {
@@ -109,12 +109,28 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   async findByQuery(queryParams: {
     [key: string]: string;
   }): Promise<QueryResult<IStore>> {
+    console.log(queryParams);
+
     const result = await ApiFeatures.generateSqlQuery(
       dataSource,
       "stores",
       queryParams,
-      {}
+      {
+        storeName: {
+          operator: "like",
+        },
+        id: {
+          operator: "eq",
+        },
+        location: {
+          operator: "include",
+        },
+        address: {
+          operator: "like",
+        },
+      }
     );
+    console.log("🚀 ~ storeRepoBase ~ result:", result);
     return {
       docs: this.toDomainStores(result.docs),
       meta: result.meta,
@@ -138,9 +154,10 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       storePhone: prismaStore.storePhone,
       logo: prismaStore.logo,
       isPublished: prismaStore.isPublished,
-      position: prismaStore.position,
+      location: prismaStore.location,
+      address: prismaStore.address,
       socialMediaLinks: prismaStore.socialMediaLinks,
-    });    
+    });
     return store;
   },
 });
@@ -161,7 +178,7 @@ export interface IStoreRepository {
     where: FindManyOptions<StoreEntity>;
     data: StoresUpdateDataPayload;
   }): Promise<number>;
-  
+
   deleteStore(store: IStore): Promise<number>;
   deleteMany(payload: Array<number>): Promise<number>;
 }

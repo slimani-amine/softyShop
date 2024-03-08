@@ -33,6 +33,12 @@ export class CategoryEntity {
   })
   icon: string;
 
+  @Column({
+    type: "boolean",
+    default: false,
+  })
+  isPublished: boolean;
+
   @OneToMany(() => ProductEntity, (productCategory) => productCategory.name)
   product: ProductEntity[];
 

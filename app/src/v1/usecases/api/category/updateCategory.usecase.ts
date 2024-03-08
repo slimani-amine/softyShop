@@ -13,6 +13,8 @@ export type UpdateCategoryUseCaseType = (
 export const updateCategoryUseCaseBase =
   (CategoryRepository: ICategoryRepository) =>
   async (Category: ICategory, updatePayload: Partial<ICategory>) => {
+    console.log("🚀 ~ updatePayload:", updatePayload)
+    console.log("🚀 ~ Category:", Category)
     const updatedCategory = await CategoryRepository.updateCategory(
       Category,
       updatePayload

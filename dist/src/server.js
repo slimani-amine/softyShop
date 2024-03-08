@@ -13,15 +13,15 @@ const path = require("path");
 const config_1 = require("./config");
 const logger_1 = require("./v1/core/logger/logger");
 const server = express();
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["*"];
 server.use(function (req, res, next) {
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
         res.setHeader("Access-Control-Allow-Origin", origin);
     }
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, PATCH");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, x-refresh");
     if (req.method === "OPTIONS") {
         res.sendStatus(200);
     }
@@ -29,11 +29,18 @@ server.use(function (req, res, next) {
         next();
     }
 });
+server.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader("Access-Control-Allow-Origin", origin);
+    }
+    next();
+});
 server.use(express.json());
 server.use(cookieParser());
 server.use(request_interceptor_1.requestInterceptor);
 server.use(response_interceptor_1.responseInterceptor);
-server.use(express.static(config_1.STATIC_FILES_PATH));
+server.use('/static', express.static(config_1.STATIC_FILES_PATH));
 server.use("/v1/api", api_1.default);
 server.use("/v1/auth", (0, auth_1.default)());
 const swaggerDefinition = {

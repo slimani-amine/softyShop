@@ -36,6 +36,11 @@ export class ProductEntity {
   name: string;
 
   @Column({
+    type: "varchar",
+  })
+  images: string;
+
+  @Column({
     type: "float",
   })
   price: number;
@@ -44,6 +49,12 @@ export class ProductEntity {
     type: "int",
   })
   stockNumber: number;
+
+  @Column({
+    type: "int",
+    default: 0,
+  })
+  discount: number;
 
   @Column({
     type: "date",

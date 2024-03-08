@@ -7,6 +7,7 @@ class Category extends idAsNumber_1.NumberId {
         super(payload.id);
         this.name = payload.name;
         this.icon = payload.icon;
+        this.isPublished = payload.isPublished;
     }
 }
 exports.Category = Category;

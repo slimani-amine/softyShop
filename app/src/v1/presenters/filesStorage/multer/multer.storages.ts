@@ -1,7 +1,7 @@
-import { STATIC_FILES_PATH } from '../../../../config';
-import { getStorageFileName } from '../../../utils/files/getStorageFileName';
-import * as multer from 'multer';
-import { join } from 'path';
+import { STATIC_FILES_PATH } from "../../../../config";
+import { getStorageFileName } from "../../../utils/files/getStorageFileName";
+import * as multer from "multer";
+import { join } from "path";
 
 const getMulterStorage = (destinationPath: string) => {
   return multer.diskStorage({
@@ -15,4 +15,4 @@ const getMulterStorage = (destinationPath: string) => {
   });
 };
 
-export const imagesStorage = getMulterStorage(join(STATIC_FILES_PATH, '/images'));
+export const imagesStorage = getMulterStorage(join(STATIC_FILES_PATH, ""));

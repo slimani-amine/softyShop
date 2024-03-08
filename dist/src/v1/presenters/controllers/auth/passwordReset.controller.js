@@ -9,7 +9,7 @@ const passwordResetControllerBase = (passwordResetUseCase) => async (req, res, n
         logger_1.logger.log('REQUEST ACCOUNT PASSWORD RESET CONTROLLER', `Token ${((_a = req === null || req === void 0 ? void 0 : req.body) === null || _a === void 0 ? void 0 : _a.token) || 'unknwon'}`);
         const result = await passwordResetUseCase(req === null || req === void 0 ? void 0 : req.body);
         res.status(200).send({
-            message: 'réinitialiser le mot de passe avec succès',
+            message: 'Reset the password successfully',
             data: result.user,
         });
     }

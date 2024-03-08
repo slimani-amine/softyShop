@@ -51,7 +51,9 @@ server.use(express.json());
 server.use(cookieParser());
 server.use(requestInterceptor);
 server.use(responseInterceptor);
-server.use(express.static(STATIC_FILES_PATH));
+server.use('/static',express.static(STATIC_FILES_PATH));
+
+
 server.use("/v1/api", v1ApiRouter);
 server.use("/v1/auth", getV1AuthRouter());
 

@@ -7,11 +7,9 @@ const getAllProductReviewsUseCaseBase = (dependencies) => async (productId) => {
     const product = (await product_repository_1.productRepo.findOne({
         where: { id: productId },
     }));
-    console.log("🚀 ~ product:", product);
     const reviews = await dependencies.reviewRepo.findAll({
         where: { product: product },
     });
-    console.log("🚀 ~ reviews:", reviews);
     return reviews;
 };
 exports.getAllProductReviewsUseCaseBase = getAllProductReviewsUseCaseBase;

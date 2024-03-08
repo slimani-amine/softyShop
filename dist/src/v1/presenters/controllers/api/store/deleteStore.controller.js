@@ -6,7 +6,7 @@ const deleteStoresControllerBase = (deleteStoreUseCase) => async (req, res, next
     try {
         const result = await deleteStoreUseCase(req === null || req === void 0 ? void 0 : req.params);
         res.status(200).send({
-            message: 'success',
+            message: "Store delete successfully",
             data: result,
         });
     }

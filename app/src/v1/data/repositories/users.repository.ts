@@ -16,6 +16,7 @@ import {
 } from "../../utils/querying/apiFeatures.util";
 import { ICreateUserInput, IUser, User } from "../../domain/users/user";
 import dataSource from "../connection";
+import { cartRepo } from "./cart.repsitory";
 
 type DeepPartialWithIsVerified<T> = DeepPartial<T> & { isVerified?: boolean };
 
@@ -77,6 +78,10 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     return userFound.password;
   },
   async create(payload: ICreateUserInput): Promise<IUser> {
+    let cart;
+    if (payload?.role !== "admin") {
+      cart = await cartRepo.createCart();
+    }
     const user = this.manager.create(UserEntity, {
       email: payload.email,
       isVerified: payload.isVerified,
@@ -88,6 +93,7 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       phoneNumber: payload.phoneNumber,
       confirmation_token: payload.confirmation_token,
       confirmed_email: payload.confirmed_email,
+      cart: cart,
     } as DeepPartialWithIsVerified<UserEntity>);
 
     const result = await this.manager.save(UserEntity, user);
@@ -104,8 +110,21 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       {
         id: {
           operator: "eq",
+          filter: true,
         },
         email: {
+          operator: "eq",
+        },
+        role: {
+          operator: "eq",
+        },
+        firstName: {
+          operator: "like",
+        },
+        lastName: {
+          operator: "like",
+        },
+        isVerified: {
           operator: "eq",
         },
         "resetPassword.id": {
@@ -118,8 +137,10 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
         },
       }
     );
+    console.log(result);
+
     return {
-      docs: this.toDomainUsers(result.docs),
+      docs: result.docs,
       meta: result.meta,
     };
   },
@@ -140,11 +161,11 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       picture: prismaUser.picture,
       firstName: prismaUser.firstName,
       lastName: prismaUser.lastName,
-      password: prismaUser.password,
       role: prismaUser.role,
       phoneNumber: prismaUser.phoneNumber,
       confirmation_token: prismaUser.confirmation_token,
       confirmed_email: prismaUser.confirmed_email,
+      cart: prismaUser.cart,
     });
     return user;
   },

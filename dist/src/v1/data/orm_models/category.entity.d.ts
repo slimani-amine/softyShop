@@ -4,6 +4,7 @@ export declare class CategoryEntity {
     id: string;
     name: string;
     icon: string;
+    isPublished: boolean;
     product: ProductEntity[];
     deletedAt: Date;
     createdAt: Date;

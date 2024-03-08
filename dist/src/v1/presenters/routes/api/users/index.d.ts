@@ -8,4 +8,5 @@ export declare function getUsersApiRouter(controllers?: {
     userAddresses: ControllerType;
     oneAdress: ControllerType;
     updateAddress: ControllerType;
+    changeUserRole: ControllerType;
 }): import("express-serve-static-core").Router;

@@ -5,6 +5,7 @@ const user_entity_1 = require("../orm_models/user.entity");
 const apiFeatures_util_1 = require("../../utils/querying/apiFeatures.util");
 const user_1 = require("../../domain/users/user");
 const connection_1 = require("../connection");
+const cart_repsitory_1 = require("./cart.repsitory");
 const usersRepoBase = (dbConnection) => ({
     manager: dbConnection.manager,
     async findOne(findData) {
@@ -52,6 +53,10 @@ const usersRepoBase = (dbConnection) => ({
         return userFound.password;
     },
     async create(payload) {
+        let cart;
+        if ((payload === null || payload === void 0 ? void 0 : payload.role) !== "admin") {
+            cart = await cart_repsitory_1.cartRepo.createCart();
+        }
         const user = this.manager.create(user_entity_1.UserEntity, {
             email: payload.email,
             isVerified: payload.isVerified,
@@ -63,6 +68,7 @@ const usersRepoBase = (dbConnection) => ({
             phoneNumber: payload.phoneNumber,
             confirmation_token: payload.confirmation_token,
             confirmed_email: payload.confirmed_email,
+            cart: cart,
         });
         const result = await this.manager.save(user_entity_1.UserEntity, user);
         return this.toDomainUser(result);
@@ -71,9 +77,19 @@ const usersRepoBase = (dbConnection) => ({
         const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "users", queryParams, {
             id: {
                 operator: "eq",
+                filter: true,
             },
             email: {
                 operator: "eq",
+            },
+            role: {
+                operator: "eq",
+            },
+            firstName: {
+                operator: "like",
+            },
+            lastName: {
+                operator: "like",
             },
             "resetPassword.id": {
                 operator: "injoin",
@@ -84,8 +100,9 @@ const usersRepoBase = (dbConnection) => ({
                 },
             },
         });
+        console.log(result);
         return {
-            docs: this.toDomainUsers(result.docs),
+            docs: result.docs,
             meta: result.meta,
         };
     },
@@ -109,6 +126,7 @@ const usersRepoBase = (dbConnection) => ({
             phoneNumber: prismaUser.phoneNumber,
             confirmation_token: prismaUser.confirmation_token,
             confirmed_email: prismaUser.confirmed_email,
+            cart: prismaUser.cart,
         });
         return user;
     },

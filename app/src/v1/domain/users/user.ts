@@ -1,3 +1,4 @@
+import { CartEntity } from "../../data/orm_models/cart.entity";
 import { IStore } from "../store/store";
 import { IIdAsNumber, NumberId } from "../types/idAsNumber";
 
@@ -14,6 +15,7 @@ export interface IUser extends IIdAsNumber {
   confirmation_token: string;
   confirmed_email: boolean;
   store?: IStore;
+  cart?: CartEntity;
 }
 
 export class User extends NumberId implements IUser {
@@ -28,7 +30,7 @@ export class User extends NumberId implements IUser {
   phoneNumber: string;
   confirmation_token: string;
   confirmed_email: boolean;
-
+  cart?: CartEntity;
   constructor(payload: {
     id: string;
     email: string;
@@ -36,11 +38,11 @@ export class User extends NumberId implements IUser {
     picture: string;
     firstName: string;
     lastName: string;
-    password: string;
     role: string;
     phoneNumber: string;
     confirmation_token: string;
     confirmed_email: boolean;
+    cart?: CartEntity;
   }) {
     super(payload.id);
     this.email = payload.email;
@@ -48,11 +50,11 @@ export class User extends NumberId implements IUser {
     this.picture = payload.picture;
     this.firstName = payload.firstName;
     this.lastName = payload.lastName;
-    this.password = payload.password;
     this.role = payload.role;
     this.phoneNumber = payload.phoneNumber;
     this.confirmation_token = payload.confirmation_token;
     this.confirmed_email = payload.confirmed_email;
+    this.cart = payload.cart;
   }
 }
 
@@ -68,6 +70,7 @@ export interface ICreateUserInput {
   phoneNumber: string;
   confirmation_token: string;
   confirmed_email: boolean;
+  cart_id?: string;
 }
 
 export interface IUserPasswordResetInformation extends IIdAsNumber {

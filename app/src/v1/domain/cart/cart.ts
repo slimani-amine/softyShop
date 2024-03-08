@@ -1,71 +1,28 @@
-import { ICartProduct } from "../cartProduct/cartProduct";
-import { IOrder } from "../order/order";
-import { IPaymentMethod } from "../paymentMethod/paymentMethod";
+import { CartProductEntity } from "../../data/orm_models/cartProduct.entity";
 import { IIdAsNumber, NumberId } from "../types/idAsNumber";
 
 export interface ICart extends IIdAsNumber {
   id: string;
   totalQuantity: number;
   totalAmount: number;
-  address: string;
-  date: Date;
-  estimatedDeliveryDate: Date;
-  cartProduct?: ICartProduct[];
-  order?: IOrder[];
-  paymentMethod?: IPaymentMethod;
-  deletedAt: Date;
-  createdAt: Date;
-  updatedAt: Date;
+  cartProducts?: CartProductEntity[];
 }
 
 export class Cart extends NumberId implements ICart {
   id: string;
   totalQuantity: number;
   totalAmount: number;
-  address: string;
-  date: Date;
-  estimatedDeliveryDate: Date;
-  cartProduct?: ICartProduct[];
-  order?: IOrder[];
-  paymentMethod?: IPaymentMethod;
-  deletedAt: Date;
-  createdAt: Date;
-  updatedAt: Date;
+  cartProducts?: CartProductEntity[];
 
   constructor(payload: {
     id: string;
     totalQuantity: number;
     totalAmount: number;
-    address: string;
-    date: Date;
-    estimatedDeliveryDate: Date;
-    cartProduct?: ICartProduct[];
-    order?: IOrder[];
-    paymentMethod?: IPaymentMethod;
-    deletedAt: Date;
-    createdAt: Date;
-    updatedAt: Date;
+    cartProducts?: CartProductEntity[];
   }) {
     super(payload.id);
     this.totalQuantity = payload.totalQuantity;
     this.totalAmount = payload.totalAmount;
-    this.address = payload.address;
-    this.date = payload.date;
-    this.estimatedDeliveryDate = payload.estimatedDeliveryDate;
-    this.cartProduct = payload.cartProduct;
-    this.order = payload.order;
-    this.paymentMethod = payload.paymentMethod;
-    this.deletedAt = payload.deletedAt;
-    this.createdAt = payload.createdAt;
-    this.updatedAt = payload.updatedAt;
+    this.cartProducts = payload.cartProducts;
   }
-}
-
-export interface ICreateCartInput {
-  totalQuantity: number;
-  totalAmount: number;
-  address: string;
-  date: Date;
-  estimatedDeliveryDate: Date;
-  paymentMethodId?: string;
 }

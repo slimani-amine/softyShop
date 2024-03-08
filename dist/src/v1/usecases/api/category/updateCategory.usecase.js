@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateCategoryUseCase = exports.updateCategoryUseCaseBase = void 0;
 const category_repository_1 = require("../../../data/repositories/category.repository");
 const updateCategoryUseCaseBase = (CategoryRepository) => async (Category, updatePayload) => {
+    console.log("🚀 ~ updatePayload:", updatePayload);
+    console.log("🚀 ~ Category:", Category);
     const updatedCategory = await CategoryRepository.updateCategory(Category, updatePayload);
     return updatedCategory;
 };

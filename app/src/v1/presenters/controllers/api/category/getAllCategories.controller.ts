@@ -11,7 +11,7 @@ export const getAllCategoriesControllerBase =
       const result = await getAllCategoriesUseCase(req?.query);
       res.status(200).send({
         message: "success",
-        data: result.docs,
+        data: result,
       });
     } catch (err) {
       next(err);

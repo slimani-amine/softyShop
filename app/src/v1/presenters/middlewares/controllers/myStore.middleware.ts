@@ -12,6 +12,7 @@ export const myStoreMiddleware = async (
 
   try {
     const myStores = await getVendorStoresUseCase({ userId });
+    console.log("🚀 ~ myStores:", myStores)
 
     const isStoreInMyStores = myStores.some((store) => {
       return store.id == storeId;

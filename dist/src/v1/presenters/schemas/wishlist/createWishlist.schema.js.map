@@ -1,0 +1,1 @@
+{"version":3,"file":"createWishlist.schema.js","sourceRoot":"","sources":["../../../../../../app/src/v1/presenters/schemas/wishlist/createWishlist.schema.ts"],"names":[],"mappings":";;AAAA,6BAAwB;AAExB,MAAM,oBAAoB,GAAG,OAAC,CAAC,MAAM,CAAC;IACpC,SAAS,EAAE,OAAC,CAAC,MAAM,EAAE,CAAC,GAAG,CAAC,CAAC,EAAE;QAC3B,OAAO,EAAE,4BAA4B;KACtC,CAAC;CACH,CAAC,CAAC;AAEH,kBAAe,oBAAoB,CAAC"}

@@ -14,7 +14,6 @@ const typeorm_1 = require("typeorm");
 const product_entity_1 = require("./product.entity");
 const cart_entity_1 = require("./cart.entity");
 let CartProductEntity = class CartProductEntity {
-    ;
 };
 exports.CartProductEntity = CartProductEntity;
 __decorate([
@@ -23,35 +22,36 @@ __decorate([
 ], CartProductEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'int',
+        type: "int",
+        default: 1,
     }),
     __metadata("design:type", Number)
 ], CartProductEntity.prototype, "quantity", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => product_entity_1.ProductEntity, (product) => product.cartProducts),
-    (0, typeorm_1.JoinColumn)({ name: 'product_id' }),
+    (0, typeorm_1.JoinColumn)({ name: "product_id" }),
     __metadata("design:type", product_entity_1.ProductEntity)
 ], CartProductEntity.prototype, "product", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => cart_entity_1.CartEntity, (cart) => cart.cartProduct),
-    (0, typeorm_1.JoinColumn)({ name: 'cart_id' }),
+    (0, typeorm_1.ManyToOne)(() => cart_entity_1.CartEntity, (cart) => cart.cartProducts),
+    (0, typeorm_1.JoinColumn)({ name: "cart_id" }),
     __metadata("design:type", cart_entity_1.CartEntity)
 ], CartProductEntity.prototype, "cart", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], CartProductEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], CartProductEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], CartProductEntity.prototype, "updatedAt", void 0);
 exports.CartProductEntity = CartProductEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'CartProduct',
+        name: "CartProduct",
     })
 ], CartProductEntity);
 //# sourceMappingURL=cartProduct.entity.js.map

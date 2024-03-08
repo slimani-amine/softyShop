@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderEntity = void 0;
 const typeorm_1 = require("typeorm");
 const cart_entity_1 = require("./cart.entity");
+const paymentMethod_entity_1 = require("./paymentMethod.entity");
 let OrderEntity = class OrderEntity {
 };
 exports.OrderEntity = OrderEntity;
@@ -20,33 +21,54 @@ __decorate([
     __metadata("design:type", String)
 ], OrderEntity.prototype, "id", void 0);
 __decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], OrderEntity.prototype, "address", void 0);
+__decorate([
     (0, typeorm_1.Column)({
-        type: 'enum',
-        enum: ['processing', 'on_delivery', 'livered', 'cancelled'],
-        default: 'processing',
+        type: "date",
+    }),
+    __metadata("design:type", Date)
+], OrderEntity.prototype, "date", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        type: "date",
+    }),
+    __metadata("design:type", Date)
+], OrderEntity.prototype, "estimatedDeliveryDate", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => paymentMethod_entity_1.PaymentMethodEntity, (paymentMethod) => paymentMethod.paymentMethods),
+    (0, typeorm_1.JoinColumn)({ name: "paymentMethod_id" }),
+    __metadata("design:type", paymentMethod_entity_1.PaymentMethodEntity)
+], OrderEntity.prototype, "paymentMethod", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        type: "enum",
+        enum: ["processing", "on_delivery", "livered", "cancelled"],
+        default: "processing",
     }),
     __metadata("design:type", String)
 ], OrderEntity.prototype, "status", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => cart_entity_1.CartEntity, (cart) => cart.order),
-    (0, typeorm_1.JoinColumn)({ name: 'cart_id' }),
+    (0, typeorm_1.JoinColumn)({ name: "cart_id" }),
     __metadata("design:type", cart_entity_1.CartEntity)
 ], OrderEntity.prototype, "cart", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], OrderEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], OrderEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], OrderEntity.prototype, "updatedAt", void 0);
 exports.OrderEntity = OrderEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'Order',
+        name: "Order",
     })
 ], OrderEntity);
 //# sourceMappingURL=orders.entity.js.map

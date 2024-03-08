@@ -8,7 +8,8 @@ class Store extends idAsNumber_1.NumberId {
         this.storeName = payload.storeName;
         this.logo = payload.logo;
         this.isPublished = payload.isPublished;
-        this.position = payload.position;
+        this.location = payload.location;
+        this.address = payload.address;
         this.socialMediaLinks = payload.socialMediaLinks;
         this.user = payload.user;
         this.products = payload.products;

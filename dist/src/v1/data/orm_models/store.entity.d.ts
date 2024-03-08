@@ -9,7 +9,8 @@ export declare class StoreEntity {
     storePhone: string;
     logo: string;
     isPublished: boolean;
-    position: string;
+    location: string;
+    address: string;
     socialMediaLinks: string;
     products: ProductEntity[];
     brands: BrandEntity[];

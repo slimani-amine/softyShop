@@ -1,6 +1,6 @@
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { ProductEntity } from './product.entity';
-import { CartEntity } from './cart.entity';
+import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from "../../../types/repos";
+import { ProductEntity } from "./product.entity";
+import { CartEntity } from "./cart.entity";
 export declare class CartProductEntity {
     id: string;
     quantity: number;

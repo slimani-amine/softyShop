@@ -14,7 +14,6 @@ const isAuthenticated_middleware_1 = require("../../middlewares/auth/isAuthentic
 const logout_controller_1 = require("../../controllers/auth/logout.controller");
 const multerUpload_middleware_1 = require("../../middlewares/uploads/multerUpload.middleware");
 const transferFilePathToBody_middleware_1 = require("../../middlewares/uploads/transferFilePathToBody.middleware");
-const setDefaultProfilePicIfNotGiven_1 = require("../../middlewares/auth/setDefaultProfilePicIfNotGiven");
 const v1AuthRouter = (0, express_1.Router)();
 const defaults = {
     registerController: register_controller_1.transactionalRegisterController,
@@ -29,7 +28,7 @@ const defaults = {
 function getV1AuthRouter(controllers = defaults) {
     v1AuthRouter
         .route('/register')
-        .post(multerUpload_middleware_1.multerImageUpload.single('picture'), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)('picture', transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), (0, setDefaultProfilePicIfNotGiven_1.setDefaultProfilePicIfNotGiven)('picture'), controllers.registerController);
+        .post(multerUpload_middleware_1.multerImageUpload.single('picture'), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)('picture', transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), controllers.registerController);
     v1AuthRouter.route('/login').post(controllers.loginController);
     v1AuthRouter
         .route('/tknr')

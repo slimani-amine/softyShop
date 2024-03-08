@@ -2,7 +2,7 @@ components:
   schemas:
     StoreEntityValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -18,7 +18,7 @@ components:
                   type: string
                 isPublished:
                   type: string
-                position:
+                location:
                   type: string
                 socialMediaLinks:
                   type: string

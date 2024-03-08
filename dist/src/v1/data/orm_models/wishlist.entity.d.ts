@@ -1,8 +1,9 @@
-import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from '../../../types/repos';
-import { UserEntity } from './user.entity';
-import { ProductEntity } from './product.entity';
+import { QueryDeepPartialEntity, WhereEntityOptions, findManyType } from "../../../types/repos";
+import { UserEntity } from "./user.entity";
+import { ProductEntity } from "./product.entity";
 export declare class WishlistEntity {
     id: string;
+    user_id: number;
     user: UserEntity;
     product: ProductEntity;
     deletedAt: Date;

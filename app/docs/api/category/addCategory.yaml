@@ -12,7 +12,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateCategoryInput"
+              $ref: "#/components/schemas/Category"
       responses:
         "201":
           description: Category created successfully

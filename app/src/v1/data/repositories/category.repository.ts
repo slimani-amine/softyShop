@@ -9,9 +9,7 @@ import {
   ApiFeatures,
   QueryResult,
 } from "../../utils/querying/apiFeatures.util";
-import {
-  CategoryEntity,
-} from "../orm_models/category.entity";
+import { CategoryEntity } from "../orm_models/category.entity";
 import dataSource from "../connection";
 import {
   Category,
@@ -38,6 +36,7 @@ export const categoryRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     const category = this.manager.create(CategoryEntity, {
       name: payload.name,
       icon: payload.icon,
+      isPublished: payload.isPublished,
     } as DeepPartial<CategoryEntity>);
 
     const result = await this.manager.save(CategoryEntity, category);
@@ -56,18 +55,30 @@ export const categoryRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       dataSource,
       "category",
       queryParams,
-      {}
+      {
+        id: {
+          operator: "eq",
+        },
+        name: {
+          operator: "like",
+        },
+        isPublished: {
+          operator: "eq",
+        },
+      }
     );
     return {
       docs: this.toDomainCategories(result.docs),
       meta: result.meta,
     };
   },
-  
+
   async updateCategory(
     store: ICategory,
     payload: Partial<CategoryEntity>
   ): Promise<ICategory> {
+    console.log("🚀 ~ categoryRepoBase ~ payload:", payload);
+
     await this.manager.update(
       CategoryEntity,
       {
@@ -98,6 +109,7 @@ export const categoryRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       id: prismaCategory.id,
       name: prismaCategory.name,
       icon: prismaCategory.icon,
+      isPublished: prismaCategory.isPublished,
     });
     return category;
   },
@@ -112,6 +124,9 @@ export interface ICategoryRepository {
     [key: string]: string;
   }): Promise<QueryResult<ICategory>>;
   createCategory(payload: ICreateCategoryInput): Promise<ICategory>;
-  updateCategory(store: ICategory, payload: Partial<CategoryEntity>): Promise<ICategory>;
+  updateCategory(
+    store: ICategory,
+    payload: Partial<CategoryEntity>
+  ): Promise<ICategory>;
   deleteCategory(category: ICategory): Promise<number>;
 }

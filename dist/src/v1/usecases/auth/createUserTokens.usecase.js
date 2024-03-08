@@ -15,11 +15,11 @@ exports.createUserTokensUseCaseBase = createUserTokensUseCaseBase;
 const createUserAccessToken = (user) => {
     const accessTokenPayload = {
         iat: Math.floor(Date.now() / 1000),
+        iss: index_1.TOKENS_INFO.ISSUER,
+        aud: index_1.TOKENS_INFO.AUDIENCE,
         isVerified: user.isVerified,
         sub: user.id,
         role: user.role,
-        iss: index_1.TOKENS_INFO.ISSUER,
-        aud: index_1.TOKENS_INFO.AUDIENCE,
     };
     const accessToken = jwtService.sign(accessTokenPayload, index_1.JWT_KEYS.SECRET_KEY, {
         algorithm: "RS256",
@@ -31,11 +31,11 @@ exports.createUserAccessToken = createUserAccessToken;
 const createUserRefreshToken = (user) => {
     const refreshTokenPayload = {
         iat: Math.floor(Date.now() / 1000),
+        iss: index_1.TOKENS_INFO.ISSUER,
+        aud: index_1.TOKENS_INFO.AUDIENCE,
         isVerified: user.isVerified,
         sub: user.id,
         role: user.role,
-        iss: index_1.TOKENS_INFO.ISSUER,
-        aud: index_1.TOKENS_INFO.AUDIENCE,
     };
     const refreshToken = jwtService.sign(refreshTokenPayload, index_1.JWT_KEYS.SECRET_KEY, {
         algorithm: "RS256",

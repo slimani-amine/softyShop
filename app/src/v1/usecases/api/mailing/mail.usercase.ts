@@ -50,7 +50,7 @@ export const mailUserUseCaseBase =
       const email = user.email;
 
       await transporter.sendMail({
-        from: `Amine Slimani <slimani@gmail.com>`,
+        from: `Amine Slimani <SoftyShop@gmail.com>`,
         to: email,
         subject: payload.subject,
         template: payload.template,

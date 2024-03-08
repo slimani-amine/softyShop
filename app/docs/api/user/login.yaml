@@ -6,7 +6,7 @@ paths:
       summary: Login
       description: Returns user info and token.
       requestBody:
-        description: Create a new Government
+        description: login
         content:
           application/json:
             schema:

@@ -16,5 +16,5 @@ const getMulterStorage = (destinationPath) => {
         },
     });
 };
-exports.imagesStorage = getMulterStorage((0, path_1.join)(config_1.STATIC_FILES_PATH, '/images'));
+exports.imagesStorage = getMulterStorage((0, path_1.join)(config_1.STATIC_FILES_PATH, ""));
 //# sourceMappingURL=multer.storages.js.map

@@ -29,6 +29,7 @@ const updateProduct_controller_1 = require("../../../controllers/api/product/upd
 const myStore_middleware_1 = require("../../../middlewares/controllers/myStore.middleware");
 const multerUpload_middleware_1 = require("../../../middlewares/uploads/multerUpload.middleware");
 const transferFilePathToBody_middleware_1 = require("../../../middlewares/uploads/transferFilePathToBody.middleware");
+const setDefaultProductImageIfNotGiven_1 = require("../../../middlewares/controllers/setDefaultProductImageIfNotGiven");
 const router = express.Router();
 const defaults = {
     createStore: createStore_controller_1.createStoreController,
@@ -68,7 +69,7 @@ function getStoresApiRouter(controllers = defaults) {
         .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin", "user"), controllers.updateStore);
     router
         .route("/:id/product")
-        .post((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), multerUpload_middleware_1.multerImageUpload.single("picture"), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)("picture", transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), myStore_middleware_1.myStoreMiddleware, controllers.createProduct)
+        .post((0, restrictTo_middleware_1.restrictToMiddleware)("vendor", "admin"), multerUpload_middleware_1.multerImageUpload.array("images"), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)("images", transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), (0, setDefaultProductImageIfNotGiven_1.setDefaultProductImageIfNotGiven)("images"), myStore_middleware_1.myStoreMiddleware, controllers.createProduct)
         .get(myStore_middleware_1.myStoreMiddleware, controllers.getStoreProduct);
     router
         .route("/:id/product/:productId")

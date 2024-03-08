@@ -18,6 +18,8 @@ const updateMyProfileUseCaseBase = (dependencies) => async (user, payload) => {
     const updatedUser = await dependencies.usersRepo.updateOne(userFound, {
         email: (payload === null || payload === void 0 ? void 0 : payload.email) || userFound.email,
         picture: (payload === null || payload === void 0 ? void 0 : payload.picture) || userFound.picture,
+        firstName: (payload === null || payload === void 0 ? void 0 : payload.firstName) || userFound.firstName,
+        lastName: (payload === null || payload === void 0 ? void 0 : payload.lastName) || userFound.lastName,
     });
     return updatedUser;
 };

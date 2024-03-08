@@ -6,7 +6,6 @@ const myStoreMiddleware = async (req, res, next) => {
     var _a;
     const storeId = req.params.id;
     const userId = req.user.id;
-    console.log(req);
     const role = (_a = req.user) === null || _a === void 0 ? void 0 : _a.role;
     try {
         const myStores = await (0, getVendorStores_usecase_1.getVendorStoresUseCase)({ userId });

@@ -36,6 +36,7 @@ export const passwordResetUseCaseBase =
         relations: {
           user: true,
         },
+        
       });
     if (!passwordResetInformationFound) {
       exceptionService.unauthorizedException({

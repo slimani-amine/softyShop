@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaymentMethodEntity = void 0;
 const typeorm_1 = require("typeorm");
-const cart_entity_1 = require("./cart.entity");
+const orders_entity_1 = require("./orders.entity");
 let PaymentMethodEntity = class PaymentMethodEntity {
 };
 exports.PaymentMethodEntity = PaymentMethodEntity;
@@ -21,35 +21,35 @@ __decorate([
 ], PaymentMethodEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
     __metadata("design:type", String)
 ], PaymentMethodEntity.prototype, "name", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar',
+        type: "varchar",
     }),
     __metadata("design:type", String)
 ], PaymentMethodEntity.prototype, "icon", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => cart_entity_1.CartEntity, (cart) => cart.paymentMethod),
+    (0, typeorm_1.OneToMany)(() => orders_entity_1.OrderEntity, (cart) => cart.paymentMethod),
     __metadata("design:type", Array)
 ], PaymentMethodEntity.prototype, "paymentMethods", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], PaymentMethodEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], PaymentMethodEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], PaymentMethodEntity.prototype, "updatedAt", void 0);
 exports.PaymentMethodEntity = PaymentMethodEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'PaymentMethod',
+        name: "PaymentMethod",
     })
 ], PaymentMethodEntity);
 //# sourceMappingURL=paymentMethod.entity.js.map

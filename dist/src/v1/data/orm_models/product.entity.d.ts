@@ -9,8 +9,10 @@ import { CartProductEntity } from "./cartProduct.entity";
 export declare class ProductEntity {
     id: string;
     name: string;
+    images: string;
     price: number;
     stockNumber: number;
+    discount: number;
     publishedAt: Date;
     availability: boolean;
     isPublished: boolean;

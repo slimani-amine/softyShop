@@ -20,6 +20,8 @@ const createProductUseCaseBase = (dependencies = {
         brand_id: payload.brand_id,
         category_id: payload.category_id,
         store_id: payload.store_id,
+        images: payload.images,
+        discount: payload.discount,
     });
     return {
         product: productCreated,

@@ -14,7 +14,6 @@ import {
 } from "../../../middlewares/schemas/validateSchema.middleware";
 import {
   isAuthentictedMiddleware,
-  isAuthentictedMiddlewareNoVerificationNeeded,
 } from "../../../middlewares/auth/isAuthenticated.middleware";
 import updateProfileSchema from "../../../schemas/auth/updateProfile.schema";
 import { restrictToMiddleware } from "../../../middlewares/auth/restrictTo.middleware";
@@ -23,6 +22,8 @@ import { deleteAddressesController } from "../../../controllers/api/addresses/de
 import { getUserAddressesController } from "../../../controllers/api/addresses/getUserAddresses.controller";
 import { getOneAddressController } from "../../../controllers/api/addresses/getOneAddresse.controller";
 import { updateAddressController } from "../../../controllers/api/addresses/updateAddresse.controller";
+import { changeUserRoleController } from "../../../controllers/api/users/changeUserRole.controller";
+import changeUserRoleSchema from "../../../schemas/auth/changeUserRole.schem";
 
 const router = express.Router();
 
@@ -35,6 +36,7 @@ const defaults = {
   userAddresses: getUserAddressesController,
   oneAdress: getOneAddressController,
   updateAddress: updateAddressController,
+  changeUserRole: changeUserRoleController,
 };
 
 export function getUsersApiRouter(
@@ -47,6 +49,7 @@ export function getUsersApiRouter(
     userAddresses: ControllerType;
     oneAdress: ControllerType;
     updateAddress: ControllerType;
+    changeUserRole: ControllerType;
   } = defaults
 ) {
   router.use(isAuthentictedMiddleware);
@@ -62,6 +65,13 @@ export function getUsersApiRouter(
     );
 
   router.route("/").get(restrictToMiddleware("admin"), controllers.getUsers);
+  router
+    .route("/change-user-role/:id")
+    .patch(
+      restrictToMiddleware("admin"),
+      validateSchemaMiddleware(changeUserRoleSchema, VALIDATION_PATHS.BODY),
+      controllers.changeUserRole
+    );
 
   router
     .route("/addresses")

@@ -30,10 +30,10 @@ const registerSchema = z
     //   PASSWORDS_DO_NOT_MATCH_ERROR_MESSAGE
     // )
     picture: z.string(),
-    firstName: z.string().min(4, {
+    firstName: z.string().min(2, {
       message: FirstNAME_TOO_SHORT_ERROR_MESSAGE,
     }),
-    lastName: z.string().min(4, {
+    lastName: z.string().min(2, {
       message: LAST_NAME_TOO_SHORT_ERROR_MESSAGE,
     }),
     role: z.enum(

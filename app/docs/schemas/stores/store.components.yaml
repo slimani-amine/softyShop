@@ -13,24 +13,24 @@ components:
           type: string
         isPublished:
           type: boolean
-        position:
+        location:
           type: string
         socialMediaLinks:
           type: string
         products:
           type: array
           items:
-            $ref: '#/components/schemas/ProductEntity'
+            $ref: "#/components/schemas/ProductEntity"
         brands:
           type: array
           items:
-            $ref: '#/components/schemas/BrandEntity'
+            $ref: "#/components/schemas/BrandEntity"
         productCreators:
           type: array
           items:
-            $ref: '#/components/schemas/ProductCreatorEntity'
+            $ref: "#/components/schemas/ProductCreatorEntity"
         user:
-          $ref: '#/components/schemas/UserEntity'
+          $ref: "#/components/schemas/UserEntity"
         deletedAt:
           type: string
           format: date-time

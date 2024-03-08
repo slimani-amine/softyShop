@@ -1,0 +1,16 @@
+components:
+  schemas:
+    CategoryValidationError:
+      allOf:
+        - $ref: '#/components/schemas/ValidationErrorBase'
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                name:
+                  type: string
+                icon:
+                  type: string

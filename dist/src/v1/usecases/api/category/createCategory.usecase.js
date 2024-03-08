@@ -20,6 +20,7 @@ const createCategoryUseCaseBase = (dependencies = {
     const categoryCreated = await dependencies.categoryRepo.createCategory({
         name: payload.name,
         icon: payload.icon,
+        isPublished: payload.isPublished,
     });
     return {
         category: categoryCreated,

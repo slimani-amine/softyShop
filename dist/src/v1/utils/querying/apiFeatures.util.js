@@ -273,6 +273,7 @@ class ApiFeatures {
             page,
             perPage,
         }, apiOptions);
+        console.log("🚀 ~ ApiFeatures ~ sqlStatement:", sqlStatement);
         const rows = await dbConnection.query(sqlStatement);
         const count = rows.length > 0 && apiOptions.isPaging ? rows[0].count : 0;
         const meta = apiOptions.isPaging ? this.generateMetaData(perPage, page, count) : false;

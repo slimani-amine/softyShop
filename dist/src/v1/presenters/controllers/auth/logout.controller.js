@@ -9,7 +9,7 @@ const logoutControllerBase = () => async (req, res, next) => {
         res.clearCookie(config_1.TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME);
         res.clearCookie(config_1.TOKENS_INFO.REFRESH_TOKEN_COOKIE_NAME);
         res.status(200).send({
-            message: 'déconnecté avec succès',
+            message: 'successfully disconnected',
             data: {},
         });
     }

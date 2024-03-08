@@ -28,39 +28,21 @@ export class CartEntity {
 
   @Column({
     type: "int",
+    default: 0,
   })
   totalQuantity: number;
 
   @Column({
     type: "int",
+    default: 0,
   })
   totalAmount: number;
 
-  @Column()
-  address: string;
-
-  @Column({
-    type: "date",
-  })
-  date: Date;
-
-  @Column({
-    type: "date",
-  })
-  estimatedDeliveryDate: Date;
-
   @OneToMany(() => CartProductEntity, (wishlist) => wishlist.product)
-  cartProduct: CartProductEntity[];
+  cartProducts: CartProductEntity[];
 
   @OneToMany(() => OrderEntity, (order) => order.cart)
   order: OrderEntity[];
-
-  @ManyToOne(
-    () => PaymentMethodEntity,
-    (paymentMethod) => paymentMethod.paymentMethods
-  )
-  @JoinColumn({ name: "paymentMethod_id" })
-  paymentMethod: PaymentMethodEntity;
 
   @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;

@@ -35,7 +35,8 @@ const storeRepoBase = (dbConnection) => ({
             storePhone: payload.storePhone,
             logo: payload.logo,
             isPublished: payload.isPublished,
-            position: JSON.stringify(payload.position),
+            location: JSON.stringify(payload.location),
+            address: payload.address,
             socialMediaLinks: JSON.stringify(payload.socialMediaLinks),
             user: vendor,
         });
@@ -68,7 +69,13 @@ const storeRepoBase = (dbConnection) => ({
         return result.affected;
     },
     async findByQuery(queryParams) {
-        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "stores", queryParams, {});
+        console.log(queryParams);
+        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "stores", queryParams, {
+            storeName: {
+                operator: "eq",
+            },
+        });
+        console.log("🚀 ~ storeRepoBase ~ result:", result);
         return {
             docs: this.toDomainStores(result.docs),
             meta: result.meta,
@@ -88,7 +95,8 @@ const storeRepoBase = (dbConnection) => ({
             storePhone: prismaStore.storePhone,
             logo: prismaStore.logo,
             isPublished: prismaStore.isPublished,
-            position: prismaStore.position,
+            location: prismaStore.location,
+            address: prismaStore.address,
             socialMediaLinks: prismaStore.socialMediaLinks,
         });
         return store;

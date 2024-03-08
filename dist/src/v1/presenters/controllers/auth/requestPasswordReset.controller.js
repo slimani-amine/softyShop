@@ -9,7 +9,7 @@ const requestPasswordResetControllerBase = (requestUserPasswordResetUseCase) => 
         logger_1.logger.log('REQUEST ACCOUNT PASSWORD RESET CONTROLLER', `USER ${((_a = req === null || req === void 0 ? void 0 : req.body) === null || _a === void 0 ? void 0 : _a.email) || 'unknwon'}`);
         const result = await requestUserPasswordResetUseCase(req === null || req === void 0 ? void 0 : req.body);
         res.status(200).send({
-            message: 'un email a été envoyé pour réinitialiser votre mot de passe',
+            message: 'An email was sent to reset your password',
             data: result.user,
         });
     }

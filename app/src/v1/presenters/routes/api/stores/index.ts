@@ -33,7 +33,10 @@ import {
   FilePathTypes,
   transferFilePathToBodyMiddlewareBuilder,
 } from "../../../middlewares/uploads/transferFilePathToBody.middleware";
-import { setDefaultProfilePicIfNotGiven } from "../../../middlewares/auth/setDefaultProfilePicIfNotGiven";
+import { setDefaultProductImageIfNotGiven } from "../../../middlewares/controllers/setDefaultProductImageIfNotGiven";
+import updateStoreSchema from "../../../schemas/store/updateStore.schema";
+import { publishStoreController } from "../../../controllers/api/store/publishStore.controller";
+import publishStoreSchema from "../../../schemas/store/publish.schema";
 
 const router = express.Router();
 
@@ -44,6 +47,7 @@ const defaults = {
   getOneStore: getOneStoreController,
   getVendorStores: getVendorStoresController,
   updateStore: updateStoreController,
+  publishStore: publishStoreController,
   createProduct: createProductController,
   getAllProducts: getAllProductsController,
   getStoreProduct: getStoreProductsController,
@@ -68,6 +72,7 @@ export function getStoresApiRouter(
     getOneStore: ControllerType;
     getVendorStores: ControllerType;
     updateStore: ControllerType;
+    publishStore: ControllerType;
     createProduct: ControllerType;
     getAllProducts: ControllerType;
     getStoreProduct: ControllerType;
@@ -102,16 +107,29 @@ export function getStoresApiRouter(
 
   router
     .route("/:id")
-    .delete(restrictToMiddleware("admin", "user"),controllers.deleteStore) // delete a store
-    .get(controllers.getOneStore) // get one store
-    .patch(restrictToMiddleware("admin", "user"),controllers.updateStore); // update a store
+    .delete(restrictToMiddleware("admin", "vendor"), controllers.deleteStore) // delete a store
+    .get(myStoreMiddleware, controllers.getOneStore) // get one store
+    .patch(
+      restrictToMiddleware("admin", "vendor"),
+      validateSchemaMiddleware(updateStoreSchema, VALIDATION_PATHS.BODY),
+      controllers.updateStore
+    ); // update a store
+
+  router
+    .route("/:id/publish")
+    .patch(
+      restrictToMiddleware("admin"),
+      validateSchemaMiddleware(publishStoreSchema, VALIDATION_PATHS.BODY),
+      controllers.publishStore
+    ); // publish a store
 
   router
     .route("/:id/product")
     .post(
       restrictToMiddleware("vendor", "admin"),
-      multerImageUpload.single("picture"),
-      transferFilePathToBodyMiddlewareBuilder("picture", FilePathTypes.IMAGES),
+      multerImageUpload.array("images"),
+      transferFilePathToBodyMiddlewareBuilder("images", FilePathTypes.IMAGES),
+      setDefaultProductImageIfNotGiven("images"),
       myStoreMiddleware,
       controllers.createProduct
     )
@@ -119,9 +137,17 @@ export function getStoresApiRouter(
 
   router
     .route("/:id/product/:productId")
-    .delete(restrictToMiddleware("vendor"),myStoreMiddleware, controllers.deleteProduct) // delete a product (only for vendor)
+    .delete(
+      restrictToMiddleware("vendor"),
+      myStoreMiddleware,
+      controllers.deleteProduct
+    ) // delete a product (only for vendor)
     .get(controllers.getOneProduct) // get one product
-    .patch(restrictToMiddleware("admin", "vendor"),myStoreMiddleware, controllers.updateProduct); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
+    .patch(
+      restrictToMiddleware("admin", "vendor"),
+      myStoreMiddleware,
+      controllers.updateProduct
+    ); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
 
   router
     .route("/:id/brand")

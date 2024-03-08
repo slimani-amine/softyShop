@@ -7,7 +7,7 @@ const getAllCategoriesControllerBase = (getAllCategoriesUseCase) => async (req, 
         const result = await getAllCategoriesUseCase(req === null || req === void 0 ? void 0 : req.query);
         res.status(200).send({
             message: "success",
-            data: result.docs,
+            data: result,
         });
     }
     catch (err) {

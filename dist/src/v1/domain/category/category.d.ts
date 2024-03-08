@@ -3,6 +3,7 @@ export interface ICategory extends IIdAsNumber {
     id: string;
     name: string;
     icon: string;
+    isPublished: boolean;
 }
 export declare class Category extends NumberId implements ICategory {
     id: string;
@@ -11,13 +12,16 @@ export declare class Category extends NumberId implements ICategory {
     deletedAt: Date;
     createdAt: Date;
     updatedAt: Date;
+    isPublished: boolean;
     constructor(payload: {
         id: string;
         name: string;
         icon: string;
+        isPublished: boolean;
     });
 }
 export interface ICreateCategoryInput {
     name: string;
     icon: string;
+    isPublished: boolean;
 }

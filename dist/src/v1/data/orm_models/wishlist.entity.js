@@ -21,30 +21,34 @@ __decorate([
     __metadata("design:type", String)
 ], WishlistEntity.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.reviews),
-    (0, typeorm_1.JoinColumn)({ name: 'user_id' }),
+    (0, typeorm_1.PrimaryColumn)(),
+    __metadata("design:type", Number)
+], WishlistEntity.prototype, "user_id", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.wishlist),
+    (0, typeorm_1.JoinColumn)({ name: "user_id" }),
     __metadata("design:type", user_entity_1.UserEntity)
 ], WishlistEntity.prototype, "user", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => product_entity_1.ProductEntity, (product) => product.reviews),
-    (0, typeorm_1.JoinColumn)({ name: 'product_id' }),
+    (0, typeorm_1.ManyToOne)(() => product_entity_1.ProductEntity, (product) => product.wishlist),
+    (0, typeorm_1.JoinColumn)({ name: "product_id" }),
     __metadata("design:type", product_entity_1.ProductEntity)
 ], WishlistEntity.prototype, "product", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)({ name: 'deletedAt' }),
+    (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)
 ], WishlistEntity.prototype, "deletedAt", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({ name: 'createdAt' }),
+    (0, typeorm_1.CreateDateColumn)({ name: "createdAt" }),
     __metadata("design:type", Date)
 ], WishlistEntity.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({ name: 'updatedAt' }),
+    (0, typeorm_1.UpdateDateColumn)({ name: "updatedAt" }),
     __metadata("design:type", Date)
 ], WishlistEntity.prototype, "updatedAt", void 0);
 exports.WishlistEntity = WishlistEntity = __decorate([
     (0, typeorm_1.Entity)({
-        name: 'Wishlist',
+        name: "Wishlist",
     })
 ], WishlistEntity);
 //# sourceMappingURL=wishlist.entity.js.map

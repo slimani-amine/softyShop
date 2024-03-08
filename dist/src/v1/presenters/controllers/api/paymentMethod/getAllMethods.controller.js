@@ -4,7 +4,7 @@ exports.getAllPayementMethodsController = exports.getAllPayementMethodsControlle
 const getAllMethods_usecase_1 = require("../../../../usecases/api/paymentMethod/getAllMethods.usecase");
 const getAllPayementMethodsControllerBase = (getAllPayementMethodsUseCase) => async (req, res, next) => {
     try {
-        const result = await getAllPayementMethodsUseCase(req === null || req === void 0 ? void 0 : req.query);
+        const result = await (0, getAllMethods_usecase_1.getAllPaymentMethodsUseCase)(req === null || req === void 0 ? void 0 : req.query);
         res.status(200).send({
             message: "success",
             data: result.docs,

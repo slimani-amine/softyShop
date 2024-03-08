@@ -7,7 +7,8 @@ export interface IStore extends IIdAsNumber {
     storePhone: string;
     logo: string;
     isPublished: boolean;
-    position: string;
+    location: string;
+    address: string;
     socialMediaLinks: string;
 }
 export declare class Store extends NumberId implements IStore {
@@ -16,7 +17,8 @@ export declare class Store extends NumberId implements IStore {
     storePhone: string;
     logo: string;
     isPublished: boolean;
-    position: string;
+    location: string;
+    address: string;
     socialMediaLinks: string;
     user?: IUser;
     products?: IProduct[];
@@ -26,7 +28,8 @@ export declare class Store extends NumberId implements IStore {
         storePhone: string;
         logo: string;
         isPublished: boolean;
-        position: string;
+        location: string;
+        address: string;
         socialMediaLinks: string;
         user?: IUser;
         products?: IProduct[];
@@ -37,7 +40,8 @@ export interface ICreateStoreInput {
     storePhone: string;
     logo: string;
     isPublished: boolean;
-    position: string;
+    location: string;
+    address: string;
     socialMediaLinks: string;
     vendor_id?: string;
 }

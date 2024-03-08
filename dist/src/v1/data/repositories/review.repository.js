@@ -15,9 +15,7 @@ const reviewRepoBase = (dbConnection) => ({
         return this.toDomainReview(review);
     },
     async findAll(findData) {
-        console.log("🚀 ~ findAll ~ findData:", findData);
         const reviews = await this.manager.find(reviews_entity_1.ReviewsEntity, findData);
-        console.log("🚀 ~ findAll ~ reviews:", reviews);
         return this.toDomainReviews(reviews);
     },
     async createReview(payload) {
