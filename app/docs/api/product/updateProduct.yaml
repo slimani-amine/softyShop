@@ -5,6 +5,8 @@ paths:
         - Products
       summary: Update a product
       description: Update a product for a specific store.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

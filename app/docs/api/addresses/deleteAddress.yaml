@@ -5,6 +5,8 @@ paths:
         - Addresses
       summary: Delete address
       description: Delete an address.
+      security:
+        - BearerAuth: []
       parameters:
         - in: path
           name: id

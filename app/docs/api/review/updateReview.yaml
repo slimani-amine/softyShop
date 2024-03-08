@@ -5,6 +5,8 @@ paths:
         - reviews
       summary: Update a review
       description: Update a review for a product.
+      security:
+        - BearerAuth: []
       requestBody:
         required: true
         content:

@@ -1,39 +1,33 @@
 paths:
-  /api/store/{id}/product:
+  /api/shopping/my-cart:
     get:
       tags:
-        - Products
-      summary: Get all products for a store
-      description: Get all products for a store.
+        - cart
+      summary: Get carts by user
       security:
         - BearerAuth: []
+      description: Get all carts for a specific user.
       parameters:
-        - name: id
-          in: path
+        - in: path
+          name: userId
           required: true
-          description: ID of the store to get products for
+          description: The ID of the user.
           schema:
             type: string
       responses:
         "200":
-          description: Success
+          description: carts retrieved successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
                         type: array
                         items:
-                          $ref: "#/components/schemas/Product"
-        "404":
-          description: Store not found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/NotFoundError"
+                          $ref: "#/components/schemas/cart"
         "500":
           description: Internal server error!
           content:

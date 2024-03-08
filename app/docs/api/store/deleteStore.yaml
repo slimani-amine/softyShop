@@ -5,6 +5,8 @@ paths:
         - Store
       summary: Delete a store
       description: Delete a store.
+      security:
+        - BearerAuth: []
       parameters:
         - name: id
           in: path

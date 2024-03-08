@@ -5,6 +5,8 @@ paths:
         - Addresses
       summary: Create a new address
       description: Create a new address for the user.
+      security:
+        - BearerAuth: []
       requestBody:
         required: true
         content:

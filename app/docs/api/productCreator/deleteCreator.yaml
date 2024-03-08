@@ -5,6 +5,8 @@ paths:
         - Product creators
       summary: Delete a product creator
       description: Delete a product creator for a specific store.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

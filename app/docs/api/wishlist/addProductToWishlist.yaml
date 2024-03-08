@@ -1,9 +1,11 @@
 paths:
-  /api/shopping/{userId}/wishlist:
+  /api/shopping/my-wishlist:
     post:
       tags:
         - Wishlist
       summary: Add item to wishlist
+      security:
+        - BearerAuth: []
       description: Add a product to the user's wishlist.
       parameters:
         - in: path

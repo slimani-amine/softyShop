@@ -5,6 +5,8 @@ paths:
         - reviews
       summary: Delete a review
       description: Delete a review for a product.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

@@ -5,6 +5,8 @@ paths:
         - Brands
       summary: Create a brand
       description: Create a brand for a specific store.
+      security:
+        - BearerAuth: []
       requestBody:
         required: true
         content:

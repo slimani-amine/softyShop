@@ -5,6 +5,8 @@ paths:
         - Addresses
       summary: Get user addresses
       description: Get all addresses for the user.
+      security:
+        - BearerAuth: []
       responses:
         '200':
           description: Addresses retrieved successfully

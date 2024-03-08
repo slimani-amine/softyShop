@@ -4,7 +4,7 @@ paths:
       summary: Get all categories
       description: Get all categories (only for admin or vendor).
       security:
-        - cookieAuth: []
+        - BearerAuth: []
       tags:
         - Category
       responses:

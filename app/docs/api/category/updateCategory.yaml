@@ -4,7 +4,7 @@ paths:
       summary: Update a category
       description: Update a category (only for admin).
       security:
-        - cookieAuth: []
+        - BearerAuth: []
       tags:
         - Category
       parameters:

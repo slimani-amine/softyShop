@@ -5,6 +5,8 @@ paths:
         - Store
       summary: Create a new store
       description: Create a new store.
+      security:
+        - BearerAuth: []
       requestBody:
         required: true
         content:

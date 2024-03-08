@@ -5,6 +5,8 @@ paths:
         - Store
       summary: Get all stores
       description: Get all stores.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

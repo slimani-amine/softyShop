@@ -5,6 +5,8 @@ paths:
         - Products
       summary: Get all products
       description: Get a list of all products.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

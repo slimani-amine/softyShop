@@ -5,6 +5,8 @@ paths:
         - Store
       summary: Get vendor stores
       description: Get stores associated with the vendor.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

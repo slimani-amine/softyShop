@@ -5,6 +5,8 @@ paths:
         - Brands
       summary: Delete a brand
       description: Delete a brand for a specific store.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

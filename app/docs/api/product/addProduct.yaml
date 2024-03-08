@@ -5,6 +5,8 @@ paths:
         - Products
       summary: Create a product for a store
       description: Create a product for a store.
+      security:
+        - BearerAuth: []
       parameters:
         - name: id
           in: path

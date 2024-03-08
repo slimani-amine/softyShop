@@ -34,3 +34,6 @@ tags:
 
   - name: Wishlist
     description: wishlist Cruds
+
+  - name: cart
+    description: cart Cruds

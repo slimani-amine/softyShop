@@ -1,36 +1,43 @@
 paths:
-  /api/products/review:
+  /api/shopping/my-cart:
     post:
       tags:
-        - reviews
-      summary: Create a review
-      description: Create a new review for a product.
+        - cart
+      summary: Add item to cart
       security:
         - BearerAuth: []
+      description: Add a product to the user's cart or change her quantity
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          description: The ID of the user.
+          schema:
+            type: string
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateReviewInput"
+              $ref: "#/components/schemas/cart"
       responses:
         "201":
-          description: Review created successfully
+          description: Product added to cart successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
-                        $ref: "#/components/schemas/Review"
+                        $ref: "#/components/schemas/cart"
         "422":
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ValidationError"
+                $ref: "#/components/schemas/cartValidationError"
         "500":
           description: Internal server error!
           content:

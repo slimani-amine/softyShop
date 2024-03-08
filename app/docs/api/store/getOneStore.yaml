@@ -5,6 +5,8 @@ paths:
         - Store
       summary: Get one store
       description: Get one store.
+      security:
+        - BearerAuth: []
       parameters:
         - name: id
           in: path

@@ -4,7 +4,7 @@ paths:
       summary: Delete a payment method
       description: Delete a payment method (only for admin).
       security:
-        - cookieAuth: []
+        - BearerAuth: []
       tags:
         - Payment methods
       parameters:

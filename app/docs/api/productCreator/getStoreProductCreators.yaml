@@ -5,6 +5,8 @@ paths:
         - Product creators
       summary: Get store product creators
       description: Get all product creators for a specific store.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

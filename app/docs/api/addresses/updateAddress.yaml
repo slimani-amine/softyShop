@@ -5,6 +5,8 @@ paths:
         - Addresses
       summary: Update address
       description: Update details of a specific address.
+      security:
+        - BearerAuth: []
       parameters:
         - in: path
           name: id

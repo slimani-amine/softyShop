@@ -4,7 +4,7 @@ paths:
       summary: Delete a category
       description: Delete a category (only for admin).
       security:
-        - cookieAuth: []
+        - BearerAuth: []
       tags:
         - Category
       parameters:

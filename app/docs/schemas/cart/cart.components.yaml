@@ -1,0 +1,17 @@
+components:
+  schemas:
+    cart:
+      type: object
+      required:
+        - userId
+        - productId
+      properties:
+        productId:
+          type: string
+          description: The ID of the product in the cart
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

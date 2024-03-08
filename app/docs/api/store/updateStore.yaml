@@ -5,6 +5,8 @@ paths:
         - Store
       summary: Update a store
       description: Update a store.
+      security:
+        - BearerAuth: []
       parameters:
         - name: id
           in: path

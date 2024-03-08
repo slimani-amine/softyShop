@@ -1,12 +1,12 @@
 paths:
-  /api/shopping/my-wishlist/{productId}:
+  /api/shopping/my-cart/{productId}:
     delete:
       tags:
-        - Wishlist
-      summary: Delete product from wishlist
+        - cart
+      summary: Delete product from cart
       security:
         - BearerAuth: []
-      description: Delete a product from the user's wishlist.
+      description: Delete a product from the user's cart.
       parameters:
         - in: path
           name: userId
@@ -17,12 +17,12 @@ paths:
         - in: path
           name: productId
           required: true
-          description: The ID of the product to be deleted from the wishlist.
+          description: The ID of the product to be deleted from the cart.
           schema:
             type: string
       responses:
         "200":
-          description: Product deleted from wishlist successfully
+          description: Product deleted from cart successfully
           content:
             application/json:
               schema:
@@ -31,7 +31,7 @@ paths:
                   - type: object
                     properties:
                       data:
-                        $ref: "#/components/schemas/Wishlist"
+                        $ref: "#/components/schemas/cart"
         "500":
           description: Internal server error!
           content:

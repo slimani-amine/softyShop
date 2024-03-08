@@ -4,9 +4,10 @@ paths:
       summary: Create a category
       description: Create a category (only for admin).
       security:
-        - cookieAuth: []
+        - BearerAuth: []
       tags:
         - Category
+
       requestBody:
         required: true
         content:

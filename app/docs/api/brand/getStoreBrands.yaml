@@ -5,6 +5,8 @@ paths:
         - Brands
       summary: Get store brands
       description: Get all brands for a specific store.
+      security:
+        - BearerAuth: []
       responses:
         "200":
           description: Success

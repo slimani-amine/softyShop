@@ -5,6 +5,8 @@ paths:
         - Addresses
       summary: Get one address
       description: Get details of a specific address.
+      security:
+        - BearerAuth: []
       parameters:
         - in: path
           name: id

@@ -5,6 +5,8 @@ paths:
         - Product creators
       summary: Create a product creator
       description: Create a product creator for a specific store.
+      security:
+        - BearerAuth: []
       requestBody:
         required: true
         content:
