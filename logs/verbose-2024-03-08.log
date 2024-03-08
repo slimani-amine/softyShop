@@ -2338,3 +2338,55 @@
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/cart"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/cart in 14ms"}
 {"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 63ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart"}
+{"level":"error","message":"[ERROR] This product is already in the cart","trace":"Error: This product is already in the cart\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/cartProduct/addProductToCart.usecase.ts:53:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/addProductToCart.controller.ts:13:22"}
+{"level":"error","message":"[ERROR] This product is already in the cart"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart in 23ms"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/shopping/my-cart/26"}
+{"level":"error","message":"[ERROR] product not found","trace":"Error: product not found\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/cartProduct/deleteProductFromCart.usecase.ts:42:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/deleteProductFromCart.controller.ts:12:22"}
+{"level":"error","message":"[ERROR] product not found"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/shopping/my-cart/26 in 18ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 40ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/shopping/my-cart/26"}
+{"level":"error","message":"[ERROR] product not found","trace":"Error: product not found\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/cartProduct/deleteProductFromCart.usecase.ts:42:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/deleteProductFromCart.controller.ts:12:22"}
+{"level":"error","message":"[ERROR] product not found"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/shopping/my-cart/26 in 40ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-wishlist"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-wishlist in 41ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/6/wishlist"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-wishlist"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-wishlist in 43ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-wishlist"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-wishlist in 14ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-wishlist"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-wishlist in 42ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-wishlist"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-wishlist in 31ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/shopping/my-wishlist/26"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/shopping/my-wishlist/26 in 48ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-wishlist"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-wishlist in 12ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}

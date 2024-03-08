@@ -8,7 +8,7 @@ export const getWishlistsByUserControllerBase =
   (getWishlistsByUserUseCase: GetWishlistsByUserUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const userId = req.params.userId;
+      const userId = req.user.id;
       const result = await getWishlistsByUserUseCase(Number(userId));
       res.status(200).send({
         message: "success",

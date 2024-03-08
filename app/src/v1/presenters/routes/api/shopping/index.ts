@@ -35,24 +35,18 @@ export function getWishlistApiRouter(
   router.use(isAuthentictedMiddleware);
 
   router
-    .route("/:userId/wishlist")
+    .route("/my-wishlist")
     .post(controllers.addWishlist) //add item in wishlist
     .get(controllers.getWishlistsByUser); //get Wishlists By User
 
-  router
-    .route("/:userId/wishlist/:productId")
-    .delete(controllers.deleteWishlist); //delete the product from Wishlist
-
-  router.route("/my-cart").get(controllers.getUserCart); //get the cart
-  router.route("/cart").get(controllers.getUserCartProduct); //get the cart + products
+  router.route("/my-wishlist/:productId").delete(controllers.deleteWishlist); //delete the product from Wishlist
 
   router
-    .route("/cart/product")
+    .route("/my-cart")
+    .get(controllers.getUserCartProduct) //get the cart + products
     .post(controllers.addProductToCart); //add product to a cart
 
-  router
-    .route("/cart/product/:cartProductId")
-    .delete(controllers.deleteProductFromCart); //delete the product from cart
+  router.route("/my-cart/:productId").delete(controllers.deleteProductFromCart); //delete the product from cart
 
   return router;
 }

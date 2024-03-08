@@ -35,23 +35,14 @@ export const deleteProductFromCartUseCaseBase =
       relations: {
         product: true,
       },
-      where: { product: { id: params.cartProductId } },
+      where: { product: { id: params.productId } },
     });
-    console.log("🚀 ~ product:", product)
+    console.log("🚀 ~ product:", product);
     if (!product) {
       exceptionService.notFoundException({
         message: "product not found",
       });
     }
-
-    // const sommeQuantities = cart.totalQuantity * 1 - product.quantity * 1;
-    // const sommePrice = cart.totalAmount * 1 - product.product.price * 1;
-
-    // const updatedCart = await cartRepo.updateCart(cart, {
-    //   totalQuantity: sommeQuantities,
-    //   totalAmount: sommePrice,
-    // });
-    // console.log("🚀 ~ updatedCart:", updatedCart)
 
     const result =
       await dependencies.cartProductRepo.deleteCartProduct(product);

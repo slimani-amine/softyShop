@@ -32,7 +32,7 @@ export const getUserCartProductUseCaseBase =
     }
     let sommePrice = 0;
     for (let i = 0; i < cartProduct.length; i++) {
-      sommePrice += cartProduct[i].product.price*cartProduct[i].quantity;
+      sommePrice += cartProduct[i].product.price * cartProduct[i].quantity;
     }
 
     const cart = (await cartRepo.findOne({

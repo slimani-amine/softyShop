@@ -8,7 +8,7 @@ export const createWishlistControllerBase =
   (createWishlistUseCase: CreateWishlistUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {      
-      req.body.userId = req.params.userId;
+      req.body.userId = req.user.id;
       
       const result = await createWishlistUseCase(req.body);
 
