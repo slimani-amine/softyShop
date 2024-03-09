@@ -12,7 +12,7 @@ export const getAllStoresControllerBase =
       const result = await getAllStoreUseCase(req?.query);
       res.status(200).send({
         message: 'success',
-        data: result.docs,
+        data: result,
       });
     } catch (err) {
       next(err);

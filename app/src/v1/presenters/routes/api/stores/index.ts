@@ -1,10 +1,10 @@
 import * as express from "express";
 import { ControllerType } from "../../../../../types/controller";
 import { createBrandController } from "../../../controllers/api/brands/createBrand.controller";
-import { createStoreController } from "../../../controllers/api/store/createStore.controller";
-import { deleteStoresController } from "../../../controllers/api/store/deleteStore.controller";
-import { getAllStoresController } from "../../../controllers/api/store/getAllStores.controller";
-import { getOneStoreController } from "../../../controllers/api/store/getOneStore.controller";
+import { createStoreController } from "../../../controllers/api/stores/createStore.controller";
+import { deleteStoresController } from "../../../controllers/api/stores/deleteStore.controller";
+import { getAllStoresController } from "../../../controllers/api/stores/getAllStores.controller";
+import { getOneStoreController } from "../../../controllers/api/stores/getOneStore.controller";
 import {
   VALIDATION_PATHS,
   validateSchemaMiddleware,
@@ -12,8 +12,8 @@ import {
 import createStoreSchema from "../../../schemas/store/createStore.schema";
 import { restrictToMiddleware } from "../../../middlewares/auth/restrictTo.middleware";
 import { isAuthentictedMiddleware } from "../../../middlewares/auth/isAuthenticated.middleware";
-import { getVendorStoresController } from "../../../controllers/api/store/getVendorStores.controller";
-import { updateStoreController } from "../../../controllers/api/store/updateStore.controller";
+import { getVendorStoresController } from "../../../controllers/api/stores/getVendorStores.controller";
+import { updateStoreController } from "../../../controllers/api/stores/updateStore.controller";
 import { getStoreBrandsController } from "../../../controllers/api/brands/getStoreBrands.controller";
 import { deleteBrandController } from "../../../controllers/api/brands/deleteBrand.controller";
 import { updateBrandController } from "../../../controllers/api/brands/updateBrand.controller";
@@ -35,7 +35,7 @@ import {
 } from "../../../middlewares/uploads/transferFilePathToBody.middleware";
 import { setDefaultProductImageIfNotGiven } from "../../../middlewares/controllers/setDefaultProductImageIfNotGiven";
 import updateStoreSchema from "../../../schemas/store/updateStore.schema";
-import { publishStoreController } from "../../../controllers/api/store/publishStore.controller";
+import { publishStoreController } from "../../../controllers/api/stores/publishStore.controller";
 import publishStoreSchema from "../../../schemas/store/publish.schema";
 
 const router = express.Router();
@@ -124,7 +124,7 @@ export function getStoresApiRouter(
     ); // publish a store
 
   router
-    .route("/:id/product")
+    .route("/:id/products")
     .post(
       restrictToMiddleware("vendor", "admin"),
       multerImageUpload.array("images"),
@@ -136,7 +136,7 @@ export function getStoresApiRouter(
     .get(myStoreMiddleware, controllers.getStoreProduct); // get all product / post a product (only for vendor)
 
   router
-    .route("/:id/product/:productId")
+    .route("/:id/products/:productId")
     .delete(
       restrictToMiddleware("vendor"),
       myStoreMiddleware,
@@ -150,7 +150,7 @@ export function getStoresApiRouter(
     ); // get one product / delete a product (only for vendor) / update a product (only for admin or vendor)
 
   router
-    .route("/:id/brand")
+    .route("/:id/brands")
     .post(
       restrictToMiddleware("vendor"),
       multerImageUpload.single("picture"),
@@ -160,17 +160,17 @@ export function getStoresApiRouter(
     .get(controllers.getStoreBrands); // get all brands
 
   router
-    .route("/:id/brand/:brandId")
+    .route("/:id/brands/:brandId")
     .delete(restrictToMiddleware("vendor"), controllers.deleteBrand) // delete a brand (only for vendor)
     .patch(restrictToMiddleware("vendor", "admin"), controllers.updateBrand); // update a brand (only for admin or vendor)
 
   router
-    .route("/:id/productCreator")
+    .route("/:id/productCreators")
     .post(restrictToMiddleware("vendor"), controllers.createProductCreator) // post productCreator (only for vendor)
     .get(controllers.getStoreProductCreators); // get all productCreators
 
   router
-    .route("/:id/productCreator/:productCreatorId")
+    .route("/:id/productCreators/:productCreatorId")
     .delete(restrictToMiddleware("vendor"), controllers.deleteProductCreator) // delete a productCreator (only for vendor)
     .patch(
       restrictToMiddleware("vendor", "admin"),

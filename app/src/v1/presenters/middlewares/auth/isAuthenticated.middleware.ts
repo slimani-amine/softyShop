@@ -61,7 +61,7 @@ export const isAuthentictedMiddleware = async (
       id: accessTokenPayload.sub,
       isVerified: accessTokenPayload.isVerified,
       role: accessTokenPayload.role,
-      cartId: me.cart.id,
+      cartId: me?.cart?.id,
     };
 
     next();

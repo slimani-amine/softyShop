@@ -31,14 +31,14 @@ export function getProductsApiRouter(
 
   router.route("/").get(controllers.getAllProducts); //get all products
 
-  router.route("/:id/review").get(controllers.productReviews); //get the product reviews
+  router.route("/:id/reviews").get(controllers.productReviews); //get the product reviews
 
   router
-    .route("/review")
+    .route("/reviews")
     .post(restrictToMiddleware("user"), controllers.addReview); //create a new review
 
   router
-    .route("/review/:id")
+    .route("/reviews/:id")
     .delete(controllers.deleteReview) //delete review
     .patch(controllers.updateReview); //update review
 

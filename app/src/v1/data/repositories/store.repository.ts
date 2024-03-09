@@ -130,7 +130,6 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
         },
       }
     );
-    console.log("🚀 ~ storeRepoBase ~ result:", result);
     return {
       docs: this.toDomainStores(result.docs),
       meta: result.meta,

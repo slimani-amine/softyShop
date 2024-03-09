@@ -1,37 +1,121 @@
+# version: '3.8'
+# services:
+#   starterdevdb:
+#     image: mysql:8.0.28
+#     container_name: starterdevdb
+#     restart: always
+#     env_file:
+#       - .env.db.docker
+#     volumes:
+#       - ../../initdb/:/docker-entrypoint-initdb.d
+#       - mysqlstarterdev-data:/var/lib/mysql
+#     ports:
+#       - '3306:3306'
+#     healthcheck:
+#       test: mysql -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT 1;"
+#       start_period: 5s
+#       interval: 5s
+#       timeout: 5s
+#       retries: 55
+
+#   startertestdb:
+#     image: mysql:8.0.28
+#     container_name: startertestdb
+#     restart: always
+#     env_file:
+#       - .env.dbtest.docker
+#     volumes:
+#       - mysqlstartertest-data:/var/lib/mysql
+#       - ../../initdb/:/docker-entrypoint-initdb.d
+#       - ../../scripts/reset-test-db.sql:/container-scripts/reset-test-db.sql
+#       - ../../scripts/init-test-db-proced.sql:/container-scripts/init-test-db-proced.sql
+#     ports:
+#       - '3307:3306'
+#     healthcheck:
+#       test: mysql -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT 1;"
+#       start_period: 5s
+#       interval: 5s
+#       timeout: 5s
+#       retries: 55
+
+#   starterdevapi:
+#     build:
+#       context: ../../
+#       dockerfile: ./docker/dev/Dockerfile
+#     container_name: starterdevapi
+#     restart: always
+#     env_file:
+#       - .env.server.docker
+#     volumes:
+#       - ../../:/app
+#     ports:
+#       - '6001:6001'
+#     healthcheck:
+#       test: ['CMD', 'curl', '-f', 'localhost:6001']
+#       interval: 30s
+#       timeout: 10s
+#       retries: 5
+#     depends_on:
+#       starterdevdb:
+#         condition: service_healthy
+#     links:
+#       - starterdevdb
+
+#   starterdevadminer:
+#     image: adminer:4.8.1-standalone
+#     container_name: starterdevadminer
+#     restart: always
+#     ports:
+#       - 8080:8080
+
+# volumes:
+#   mysqlstarterdev-data:
+#   mysqlstartertest-data:
+
+
+
+
+
+
+
+
+
+
+
 version: '3.8'
 services:
   starterdevdb:
-    image: mysql:latest
+    image: mariadb:11.1.2-jammy
     container_name: starterdevdb
     restart: always
     env_file:
       - .env.db.docker
     volumes:
       - ../../initdb/:/docker-entrypoint-initdb.d
-      - mysqlstarterdev-data:/var/lib/mysql
+      - mariadbstarterdev-data:/var/lib/mysql
     ports:
       - '3306:3306'
     healthcheck:
-      test: mysql -h 127.0.0.1 -u root --password=Amine.123 --execute="SELECT 1;"
+      test: mariadb -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT 1;"
       start_period: 5s
       interval: 5s
       timeout: 5s
       retries: 55
   startertestdb:
-    image: mysql:latest
+    image: mariadb:11.1.2-jammy
     container_name: startertestdb
     restart: always
     env_file:
       - .env.dbtest.docker
     volumes:
-      - mysqlstartertest-data:/var/lib/mysql
+      - mariadbstartertest-data:/var/lib/mysql
       - ../../initdb/:/docker-entrypoint-initdb.d
       - ../../scripts/reset-test-db.sql:/container-scripts/reset-test-db.sql
       - ../../scripts/init-test-db-proced.sql:/container-scripts/init-test-db-proced.sql
     ports:
       - '3307:3306'
     healthcheck:
-      test: mysql -h 127.0.0.1 -u root --password=Amine.123 --execute="SELECT 1;"
+      test: mariadb -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT 1;"
       start_period: 5s
       interval: 5s
       timeout: 5s
@@ -47,9 +131,9 @@ services:
     volumes:
       - ../../:/app
     ports:
-      - '3000:3000'
+      - '6001:6001'
     healthcheck:
-      test: ['CMD', 'curl', '-f', 'localhost:3000']
+      test: ['CMD', 'curl', '-f', 'localhost:6001']
       interval: 30s
       timeout: 10s
       retries: 5
@@ -65,5 +149,5 @@ services:
     ports:
       - 8080:8080
 volumes:
-  mysqlstarterdev-data:
-  mysqlstartertest-data:
+  mariadbstarterdev-data:
+  mariadbstartertest-data:

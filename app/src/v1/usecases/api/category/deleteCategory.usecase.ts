@@ -18,7 +18,7 @@ export const deleteCategoryUseCaseBase =
   ): DeleteCategoryUseCaseType =>
   async (params: { [id: string]: any }) => {
     const category = await dependencies.categoryRepo.findOne({
-      where: { id: params.id },
+      where: { id: params.categoryId },
     });
 
     if (!category) {
