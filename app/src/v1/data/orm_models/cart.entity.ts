@@ -3,8 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
-  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -17,7 +15,6 @@ import {
 
 import { CartProductEntity } from "./cartProduct.entity";
 import { OrderEntity } from "./orders.entity";
-import { PaymentMethodEntity } from "./paymentMethod.entity";
 
 @Entity({
   name: "Cart",

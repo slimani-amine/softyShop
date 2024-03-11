@@ -17,7 +17,7 @@ export const updateMyProfileUseCaseBase =
   async (user: IRequestUser, payload: Partial<IUser>) => {
     const userFound = await dependencies.usersRepo.findOne({
       where: {
-        id: parseInt(user.id),
+        id: user.id,
       },
     });
 

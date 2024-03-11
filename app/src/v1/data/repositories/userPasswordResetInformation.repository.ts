@@ -57,7 +57,7 @@ export const userPasswordResetInformationRepositoryBase = (
   ): Promise<IUserPasswordResetInformation> {
     const entity = this.manager.create(ResetPasswordEntity, {
       token: payload.token,
-      user_id: parseInt(payload.userId),
+      user_id: payload.userId,
       expirationDate: payload.expirationDate,
     });
     const result = await this.manager.save(ResetPasswordEntity, entity);

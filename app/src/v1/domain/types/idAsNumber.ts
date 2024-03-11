@@ -1,6 +1,6 @@
 export interface IIdAsNumber {
   id: string;
-  getIdAsNumber(): number;
+  getIdAsNumber(): string;
 }
 
 export class NumberId {
@@ -8,10 +8,10 @@ export class NumberId {
   constructor(id: string) {
     this.id = id;
   }
-  getIdAsNumber(): number {
-    const result = parseInt(this.id);
-    if (isNaN(result)) {
-      throw new Error('Id Error');
+  getIdAsNumber(): string {
+    const result = this.id;
+    if (!result) {
+      throw new Error("Id Error");
     }
     return result;
   }

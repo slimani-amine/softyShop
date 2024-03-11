@@ -23,9 +23,9 @@ export class ResetPasswordEntity {
   token: string;
 
   @Column({
-    type: 'int',
+    type: 'uuid',
   })
-  user_id: number;
+  user_id: string;
 
   @ManyToOne(() => UserEntity, (user) => user.resetPasswords)
   @JoinColumn({ name: 'user_id' })

@@ -1,14 +1,17 @@
-import { FRONT_END_BASE_URL } from '../../../config';
-import { exceptionService } from '../../core/errors/exceptions';
-import { IUsersRepository, usersRepo } from '../../data/repositories/users.repository';
-import { IUser } from '../../domain/users/user';
-import { sendUserVerificationMailUseCase } from '../api/mailing/sendVerificationMail.usecase';
-import { generateAccountVerificationTokenForUser } from '../../utils/tokenUtils/generateAccountVerificationToken.util';
-import { IRequestUser } from './types/IRequestUser';
-import { ACCOUNT_NOT_FOUND_ERROR_MESSAGE } from '../../domain/auth/errors';
+import { FRONT_END_BASE_URL } from "../../../config";
+import { exceptionService } from "../../core/errors/exceptions";
+import {
+  IUsersRepository,
+  usersRepo,
+} from "../../data/repositories/users.repository";
+import { IUser } from "../../domain/users/user";
+import { sendUserVerificationMailUseCase } from "../api/mailing/sendVerificationMail.usecase";
+import { generateAccountVerificationTokenForUser } from "../../utils/tokenUtils/generateAccountVerificationToken.util";
+import { IRequestUser } from "./types/IRequestUser";
+import { ACCOUNT_NOT_FOUND_ERROR_MESSAGE } from "../../domain/auth/errors";
 
 export type RequestAccountVerificationUseCaseType = (
-  payload: IRequestUser,
+  payload: IRequestUser
 ) => Promise<{ user: IUser }>;
 
 export const requestAccountVerificationUseCaseBase =
@@ -16,13 +19,13 @@ export const requestAccountVerificationUseCaseBase =
     usersRepo: IUsersRepository;
     generateAndSendUserAccountVerificationEmail: (
       user: IUser,
-      usersRepo: IUsersRepository,
+      usersRepo: IUsersRepository
     ) => Promise<string>;
   }) =>
   async (user: IRequestUser) => {
     const userFound = await dependencies.usersRepo.findOne({
       where: {
-        id: parseInt(user.id),
+        id: user.id,
         confirmed_email: false,
       },
     });
@@ -35,7 +38,7 @@ export const requestAccountVerificationUseCaseBase =
 
     await dependencies.generateAndSendUserAccountVerificationEmail(
       userFound,
-      dependencies.usersRepo,
+      dependencies.usersRepo
     );
 
     return {
@@ -45,7 +48,7 @@ export const requestAccountVerificationUseCaseBase =
 
 export async function generateAndSendUserAccountVerificationEmail(
   user: IUser,
-  usersRepo: IUsersRepository,
+  usersRepo: IUsersRepository
 ): Promise<string> {
   const verificationToken = generateAccountVerificationTokenForUser(user);
 
@@ -65,5 +68,6 @@ export async function generateAndSendUserAccountVerificationEmail(
 export const requestAccountVerificationUseCase: RequestAccountVerificationUseCaseType =
   requestAccountVerificationUseCaseBase({
     usersRepo,
-    generateAndSendUserAccountVerificationEmail: generateAndSendUserAccountVerificationEmail,
+    generateAndSendUserAccountVerificationEmail:
+      generateAndSendUserAccountVerificationEmail,
   });

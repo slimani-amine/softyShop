@@ -4,7 +4,7 @@ import {
   wishlistRepo,
 } from "../../../data/repositories/wishlist.repository";
 
-export type GetWishlistsByUserUseCaseType = (userId: number) => Promise<any[]>;
+export type GetWishlistsByUserUseCaseType = (userId: string) => Promise<any[]>;
 
 export const getWishlistsByUserUseCaseBase =
   (
@@ -14,7 +14,7 @@ export const getWishlistsByUserUseCaseBase =
       wishlistRepo: wishlistRepo,
     }
   ): GetWishlistsByUserUseCaseType =>
-  async (userId: number) => {
+  async (userId: string) => {
     const wishlists = await dependencies.wishlistRepo.findAll({
       relations: {
         product: true,

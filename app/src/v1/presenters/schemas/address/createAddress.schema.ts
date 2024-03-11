@@ -11,9 +11,15 @@ const createAddressSchema = z.object({
     message: "The state is required",
   }),
   zipCode: z.number(),
-  user_id: z.string().min(1, {
-    message: "The user is required",
-  }),
+  phoneNumber: z
+    .string()
+    .min(8, {
+      message: "The phone number 8 numbers",
+    })
+    .max(8, {
+      message: "The phone number 8 numbers",
+    })
+    .optional(),
 });
 
 export default createAddressSchema;

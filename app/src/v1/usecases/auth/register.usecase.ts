@@ -65,7 +65,6 @@ export const registerUseCaseBase =
     //   dependencies.usersRepo,
     // );
     const tokens = await dependencies.createUserTokensUseCase(userCreated);
-    console.log("🚀 ~ tokens:", tokens)
 
     return {
       user: userCreated,

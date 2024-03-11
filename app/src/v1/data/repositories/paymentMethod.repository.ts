@@ -47,7 +47,6 @@ export const paymentMethodRepoBase = (
   ): Promise<IPaymentMethod> {
     const paymentMethod = this.manager.create(PaymentMethodEntity, {
       name: payload.name,
-      icon: payload.icon,
     } as DeepPartial<PaymentMethodEntity>);
 
     const result = await this.manager.save(PaymentMethodEntity, paymentMethod);
@@ -127,7 +126,6 @@ export const paymentMethodRepoBase = (
     const paymentMethod = new PaymentMethod({
       id: prismaPaymentMethod.id,
       name: prismaPaymentMethod.name,
-      icon: prismaPaymentMethod.icon,
     });
     return paymentMethod;
   },

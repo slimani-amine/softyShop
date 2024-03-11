@@ -33,9 +33,20 @@ export const createAddressUseCaseBase =
       });
     }
 
+    const addressFound = await dependencies.addressRepo.findAll({
+      where: [{ address: payload.address, user: { id: payload.user_id } }],
+    });
+
+    if (addressFound.length > 0) {
+      exceptionService.badRequestException({
+        message: "An address already exist for this user.",
+      });
+    }
+
     validateCreateAddressPayload(payload);
     const addressCreated = await dependencies.addressRepo.createAddress({
       address: payload.address,
+      phoneNumber: payload?.phoneNumber || user.phoneNumber,
       city: payload.city,
       state: payload.state,
       zipCode: payload.zipCode,

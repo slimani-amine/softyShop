@@ -12,9 +12,7 @@ export type GetStoreProductUseCaseType = (queryParams: {
 
 export const getStoreProductUseCaseBase =
   (dependencies: { productRepo: IProductRepository }) =>
-  async (queryParams: { storeId: string }) => {
-    console.log("🚀 ~ queryParams:", queryParams)
-    
+  async (queryParams: { storeId: string }) => {    
     const store = await storeRepo.findOne({
       where: { id: queryParams.storeId },
     });

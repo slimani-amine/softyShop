@@ -7,6 +7,7 @@ import { NextFunction, Request, Response } from "express";
 const createAddressControllerBase =
   (createAddressUseCase: createAddressUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {    
+    req.body.user_id=req.user.id
     try {
       const result = await createAddressUseCase(req?.body);
       return res.status(201).json({

@@ -14,7 +14,6 @@ export type GetOneProductUseCaseType = (queryParams: {
 export const getOneProductUseCaseBase =
   (dependencies: { productRepo: IProductRepository }) =>
   async (queryParams: { [id: string]: any }) => {
-    console.log("🚀 ~ queryParams:", queryParams);
     queryParams.storeId = queryParams.id;
 
     const storeProduct = await getStoreProductUseCase({
@@ -59,7 +58,7 @@ export const getOneProductUseCaseBase =
           },
           store: {
             id: true,
-            storeName: true,
+            name: true,
           },
         },
       });

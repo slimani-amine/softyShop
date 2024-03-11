@@ -16,7 +16,7 @@ export type GetUserAddressesUseCaseType = (queryParams: {
 export const getUserAddressesUseCaseBase =
   (dependencies: { addressRepo: IAddressRepository }) =>
   async (queryParams: { userId: string }): Promise<IAddress[]> => {
-    const UserId = parseInt(queryParams.userId, 10);
+    const UserId = queryParams.userId;
     const user = (await usersRepo.findOne({
       where: { id: UserId },
     })) as IUser;

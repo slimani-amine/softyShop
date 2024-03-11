@@ -39,7 +39,7 @@ export const wishlistRepoBase = (dbConnection: DataSource | QueryRunner) => ({
 
   async createWishlist(payload: ICreateWishlistInput): Promise<IWishlist> {
     const user = await this.manager.findOne(UserEntity, {
-      where: { id: parseInt(payload.userId, 10) },
+      where: { id: payload.userId },
     });
 
     if (!user) {

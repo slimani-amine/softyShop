@@ -1,10 +1,10 @@
 import { z } from "zod";
 
 const createStoreSchema = z.object({
-  storeName: z.string().min(4, {
+  name: z.string().min(4, {
     message: "Le nom du boutique est obligatoire",
   }),
-  storePhone: z
+  phoneNumber: z
     .string()
     .min(8, {
       message: "Le telephone du boutique est obligatoire (8 chiffres)",

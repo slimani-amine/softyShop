@@ -17,7 +17,7 @@ export const getMyProfileUseCaseBase =
         cart: true,
       },
       where: {
-        id: parseInt(user.id),
+        id: user.id,
       },
       select: {
         cart: {

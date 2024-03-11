@@ -76,7 +76,7 @@ export interface ICreateUserInput {
 export interface IUserPasswordResetInformation extends IIdAsNumber {
   id: string;
   token: string;
-  userId: number;
+  userId: string;
   user?: IUser;
   createdAt: Date;
   updatedAt: Date;
@@ -89,7 +89,7 @@ export class UserPasswordResetInformation
 {
   id: string;
   token: string;
-  userId: number;
+  userId: string;
   user?: IUser;
   createdAt: Date;
   updatedAt: Date;
@@ -98,7 +98,7 @@ export class UserPasswordResetInformation
   constructor(payload: {
     id: string;
     token: string;
-    userId: number;
+    userId: string;
     createdAt: Date;
     updatedAt: Date;
     user?: IUser;

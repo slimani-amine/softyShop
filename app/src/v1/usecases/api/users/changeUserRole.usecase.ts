@@ -16,7 +16,7 @@ export const changeUserRoleUseCaseBase =
   async (userId: string, payload: Partial<IUser>) => {
     const userFound = await dependencies.usersRepo.findOne({
       where: {
-        id: parseInt(userId),
+        id: userId,
       },
     });
 

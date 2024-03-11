@@ -4,6 +4,7 @@ import { IUser } from "../users/user";
 export interface IAddress extends IIdAsNumber {
   id: string;
   address: string;
+  phoneNumber: string;
   city: string;
   state: string;
   zipCode: number;
@@ -13,6 +14,7 @@ export interface IAddress extends IIdAsNumber {
 export class Address extends NumberId implements IAddress {
   id: string;
   address: string;
+  phoneNumber: string;
   city: string;
   state: string;
   zipCode: number;
@@ -21,6 +23,7 @@ export class Address extends NumberId implements IAddress {
   constructor(payload: {
     id: string;
     address: string;
+    phoneNumber: string;
     city: string;
     state: string;
     zipCode: number;
@@ -28,6 +31,7 @@ export class Address extends NumberId implements IAddress {
   }) {
     super(payload.id);
     this.address = payload.address;
+    this.phoneNumber = payload.phoneNumber;
     this.city = payload.city;
     this.state = payload.state;
     this.zipCode = payload.zipCode;
@@ -37,8 +41,9 @@ export class Address extends NumberId implements IAddress {
 
 export interface ICreateAddressInput {
   address: string;
+  phoneNumber?: string;
   city: string;
   state: string;
   zipCode: number;
-  user_id?: number;
+  user_id?: string;
 }

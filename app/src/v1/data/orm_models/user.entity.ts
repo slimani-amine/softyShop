@@ -16,7 +16,6 @@ import {
   findManyType,
 } from "../../../types/repos";
 import { StoreEntity } from "./store.entity";
-import { PaymentMethodEntity } from "./paymentMethod.entity";
 import { AddressesEntity } from "./addresses.entity";
 import { ReviewsEntity } from "./reviews.entity";
 import { WishlistEntity } from "./wishlist.entity";
@@ -27,8 +26,8 @@ import { ResetPasswordEntity } from "./resetpassword.entity";
   name: "Users",
 })
 export class UserEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
 
   @Column({
     type: "varchar",

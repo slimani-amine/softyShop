@@ -21,7 +21,7 @@ export const createStoreUseCaseBase =
   ): createStoreUseCaseType =>
   async (payload: ICreateStoreInput) => {
     const storeFound = await dependencies.storeRepo.findAll({
-      where: [{ storeName: payload.storeName }],
+      where: [{ name: payload.name }],
     });
     if (storeFound.length > 0) {
       exceptionService.badRequestException({
@@ -31,8 +31,8 @@ export const createStoreUseCaseBase =
 
     validatecreateStorePayload(payload);
     const storeCreated = await dependencies.storeRepo.createStore({
-      storeName: payload.storeName,
-      storePhone: payload.storePhone,
+      name: payload.name,
+      phoneNumber: payload.phoneNumber,
       logo: payload.logo,
       isPublished: payload.isPublished,
       location: payload.location,

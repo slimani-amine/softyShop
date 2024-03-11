@@ -30,12 +30,12 @@ export class StoreEntity {
     type: "varchar",
     unique: true,
   })
-  storeName: string;
+  name: string;
 
   @Column({
     type: "varchar",
   })
-  storePhone: string;
+  phoneNumber: string;
 
   @Column({
     type: "varchar",

@@ -25,7 +25,7 @@ export class WishlistEntity {
   id: string;
 
   @PrimaryColumn()
-  user_id: number;
+  user_id: string;
 
   @ManyToOne(() => UserEntity, (user) => user.wishlist)
   @JoinColumn({ name: "user_id" })

@@ -4,8 +4,8 @@ import { IUser } from "../users/user";
 
 export interface IStore extends IIdAsNumber {
   id: string;
-  storeName: string;
-  storePhone: string;
+  name: string;
+  phoneNumber: string;
   logo: string;
   isPublished: boolean;
   location: string;
@@ -15,8 +15,8 @@ export interface IStore extends IIdAsNumber {
 
 export class Store extends NumberId implements IStore {
   id: string;
-  storeName: string;
-  storePhone: string;
+  name: string;
+  phoneNumber: string;
   logo: string;
   isPublished: boolean;
   location: string;
@@ -27,8 +27,8 @@ export class Store extends NumberId implements IStore {
 
   constructor(payload: {
     id: string;
-    storeName: string;
-    storePhone: string;
+    name: string;
+    phoneNumber: string;
     logo: string;
     isPublished: boolean;
     location: string;
@@ -38,7 +38,7 @@ export class Store extends NumberId implements IStore {
     products?: IProduct[];
   }) {
     super(payload.id);
-    this.storeName = payload.storeName;
+    this.name = payload.name;
     this.logo = payload.logo;
     this.isPublished = payload.isPublished;
     this.location = payload.location;
@@ -50,8 +50,8 @@ export class Store extends NumberId implements IStore {
 }
 
 export interface ICreateStoreInput {
-  storeName: string;
-  storePhone: string;
+  name: string;
+  phoneNumber: string;
   logo: string;
   isPublished: boolean;
   location: string;

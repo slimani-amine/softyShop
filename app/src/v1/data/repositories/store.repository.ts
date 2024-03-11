@@ -39,7 +39,7 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
 
   async createStore(payload: ICreateStoreInput): Promise<IStore> {
     const vendor = await this.manager.findOne(UserEntity, {
-      where: { id: parseInt(payload.vendor_id, 10) },
+      where: { id: payload.vendor_id },
     });
 
     if (!vendor) {
@@ -49,8 +49,8 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     }
 
     const store = this.manager.create(StoreEntity, {
-      storeName: payload.storeName,
-      storePhone: payload.storePhone,
+      name: payload.name,
+      phoneNumber: payload.phoneNumber,
       logo: payload.logo,
       isPublished: payload.isPublished,
       location: JSON.stringify(payload.location),
@@ -116,7 +116,7 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       "stores",
       queryParams,
       {
-        storeName: {
+        name: {
           operator: "like",
         },
         id: {
@@ -149,8 +149,8 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     }
     const store = new Store({
       id: prismaStore.id,
-      storeName: prismaStore.storeName,
-      storePhone: prismaStore.storePhone,
+      name: prismaStore.name,
+      phoneNumber: prismaStore.phoneNumber,
       logo: prismaStore.logo,
       isPublished: prismaStore.isPublished,
       location: prismaStore.location,

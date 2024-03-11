@@ -1,4 +1,3 @@
-import { createBrandUseCase } from "../../../../usecases/api/brands/createBrand.usecase";
 import {
   createProductUseCase,
   createProductUseCaseType,

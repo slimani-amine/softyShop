@@ -3,7 +3,7 @@ import { QueryDeepPartialEntity, findManyType, WhereEntityOptions } from '../../
 export declare class ResetPasswordEntity {
     id: string;
     token: string;
-    user_id: number;
+    user_id: string;
     user: UserEntity;
     expirationDate: Date;
     createdAt: Date;

@@ -4,7 +4,6 @@ import {
   storeRepo,
 } from "../../../data/repositories/store.repository";
 import { usersRepo } from "../../../data/repositories/users.repository";
-import { IUser } from "app/src/v1/domain/users/user";
 
 export type GetVendorStoresUseCaseType = (queryParams: {
   userId: string;
@@ -14,10 +13,10 @@ export const getVendorStoresUseCaseBase =
   (dependencies: { storeRepo: IStoreRepository }) =>
   async (queryParams: { userId: string }): Promise<IStore[]> => {
     const vendor = (await usersRepo.findOne({
-      where: { id: parseInt(queryParams.userId, 10) },
+      where: { id: queryParams.userId },
     })) as any;
 
-    const storesFound = await dependencies.storeRepo.findMyStores({
+    const storesFound = await dependencies.storeRepo.findAll({
       where: { user: vendor },
     });
 

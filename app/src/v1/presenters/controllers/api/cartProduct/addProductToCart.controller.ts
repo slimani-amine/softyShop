@@ -1,3 +1,4 @@
+import { exceptionService } from "../../../../core/errors/exceptions";
 import {
   AddProductToCartUseCaseType,
   addProductToCartUseCase,
@@ -7,8 +8,14 @@ import { Request, Response, NextFunction } from "express";
 export const addProductToCartControllerBase =
   (addProductToCartUseCase: AddProductToCartUseCaseType) =>
   async (req: Request, res: Response, next: NextFunction) => {
+    const cartId = req?.user?.cartId;
     try {
-      req.body.cartId = req.user.cartId;
+      if (!cartId) {
+        exceptionService.notFoundException({
+          message: "you have not a cart ",
+        });
+      }
+      req.body.cartId = cartId;
 
       const result = await addProductToCartUseCase(req.body);
 

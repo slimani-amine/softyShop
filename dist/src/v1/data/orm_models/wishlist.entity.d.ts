@@ -3,7 +3,7 @@ import { UserEntity } from "./user.entity";
 import { ProductEntity } from "./product.entity";
 export declare class WishlistEntity {
     id: string;
-    user_id: number;
+    user_id: string;
     user: UserEntity;
     product: ProductEntity;
     deletedAt: Date;

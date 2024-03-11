@@ -3,13 +3,13 @@ import { ZodValidationMessageCommon } from "../errors.common";
 
 const updateStoreSchema = z
   .object({
-    storeName: z.union([
+    name: z.union([
       z.string().min(2, {
         message: "Store name must be a string with at least 2 characters",
       }),
       z.undefined(),
     ]),
-    storePhone: z.union([
+    phoneNumber: z.union([
       z.string().min(8, {
         message: "Store phone must be a string with at least 8 characters",
       }),
@@ -44,8 +44,8 @@ const updateStoreSchema = z
   .strict(`${ZodValidationMessageCommon.FIELDS_UNEXPECTED_MESSAGE}`)
   .refine(
     (data) =>
-      data?.storeName ||
-      data?.storePhone ||
+      data?.name ||
+      data?.phoneNumber ||
       data?.logo ||
       data?.location ||
       data?.socialMediaLinks ||

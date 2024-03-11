@@ -35,7 +35,7 @@ export const reviewRepoBase = (dbConnection: DataSource | QueryRunner) => ({
 
   async createReview(payload: ICreateReviewInput): Promise<IReview> {
     const user = await this.manager.findOne(UserEntity, {
-      where: { id: parseInt(payload.userId, 10) },
+      where: { id: payload.userId },
     });
 
     if (!user) {

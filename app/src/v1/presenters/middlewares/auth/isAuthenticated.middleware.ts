@@ -48,7 +48,7 @@ export const isAuthentictedMiddleware = async (
         cart: true,
       },
       where: {
-        id: parseInt(accessTokenPayload.sub),
+        id: accessTokenPayload.sub,
       },
       select: {
         cart: {

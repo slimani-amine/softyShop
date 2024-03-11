@@ -12,7 +12,6 @@ export type GetUsersUseCaseType = (queryParams: {
 export const getUsersUseCaseBase =
   (dependencies: { usersRepo: IUsersRepository }) =>
   async (queryParams: { [key: string]: any }) => {
-    console.log("🚀 ~ queryParams:", queryParams);
     const result = await dependencies.usersRepo.findByQuery( queryParams );
     return result;
   };

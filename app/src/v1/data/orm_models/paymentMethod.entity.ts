@@ -26,13 +26,8 @@ export class PaymentMethodEntity {
   })
   name: string;
 
-  @Column({
-    type: "varchar",
-  })
-  icon: string;
-
   @OneToMany(() => OrderEntity, (cart) => cart.paymentMethod)
-  paymentMethods: OrderEntity[];
+  order: OrderEntity[];
 
   @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;

@@ -54,6 +54,7 @@ export const addressRepoBase = (dbConnection: DataSource | QueryRunner) => ({
 
     const address = this.manager.create(AddressesEntity, {
       address: payload.address,
+      phoneNumber: payload?.phoneNumber,
       city: payload.city,
       state: payload.state,
       zipCode: payload.zipCode,
@@ -126,6 +127,7 @@ export const addressRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     const address = new Address({
       id: prismaAddress.id,
       address: prismaAddress.address,
+      phoneNumber: prismaAddress.phoneNumber,
       city: prismaAddress.city,
       state: prismaAddress.state,
       zipCode: prismaAddress.zipCode,

@@ -37,7 +37,6 @@ export const createMethodUseCaseBase =
     const methodCreated =
       await dependencies.paymentMethodRepo.createPaymentMethod({
         name: payload.name,
-        icon: payload.icon,
       });
 
     return {

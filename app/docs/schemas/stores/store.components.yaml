@@ -5,9 +5,9 @@ components:
       properties:
         id:
           type: string
-        storeName:
+        name:
           type: string
-        storePhone:
+        phoneNumber:
           type: string
         logo:
           type: string
