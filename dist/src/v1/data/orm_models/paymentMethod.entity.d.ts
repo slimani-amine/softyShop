@@ -3,8 +3,7 @@ import { OrderEntity } from "./orders.entity";
 export declare class PaymentMethodEntity {
     id: string;
     name: string;
-    icon: string;
-    paymentMethods: OrderEntity[];
+    order: OrderEntity[];
     deletedAt: Date;
     createdAt: Date;
     updatedAt: Date;

@@ -6,7 +6,6 @@ class PaymentMethod extends idAsNumber_1.NumberId {
     constructor(payload) {
         super(payload.id);
         this.name = payload.name;
-        this.icon = payload.icon;
     }
 }
 exports.PaymentMethod = PaymentMethod;

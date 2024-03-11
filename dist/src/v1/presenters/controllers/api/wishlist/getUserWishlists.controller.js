@@ -4,8 +4,8 @@ exports.getWishlistsByUserController = exports.getWishlistsByUserControllerBase 
 const getUserWishlists_usecase_1 = require("../../../../usecases/api/wishlist/getUserWishlists.usecase");
 const getWishlistsByUserControllerBase = (getWishlistsByUserUseCase) => async (req, res, next) => {
     try {
-        const userId = req.params.userId;
-        const result = await getWishlistsByUserUseCase(Number(userId));
+        const userId = req.user.id;
+        const result = await getWishlistsByUserUseCase(userId);
         res.status(200).send({
             message: "success",
             data: result,

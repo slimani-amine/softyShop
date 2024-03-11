@@ -3,13 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllProductUseCase = exports.getAllProductUseCaseBase = void 0;
 const product_repository_1 = require("../../../data/repositories/product.repository");
 const getAllProductUseCaseBase = (dependencies) => async (queryParams) => {
-    const productsFound = await dependencies.productRepo.findAll({
-        relations: { category: true },
-        where: queryParams,
-        select: {
-            category: { name: true },
-        },
-    });
+    const productsFound = await dependencies.productRepo.findByQuery(queryParams);
     return productsFound;
 };
 exports.getAllProductUseCaseBase = getAllProductUseCaseBase;

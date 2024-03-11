@@ -37,6 +37,12 @@ __decorate([
         type: "varchar",
     }),
     __metadata("design:type", String)
+], ProductEntity.prototype, "description", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        type: "varchar",
+    }),
+    __metadata("design:type", String)
 ], ProductEntity.prototype, "images", void 0);
 __decorate([
     (0, typeorm_1.Column)({

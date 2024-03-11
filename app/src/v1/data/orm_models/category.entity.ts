@@ -15,7 +15,7 @@ import {
 import { ProductEntity } from "./product.entity";
 
 @Entity({
-  name: "Category",
+  name: "Categories",
 })
 export class CategoryEntity {
   @PrimaryGeneratedColumn()

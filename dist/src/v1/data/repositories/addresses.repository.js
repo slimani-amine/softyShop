@@ -32,6 +32,7 @@ const addressRepoBase = (dbConnection) => ({
         }
         const address = this.manager.create(addresses_entity_1.AddressesEntity, {
             address: payload.address,
+            phoneNumber: payload === null || payload === void 0 ? void 0 : payload.phoneNumber,
             city: payload.city,
             state: payload.state,
             zipCode: payload.zipCode,
@@ -79,6 +80,7 @@ const addressRepoBase = (dbConnection) => ({
         const address = new addresses_1.Address({
             id: prismaAddress.id,
             address: prismaAddress.address,
+            phoneNumber: prismaAddress.phoneNumber,
             city: prismaAddress.city,
             state: prismaAddress.state,
             zipCode: prismaAddress.zipCode,

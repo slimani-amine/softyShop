@@ -1,7 +1,12 @@
-version: '3.8'
+version: "2"
+
+networks:
+  app-tier:
+    driver: bridge
+
 services:
   starterproddb:
-    image: mysql:latest
+    image: bitnami/mysql:latest
     container_name: starterproddb
     restart: always
     env_file:
@@ -10,7 +15,7 @@ services:
       - ../../initdb/:/docker-entrypoint-initdb.d
       - mysqlstarterprod-data:/var/lib/mysql
     ports:
-      - '3306:3306'
+      - "3306:3306"
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       start_period: 5s
@@ -28,9 +33,9 @@ services:
     env_file:
       - .env.server.docker
     ports:
-      - '3000:3000'
+      - "3306:3306"
     healthcheck:
-      test: ['CMD', 'curl', '-f', 'localhost:3000/v1/api/healthcheck']
+      test: ["CMD", "curl", "-f", "localhost:3306/v1/api/healthcheck"]
       interval: 30s
       timeout: 10s
       retries: 5

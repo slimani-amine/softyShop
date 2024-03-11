@@ -4,18 +4,18 @@ declare const createAddressSchema: z.ZodObject<{
     city: z.ZodString;
     state: z.ZodString;
     zipCode: z.ZodNumber;
-    user_id: z.ZodString;
+    phoneNumber: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     address?: string;
     city?: string;
     state?: string;
     zipCode?: number;
-    user_id?: string;
+    phoneNumber?: string;
 }, {
     address?: string;
     city?: string;
     state?: string;
     zipCode?: number;
-    user_id?: string;
+    phoneNumber?: string;
 }>;
 export default createAddressSchema;

@@ -13,7 +13,7 @@ v1ApiRouter.route("/healthcheck").get(async (req, res) => {
 });
 v1ApiRouter.use("/users", (0, users_1.getUsersApiRouter)());
 v1ApiRouter.use("/admin", (0, admin_1.getAdminApiRouter)());
-v1ApiRouter.use("/store", (0, stores_1.getStoresApiRouter)());
+v1ApiRouter.use("/stores", (0, stores_1.getStoresApiRouter)());
 v1ApiRouter.use("/products", (0, products_1.getProductsApiRouter)());
 v1ApiRouter.use("/shopping", (0, shopping_1.getWishlistApiRouter)());
 exports.default = v1ApiRouter;

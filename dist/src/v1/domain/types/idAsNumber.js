@@ -6,9 +6,9 @@ class NumberId {
         this.id = id;
     }
     getIdAsNumber() {
-        const result = parseInt(this.id);
-        if (isNaN(result)) {
-            throw new Error('Id Error');
+        const result = this.id;
+        if (!result) {
+            throw new Error("Id Error");
         }
         return result;
     }

@@ -1,4 +1,4 @@
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
 {"level":"error","message":"[ERROR] Cannot read properties of undefined (reading 'toString')","trace":"TypeError: Cannot read properties of undefined (reading 'toString')\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/cartProduct/getUserCartProduct.usecase.ts:40:20\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/getUserCartProduct.controller.ts:14:22"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 331ms"}
@@ -54,7 +54,7 @@
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=2 in 16ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:z"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:z in 69ms"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/admin/category/66"}
 {"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/admin/category/66 in 30ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
@@ -72,10 +72,10 @@
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 6ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 26ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:%C3%A9s"}
@@ -104,11 +104,11 @@
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 8ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/?role=vendor"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/?role=vendor in 10ms"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
 {"level":"error","message":"[ERROR] you have not a cart ","trace":"Error: you have not a cart \n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/getUserCartProduct.controller.ts:15:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
 {"level":"error","message":"[ERROR] you have not a cart "}
@@ -122,10 +122,10 @@
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
 {"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 2"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 23ms"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart"}
 {"level":"error","message":"[ERROR] you have not a cart ","trace":"Error: you have not a cart \n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/addProductToCart.controller.ts:14:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:140:7)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)"}
 {"level":"error","message":"[ERROR] you have not a cart "}
@@ -136,7 +136,7 @@
 {"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/shopping/my-cart/26 in 37ms"}
 {"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
 {"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl fadi@benromdhan.com"}
-{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"20\",\"email\":\"fadi@benromdhan.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"Fadi\",\"lastName\":\"Ben Romadhne\",\"role\":\"user\",\"phoneNumber\":\"99453658\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"20\",\"email\":\"fadi@benromdhan.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Fadi\",\"lastName\":\"Ben Romadhne\",\"role\":\"user\",\"phoneNumber\":\"99453658\",\"confirmation_token\":null,\"confirmed_email\":true}"}
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 137ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
 {"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 2"}
@@ -151,39 +151,39 @@
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 20ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/?role=vendor"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/?role=vendor in 10ms"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
 {"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 2"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 24ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/?role=vendor"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/?role=vendor in 14ms"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
 {"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 2"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 43ms"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
 {"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 2"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 62ms"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 21ms"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
 {"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 20"}
 {"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/getMyProfile.usecase.ts:29:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/getMe.controller.ts:16:22"}
@@ -195,11 +195,11 @@
 {"level":"error","message":"[ERROR] This Account Doesn't Exist"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 90ms"}
 {"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
-{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 202ms"}
 {"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
 {"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
-{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 127ms"}
 {"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/category"}
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/category in 275ms"}
@@ -217,7 +217,7 @@
 {"level":"error","message":"[ERROR] Vendor not found"}
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores in 77ms"}
 {"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
-{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"b68a6e4e-ae7c-4a87-b86b-6f797cde9574\",\"email\":\"vendor001@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"001\",\"role\":\"vendor\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":1,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"b68a6e4e-ae7c-4a87-b86b-6f797cde9574\",\"email\":\"vendor001@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"001\",\"role\":\"vendor\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":1,\"totalQuantity\":0,\"totalAmount\":0}}"}
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 209ms"}
 {"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores"}
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores in 39ms"}
@@ -229,7 +229,7 @@
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/5/products in 32ms"}
 {"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
 {"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 65ms"}
-{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
 {"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
 {"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 20"}
 {"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/getMyProfile.usecase.ts:29:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/getMe.controller.ts:16:22"}
@@ -265,3 +265,888 @@
 {"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/getMyProfile.usecase.ts:29:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/getMe.controller.ts:16:22"}
 {"level":"error","message":"[ERROR] This Account Doesn't Exist"}
 {"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 10ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 20"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/getMyProfile.usecase.ts:29:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/getMe.controller.ts:16:22"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 20"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/getMyProfile.usecase.ts:29:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/getMe.controller.ts:16:22"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 15ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"4a5b543e-d279-4833-9201-f7ed4c84019a\",\"email\":\"fadi@benromdhan.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Fadi\",\"lastName\":\"Ben Romadhne\",\"role\":\"user\",\"phoneNumber\":\"99453658\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":2,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 162ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl fadi@benromdhan.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"4a5b543e-d279-4833-9201-f7ed4c84019a\",\"email\":\"fadi@benromdhan.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Fadi\",\"lastName\":\"Ben Romadhne\",\"role\":\"user\",\"phoneNumber\":\"99453658\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 108ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 464ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 196ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 29ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 17ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 30ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 32ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 16ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 26ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 21ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 26ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 108ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 26ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 47ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 16ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4a5b543e-d279-4833-9201-f7ed4c84019a"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 12ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"ad04b8cc-05e8-435b-b226-a0db77f66200\",\"email\":\"montassarbenelkhouja@takiacademyteam.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Montassar\",\"lastName\":\"Benelkhouja\",\"role\":\"vendor\",\"phoneNumber\":\"99453658\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":3,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 223ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl montassarbenelkhouja@takiacademyteam.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"ad04b8cc-05e8-435b-b226-a0db77f66200\",\"email\":\"montassarbenelkhouja@takiacademyteam.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Montassar\",\"lastName\":\"Benelkhouja\",\"role\":\"vendor\",\"phoneNumber\":\"99453658\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 129ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/password-reset/request"}
+{"level":"info","message":"[REQUEST ACCOUNT PASSWORD RESET CONTROLLER] USER montassarbenelkhouja@takiacademyteam.com"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/password-reset/request in 3543ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/password-reset"}
+{"level":"info","message":"[REQUEST ACCOUNT PASSWORD RESET CONTROLLER] Token c1bbf5c9ecb19ce5a7eb96c0c84b644ab3e00b85e43dfbbbc795e9556dbb5d88"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/password-reset in 105ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl montassarbenelkhouja@takiacademyteam.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"ad04b8cc-05e8-435b-b226-a0db77f66200\",\"email\":\"montassarbenelkhouja@takiacademyteam.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Montassar\",\"lastName\":\"Benelkhouja\",\"role\":\"vendor\",\"phoneNumber\":\"99453658\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 118ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl fadi@benromdhan.com"}
+{"level":"error","message":"[ERROR] Wrong Login Information, Please Verify Again","trace":"Error: Wrong Login Information, Please Verify Again\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/auth/login.usecase.ts:44:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/login.controller.ts:14:22"}
+{"level":"error","message":"[ERROR] Wrong Login Information, Please Verify Again"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 259ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"8aa6938d-e197-4ed3-970d-c1f487e6c1ca\",\"email\":\"fadiromdhan2@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"fadi\",\"lastName\":\"romdhan\",\"role\":\"vendor\",\"phoneNumber\":\"29191726\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":4,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 173ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 182ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 166ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 195ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 62ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 44ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 57ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 20ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=2"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=2 in 17ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:r"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:r in 19ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:z"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:z in 24ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:o"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:o in 9ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:b"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:bv"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:b in 13ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:bv in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:v"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:v in 16ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 54ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 16ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 12ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 25ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 4ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 11ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 8ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 3ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 4ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 11ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 8ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 16ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 12ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 10ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 8ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 8ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 12ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 11ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/category"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/category in 49ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 5ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/2"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/2 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 9ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 10ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 9ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 7ms"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/admin/category/2"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/admin/category/2 in 31ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 9ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category/59"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category/59"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category/59"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 16ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 19ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 6ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=2"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=2 in 3ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 0ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category/59"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 21ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 19ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 21ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 15ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 5ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 29ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 5ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 4ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 9ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 8ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 6ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 5ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 5ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 5ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=2"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=2 in 11ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?search=id:4"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?search=id:4 in 36ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?search=id:1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?search=id:1 in 5ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"error","message":"[ERROR] An Account With The Given Email Already Exists","trace":"Error: An Account With The Given Email Already Exists\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/auth/register.usecase.ts:41:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/register.controller.ts:16:20\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/controllers/transactional.controller.ts:13:9\n    at async EntityManager.transaction (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/entity-manager/EntityManager.ts:154:28)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/controllers/transactional.controller.ts:11:7"}
+{"level":"error","message":"[ERROR] An Account With The Given Email Already Exists"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 20ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"c43c800c-b61b-4b8e-ad4e-7252481f17ac\",\"email\":\"fadiromdhan3@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"fadi\",\"lastName\":\"romdhan\",\"role\":\"vendor\",\"phoneNumber\":\"29191726\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":5,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 160ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this","trace":"Error: You Not Have Role to access this\n    at ExceptionsService.unauthorizedException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:58:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/restrictTo.middleware.ts:9:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 46ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl fadiromdhan3@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"c43c800c-b61b-4b8e-ad4e-7252481f17ac\",\"email\":\"fadiromdhan3@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"fadi\",\"lastName\":\"romdhan\",\"role\":\"vendor\",\"phoneNumber\":\"29191726\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 195ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 44ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this","trace":"Error: You Not Have Role to access this\n    at ExceptionsService.unauthorizedException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:58:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/restrictTo.middleware.ts:9:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 24ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl fadiromdhan3@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"c43c800c-b61b-4b8e-ad4e-7252481f17ac\",\"email\":\"fadiromdhan3@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"fadi\",\"lastName\":\"romdhan\",\"role\":\"vendor\",\"phoneNumber\":\"29191726\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 187ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this","trace":"Error: You Not Have Role to access this\n    at ExceptionsService.unauthorizedException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:58:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/restrictTo.middleware.ts:9:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 26ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl fadiromdhan3@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"c43c800c-b61b-4b8e-ad4e-7252481f17ac\",\"email\":\"fadiromdhan3@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"fadi\",\"lastName\":\"romdhan\",\"role\":\"vendor\",\"phoneNumber\":\"29191726\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 124ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 25ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID c43c800c-b61b-4b8e-ad4e-7252481f17ac"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 26ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this","trace":"Error: You Not Have Role to access this\n    at ExceptionsService.unauthorizedException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:58:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/restrictTo.middleware.ts:9:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 13ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl fadiromdhan3@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"c43c800c-b61b-4b8e-ad4e-7252481f17ac\",\"email\":\"fadiromdhan3@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"fadi\",\"lastName\":\"romdhan\",\"role\":\"vendor\",\"phoneNumber\":\"29191726\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 175ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 22ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID c43c800c-b61b-4b8e-ad4e-7252481f17ac"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 30ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this","trace":"Error: You Not Have Role to access this\n    at ExceptionsService.unauthorizedException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:58:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/restrictTo.middleware.ts:9:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 19ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 130ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 22ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 21ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 22ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 57ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 12ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 10ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 10ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 29ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 8ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 8ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=2"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=2 in 12ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 10ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 5ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 14ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:o"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:o in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:oo"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:oo in 10ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:oe"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:oe in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:or"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:or in 9ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:orror"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:orror in 8ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:h"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:h in 5ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 23ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 28ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 92ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/category"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/category in 74ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 8ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 15ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 9ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/3"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/3 in 19ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 11ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/3"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/3 in 9ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 9ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 4ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 17ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 5ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 4ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/3"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/3 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 11ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 5ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 10ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category/59"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/admin/category/3"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/admin/category/3 in 30ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 15ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=2"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=2 in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:heefazegg"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name:heefazegg in 19ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 10ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 4ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 33ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 11ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/admin/category/1"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/admin/category/1 in 20ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 12ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 1ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"6c4ec794-9ea6-44ac-ab3f-56c7dee40f78\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 130ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?perPage=5&page=1 in 21ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=4&page:1&search=name:"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=4&page:1&search=name: in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/stores?page=1&perPage=5"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/category?perPage=5&page=1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/category?perPage=5&page=1 in 7ms"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/stores?page=1&perPage=5 in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 104ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 8ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 4ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 68ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart"}
+{"level":"error","message":"[ERROR] Validation Error","trace":"Error: Validation Error\n    at ExceptionsService.unprocessabhleEntityException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:67:11)\n    at validatePayloadSchema (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/utils/validation/validate.schema.ts:37:24)\n    at trimAndValidateSchemaPayload (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/utils/validation/validate.schema.ts:10:24)\n    at validateCreateCartProductPayload (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/cartProduct/addProductToCart.usecase.ts:97:31)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/cartProduct/addProductToCart.usecase.ts:29:5\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/addProductToCart.controller.ts:20:28\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:140:7)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)"}
+{"level":"error","message":"[ERROR] Validation Error"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart in 210ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 97ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products?search=stockNumber:100"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products?search=stockNumber:100 in 27ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/product"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products in 32ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart in 71ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 16ms"}
+{"level":"info","message":"[REQUEST] Received DELETE request at /v1/api/shopping/my-cart/1"}
+{"level":"info","message":"[RESPONSE] Responded to DELETE request at /v1/api/shopping/my-cart/1 in 32ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 21ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 130ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl montassarbenelkhouja@takiacademyteam.com"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/auth/login.usecase.ts:38:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/login.controller.ts:14:22"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 53ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl montassarbenelkhouja@takiacademyteam.com"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/auth/login.usecase.ts:38:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/login.controller.ts:14:22"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 35ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"5fd94fa6-a957-4a48-be4e-05265a17a786\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"001\",\"role\":\"vendor\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":1,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 233ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"ff83acb0-36e0-4e64-99ac-3b94030e77b1\",\"email\":\"adminadmin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"amine\",\"lastName\":\"slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 180ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/change-user-role/1"}
+{"level":"info","message":"[CHANGE USER ROLE] UPDATE USER 1"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/changeUserRole.usecase.ts:24:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/users/changeUserRole.controller.ts:17:22"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/change-user-role/1 in 36ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users?search=role:vendor"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users?search=role:vendor in 32ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/change-user-role/5fd94fa6-a957-4a48-be4e-05265a17a786"}
+{"level":"info","message":"[CHANGE USER ROLE] UPDATE USER 5fd94fa6-a957-4a48-be4e-05265a17a786"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/change-user-role/5fd94fa6-a957-4a48-be4e-05265a17a786 in 91ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"5fd94fa6-a957-4a48-be4e-05265a17a786\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"001\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 100ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 5fd94fa6-a957-4a48-be4e-05265a17a786"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 36ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 5fd94fa6-a957-4a48-be4e-05265a17a786"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 38ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"ce5ec9f7-4331-4e89-a81a-3ce3a4d5c96d\",\"email\":\"vendor001@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"001\",\"role\":\"vendor\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":2,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 144ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"5fd94fa6-a957-4a48-be4e-05265a17a786\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Amine\",\"lastName\":\"Slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 107ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores in 34ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/category"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/category in 26ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/category"}
+{"level":"error","message":"[ERROR] A category with the given name already exists","trace":"Error: A category with the given name already exists\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/category/createCategory.usecase.ts:31:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/category/createCategory.controller.ts:11:22"}
+{"level":"error","message":"[ERROR] A category with the given name already exists"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/category in 19ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl vendor001@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"ce5ec9f7-4331-4e89-a81a-3ce3a4d5c96d\",\"email\":\"vendor001@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"001\",\"role\":\"vendor\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 117ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/productCreators"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/productCreators in 87ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/brands"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/brands in 42ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"error","message":"[ERROR] Field 'description' doesn't have a default value","trace":"QueryFailedError: Field 'description' doesn't have a default value\n    at Query.onResult (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/typeorm/src/driver/mysql/MysqlQueryRunner.ts:222:33)\n    at Query.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/commands/command.js:36:14)\n    at PoolConnection.handlePacket (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:478:34)\n    at PacketParser.onPacket (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:97:12)\n    at PacketParser.executeStart (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/packet_parser.js:75:16)\n    at Socket.<anonymous> (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:104:25)\n    at Socket.emit (node:events:518:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:559:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 53ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 41ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products in 18ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/getMyProfile.usecase.ts:29:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/getMe.controller.ts:16:22"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 65ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 6c4ec794-9ea6-44ac-ab3f-56c7dee40f78"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist","trace":"Error: This Account Doesn't Exist\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/getMyProfile.usecase.ts:29:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/getMe.controller.ts:16:22"}
+{"level":"error","message":"[ERROR] This Account Doesn't Exist"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 9ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"944f90eb-d2e7-4a5f-9bdd-863704ebb1b2\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Amine\",\"lastName\":\"Slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 129ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/category"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/category in 20ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"2f4a34e5-47fa-4c21-ba37-da169347de99\",\"email\":\"vendor01@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"01\",\"role\":\"vendor\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":1,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 142ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores in 25ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/brands"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/brands in 22ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/productCreators"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/productCreators in 20ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 112ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 277ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"error","message":"[ERROR] Validation Error","trace":"Error: Validation Error\n    at ExceptionsService.unprocessabhleEntityException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:67:11)\n    at validatePayloadSchema (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/utils/validation/validate.schema.ts:37:24)\n    at trimAndValidateSchemaPayload (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/utils/validation/validate.schema.ts:10:24)\n    at validateUpdateOrderPayload (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/updateOrder.usecase.ts:37:31)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/updateOrder.usecase.ts:24:5\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/updateOrder.controller.ts:24:28\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Validation Error"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 39ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/users/addresses"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/users/addresses in 81ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"944f90eb-d2e7-4a5f-9bdd-863704ebb1b2\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3306/images/default.png\",\"firstName\":\"Amine\",\"lastName\":\"Slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 140ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/payment-method"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/payment-method in 26ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/payment-method"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/payment-method in 45ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"error","message":"[ERROR] address not found","trace":"Error: address not found\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/updateOrder.controller.ts:27:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] address not found"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 26ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/addresses/1"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/addresses/1 in 17ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"error","message":"[ERROR] address not found","trace":"Error: address not found\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/updateOrder.controller.ts:27:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] address not found"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 61ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"error","message":"[ERROR] Property \"paymentMethod_id\" was not found in \"OrderEntity\". Make sure your query is correct.","trace":"EntityPropertyNotFoundError: Property \"paymentMethod_id\" was not found in \"OrderEntity\". Make sure your query is correct.\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:500:31\n    at Array.forEach (<anonymous>)\n    at UpdateQueryBuilder.createUpdateExpression (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:493:68)\n    at UpdateQueryBuilder.getQuery (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:53:21)\n    at UpdateQueryBuilder.getQueryAndParameters (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/QueryBuilder.ts:507:28)\n    at UpdateQueryBuilder.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:142:50)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.updateOrder (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/orders.repository.ts:40:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/updateOrder.usecase.ts:26:26\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/updateOrder.controller.ts:46:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 67ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"error","message":"[ERROR] Validation Error","trace":"Error: Validation Error\n    at ExceptionsService.unprocessabhleEntityException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:67:11)\n    at validatePayloadSchema (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/utils/validation/validate.schema.ts:37:24)\n    at trimAndValidateSchemaPayload (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/utils/validation/validate.schema.ts:10:24)\n    at validateUpdateOrderPayload (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/updateOrder.usecase.ts:37:31)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/updateOrder.usecase.ts:24:5\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/updateOrder.controller.ts:49:28\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Validation Error"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 34ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"error","message":"[ERROR] Property \"address\" was not found in \"OrderEntity\". Make sure your query is correct.","trace":"EntityPropertyNotFoundError: Property \"address\" was not found in \"OrderEntity\". Make sure your query is correct.\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:500:31\n    at Array.forEach (<anonymous>)\n    at UpdateQueryBuilder.createUpdateExpression (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:493:68)\n    at UpdateQueryBuilder.getQuery (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:53:21)\n    at UpdateQueryBuilder.getQueryAndParameters (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/QueryBuilder.ts:507:28)\n    at UpdateQueryBuilder.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:142:50)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.updateOrder (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/orders.repository.ts:40:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/updateOrder.usecase.ts:23:26\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/updateOrder.controller.ts:52:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 49ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 51ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 52ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 27ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 40ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 24ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 91ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"error","message":"[ERROR] Unknown column 'distinctAlias.OrderEntity_id' in 'field list'","trace":"QueryFailedError: Unknown column 'distinctAlias.OrderEntity_id' in 'field list'\n    at Query.onResult (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/typeorm/src/driver/mysql/MysqlQueryRunner.ts:222:33)\n    at Query.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/commands/command.js:36:14)\n    at PoolConnection.handlePacket (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:478:34)\n    at PacketParser.onPacket (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:97:12)\n    at PacketParser.executeStart (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/packet_parser.js:75:16)\n    at Socket.<anonymous> (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:104:25)\n    at Socket.emit (node:events:518:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:559:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 47ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"error","message":"[ERROR] Unknown column 'distinctAlias.OrderEntity_id' in 'field list'","trace":"QueryFailedError: Unknown column 'distinctAlias.OrderEntity_id' in 'field list'\n    at Query.onResult (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/typeorm/src/driver/mysql/MysqlQueryRunner.ts:222:33)\n    at Query.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/commands/command.js:36:14)\n    at PoolConnection.handlePacket (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:478:34)\n    at PacketParser.onPacket (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:97:12)\n    at PacketParser.executeStart (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/packet_parser.js:75:16)\n    at Socket.<anonymous> (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/mysql2/lib/connection.js:104:25)\n    at Socket.emit (node:events:518:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:559:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 14ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 42ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3306"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/4355210b-542a-48ba-adab-e0af8fde031c in 31ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"944f90eb-d2e7-4a5f-9bdd-863704ebb1b2\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"Amine\",\"lastName\":\"Slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 2255ms"}

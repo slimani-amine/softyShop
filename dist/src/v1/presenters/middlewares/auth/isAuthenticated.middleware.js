@@ -5,7 +5,9 @@ const errors_1 = require("../../../domain/auth/errors");
 const config_1 = require("../../../../config");
 const exceptions_1 = require("../../../core/errors/exceptions");
 const jwtService = require("jsonwebtoken");
-const isAuthentictedMiddleware = (req, res, next) => {
+const users_repository_1 = require("../../../data/repositories/users.repository");
+const isAuthentictedMiddleware = async (req, res, next) => {
+    var _a;
     try {
         let accessToken;
         if (req.headers.authorization &&
@@ -26,10 +28,24 @@ const isAuthentictedMiddleware = (req, res, next) => {
                 message: errors_1.ACCOUNT_VERIFICATION_REQUIRED_ERROR_MESSAGE,
             });
         }
+        const me = await users_repository_1.usersRepo.findOne({
+            relations: {
+                cart: true,
+            },
+            where: {
+                id: accessTokenPayload.sub,
+            },
+            select: {
+                cart: {
+                    id: true,
+                },
+            },
+        });
         req.user = {
             id: accessTokenPayload.sub,
             isVerified: accessTokenPayload.isVerified,
             role: accessTokenPayload.role,
+            cartId: (_a = me === null || me === void 0 ? void 0 : me.cart) === null || _a === void 0 ? void 0 : _a.id,
         };
         next();
     }

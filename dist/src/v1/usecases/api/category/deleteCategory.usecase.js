@@ -7,7 +7,7 @@ const deleteCategoryUseCaseBase = (dependencies = {
     categoryRepo: category_repository_1.categoryRepo,
 }) => async (params) => {
     const category = await dependencies.categoryRepo.findOne({
-        where: { id: params.id },
+        where: { id: params.categoryId },
     });
     if (!category) {
         exceptions_1.exceptionService.notFoundException({

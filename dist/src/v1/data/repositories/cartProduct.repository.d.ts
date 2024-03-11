@@ -10,6 +10,7 @@ export declare const cartProductRepoBase: (dbConnection: DataSource | QueryRunne
         cartId: string;
     }): Promise<CartProductEntity>;
     deleteCartProduct(cartProduct: CartProductEntity): Promise<number>;
+    updateCartProduct(cartProduct: CartProductEntity, payload: Partial<CartProductEntity>): Promise<any>;
 };
 export declare const cartProductRepo: {
     manager: import("typeorm").EntityManager;
@@ -21,6 +22,7 @@ export declare const cartProductRepo: {
         cartId: string;
     }): Promise<CartProductEntity>;
     deleteCartProduct(cartProduct: CartProductEntity): Promise<number>;
+    updateCartProduct(cartProduct: CartProductEntity, payload: Partial<CartProductEntity>): Promise<any>;
 };
 export interface ICartProductRepository {
     findOne(findData: FindOneOptions<CartProductEntity>): Promise<CartProductEntity>;
@@ -31,4 +33,5 @@ export interface ICartProductRepository {
         cartId: string;
     }): Promise<CartProductEntity>;
     deleteCartProduct(cartProduct: CartProductEntity): Promise<number>;
+    updateCartProduct(cartProduct: CartProductEntity, payload: Partial<CartProductEntity>): Promise<any>;
 }

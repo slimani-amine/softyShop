@@ -26,15 +26,9 @@ __decorate([
     __metadata("design:type", String)
 ], PaymentMethodEntity.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({
-        type: "varchar",
-    }),
-    __metadata("design:type", String)
-], PaymentMethodEntity.prototype, "icon", void 0);
-__decorate([
     (0, typeorm_1.OneToMany)(() => orders_entity_1.OrderEntity, (cart) => cart.paymentMethod),
     __metadata("design:type", Array)
-], PaymentMethodEntity.prototype, "paymentMethods", void 0);
+], PaymentMethodEntity.prototype, "order", void 0);
 __decorate([
     (0, typeorm_1.DeleteDateColumn)({ name: "deletedAt" }),
     __metadata("design:type", Date)

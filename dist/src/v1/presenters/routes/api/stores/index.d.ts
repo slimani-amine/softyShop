@@ -6,6 +6,7 @@ export declare function getStoresApiRouter(controllers?: {
     getOneStore: ControllerType;
     getVendorStores: ControllerType;
     updateStore: ControllerType;
+    publishStore: ControllerType;
     createProduct: ControllerType;
     getAllProducts: ControllerType;
     getStoreProduct: ControllerType;

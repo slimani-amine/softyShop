@@ -22,7 +22,7 @@ __decorate([
 ], WishlistEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.PrimaryColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], WishlistEntity.prototype, "user_id", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.wishlist),

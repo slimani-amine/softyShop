@@ -17,6 +17,7 @@ const getUserAddresses_controller_1 = require("../../../controllers/api/addresse
 const getOneAddresse_controller_1 = require("../../../controllers/api/addresses/getOneAddresse.controller");
 const updateAddresse_controller_1 = require("../../../controllers/api/addresses/updateAddresse.controller");
 const changeUserRole_controller_1 = require("../../../controllers/api/users/changeUserRole.controller");
+const changeUserRole_schem_1 = require("../../../schemas/auth/changeUserRole.schem");
 const router = express.Router();
 const defaults = {
     getUsers: getUsers_controller_1.getUsersController,
@@ -37,8 +38,8 @@ function getUsersApiRouter(controllers = defaults) {
         .patch(multerUpload_middleware_1.multerImageUpload.single("picture"), (0, transferFilePathToBody_middleware_1.transferFilePathToBodyMiddlewareBuilder)("picture", transferFilePathToBody_middleware_1.FilePathTypes.IMAGES), (0, validateSchema_middleware_1.validateSchemaMiddleware)(updateProfile_schema_1.default, validateSchema_middleware_1.VALIDATION_PATHS.BODY), controllers.updateMyProfileController);
     router.route("/").get((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.getUsers);
     router
-        .route("/change-user-role")
-        .get((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), controllers.changeUserRole);
+        .route("/change-user-role/:id")
+        .patch((0, restrictTo_middleware_1.restrictToMiddleware)("admin"), (0, validateSchema_middleware_1.validateSchemaMiddleware)(changeUserRole_schem_1.default, validateSchema_middleware_1.VALIDATION_PATHS.BODY), controllers.changeUserRole);
     router
         .route("/addresses")
         .post(controllers.createAddress)

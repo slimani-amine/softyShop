@@ -5,7 +5,7 @@ const exceptions_1 = require("../../../core/errors/exceptions");
 const users_repository_1 = require("../../../data/repositories/users.repository");
 const addresses_repository_1 = require("../../../data/repositories/addresses.repository");
 const getUserAddressesUseCaseBase = (dependencies) => async (queryParams) => {
-    const UserId = parseInt(queryParams.userId, 10);
+    const UserId = queryParams.userId;
     const user = (await users_repository_1.usersRepo.findOne({
         where: { id: UserId },
     }));

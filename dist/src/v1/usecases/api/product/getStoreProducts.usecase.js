@@ -15,6 +15,10 @@ const getStoreProductUseCaseBase = (dependencies) => async (queryParams) => {
     }
     const productsFound = await dependencies.productRepo.findAll({
         where: { store: store },
+        relations: {
+            store: true,
+            reviews: true,
+        },
         cache: true,
     });
     return productsFound;

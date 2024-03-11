@@ -6,6 +6,7 @@ class Address extends idAsNumber_1.NumberId {
     constructor(payload) {
         super(payload.id);
         this.address = payload.address;
+        this.phoneNumber = payload.phoneNumber;
         this.city = payload.city;
         this.state = payload.state;
         this.zipCode = payload.zipCode;

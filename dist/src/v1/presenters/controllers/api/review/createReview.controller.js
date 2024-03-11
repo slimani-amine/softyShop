@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createReviewController = exports.createReviewControllerBase = void 0;
 const createReview_usecase_1 = require("../../../../usecases/api/review/createReview.usecase");
 const createReviewControllerBase = (createReviewUseCase) => async (req, res, next) => {
+    req.body.userId = req.user.id;
     try {
         const result = await createReviewUseCase(req.body);
         res.status(201).send({

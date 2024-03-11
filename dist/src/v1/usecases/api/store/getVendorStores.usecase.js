@@ -5,9 +5,9 @@ const store_repository_1 = require("../../../data/repositories/store.repository"
 const users_repository_1 = require("../../../data/repositories/users.repository");
 const getVendorStoresUseCaseBase = (dependencies) => async (queryParams) => {
     const vendor = (await users_repository_1.usersRepo.findOne({
-        where: { id: parseInt(queryParams.userId, 10) },
+        where: { id: queryParams.userId },
     }));
-    const storesFound = await dependencies.storeRepo.findMyStores({
+    const storesFound = await dependencies.storeRepo.findAll({
         where: { user: vendor },
     });
     return storesFound;

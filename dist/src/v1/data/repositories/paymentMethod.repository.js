@@ -18,7 +18,6 @@ const paymentMethodRepoBase = (dbConnection) => ({
     async createPaymentMethod(payload) {
         const paymentMethod = this.manager.create(paymentMethod_entity_1.PaymentMethodEntity, {
             name: payload.name,
-            icon: payload.icon,
         });
         const result = await this.manager.save(paymentMethod_entity_1.PaymentMethodEntity, paymentMethod);
         return this.toDomainPaymentMethod(result);
@@ -28,7 +27,17 @@ const paymentMethodRepoBase = (dbConnection) => ({
         return result !== null ? 1 : 0;
     },
     async findByQuery(queryParams) {
-        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "paymentMethod", queryParams, {});
+        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "paymentMethod", queryParams, {
+            id: {
+                operator: "eq",
+            },
+            name: {
+                operator: "like",
+            },
+            isPublished: {
+                operator: "eq",
+            },
+        });
         return {
             docs: this.toDomainPaymentMethods(result.docs),
             meta: result.meta,
@@ -56,7 +65,6 @@ const paymentMethodRepoBase = (dbConnection) => ({
         const paymentMethod = new paymentMethod_1.PaymentMethod({
             id: prismaPaymentMethod.id,
             name: prismaPaymentMethod.name,
-            icon: prismaPaymentMethod.icon,
         });
         return paymentMethod;
     },

@@ -1,12 +1,12 @@
 import { z } from "zod";
 declare const createCartProductSchema: z.ZodObject<{
     productId: z.ZodString;
-    cartId: z.ZodString;
+    quantity: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
     productId?: string;
-    cartId?: string;
+    quantity?: number;
 }, {
     productId?: string;
-    cartId?: string;
+    quantity?: number;
 }>;
 export default createCartProductSchema;

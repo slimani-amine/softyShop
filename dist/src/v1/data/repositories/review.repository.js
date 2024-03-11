@@ -20,7 +20,7 @@ const reviewRepoBase = (dbConnection) => ({
     },
     async createReview(payload) {
         const user = await this.manager.findOne(user_entity_1.UserEntity, {
-            where: { id: parseInt(payload.userId, 10) },
+            where: { id: payload.userId },
         });
         if (!user) {
             exceptions_1.exceptionService.notFoundException({

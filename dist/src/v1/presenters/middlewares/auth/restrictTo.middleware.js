@@ -6,7 +6,7 @@ const restrictToMiddleware = (...roles) => (req, res, next) => {
     try {
         if (!roles.includes(req.user.role)) {
             exceptions_1.exceptionService.unauthorizedException({
-                message: `RBAC! You Not Have Role to access this`,
+                message: `You Not Have Role to access this`,
             });
         }
         next();

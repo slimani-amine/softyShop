@@ -16,9 +16,18 @@ const createAddressUseCaseBase = (dependencies = {
             message: errors_1.ACCOUNT_NOT_FOUND_ERROR_MESSAGE,
         });
     }
+    const addressFound = await dependencies.addressRepo.findAll({
+        where: [{ address: payload.address, user: { id: payload.user_id } }],
+    });
+    if (addressFound.length > 0) {
+        exceptions_1.exceptionService.badRequestException({
+            message: "An address already exist for this user.",
+        });
+    }
     validateCreateAddressPayload(payload);
     const addressCreated = await dependencies.addressRepo.createAddress({
         address: payload.address,
+        phoneNumber: (payload === null || payload === void 0 ? void 0 : payload.phoneNumber) || user.phoneNumber,
         city: payload.city,
         state: payload.state,
         zipCode: payload.zipCode,

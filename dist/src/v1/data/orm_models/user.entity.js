@@ -21,8 +21,8 @@ let UserEntity = class UserEntity {
 };
 exports.UserEntity = UserEntity;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    (0, typeorm_1.PrimaryGeneratedColumn)("uuid"),
+    __metadata("design:type", String)
 ], UserEntity.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({

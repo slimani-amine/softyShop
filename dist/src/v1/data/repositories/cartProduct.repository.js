@@ -46,7 +46,6 @@ const cartProductRepoBase = (dbConnection) => ({
             cart: cart,
         });
         const result = await this.manager.save(cartProduct_entity_1.CartProductEntity, cartProduct);
-        console.log("🚀 ~ cartProductRepoBase ~ result:", result);
         return result;
     },
     async deleteCartProduct(cartProduct) {
@@ -54,6 +53,17 @@ const cartProductRepoBase = (dbConnection) => ({
             id: cartProduct.id,
         });
         return result !== null ? 1 : 0;
+    },
+    async updateCartProduct(cartProduct, payload) {
+        await this.manager.update(cartProduct_entity_1.CartProductEntity, {
+            id: cartProduct.id,
+        }, payload);
+        const updatedProductCart = await this.manager.findOne(cartProduct_entity_1.CartProductEntity, {
+            where: {
+                id: cartProduct.id,
+            },
+        });
+        return updatedProductCart;
     },
 });
 exports.cartProductRepoBase = cartProductRepoBase;

@@ -18,32 +18,16 @@ import { PaymentMethodEntity } from "./paymentMethod.entity";
 import { AddressesEntity } from "./addresses.entity";
 
 @Entity({
-  name: "Order",
+  name: "Orders",
 })
 export class OrderEntity {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
-  address: string;
-
-  @Column({
-    type: "date",
-  })
-  date: Date;
-
   @Column({
     type: "date",
   })
   estimatedDeliveryDate: Date;
-
-  @ManyToOne(() => PaymentMethodEntity, (paymentMethod) => paymentMethod.order)
-  @JoinColumn({ name: "paymentMethod_id" })
-  paymentMethod: PaymentMethodEntity;
-
-  @ManyToOne(() => AddressesEntity, (addresses) => addresses.order)
-  @JoinColumn({ name: "address_id" })
-  addresses: AddressesEntity;
 
   @Column({
     type: "enum",
@@ -51,6 +35,14 @@ export class OrderEntity {
     default: "processing",
   })
   status: string;
+
+  @ManyToOne(() => PaymentMethodEntity, (paymentMethod) => paymentMethod.order)
+  @JoinColumn({ name: "paymentMethod_id" })
+  paymentMethod: PaymentMethodEntity;
+
+  @ManyToOne(() => AddressesEntity, (addresses) => addresses.order)
+  @JoinColumn({ name: "address_id" })
+  address: AddressesEntity;
 
   @ManyToOne(() => CartEntity, (cart) => cart.order)
   @JoinColumn({ name: "cart_id" })

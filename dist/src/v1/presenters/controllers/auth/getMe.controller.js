@@ -6,10 +6,10 @@ const getMyProfile_usecase_1 = require("../../../usecases/api/users/getMyProfile
 const getMeControllerBase = (getMyProfileUseCase) => async (req, res, next) => {
     var _a;
     try {
-        logger_1.logger.log('GET ME CONTROLLER', `IN GET ME CONTROLLER ID ${(_a = req === null || req === void 0 ? void 0 : req.user) === null || _a === void 0 ? void 0 : _a.id}`);
+        logger_1.logger.log("GET ME CONTROLLER", `IN GET ME CONTROLLER ID ${(_a = req === null || req === void 0 ? void 0 : req.user) === null || _a === void 0 ? void 0 : _a.id}`);
         const result = await getMyProfileUseCase(req === null || req === void 0 ? void 0 : req.user);
         res.status(200).send({
-            message: 'success',
+            message: "success",
             data: result,
         });
     }

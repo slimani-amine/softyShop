@@ -20,12 +20,12 @@ const defaults = {
 function getProductsApiRouter(controllers = defaults) {
     router.use(isAuthenticated_middleware_1.isAuthentictedMiddleware);
     router.route("/").get(controllers.getAllProducts);
-    router.route("/:id/review").get(controllers.productReviews);
+    router.route("/:id/reviews").get(controllers.productReviews);
     router
-        .route("/review")
+        .route("/reviews")
         .post((0, restrictTo_middleware_1.restrictToMiddleware)("user"), controllers.addReview);
     router
-        .route("/review/:id")
+        .route("/reviews/:id")
         .delete(controllers.deleteReview)
         .patch(controllers.updateReview);
     return router;

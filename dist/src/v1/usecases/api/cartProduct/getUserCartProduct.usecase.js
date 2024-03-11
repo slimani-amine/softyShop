@@ -13,12 +13,24 @@ const getUserCartProductUseCaseBase = (dependencies) => async (queryParams) => {
             cart: { id: cartId },
         },
     });
-    const cart = await cart_repsitory_1.cartRepo.findOne({
+    let sommeQuantities = 0;
+    for (let i = 0; i < cartProduct.length; i++) {
+        sommeQuantities += cartProduct[i].quantity;
+    }
+    let sommePrice = 0;
+    for (let i = 0; i < cartProduct.length; i++) {
+        sommePrice += cartProduct[i].product.price * cartProduct[i].quantity;
+    }
+    const cart = (await cart_repsitory_1.cartRepo.findOne({
         where: {
             id: cartId.toString(),
         },
+    }));
+    const newCart = await cart_repsitory_1.cartRepo.updateCart(cart, {
+        totalQuantity: sommeQuantities,
+        totalAmount: sommePrice,
     });
-    return [cart, cartProduct];
+    return [newCart, cartProduct];
 };
 exports.getUserCartProductUseCaseBase = getUserCartProductUseCaseBase;
 exports.getUserCartProductUseCase = (0, exports.getUserCartProductUseCaseBase)({

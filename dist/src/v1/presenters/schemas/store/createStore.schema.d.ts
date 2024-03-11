@@ -1,6 +1,5 @@
 import { z } from "zod";
-declare const createStoreSchema: z.ZodObject<
-  {
+declare const createStoreSchema: z.ZodObject<{
     name: z.ZodString;
     phoneNumber: z.ZodString;
     logo: z.ZodString;
@@ -9,10 +8,7 @@ declare const createStoreSchema: z.ZodObject<
     address: z.ZodString;
     socialMediaLinks: z.ZodArray<z.ZodString, "many">;
     vendor_id: z.ZodString;
-  },
-  "strip",
-  z.ZodTypeAny,
-  {
+}, "strip", z.ZodTypeAny, {
     name?: string;
     phoneNumber?: string;
     logo?: string;
@@ -21,8 +17,7 @@ declare const createStoreSchema: z.ZodObject<
     address?: string;
     socialMediaLinks?: string[];
     vendor_id?: string;
-  },
-  {
+}, {
     name?: string;
     phoneNumber?: string;
     logo?: string;
@@ -31,6 +26,5 @@ declare const createStoreSchema: z.ZodObject<
     address?: string;
     socialMediaLinks?: string[];
     vendor_id?: string;
-  }
->;
+}>;
 export default createStoreSchema;

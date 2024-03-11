@@ -23,20 +23,15 @@ const defaults = {
 function getWishlistApiRouter(controllers = defaults) {
     router.use(isAuthenticated_middleware_1.isAuthentictedMiddleware);
     router
-        .route("/:userId/wishlist")
+        .route("/my-wishlist")
         .post(controllers.addWishlist)
         .get(controllers.getWishlistsByUser);
+    router.route("/my-wishlist/:productId").delete(controllers.deleteWishlist);
     router
-        .route("/:userId/wishlist/:productId")
-        .delete(controllers.deleteWishlist);
-    router.route("/:userId/cart/:cartId").get(controllers.getUserCart);
-    router.route("/:userId/cartProduct/:cartId").get(controllers.getUserCartProduct);
-    router
-        .route("/:userId/cart/:cartId/product")
+        .route("/my-cart")
+        .get(controllers.getUserCartProduct)
         .post(controllers.addProductToCart);
-    router
-        .route("/:userId/cart/:cartId/product/:cartProductId")
-        .delete(controllers.deleteProductFromCart);
+    router.route("/my-cart/:productId").delete(controllers.deleteProductFromCart);
     return router;
 }
 exports.getWishlistApiRouter = getWishlistApiRouter;

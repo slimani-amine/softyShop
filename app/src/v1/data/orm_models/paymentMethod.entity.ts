@@ -15,7 +15,7 @@ import {
 import { OrderEntity } from "./orders.entity";
 
 @Entity({
-  name: "PaymentMethod",
+  name: "PaymentMethods",
 })
 export class PaymentMethodEntity {
   @PrimaryGeneratedColumn()

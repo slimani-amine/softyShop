@@ -8,6 +8,9 @@ import { getCartController } from "../../../controllers/api/cart/getCart.control
 import { addProductToCartController } from "../../../controllers/api/cartProduct/addProductToCart.controller";
 import { getUserCartProductController } from "../../../controllers/api/cartProduct/getUserCartProduct.controller";
 import { deleteProductFromCartController } from "../../../controllers/api/cartProduct/deleteProductFromCart.controller";
+import { createOrderController } from "../../../controllers/api/orders/createOrder.controller";
+import { updateOrderController } from "../../../controllers/api/orders/updateOrder.controller";
+import { getOrderByIdController } from "../../../controllers/api/orders/getOneOrder.controller";
 
 const router = express.Router();
 
@@ -19,6 +22,9 @@ const defaults = {
   addProductToCart: addProductToCartController,
   getUserCartProduct: getUserCartProductController,
   deleteProductFromCart: deleteProductFromCartController,
+  createOrder: createOrderController,
+  updateOrder: updateOrderController,
+  getOrderById: getOrderByIdController,
 };
 
 export function getWishlistApiRouter(
@@ -30,6 +36,9 @@ export function getWishlistApiRouter(
     addProductToCart: ControllerType;
     getUserCartProduct: ControllerType;
     deleteProductFromCart: ControllerType;
+    createOrder: ControllerType;
+    updateOrder: ControllerType;
+    getOrderById: ControllerType;
   } = defaults
 ) {
   router.use(isAuthentictedMiddleware);
@@ -47,6 +56,12 @@ export function getWishlistApiRouter(
     .post(controllers.addProductToCart); //add product to a cart
 
   router.route("/my-cart/:productId").delete(controllers.deleteProductFromCart); //delete the product from cart
+
+  router.route("/my-cart/orders").post(controllers.createOrder); // pass the cart to the order
+  router
+    .route("/my-cart/orders/:id")
+    .patch(controllers.updateOrder)
+    .get(controllers.getOrderById); //add product to a cart
 
   return router;
 }

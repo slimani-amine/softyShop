@@ -39,7 +39,7 @@ const userPasswordResetInformationRepositoryBase = (dbConnection = connection_1.
     async create(payload) {
         const entity = this.manager.create(resetpassword_entity_1.ResetPasswordEntity, {
             token: payload.token,
-            user_id: parseInt(payload.userId),
+            user_id: payload.userId,
             expirationDate: payload.expirationDate,
         });
         const result = await this.manager.save(resetpassword_entity_1.ResetPasswordEntity, entity);

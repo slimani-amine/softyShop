@@ -4,7 +4,7 @@ exports.createWishlistController = exports.createWishlistControllerBase = void 0
 const addProductToWishlist_usecase_1 = require("../../../../usecases/api/wishlist/addProductToWishlist.usecase");
 const createWishlistControllerBase = (createWishlistUseCase) => async (req, res, next) => {
     try {
-        req.body.userId = req.params.userId;
+        req.body.userId = req.user.id;
         const result = await createWishlistUseCase(req.body);
         res.status(201).send({
             message: "Wishlist created successfully",

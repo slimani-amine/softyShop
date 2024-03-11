@@ -1,8 +1,5 @@
 import { exceptionService } from "../../../core/errors/exceptions";
 import { trimAndValidateSchemaPayload } from "../../../utils/validation/validate.schema";
-
-import { usersRepo } from "../../../data/repositories/users.repository";
-import { ACCOUNT_NOT_FOUND_ERROR_MESSAGE } from "../../../domain/auth/errors";
 import { IBrand, ICreateBrandInput } from "../../../domain/brand/brand";
 import {
   IBrandRepository,

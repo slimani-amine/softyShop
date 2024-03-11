@@ -29,7 +29,17 @@ const categoryRepoBase = (dbConnection) => ({
         return result !== null ? 1 : 0;
     },
     async findByQuery(queryParams) {
-        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "category", queryParams, {});
+        const result = await apiFeatures_util_1.ApiFeatures.generateSqlQuery(connection_1.default, "category", queryParams, {
+            id: {
+                operator: "eq",
+            },
+            name: {
+                operator: "like",
+            },
+            isPublished: {
+                operator: "eq",
+            },
+        });
         return {
             docs: this.toDomainCategories(result.docs),
             meta: result.meta,

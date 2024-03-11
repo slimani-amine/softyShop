@@ -37,6 +37,12 @@ export class ProductEntity {
 
   @Column({
     type: "varchar",
+    nullable: true,
+  })
+  description: string;
+
+  @Column({
+    type: "varchar",
   })
   images: string;
 

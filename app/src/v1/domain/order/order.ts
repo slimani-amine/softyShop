@@ -1,59 +1,44 @@
+import { IAddress } from "../addresses/addresses";
 import { ICart } from "../cart/cart";
+import { IPaymentMethod } from "../paymentMethod/paymentMethod";
 import { IIdAsNumber, NumberId } from "../types/idAsNumber";
 
 export interface IOrder extends IIdAsNumber {
   id: string;
-  status: "processing" | "on_delivery" | "livered" | "cancelled";
-  cart?: ICart;
-  address: string;
-  date: Date;
   estimatedDeliveryDate: Date;
-  paymentMethod_id?: string;
-  deletedAt: Date;
-  createdAt: Date;
-  updatedAt: Date;
+  status: string;
+  paymentMethod?: IPaymentMethod; 
+  address?: IAddress; 
+  cart?: ICart; 
 }
 
 export class Order extends NumberId implements IOrder {
   id: string;
-  status: "processing" | "on_delivery" | "livered" | "cancelled";
-  cart?: ICart;
-  address: string;
-  date: Date;
   estimatedDeliveryDate: Date;
-  paymentMethod_id?: string;
-  deletedAt: Date;
-  createdAt: Date;
-  updatedAt: Date;
+  status: string;
+  paymentMethod?: IPaymentMethod; 
+  address?: IAddress;
+  cart?: ICart; 
 
   constructor(payload: {
     id: string;
-    status: "processing" | "on_delivery" | "livered" | "cancelled";
-    cart?: ICart;
-    address: string;
-    date: Date;
     estimatedDeliveryDate: Date;
-    paymentMethod_id?: string;
-    deletedAt: Date;
-    createdAt: Date;
-    updatedAt: Date;
+    status: string;
+    paymentMethod?: IPaymentMethod;
+    address?: IAddress;
+    cart?: ICart;
   }) {
     super(payload.id);
-    this.status = payload.status;
-    this.cart = payload.cart;
-    this.address = payload.address;
-    this.date = payload.date;
     this.estimatedDeliveryDate = payload.estimatedDeliveryDate;
-    this.deletedAt = payload.deletedAt;
-    this.createdAt = payload.createdAt;
-    this.updatedAt = payload.updatedAt;
+    this.status = payload.status;
+    this.paymentMethod = payload.paymentMethod;
+    this.address = payload.address;
+    this.cart = payload.cart;
   }
 }
 
 export interface ICreateOrderInput {
-  cart_id?: string;
-  address: string;
-  date: Date;
-  estimatedDeliveryDate: Date;
   paymentMethod_id?: string;
+  address_id?: string;
+  cart_id: string;
 }

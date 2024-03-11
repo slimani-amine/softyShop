@@ -36,7 +36,6 @@ export declare class User extends NumberId implements IUser {
         picture: string;
         firstName: string;
         lastName: string;
-        password: string;
         role: string;
         phoneNumber: string;
         confirmation_token: string;
@@ -61,7 +60,7 @@ export interface ICreateUserInput {
 export interface IUserPasswordResetInformation extends IIdAsNumber {
     id: string;
     token: string;
-    userId: number;
+    userId: string;
     user?: IUser;
     createdAt: Date;
     updatedAt: Date;
@@ -70,7 +69,7 @@ export interface IUserPasswordResetInformation extends IIdAsNumber {
 export declare class UserPasswordResetInformation extends NumberId implements IUserPasswordResetInformation {
     id: string;
     token: string;
-    userId: number;
+    userId: string;
     user?: IUser;
     createdAt: Date;
     updatedAt: Date;
@@ -78,7 +77,7 @@ export declare class UserPasswordResetInformation extends NumberId implements IU
     constructor(payload: {
         id: string;
         token: string;
-        userId: number;
+        userId: string;
         createdAt: Date;
         updatedAt: Date;
         user?: IUser;

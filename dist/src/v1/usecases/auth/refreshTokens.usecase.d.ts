@@ -1,6 +1,6 @@
-import { IUsersRepository, usersRepo } from '../../data/repositories/users.repository';
-import { IUser } from '../../domain/users/user';
-import { IRequestUser } from './types/IRequestUser';
+import { IUsersRepository, usersRepo } from "../../data/repositories/users.repository";
+import { IUser } from "../../domain/users/user";
+import { IRequestUser } from "./types/IRequestUser";
 export type RefreshUserTokensUseCaseType = (payload: IRequestUser) => Promise<{
     accessToken: string;
     refreshToken: string;

@@ -97,6 +97,15 @@ const productRepoBase = (dbConnection) => ({
             name: {
                 operator: "like",
             },
+            isPublished: {
+                operator: "eq",
+            },
+            availability: {
+                operator: "eq",
+            },
+            stockNumber: {
+                operator: "gte",
+            },
         });
         return {
             docs: this.toDomainProducts(result.docs),
@@ -122,7 +131,7 @@ const productRepoBase = (dbConnection) => ({
             isAccepted: prismaProduct.isAccepted,
             category: prismaProduct.category,
             images: prismaProduct.images,
-            discount: prismaProduct.discount
+            discount: prismaProduct.discount,
         });
         return product;
     },

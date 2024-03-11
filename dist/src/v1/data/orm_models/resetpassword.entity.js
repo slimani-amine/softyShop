@@ -27,9 +27,9 @@ __decorate([
 ], ResetPasswordEntity.prototype, "token", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'int',
+        type: 'uuid',
     }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], ResetPasswordEntity.prototype, "user_id", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.UserEntity, (user) => user.resetPasswords),

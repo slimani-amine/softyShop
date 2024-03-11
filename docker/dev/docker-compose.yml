@@ -1,25 +1,77 @@
-mysqlgo:
-  image: bitnami/mysql:8.1.0
-  container_name: mysqlgo
-  networks:
-    - analytics
-  restart: always
-  env_file:
-    - .env.sqldb
-  ports:
-    - "3307:3306"
-  volumes:
-    - go-db:/bitnami/mysql/data
-    - ./initdb/dump.sql:/docker-entrypoint-initdb.d/init.sql:ro
-  healthcheck:
-    test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3306"]
-    interval: 10s
-    timeout: 5s
-    retries: 3
-# version: "3.8"
+version: "3.8"
+volumes:
+  softyshop-db:
+  softyshop-db-test:
+services:
+  starterdevdb:
+    image: bitnami/mysql:8.1.0
+    container_name: starterdevdb
+    restart: always
+    env_file:
+      - .env.sqldb
+    ports:
+      - "3306:3306"
+    volumes:
+      - softyshop-db:/bitnami/mysql/data
+      - ./initdb/dump.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3306"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  startertestdb:
+    image: bitnami/mysql:8.1.0
+    container_name: startertestdb
+    restart: always
+    env_file:
+      - .env.sqldb
+    ports:
+      - "3001:3001"
+    volumes:
+      - softyshop-db-test:/bitnami/mysql/data
+      - ./initdb/dump.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3001"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  starterdevapi:
+    build:
+      context: ../../
+      dockerfile: ./docker/dev/Dockerfile
+    container_name: starterdevapi
+    restart: always
+    env_file:
+      - .env.server.docker
+    volumes:
+      - ../../:/app
+    ports:
+      - "6001:6001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "localhost:6001"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      starterdevdb:
+        condition: service_healthy
+    links:
+      - starterdevdb
+  starterdevadminer:
+    image: adminer:4.8.1-standalone
+    container_name: starterdevadminer
+    restart: always
+    ports:
+      - 8082:8080
+# version: "2"
+
+# networks:
+#   app-tier:
+#     driver: bridge
+
 # services:
 #   starterdevdb:
-#     image: mariadb:11.1.2-jammy
+#     image: bitnami/mysql:latest
 #     container_name: starterdevdb
 #     restart: always
 #     env_file:
@@ -27,6 +79,8 @@ mysqlgo:
 #     volumes:
 #       - ../../initdb/:/docker-entrypoint-initdb.d
 #       - mariadbstarterdev-data:/var/lib/mysql
+#     networks:
+#       - app-tier
 #     ports:
 #       - "3306:3306"
 #     healthcheck:
@@ -36,7 +90,7 @@ mysqlgo:
 #       timeout: 5s
 #       retries: 55
 #   startertestdb:
-#     image: mariadb:11.1.2-jammy
+#     image: bitnami/mysql:latest
 #     container_name: startertestdb
 #     restart: always
 #     env_file:
@@ -47,7 +101,7 @@ mysqlgo:
 #       - ../../scripts/reset-test-db.sql:/container-scripts/reset-test-db.sql
 #       - ../../scripts/init-test-db-proced.sql:/container-scripts/init-test-db-proced.sql
 #     ports:
-#       - "3307:3306"
+#       - "3307:3307"
 #     healthcheck:
 #       test: mariadb -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT 1;"
 #       start_period: 5s
@@ -85,3 +139,73 @@ mysqlgo:
 # volumes:
 #   mariadbstarterdev-data:
 #   mariadbstartertest-data:
+
+# # version: "3.8"
+# # services:
+# #   starterdevdb:
+# #     image: mariadb:11.1.2-jammy
+# #     container_name: starterdevdb
+# #     restart: always
+# #     env_file:
+# #       - .env.db.docker
+# #     volumes:
+# #       - ../../initdb/:/docker-entrypoint-initdb.d
+# #       - mariadbstarterdev-data:/var/lib/mysql
+# #     ports:
+# #       - "3306:3306"
+# #     healthcheck:
+# #       test: mariadb -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT 1;"
+# #       start_period: 5s
+# #       interval: 5s
+# #       timeout: 5s
+# #       retries: 55
+# #   startertestdb:
+# #     image: mariadb:11.1.2-jammy
+# #     container_name: startertestdb
+# #     restart: always
+# #     env_file:
+# #       - .env.dbtest.docker
+# #     volumes:
+# #       - mariadbstartertest-data:/var/lib/mysql
+# #       - ../../initdb/:/docker-entrypoint-initdb.d
+# #       - ../../scripts/reset-test-db.sql:/container-scripts/reset-test-db.sql
+# #       - ../../scripts/init-test-db-proced.sql:/container-scripts/init-test-db-proced.sql
+# #     ports:
+# #       - "3307:3306"
+# #     healthcheck:
+# #       test: mariadb -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT 1;"
+# #       start_period: 5s
+# #       interval: 5s
+# #       timeout: 5s
+# #       retries: 55
+# #   starterdevapi:
+# #     build:
+# #       context: ../../
+# #       dockerfile: ./docker/dev/Dockerfile
+# #     container_name: starterdevapi
+# #     restart: always
+# #     env_file:
+# #       - .env.server.docker
+# #     volumes:
+# #       - ../../:/app
+# #     ports:
+# #       - "6001:6001"
+# #     healthcheck:
+# #       test: ["CMD", "curl", "-f", "localhost:6001"]
+# #       interval: 30s
+# #       timeout: 10s
+# #       retries: 5
+# #     depends_on:
+# #       starterdevdb:
+# #         condition: service_healthy
+# #     links:
+# #       - starterdevdb
+# #   starterdevadminer:
+# #     image: adminer:4.8.1-standalone
+# #     container_name: starterdevadminer
+# #     restart: always
+# #     ports:
+# #       - 8080:8080
+# # volumes:
+# #   mariadbstarterdev-data:
+# #   mariadbstartertest-data:

@@ -91,6 +91,9 @@ const usersRepoBase = (dbConnection) => ({
             lastName: {
                 operator: "like",
             },
+            isVerified: {
+                operator: "eq",
+            },
             "resetPassword.id": {
                 operator: "injoin",
                 joinTables: {
@@ -121,7 +124,6 @@ const usersRepoBase = (dbConnection) => ({
             picture: prismaUser.picture,
             firstName: prismaUser.firstName,
             lastName: prismaUser.lastName,
-            password: prismaUser.password,
             role: prismaUser.role,
             phoneNumber: prismaUser.phoneNumber,
             confirmation_token: prismaUser.confirmation_token,

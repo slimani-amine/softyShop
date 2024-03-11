@@ -5,8 +5,8 @@ const createCartProductSchema = zod_1.z.object({
     productId: zod_1.z.string().min(1, {
         message: "Product ID is required",
     }),
-    cartId: zod_1.z.string().min(1, {
-        message: "Cart ID is required",
+    quantity: zod_1.z.number().int().min(1, {
+        message: "Quantity must be a positive integer",
     }),
 });
 exports.default = createCartProductSchema;

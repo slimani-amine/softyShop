@@ -6,7 +6,7 @@ import { WishlistEntity } from "./wishlist.entity";
 import { CartEntity } from "./cart.entity";
 import { ResetPasswordEntity } from "./resetpassword.entity";
 export declare class UserEntity {
-    id: number;
+    id: string;
     email: string;
     firstName: string;
     lastName: string;

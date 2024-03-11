@@ -10,7 +10,6 @@ class User extends idAsNumber_1.NumberId {
         this.picture = payload.picture;
         this.firstName = payload.firstName;
         this.lastName = payload.lastName;
-        this.password = payload.password;
         this.role = payload.role;
         this.phoneNumber = payload.phoneNumber;
         this.confirmation_token = payload.confirmation_token;

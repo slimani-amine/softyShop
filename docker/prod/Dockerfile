@@ -18,6 +18,6 @@ RUN npm run build
 
 COPY ../../app/docs ./dist/docs
 
-EXPOSE 3000
+EXPOSE 3306
 
 ENTRYPOINT ["npm","run","start:prod"]

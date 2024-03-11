@@ -13,11 +13,12 @@ exports.OrderEntity = void 0;
 const typeorm_1 = require("typeorm");
 const cart_entity_1 = require("./cart.entity");
 const paymentMethod_entity_1 = require("./paymentMethod.entity");
+const addresses_entity_1 = require("./addresses.entity");
 let OrderEntity = class OrderEntity {
 };
 exports.OrderEntity = OrderEntity;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    (0, typeorm_1.PrimaryGeneratedColumn)("uuid"),
     __metadata("design:type", String)
 ], OrderEntity.prototype, "id", void 0);
 __decorate([
@@ -37,11 +38,6 @@ __decorate([
     __metadata("design:type", Date)
 ], OrderEntity.prototype, "estimatedDeliveryDate", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => paymentMethod_entity_1.PaymentMethodEntity, (paymentMethod) => paymentMethod.paymentMethods),
-    (0, typeorm_1.JoinColumn)({ name: "paymentMethod_id" }),
-    __metadata("design:type", paymentMethod_entity_1.PaymentMethodEntity)
-], OrderEntity.prototype, "paymentMethod", void 0);
-__decorate([
     (0, typeorm_1.Column)({
         type: "enum",
         enum: ["processing", "on_delivery", "livered", "cancelled"],
@@ -49,6 +45,16 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], OrderEntity.prototype, "status", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => paymentMethod_entity_1.PaymentMethodEntity, (paymentMethod) => paymentMethod.order),
+    (0, typeorm_1.JoinColumn)({ name: "paymentMethod_id" }),
+    __metadata("design:type", paymentMethod_entity_1.PaymentMethodEntity)
+], OrderEntity.prototype, "paymentMethod", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => addresses_entity_1.AddressesEntity, (addresses) => addresses.order),
+    (0, typeorm_1.JoinColumn)({ name: "address_id" }),
+    __metadata("design:type", addresses_entity_1.AddressesEntity)
+], OrderEntity.prototype, "addresses", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => cart_entity_1.CartEntity, (cart) => cart.order),
     (0, typeorm_1.JoinColumn)({ name: "cart_id" }),
