@@ -109,8 +109,6 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   async findByQuery(queryParams: {
     [key: string]: string;
   }): Promise<QueryResult<IStore>> {
-    console.log(queryParams);
-
     const result = await ApiFeatures.generateSqlQuery(
       dataSource,
       "stores",

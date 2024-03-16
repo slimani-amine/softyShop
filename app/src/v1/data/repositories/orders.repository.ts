@@ -17,15 +17,18 @@ export const orderRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     return order;
   },
 
-  async findAll(findData: FindManyOptions<OrderEntity>): Promise<IOrder[]> {
+  async findAll(findData: FindManyOptions<OrderEntity>): Promise<any[]> {
     const orders = await this.manager.find(OrderEntity, findData);
-    return this.toDomainOrders(orders);
+    return orders;
   },
 
   async createOrder(payload: ICreateOrderInput): Promise<IOrder> {
     const order = this.manager.create(OrderEntity, {
       estimatedDeliveryDate: calculateEstimatedDeliveryDate(),
-      cart_id: payload.cart_id,
+      cart: { id: payload.cartId },
+      user:{
+        id: payload.userId,
+      }
     } as DeepPartial<OrderEntity>);
 
     const result = await this.manager.save(OrderEntity, order);
@@ -40,13 +43,13 @@ export const orderRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     await this.manager.update(
       OrderEntity,
       {
-        id: order.getIdAsNumber(),
+        id: order.id,
       },
       payload
     );
     const updatedOrder = await this.manager.findOne(OrderEntity, {
       where: {
-        id: order.getIdAsNumber().toString(),
+        id: order.id,
       },
     });
     return this.toDomainOrder(updatedOrder);
@@ -76,7 +79,7 @@ export const orderRepo = orderRepoBase(dataSource);
 
 export interface IOrderRepository {
   findOne(findData: FindOneOptions<OrderEntity>): Promise<IOrder>;
-  findAll(findData: FindManyOptions<OrderEntity>): Promise<IOrder[]>;
+  findAll(findData: FindManyOptions<OrderEntity>): Promise<any[]>;
 
   createOrder(payload: ICreateOrderInput): Promise<IOrder>;
   updateOrder(order: IOrder, payload: Partial<OrderEntity>): Promise<IOrder>;

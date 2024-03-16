@@ -6,36 +6,6 @@
     "auditLog": "logs/.e79331a64216de2af7e288398d0726da4e557188-audit.json",
     "files": [
         {
-            "date": 1709308127177,
-            "name": "logs\\verbose-2024-03-01.log",
-            "hash": "79a119821fc2639cc1556aa0fa6c51339c1d8acc4d9db01e279faa03a345f255"
-        },
-        {
-            "date": 1709378212863,
-            "name": "logs\\verbose-2024-03-02.log",
-            "hash": "2de8819b080fd3f6bcbdd3febc8f985d682a8856c0479931ddf56bfb35c5e571"
-        },
-        {
-            "date": 1709458546856,
-            "name": "logs\\verbose-2024-03-03.log",
-            "hash": "512cfb398b7c5a1c90b9cbedbf0278186baf7fdfbe19a60f3d8839db33699b0b"
-        },
-        {
-            "date": 1709536314009,
-            "name": "logs/verbose-2024-03-04.log",
-            "hash": "6cfb1fe09891e6ec35953b0459f1a4b1b3a275f447a467519ec88a9667de9391"
-        },
-        {
-            "date": 1709622180154,
-            "name": "logs/verbose-2024-03-05.log",
-            "hash": "fa5f53c36fddc7b26b13d7f3712ff2c1ab0bf458790ff3b9800b91f61c5ee39d"
-        },
-        {
-            "date": 1709707941534,
-            "name": "logs/verbose-2024-03-06.log",
-            "hash": "722ab0c6ce349646437570ea4f4e28fac30d1062b00a267e150bac819ebee6a4"
-        },
-        {
             "date": 1709795255201,
             "name": "logs/verbose-2024-03-07.log",
             "hash": "f8e4c67ad85f230d0c466defd277bc35fd04fa114f3f0a573cb64608f75f5848"
@@ -59,6 +29,31 @@
             "date": 1710142505881,
             "name": "logs/verbose-2024-03-11.log",
             "hash": "a2e08214b0dd9aa5398b59f2d4a6525a1b526a09a95ac41c56d07885b4f92de0"
+        },
+        {
+            "date": 1710232237079,
+            "name": "logs/verbose-2024-03-12.log",
+            "hash": "3482d2d4d110eee8a9f9108f6a1ab380b572b6cb715c76b32c5764051514d42f"
+        },
+        {
+            "date": 1710315753651,
+            "name": "logs/verbose-2024-03-13.log",
+            "hash": "622a8d3578bec5b7f576adee941129e136c7820f904a2448c472c0393279b01d"
+        },
+        {
+            "date": 1710401956019,
+            "name": "logs/verbose-2024-03-14.log",
+            "hash": "43ca74647a54b02b5b9ab940e8983e152a483fbb8934ab77cf47262446f22c9d"
+        },
+        {
+            "date": 1710488571944,
+            "name": "logs/verbose-2024-03-15.log",
+            "hash": "6e637569ab524500e5c7a339624e712a6a5e3614e63f0493ebad2f7ee16609ec"
+        },
+        {
+            "date": 1710590190782,
+            "name": "logs/verbose-2024-03-16.log",
+            "hash": "e609f22c83dc1be9ebec06f8e11fdbec5eca9752ff95abeffdf2698d9daf69aa"
         }
     ],
     "hashType": "sha256"

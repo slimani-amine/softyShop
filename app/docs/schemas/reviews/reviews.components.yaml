@@ -1,0 +1,24 @@
+components:
+  schemas:
+    ReviewsEntity:
+      type: object
+      properties:
+        id:
+          type: string
+        review:
+          type: string
+        rating:
+          type: integer
+        user:
+          $ref: "#/components/schemas/UserEntity"
+        product:
+          $ref: "#/components/schemas/ProductEntity"
+        deletedAt:
+          type: string
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time

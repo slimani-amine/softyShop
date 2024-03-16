@@ -10,7 +10,6 @@ export const getCartControllerBase =
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const cartId = req.user.cartId;
-      console.log("🚀 ~ cartId:", cartId)
       if (!cartId) {
         res.status(404).send({
           message: "you have not a cart ",

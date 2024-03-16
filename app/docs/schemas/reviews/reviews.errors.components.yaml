@@ -1,0 +1,26 @@
+components:
+  schemas:
+    ReviewsEntityValidationError:
+      allOf:
+        - $ref: "#/components/schemas/ValidationErrorBase"
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                review:
+                  type: string
+                rating:
+                  type: string
+                user:
+                  type: string
+                product:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string

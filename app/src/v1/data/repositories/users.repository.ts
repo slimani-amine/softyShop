@@ -30,53 +30,6 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     const users = await this.manager.find(UserEntity, findData);
     return this.toDomainUsers(users);
   },
-  async updateMany(updatePayload: {
-    where: UsersWherePayload;
-    data: UsersUpdateDataPayload;
-  }): Promise<number> {
-    const result = await this.manager.update(
-      UserEntity,
-      updatePayload.where,
-      updatePayload.data
-    );
-    return result.affected;
-  },
-  async updateOne(user: IUser, payload: Partial<UserEntity>): Promise<IUser> {
-    await this.manager.update(
-      UserEntity,
-      {
-        id: user.getIdAsNumber(),
-      },
-      payload
-    );
-    const updatedUser = await this.manager.findOne(UserEntity, {
-      where: {
-        id: user.getIdAsNumber(),
-      },
-    });
-    return this.toDomainUser(updatedUser);
-  },
-  async deleteOne(user: IUser): Promise<number> {
-    const result = await this.manager.softDelete(UserEntity, {
-      id: user.getIdAsNumber(),
-    });
-    return result !== null ? 1 : 0;
-  },
-  async deleteMany(payload: Array<number>): Promise<number> {
-    const result = await this.manager.softDelete(UserEntity, payload);
-    return result.affected;
-  },
-  async getUserPassword(user: IUser): Promise<string> {
-    const userFound = await this.manager.findOne(UserEntity, {
-      where: {
-        id: user.getIdAsNumber(),
-      },
-      select: {
-        password: true,
-      },
-    });
-    return userFound.password;
-  },
   async create(payload: ICreateUserInput): Promise<IUser> {
     let cart;
     if (payload?.role !== "admin") {
@@ -98,6 +51,54 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
 
     const result = await this.manager.save(UserEntity, user);
     return this.toDomainUser(result);
+  },
+  async updateOne(user: IUser, payload: Partial<any>): Promise<IUser> {
+    await this.manager.update(
+      UserEntity,
+      {
+        id: user.id,
+      },
+      payload
+    );
+    const updatedUser = await this.manager.findOne(UserEntity, {
+      where: {
+        id: user.getIdAsNumber(),
+      },
+    });
+    return this.toDomainUser(updatedUser);
+  },
+  async updateMany(updatePayload: {
+    where: UsersWherePayload;
+    data: UsersUpdateDataPayload;
+  }): Promise<number> {
+    const result = await this.manager.update(
+      UserEntity,
+      updatePayload.where,
+      updatePayload.data
+    );
+    return result.affected;
+  },
+
+  async deleteOne(user: IUser): Promise<number> {
+    const result = await this.manager.softDelete(UserEntity, {
+      id: user.getIdAsNumber(),
+    });
+    return result !== null ? 1 : 0;
+  },
+  async deleteMany(payload: Array<number>): Promise<number> {
+    const result = await this.manager.softDelete(UserEntity, payload);
+    return result.affected;
+  },
+  async getUserPassword(user: IUser): Promise<string> {
+    const userFound = await this.manager.findOne(UserEntity, {
+      where: {
+        id: user.getIdAsNumber(),
+      },
+      select: {
+        password: true,
+      },
+    });
+    return userFound.password;
   },
 
   async findByQuery(queryParams: {
@@ -137,7 +138,6 @@ export const usersRepoBase = (dbConnection: DataSource | QueryRunner) => ({
         },
       }
     );
-    console.log(result);
 
     return {
       docs: result.docs,
@@ -176,7 +176,7 @@ export const usersRepo = usersRepoBase(dataSource);
 export interface IUsersRepository {
   findOne(findData: FindOneOptions<UserEntity>): Promise<IUser>;
   findAll(findData: FindManyOptions<UserEntity>): Promise<IUser[]>;
-  updateOne(user: IUser, payload: Partial<UserEntity>): Promise<IUser>;
+  updateOne(user: IUser, payload: Partial<any>): Promise<IUser>;
   deleteOne(user: IUser): Promise<number>;
   updateMany(updatePayload: {
     where: UsersWherePayload;

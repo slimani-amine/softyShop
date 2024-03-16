@@ -26,15 +26,26 @@ export const updateMyProfileUseCaseBase =
         message: ACCOUNT_NOT_FOUND_ERROR_MESSAGE,
       });
     }
+    if (payload?.cart) {
+      const updatedUser = await dependencies.usersRepo.updateOne(userFound, {
+        email: payload?.email || userFound.email,
+        picture: payload?.picture || userFound.picture,
+        firstName: payload?.firstName || userFound.firstName,
+        lastName: payload?.lastName || userFound.lastName,
+        cart: { id: payload?.cart?.id },
+      });
 
-    const updatedUser = await dependencies.usersRepo.updateOne(userFound, {
-      email: payload?.email || userFound.email,
-      picture: payload?.picture || userFound.picture,
-      firstName: payload?.firstName || userFound.firstName,
-      lastName: payload?.lastName || userFound.lastName,
-    });
+      return updatedUser;
+    } else {
+      const updatedUser = await dependencies.usersRepo.updateOne(userFound, {
+        email: payload?.email || userFound.email,
+        picture: payload?.picture || userFound.picture,
+        firstName: payload?.firstName || userFound.firstName,
+        lastName: payload?.lastName || userFound.lastName,
+      });
 
-    return updatedUser;
+      return updatedUser;
+    }
   };
 
 export const updateMyProfileUseCase: UpdateMyProfileUseCaseType =

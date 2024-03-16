@@ -21,6 +21,7 @@ import { ReviewsEntity } from "./reviews.entity";
 import { WishlistEntity } from "./wishlist.entity";
 import { CartEntity } from "./cart.entity";
 import { ResetPasswordEntity } from "./resetpassword.entity";
+import { OrderEntity } from "./orders.entity";
 
 @Entity({
   name: "Users",
@@ -101,6 +102,9 @@ export class UserEntity {
   @OneToOne(() => CartEntity)
   @JoinColumn()
   cart: CartEntity;
+
+  @OneToMany(() => OrderEntity, (order) => order.user)
+  orders: OrderEntity[];
 
   @DeleteDateColumn({ name: "deletedAt" })
   deletedAt: Date;

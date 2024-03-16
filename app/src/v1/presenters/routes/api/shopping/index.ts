@@ -11,6 +11,8 @@ import { deleteProductFromCartController } from "../../../controllers/api/cartPr
 import { createOrderController } from "../../../controllers/api/orders/createOrder.controller";
 import { updateOrderController } from "../../../controllers/api/orders/updateOrder.controller";
 import { getOrderByIdController } from "../../../controllers/api/orders/getOneOrder.controller";
+import { payOrderController } from "../../../controllers/api/orders/payOrder.controller";
+import { myOrdersController } from "../../../controllers/api/orders/my-orders.controller";
 
 const router = express.Router();
 
@@ -25,6 +27,8 @@ const defaults = {
   createOrder: createOrderController,
   updateOrder: updateOrderController,
   getOrderById: getOrderByIdController,
+  payOrder: payOrderController,
+  myOrders: myOrdersController,
 };
 
 export function getWishlistApiRouter(
@@ -39,6 +43,8 @@ export function getWishlistApiRouter(
     createOrder: ControllerType;
     updateOrder: ControllerType;
     getOrderById: ControllerType;
+    payOrder: ControllerType;
+    myOrders: ControllerType;
   } = defaults
 ) {
   router.use(isAuthentictedMiddleware);
@@ -58,10 +64,11 @@ export function getWishlistApiRouter(
   router.route("/my-cart/:productId").delete(controllers.deleteProductFromCart); //delete the product from cart
 
   router.route("/my-cart/orders").post(controllers.createOrder); // pass the cart to the order
+  router.route("/my-cart/my-orders").get(controllers.myOrders); // get my orders
   router
     .route("/my-cart/orders/:id")
     .patch(controllers.updateOrder)
     .get(controllers.getOrderById); //add product to a cart
-
+  router.route("/my-cart/orders/:id/payment").patch(controllers.payOrder);
   return router;
 }

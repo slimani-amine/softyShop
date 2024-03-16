@@ -1,36 +1,35 @@
 paths:
-  /api/products/review:
-    post:
+  /api/shopping/my-cart/orders/{id}/payment:
+    patch:
       tags:
-        - reviews
-      summary: Create a review
-      description: Create a new review for a product.
+        - orders
+      summary: pay the order
       security:
         - BearerAuth: []
+      description: pay the order
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateReviewInput"
+              $ref: "#/components/schemas/orders"
       responses:
         "201":
-          description: Review created successfully
+          description: Order updated successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
-                        $ref: "#/components/schemas/Review"
+                        $ref: "#/components/schemas/orders"
         "422":
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ValidationError"
+                $ref: "#/components/schemas/ordersValidationError"
         "500":
           description: Internal server error!
           content:

@@ -19,11 +19,10 @@ export const cartRepoBase = (dbConnection: DataSource | QueryRunner) => ({
 
   async findOne(findData: FindOneOptions<CartEntity>): Promise<ICart> {
     const cart = await this.manager.findOne(CartEntity, findData);
-    console.log("🚀 ~ findOne ~ cart:", cart);
     return this.toDomainCart(cart);
   },
 
-  async findAll(findData: FindManyOptions<CartEntity>): Promise<any[]> {
+  async findAll(findData: FindManyOptions<CartEntity>): Promise<CartEntity[]> {
     const carts = await this.manager.find(CartEntity, findData);
     return carts;
   },

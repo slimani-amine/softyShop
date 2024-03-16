@@ -80,6 +80,10 @@ export const cartProductRepoBase = (
     });
     return result !== null ? 1 : 0;
   },
+  async deleteAllCartProducts(): Promise<number> {
+    const result = await this.manager.softDelete(CartProductEntity, {});
+    return result !== null ? 1 : 0;
+  },
   async updateCartProduct(
     cartProduct: CartProductEntity,
     payload: Partial<CartProductEntity>
@@ -115,6 +119,7 @@ export interface ICartProductRepository {
     cartId: string;
   }): Promise<CartProductEntity>;
   deleteCartProduct(cartProduct: CartProductEntity): Promise<number>;
+  deleteAllCartProducts(): Promise<number>;
   updateCartProduct(
     cartProduct: CartProductEntity,
     payload: Partial<CartProductEntity>

@@ -102,7 +102,6 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     product: IProduct,
     payload: Partial<ProductEntity>
   ): Promise<IProduct> {
-    console.log("🚀 ~ productRepoBase ~ payload:", payload);
     await this.manager.update(
       ProductEntity,
       { id: product.getIdAsNumber() },
@@ -129,8 +128,6 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   async findByQuery(queryParams: {
     [key: string]: string;
   }): Promise<QueryResult<IProduct>> {
-    console.log(queryParams);
-
     const result = await ApiFeatures.generateSqlQuery(
       dataSource,
       "products",

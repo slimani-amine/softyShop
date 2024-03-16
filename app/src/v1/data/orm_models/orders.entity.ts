@@ -16,6 +16,7 @@ import {
 import { CartEntity } from "./cart.entity";
 import { PaymentMethodEntity } from "./paymentMethod.entity";
 import { AddressesEntity } from "./addresses.entity";
+import { UserEntity } from "./user.entity";
 
 @Entity({
   name: "Orders",
@@ -30,6 +31,12 @@ export class OrderEntity {
   estimatedDeliveryDate: Date;
 
   @Column({
+    type: "boolean",
+    default: false,
+  })
+  isPaied: Date;
+
+  @Column({
     type: "enum",
     enum: ["processing", "on_delivery", "livered", "cancelled"],
     default: "processing",
@@ -39,6 +46,10 @@ export class OrderEntity {
   @ManyToOne(() => PaymentMethodEntity, (paymentMethod) => paymentMethod.order)
   @JoinColumn({ name: "paymentMethod_id" })
   paymentMethod: PaymentMethodEntity;
+
+  @ManyToOne(() => UserEntity, (user) => user.wishlist)
+  @JoinColumn({ name: "user_id" })
+  user: UserEntity;
 
   @ManyToOne(() => AddressesEntity, (addresses) => addresses.order)
   @JoinColumn({ name: "address_id" })

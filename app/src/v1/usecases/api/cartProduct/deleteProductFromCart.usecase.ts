@@ -37,7 +37,6 @@ export const deleteProductFromCartUseCaseBase =
       },
       where: { product: { id: params.productId } },
     });
-    console.log("🚀 ~ product:", product);
     if (!product) {
       exceptionService.notFoundException({
         message: "product not found",

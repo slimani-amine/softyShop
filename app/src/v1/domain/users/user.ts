@@ -15,7 +15,7 @@ export interface IUser extends IIdAsNumber {
   confirmation_token: string;
   confirmed_email: boolean;
   store?: IStore;
-  cart?: CartEntity;
+  cart?: CartEntity ;
 }
 
 export class User extends NumberId implements IUser {

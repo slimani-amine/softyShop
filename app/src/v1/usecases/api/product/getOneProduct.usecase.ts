@@ -19,7 +19,6 @@ export const getOneProductUseCaseBase =
     const storeProduct = await getStoreProductUseCase({
       storeId: queryParams.storeId,
     });
-    console.log("🚀 ~ storeProduct:", storeProduct);
 
     if (!storeProduct) {
       exceptionService.notFoundException({
@@ -28,11 +27,8 @@ export const getOneProductUseCaseBase =
     }
 
     const product = storeProduct.filter((product) => {
-      console.log(product.id == queryParams.productId);
-
       return product.id == queryParams.productId;
     });
-    console.log("🚀 ~ product ~ product:", product);
 
     if (product.length === 0) {
       exceptionService.notFoundException({

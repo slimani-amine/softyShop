@@ -17,12 +17,17 @@ export const getOrderByIdUseCaseBase =
   ): getOrderByIdUseCaseType =>
   async (orderId: string) => {
     const order = await dependencies.orderRepo.findOne({
-      relations: { address: true, paymentMethod: true },
+      relations: {
+        address: true,
+        paymentMethod: true,
+        cart: true,
+      },
       where: { id: orderId },
       select: {
         id: true,
         estimatedDeliveryDate: true,
         status: true,
+        isPaied: true,
         address: {
           id: true,
           address: true,
@@ -32,6 +37,11 @@ export const getOrderByIdUseCaseBase =
         paymentMethod: {
           id: true,
           name: true,
+        },
+        cart: {
+          id: true,
+          totalAmount: true,
+          totalQuantity: true,
         },
       },
     });

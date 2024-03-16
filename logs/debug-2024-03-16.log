@@ -1,0 +1,421 @@
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 24ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 1ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 3ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 1ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 1ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 0ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment"}
+{"level":"error","message":"[ERROR] Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.","trace":"EntityPropertyNotFoundError: Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:500:31\n    at Array.forEach (<anonymous>)\n    at UpdateQueryBuilder.createUpdateExpression (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:493:68)\n    at UpdateQueryBuilder.getQuery (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:53:21)\n    at UpdateQueryBuilder.getQueryAndParameters (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/QueryBuilder.ts:507:28)\n    at UpdateQueryBuilder.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:142:50)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.updateOne (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/users.repository.ts:46:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/payOrder.usecase.ts:32:24\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:34:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment in 78ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment"}
+{"level":"error","message":"[ERROR] Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.","trace":"EntityPropertyNotFoundError: Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:500:31\n    at Array.forEach (<anonymous>)\n    at UpdateQueryBuilder.createUpdateExpression (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:493:68)\n    at UpdateQueryBuilder.getQuery (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:53:21)\n    at UpdateQueryBuilder.getQueryAndParameters (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/QueryBuilder.ts:507:28)\n    at UpdateQueryBuilder.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:142:50)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.updateOne (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/users.repository.ts:57:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/payOrder.usecase.ts:32:24\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:34:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment in 36ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment"}
+{"level":"error","message":"[ERROR] Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.","trace":"EntityPropertyNotFoundError: Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:500:31\n    at Array.forEach (<anonymous>)\n    at UpdateQueryBuilder.createUpdateExpression (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:493:68)\n    at UpdateQueryBuilder.getQuery (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:53:21)\n    at UpdateQueryBuilder.getQueryAndParameters (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/QueryBuilder.ts:507:28)\n    at UpdateQueryBuilder.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:142:50)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.updateOne (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/users.repository.ts:57:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/payOrder.usecase.ts:32:24\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:34:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment in 31ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment"}
+{"level":"error","message":"[ERROR] Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.","trace":"EntityPropertyNotFoundError: Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:500:31\n    at Array.forEach (<anonymous>)\n    at UpdateQueryBuilder.createUpdateExpression (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:493:68)\n    at UpdateQueryBuilder.getQuery (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:53:21)\n    at UpdateQueryBuilder.getQueryAndParameters (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/QueryBuilder.ts:507:28)\n    at UpdateQueryBuilder.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:142:50)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.updateOne (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/users.repository.ts:57:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/payOrder.usecase.ts:32:24\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:34:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment in 33ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/users/me"}
+{"level":"info","message":"[GET ME CONTROLLER] IN GET ME CONTROLLER ID 4b312a52-e374-47f1-a8a6-4b6a1fcbb11d"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/users/me in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/eb92fcca-dfc5-4f39-96bb-46de17a2c4a5"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/eb92fcca-dfc5-4f39-96bb-46de17a2c4a5 in 19ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/eb92fcca-dfc5-4f39-96bb-46de17a2c4a5/payment"}
+{"level":"error","message":"[ERROR] Already Paied","trace":"Error: Already Paied\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:24:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Already Paied"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/eb92fcca-dfc5-4f39-96bb-46de17a2c4a5/payment in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7 in 9ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment in 22ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 15ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart in 17ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products in 11ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this","trace":"Error: You Not Have Role to access this\n    at ExceptionsService.unauthorizedException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:58:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/restrictTo.middleware.ts:9:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at param (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:365:14)\n    at param (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:376:14)\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:421:3)"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 14ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"944f90eb-d2e7-4a5f-9bdd-863704ebb1b2\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"Amine\",\"lastName\":\"Slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 120ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"error","message":"[ERROR] Invalid vendor store add a store first","trace":"Error: Invalid vendor store add a store first\n    at ExceptionsService.unauthorizedException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:58:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/product/createProduct.controller.ts:16:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Invalid vendor store add a store first"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 13ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl vendor01@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"2f4a34e5-47fa-4c21-ba37-da169347de99\",\"email\":\"vendor01@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"01\",\"role\":\"vendor\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 104ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"error","message":"[ERROR] category not found","trace":"Error: category not found\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at Object.createProduct (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/product.repository.ts:77:24)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/product/createProduct.usecase.ts:24:28\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/product/createProduct.controller.ts:23:22"}
+{"level":"error","message":"[ERROR] category not found"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 21ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/categories?search=id:4"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/categories?search=id:4 in 7ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/categories?search=id:4"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this","trace":"Error: You Not Have Role to access this\n    at ExceptionsService.unauthorizedException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:58:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/restrictTo.middleware.ts:9:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] You Not Have Role to access this"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/categories?search=id:4 in 9ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl admin@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"944f90eb-d2e7-4a5f-9bdd-863704ebb1b2\",\"email\":\"admin@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"Amine\",\"lastName\":\"Slimani\",\"role\":\"admin\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 106ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/admin/categories?search=id:4"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/admin/categories?search=id:4 in 7ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl vendor01@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"2f4a34e5-47fa-4c21-ba37-da169347de99\",\"email\":\"vendor01@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"vendor\",\"lastName\":\"01\",\"role\":\"vendor\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 112ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"error","message":"[ERROR] category not found","trace":"Error: category not found\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at Object.createProduct (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/product.repository.ts:77:24)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/product/createProduct.usecase.ts:24:28\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/product/createProduct.controller.ts:23:22"}
+{"level":"error","message":"[ERROR] category not found"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 17ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"error","message":"[ERROR] category not found","trace":"Error: category not found\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at Object.createProduct (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/product.repository.ts:77:24)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/product/createProduct.usecase.ts:24:28\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/product/createProduct.controller.ts:23:22"}
+{"level":"error","message":"[ERROR] category not found"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/categories?search=id:4"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/categories?search=id:4 in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/categories"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/categories in 7ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/stores/1/products"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/stores/1/products in 12ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/admin/categories?search=id:15"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/admin/categories?search=id:15 in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/products"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/products in 7ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/login"}
+{"level":"info","message":"[LOGIN CONTROLLER] IN LOGIN EMAIl user01@gmail.com"}
+{"level":"info","message":"[LOGIN USE CASE] {\"id\":\"4b312a52-e374-47f1-a8a6-4b6a1fcbb11d\",\"email\":\"user01@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"user\",\"lastName\":\"01\",\"role\":\"user\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/login in 102ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 16ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart in 20ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 11ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 14ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/c9df55c4-d726-4588-a8d3-440f7a9e0844"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/c9df55c4-d726-4588-a8d3-440f7a9e0844 in 19ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725 in 9ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 12ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725 in 8ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725 in 12ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725 in 10ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment"}
+{"level":"error","message":"[ERROR] Already Paied","trace":"Error: Already Paied\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:24:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Already Paied"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/0a0c55c7-feaa-49f9-8d2b-9972ab4e8ff7/payment in 8ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725/payment"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725/payment in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 10ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 16ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 21ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 11ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 15ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 17ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 23ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 14ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 13ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725/payment"}
+{"level":"error","message":"[ERROR] Already Paied","trace":"Error: Already Paied\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:24:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Already Paied"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/134709ee-c559-46e4-b680-ad51a729a725/payment in 19ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 27ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 10ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/1c0deee1-9e36-4763-a803-cfb5ff21b2de/payment"}
+{"level":"error","message":"[ERROR] Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.","trace":"EntityPropertyNotFoundError: Property \"totalQuantity\" was not found in \"UserEntity\". Make sure your query is correct.\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:500:31\n    at Array.forEach (<anonymous>)\n    at UpdateQueryBuilder.createUpdateExpression (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:493:68)\n    at UpdateQueryBuilder.getQuery (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:53:21)\n    at UpdateQueryBuilder.getQueryAndParameters (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/QueryBuilder.ts:507:28)\n    at UpdateQueryBuilder.execute (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/src/query-builder/UpdateQueryBuilder.ts:142:50)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.updateOne (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/data/repositories/users.repository.ts:58:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/payOrder.usecase.ts:31:24\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:34:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/1c0deee1-9e36-4763-a803-cfb5ff21b2de/payment in 23ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 4b312a52-e374-47f1-a8a6-4b6a1fcbb11d"}
+{"level":"error","message":"[ERROR] Cannot read properties of undefined (reading 'id')","trace":"TypeError: Cannot read properties of undefined (reading 'id')\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/updateMyProfile.usecase.ts:36:33\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/updateMyProfile.controller.ts:17:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 11ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/1c0deee1-9e36-4763-a803-cfb5ff21b2de/payment"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/1c0deee1-9e36-4763-a803-cfb5ff21b2de/payment in 29ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 27ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 4b312a52-e374-47f1-a8a6-4b6a1fcbb11d"}
+{"level":"error","message":"[ERROR] Cannot read properties of undefined (reading 'id')","trace":"TypeError: Cannot read properties of undefined (reading 'id')\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/updateMyProfile.usecase.ts:36:33\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/updateMyProfile.controller.ts:17:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 10ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 4b312a52-e374-47f1-a8a6-4b6a1fcbb11d"}
+{"level":"error","message":"[ERROR] Cannot read properties of undefined (reading 'id')","trace":"TypeError: Cannot read properties of undefined (reading 'id')\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/updateMyProfile.usecase.ts:36:33\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/updateMyProfile.controller.ts:17:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 19ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 4b312a52-e374-47f1-a8a6-4b6a1fcbb11d"}
+{"level":"error","message":"[ERROR] Cannot read properties of undefined (reading 'id')","trace":"TypeError: Cannot read properties of undefined (reading 'id')\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/updateMyProfile.usecase.ts:37:33\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/updateMyProfile.controller.ts:17:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 23ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 4b312a52-e374-47f1-a8a6-4b6a1fcbb11d"}
+{"level":"error","message":"[ERROR] Cannot read properties of undefined (reading 'id')","trace":"TypeError: Cannot read properties of undefined (reading 'id')\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/updateMyProfile.usecase.ts:37:33\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/updateMyProfile.controller.ts:17:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 18ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/1c0deee1-9e36-4763-a803-cfb5ff21b2de/payment"}
+{"level":"error","message":"[ERROR] Already Paied","trace":"Error: Already Paied\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:24:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Already Paied"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/1c0deee1-9e36-4763-a803-cfb5ff21b2de/payment in 11ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 19ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/1c0deee1-9e36-4763-a803-cfb5ff21b2de/payment"}
+{"level":"error","message":"[ERROR] Already Paied","trace":"Error: Already Paied\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:24:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Already Paied"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/1c0deee1-9e36-4763-a803-cfb5ff21b2de/payment in 5ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/fd838d4d-aaf0-427d-983e-329a6ff53657/payment"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/fd838d4d-aaf0-427d-983e-329a6ff53657/payment in 19ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 7ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 4b312a52-e374-47f1-a8a6-4b6a1fcbb11d"}
+{"level":"error","message":"[ERROR] Cannot read properties of undefined (reading 'id')","trace":"TypeError: Cannot read properties of undefined (reading 'id')\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/users/updateMyProfile.usecase.ts:37:33\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/auth/updateMyProfile.controller.ts:17:22"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 17ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 4b312a52-e374-47f1-a8a6-4b6a1fcbb11d"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 20ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"error","message":"[ERROR] you have not a cart ","trace":"Error: you have not a cart \n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/getUserCartProduct.controller.ts:15:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] you have not a cart "}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"error","message":"[ERROR] you have not a cart ","trace":"Error: you have not a cart \n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/getUserCartProduct.controller.ts:15:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] you have not a cart "}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 10ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/fd838d4d-aaf0-427d-983e-329a6ff53657/payment"}
+{"level":"error","message":"[ERROR] Already Paied","trace":"Error: Already Paied\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:24:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Already Paied"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/fd838d4d-aaf0-427d-983e-329a6ff53657/payment in 13ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"error","message":"[ERROR] you have not a cart ","trace":"Error: you have not a cart \n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/getUserCartProduct.controller.ts:15:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] you have not a cart "}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 5ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"0abc3c00-3b4c-40e7-baa7-21afff815a0a\",\"email\":\"user02@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"user\",\"lastName\":\"02\",\"role\":\"user\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":32,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 130ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 18ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 0abc3c00-3b4c-40e7-baa7-21afff815a0a"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"error","message":"[ERROR] you have not a cart ","trace":"Error: you have not a cart \n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/cartProduct/getUserCartProduct.controller.ts:15:26\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/layer.js:95:5)\n    at /Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:284:15\n    at Function.process_params (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/Users/macmini/Desktop/projects/softyshop-backend/node_modules/express/lib/router/index.js:280:10)\n    at isAuthentictedMiddleware (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/middlewares/auth/isAuthenticated.middleware.ts:67:5)"}
+{"level":"error","message":"[ERROR] you have not a cart "}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 14ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/auth/register"}
+{"level":"info","message":"[REGISTER USE CASE] {\"id\":\"99ac4af7-8d67-4e6a-8845-3f8036fc138e\",\"email\":\"user03@gmail.com\",\"isVerified\":true,\"picture\":\"http://localhost:3000/images/default.png\",\"firstName\":\"user\",\"lastName\":\"03\",\"role\":\"user\",\"phoneNumber\":\"56251081\",\"confirmation_token\":null,\"confirmed_email\":true,\"cart\":{\"id\":33,\"totalQuantity\":0,\"totalAmount\":0}}"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/auth/register in 123ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 20ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/users/update-me"}
+{"level":"info","message":"[UPDATE MY PROFILE CONTROLLER] IN UPDATE MY PROFILE CONTROLLER ID 99ac4af7-8d67-4e6a-8845-3f8036fc138e"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/users/update-me in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 13ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart in 13ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart in 18ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 13ms"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 6ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/1de39044-4b25-4ac3-a8a2-2e728a8783b0"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/1de39044-4b25-4ac3-a8a2-2e728a8783b0 in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/orders/1de39044-4b25-4ac3-a8a2-2e728a8783b0"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/orders/1de39044-4b25-4ac3-a8a2-2e728a8783b0 in 11ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 17ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/fd838d4d-aaf0-427d-983e-329a6ff53657/payment"}
+{"level":"error","message":"[ERROR] Already Paied","trace":"Error: Already Paied\n    at ExceptionsService.badRequestException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:55:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/payOrder.controller.ts:24:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Already Paied"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/fd838d4d-aaf0-427d-983e-329a6ff53657/payment in 15ms"}
+{"level":"info","message":"[REQUEST] Received PATCH request at /v1/api/shopping/my-cart/orders/1de39044-4b25-4ac3-a8a2-2e728a8783b0/payment"}
+{"level":"info","message":"[RESPONSE] Responded to PATCH request at /v1/api/shopping/my-cart/orders/1de39044-4b25-4ac3-a8a2-2e728a8783b0/payment in 23ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"error","message":"[ERROR] Order not found","trace":"Error: Order not found\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/usecases/api/orders/my-orders.usecase.ts:34:24\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/my-orders.controller.ts:13:21"}
+{"level":"error","message":"[ERROR] Order not found"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 9ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 51ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart/my-orders"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart/my-orders in 15ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /v1/api/shopping/my-cart"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /v1/api/shopping/my-cart in 17ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 24ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 24ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 26ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received POST request at /v1/api/shopping/my-cart/orders"}
+{"level":"error","message":"[ERROR] Cart not found","trace":"Error: Cart not found\n    at ExceptionsService.notFoundException (/Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/core/errors/exceptions.ts:61:11)\n    at /Users/macmini/Desktop/projects/softyshop-backend/app/src/v1/presenters/controllers/api/orders/createOrder.controller.ts:24:26\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+{"level":"error","message":"[ERROR] Cart not found"}
+{"level":"info","message":"[RESPONSE] Responded to POST request at /v1/api/shopping/my-cart/orders in 19ms"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}

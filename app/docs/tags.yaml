@@ -37,3 +37,6 @@ tags:
 
   - name: cart
     description: cart Cruds
+
+  - name: orders
+    description: orders Cruds

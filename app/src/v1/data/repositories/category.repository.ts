@@ -53,7 +53,7 @@ export const categoryRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   }): Promise<QueryResult<ICategory>> {
     const result = await ApiFeatures.generateSqlQuery(
       dataSource,
-      "category",
+      "categories",
       queryParams,
       {
         id: {
@@ -77,7 +77,6 @@ export const categoryRepoBase = (dbConnection: DataSource | QueryRunner) => ({
     store: ICategory,
     payload: Partial<CategoryEntity>
   ): Promise<ICategory> {
-    console.log("🚀 ~ categoryRepoBase ~ payload:", payload);
 
     await this.manager.update(
       CategoryEntity,

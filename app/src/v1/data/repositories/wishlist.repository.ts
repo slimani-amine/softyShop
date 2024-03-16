@@ -31,9 +31,7 @@ export const wishlistRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   async findAll(
     findData: FindManyOptions<WishlistEntity>
   ): Promise<any[]> {
-    console.log("🚀 ~ wishlistRepoBase ~ findData:", findData)
     const wishlists = await this.manager.find(WishlistEntity, findData);
-    console.log("🚀 ~ wishlistRepoBase ~ wishlists:", wishlists)
     return wishlists;
   },
 

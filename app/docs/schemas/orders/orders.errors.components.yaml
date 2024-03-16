@@ -1,0 +1,28 @@
+components:
+  schemas:
+    OrderEntityValidationError:
+      allOf:
+        - $ref: "#/components/schemas/ValidationErrorBase"
+        - type: object
+          required:
+            - errors
+          properties:
+            errors:
+              type: object
+              properties:
+                estimatedDeliveryDate:
+                  type: string
+                status:
+                  type: string
+                paymentMethod:
+                  type: string
+                address:
+                  type: string
+                cart:
+                  type: string
+                deletedAt:
+                  type: string
+                createdAt:
+                  type: string
+                updatedAt:
+                  type: string

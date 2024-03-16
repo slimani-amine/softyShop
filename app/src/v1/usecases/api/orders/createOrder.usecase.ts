@@ -15,12 +15,10 @@ export const createOrderUseCaseBase =
   ): createOrderUseCaseType =>
   async (payload: ICreateOrderInput) => {
     const orderCreated = await dependencies.orderRepo.createOrder(payload);
-
     return {
       order: orderCreated,
     };
   };
-
 
 
 export const createOrderUseCase: createOrderUseCaseType =

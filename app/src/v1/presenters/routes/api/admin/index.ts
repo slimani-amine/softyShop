@@ -39,12 +39,12 @@ export function getAdminApiRouter(
   router.use(isAuthentictedMiddleware);
 
   router
-    .route("/category")
+    .route("/categories")
     .post(restrictToMiddleware("admin"), controllers.createCategory) // create a category (only for admin)
-    .get(restrictToMiddleware("admin", "vendor"), controllers.getCategories); // get all categories (only for admin or vendor)
+    .get(controllers.getCategories); // get all categories (only for admin or vendor)
 
   router
-    .route("/category/:categoryId")
+    .route("/categories/:categoryId")
     .patch(restrictToMiddleware("admin"), controllers.updateCategory) // update a category (only for admin)
     .delete(restrictToMiddleware("admin"), controllers.deleteCategory); // delete a category (only for admin)
 
@@ -53,7 +53,7 @@ export function getAdminApiRouter(
     .post(restrictToMiddleware("admin"), controllers.createPaymentMethod) // create a payment method (only for admin)
     .get(
       restrictToMiddleware("admin", "vendor"),
-      controllers.getPaymentMethods 
+      controllers.getPaymentMethods
     ); // get payment methods (only for admin or vendor)
 
   router
@@ -61,8 +61,8 @@ export function getAdminApiRouter(
     .delete(restrictToMiddleware("admin"), controllers.deletePaymentMethod) // delete payment method (only for admin)
     .patch(
       restrictToMiddleware("admin", "vendor"),
-      controllers.updatePaymentMethod 
-    );// update payment method (only for admin or vendor)
+      controllers.updatePaymentMethod
+    ); // update payment method (only for admin or vendor)
 
   return router;
 }

@@ -18,8 +18,6 @@ export const updateOrderUseCaseBase =
     }
   ): updateOrderUseCaseType =>
   async (order: IOrder, payload: Partial<IOrder>) => {
-   ;
-
     const updatedOrder = await dependencies.orderRepo.updateOrder(
       order,
       payload as any
@@ -27,7 +25,6 @@ export const updateOrderUseCaseBase =
 
     return updatedOrder;
   };
-
 
 export const updateOrderUseCase: updateOrderUseCaseType =
   updateOrderUseCaseBase({

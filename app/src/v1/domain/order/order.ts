@@ -7,6 +7,7 @@ export interface IOrder extends IIdAsNumber {
   id: string;
   estimatedDeliveryDate: Date;
   status: string;
+  isPaied?: boolean;
   paymentMethod?: IPaymentMethod; 
   address?: IAddress; 
   cart?: ICart; 
@@ -16,6 +17,7 @@ export class Order extends NumberId implements IOrder {
   id: string;
   estimatedDeliveryDate: Date;
   status: string;
+  isPaied?: boolean;
   paymentMethod?: IPaymentMethod; 
   address?: IAddress;
   cart?: ICart; 
@@ -24,6 +26,7 @@ export class Order extends NumberId implements IOrder {
     id: string;
     estimatedDeliveryDate: Date;
     status: string;
+    isPaied?: boolean;
     paymentMethod?: IPaymentMethod;
     address?: IAddress;
     cart?: ICart;
@@ -31,6 +34,7 @@ export class Order extends NumberId implements IOrder {
     super(payload.id);
     this.estimatedDeliveryDate = payload.estimatedDeliveryDate;
     this.status = payload.status;
+    this.isPaied = payload.isPaied;
     this.paymentMethod = payload.paymentMethod;
     this.address = payload.address;
     this.cart = payload.cart;
@@ -40,5 +44,6 @@ export class Order extends NumberId implements IOrder {
 export interface ICreateOrderInput {
   paymentMethod_id?: string;
   address_id?: string;
-  cart_id: string;
+  cartId: string;
+  userId: string;
 }

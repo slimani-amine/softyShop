@@ -93,7 +93,7 @@ export function getStoresApiRouter(
 
   router
     .route("/")
-    .get(restrictToMiddleware("admin", "user"), controllers.getStore) // get all stores
+    .get(controllers.getStore) // get all stores
     .post(
       validateSchemaMiddleware(createStoreSchema, VALIDATION_PATHS.BODY),
       restrictToMiddleware("admin", "vendor"),
