@@ -1,5 +1,5 @@
 paths:
-  /api/admin/category:
+  /api/admin/categories:
     get:
       summary: Get all categories
       description: Get all categories (only for admin or vendor).
@@ -14,16 +14,19 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
                         type: object
                         properties:
-                          categories:
+                          docs:
                             type: array
                             items:
-                              $ref: "#/components/schemas/Category"
+                            $ref: "#/components/schemas/Category"
+                          meta:
+                            $ref: "#/components/schemas/Meta"
+
         "500":
           description: Internal server error!
           content:

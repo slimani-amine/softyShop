@@ -9,12 +9,6 @@ paths:
       description: Delete a product from the user's cart.
       parameters:
         - in: path
-          name: userId
-          required: true
-          description: The ID of the user.
-          schema:
-            type: string
-        - in: path
           name: productId
           required: true
           description: The ID of the product to be deleted from the cart.

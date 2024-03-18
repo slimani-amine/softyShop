@@ -1,6 +1,6 @@
 components:
   schemas:
-    ReviewsEntityValidationError:
+    ReviewsEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object

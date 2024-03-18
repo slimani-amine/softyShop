@@ -12,22 +12,36 @@ components:
       properties:
         email:
           type: string
+          example: admin@gmail.com
         isVerified:
           type: boolean
+          example: true
         firstName:
           type: string
+          example: Admin
         lastName:
           type: string
+          example: 01
         picture:
           type: string
+          example: https://lh3.googleusercontent.com/...
           description: profile picture link
         role:
           type: string
+          example: admin
           enum:
             - admin
             - user
             - vendor
-        
+        cart:
+          type: object
+          required:
+            - email
+          properties:
+            id:
+              type: string
+              example: 60
+
     UserLogin:
       type: object
       required:
@@ -37,9 +51,11 @@ components:
         email:
           type: string
           description: The email of the user
+          example: user01@gmail.com
         password:
           type: string
           description: The password of the user
+          example: testpassword123@A
 
     UserRegister:
       type: object
@@ -54,46 +70,49 @@ components:
         firstName:
           type: string
           description: The name of the user
+          example: vendor
         lastName:
           type: string
           description: The name of the user
+          example: 01
         email:
           type: string
           description: The email of the user
+          example: vendor01@gmail.com
         password:
           type: string
-          description: The password of the user (must at least be 12 characters long)
+          description: The password of the user (must at least be 8 characters long)
+          example: testpassword123@A
         picture:
           type: file
           description: profile picture
         role:
           type: string
+          description: The role of the user
+          example: vendor
           enum:
             - admin
             - user
             - vendor
-        
+
     UpdateUser:
       type: object
       properties:
         firstName:
           type: string
-          description: The name of the user
+          description: The first name of the user
+          example: vendor
         lastName:
           type: string
           description: The last name of the user
+          example: 01
         email:
           type: string
           description: The email of the user
+          example: vendor01@gmail.com
         picture:
           type: file
           description: profile picture
-        role:
-          type: string
-          enum:
-            - admin
-            - user
-            - vendor
 
     UpdateUserPassword:
       type: object
@@ -128,9 +147,9 @@ components:
         newPassword:
           type: string
           description: The password of the user
-        verifyNewPassword:
-          type: string
-          description: The confirmPassword of the user
+        # verifyNewPassword:
+        #   type: string
+        #   description: The confirmPassword of the user
         token:
           type: string
           description: The token of the user

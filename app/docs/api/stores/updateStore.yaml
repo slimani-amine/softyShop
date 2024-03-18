@@ -1,30 +1,43 @@
 paths:
-  /api/store:
-    post:
+  /api/stores/{id}:
+    patch:
       tags:
         - Store
-      summary: Create a new store
-      description: Create a new store.
+      summary: Update a store
+      description: Update a store.
       security:
         - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the store to update
+          schema:
+            type: string
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateStoreInput"
+              $ref: "#/components/schemas/UpdateStoreInput"
       responses:
         "201":
-          description: Store created successfully
+          description: Store updated successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
                         $ref: "#/components/schemas/Store"
+        "404":
+          description: Store not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
         "422":
           description: Validation Error
           content:

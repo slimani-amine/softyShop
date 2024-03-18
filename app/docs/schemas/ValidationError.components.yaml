@@ -1,0 +1,11 @@
+components:
+  schemas:
+    /ValidationError:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Validation error.
+          example: "Validation error"
+      required:
+        - message

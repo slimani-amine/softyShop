@@ -1,6 +1,6 @@
 components:
   schemas:
-    ProductValidationError:
+    Product/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object

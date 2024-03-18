@@ -20,9 +20,9 @@ import { exceptionService } from "../../core/errors/exceptions";
 
 export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   manager: dbConnection.manager,
-  async findOne(findData: FindOneOptions<StoreEntity>): Promise<IStore> {
+  async findOne(findData: FindOneOptions<StoreEntity>): Promise<any> {
     const store = await this.manager.findOne(StoreEntity, findData);
-    return this.toDomainStore(store);
+    return store;
   },
 
   async findAll(findData: FindManyOptions<StoreEntity>): Promise<IStore[]> {
@@ -38,16 +38,6 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   },
 
   async createStore(payload: ICreateStoreInput): Promise<IStore> {
-    const vendor = await this.manager.findOne(UserEntity, {
-      where: { id: payload.vendor_id },
-    });
-
-    if (!vendor) {
-      exceptionService.notFoundException({
-        message: "Vendor not found",
-      });
-    }
-
     const store = this.manager.create(StoreEntity, {
       name: payload.name,
       phoneNumber: payload.phoneNumber,
@@ -56,27 +46,25 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
       location: JSON.stringify(payload.location),
       address: payload.address,
       socialMediaLinks: JSON.stringify(payload.socialMediaLinks),
-      user: vendor,
+      user: { id: payload.vendor_id },
     } as DeepPartial<StoreEntity>);
 
     const result = await this.manager.save(StoreEntity, store);
     return this.toDomainStore(result);
   },
 
-  async updateStore(
-    store: IStore,
-    payload: Partial<StoreEntity>
-  ): Promise<IStore> {
+  async updateStore(store: IStore, payload: Partial<any>): Promise<IStore> {
+    console.log("🚀 ~ storeRepoBase ~ payload:", payload);
     await this.manager.update(
       StoreEntity,
       {
-        id: store.getIdAsNumber(),
+        id: store.id,
       },
       payload
     );
     const updatedStore = await this.manager.findOne(StoreEntity, {
       where: {
-        id: store.getIdAsNumber().toString(),
+        id: store.id,
       },
     });
     return this.toDomainStore(updatedStore);
@@ -96,7 +84,7 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
 
   async deleteStore(store: IStore): Promise<number> {
     const result = await this.manager.softDelete(StoreEntity, {
-      id: store.getIdAsNumber(),
+      id: store.id,
     });
     return result !== null ? 1 : 0;
   },
@@ -125,6 +113,12 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
         },
         address: {
           operator: "like",
+        },
+        vendor_id: {
+          operator: "eq",
+        },
+        phoneNumber: {
+          operator: "eq",
         },
       }
     );
@@ -162,7 +156,7 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
 export const storeRepo = storeRepoBase(dataSource);
 
 export interface IStoreRepository {
-  findOne(findData: FindOneOptions<StoreEntity>): Promise<IStore>;
+  findOne(findData: FindOneOptions<StoreEntity>): Promise<any>;
   findAll(findData: FindManyOptions<StoreEntity>): Promise<IStore[]>;
   findMyStores(findOptions: FindManyOptions<StoreEntity>): Promise<IStore[]>;
   findByQuery(queryParams: {
@@ -170,7 +164,7 @@ export interface IStoreRepository {
   }): Promise<QueryResult<IStore>>;
 
   createStore(payload: ICreateStoreInput): Promise<IStore>;
-  updateStore(store: IStore, payload: Partial<StoreEntity>): Promise<IStore>;
+  updateStore(store: IStore, payload: Partial<any>): Promise<IStore>;
   updateMany(updatePayload: {
     where: FindManyOptions<StoreEntity>;
     data: StoresUpdateDataPayload;

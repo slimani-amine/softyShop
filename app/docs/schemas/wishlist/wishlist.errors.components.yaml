@@ -1,8 +1,8 @@
 components:
   schemas:
-    WishlistValidationError:
+    Wishlist/ValidationError:
       allOf:
-        - $ref: '#/components/schemas/ValidationErrorBase'
+        - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
           required:
             - errors
@@ -15,7 +15,7 @@ components:
                 productId:
                   type: string
 
-    ValidationErrorBase:
+    /ValidationErrorBase:
       type: object
       properties:
         error:

@@ -14,10 +14,10 @@ components:
           example: 56251081
         city:
           type: string
-          example: San Francisco
+          example: Sousse
         state:
           type: string
-          example: CA
+          example: Sahloul
         zipCode:
           type: number
           example: 1005
@@ -31,22 +31,31 @@ components:
       properties:
         address:
           type: string
+          example: 123 Main St.
         phoneNumber:
           type: string
+          example: 56251081
         city:
           type: string
+          example: Sousse
         state:
           type: string
+          example: Sahloul
         zipCode:
           type: number
+          example: 1005
     UpdateAddressInput:
       type: object
       properties:
         address:
           type: string
+          example: 123 Main St.
         city:
           type: string
+          example: Sousse
         state:
           type: string
+          example: Sahloul
         zipCode:
           type: number
+          example: 1005

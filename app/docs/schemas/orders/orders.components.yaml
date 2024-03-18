@@ -1,13 +1,15 @@
 components:
   schemas:
-    OrderEntity:
+    orders:
       type: object
       properties:
         id:
           type: string
+          example: c251b9c2-9f6e-4add-8c2c-3dbd14b34bbc
         estimatedDeliveryDate:
           type: string
-          format: date-time
+          format: date
+          example: 2024-03-20
         status:
           type: string
           enum:
@@ -15,18 +17,40 @@ components:
             - on_delivery
             - livered
             - cancelled
+          example: on_delivery
         paymentMethod:
-          $ref: "#/components/schemas/PaymentMethodEntity"
+          type: object
+          properties:
+            id:
+              type: string
+              example: 1
+            name:
+              type: string
+              example: PayPal
         address:
-          $ref: "#/components/schemas/AddressesEntity"
+          type: object
+          properties:
+            street:
+              type: string
+              example: 123 Main St
+            city:
+              type: string
+              example: New York
+            state:
+              type: string
+              example: NY
+              postalCode:
+                type: string
+                example: 10001
         cart:
-          $ref: "#/components/schemas/CartEntity"
-        deletedAt:
-          type: string
-          format: date-time
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
+          type: object
+          properties:
+            id:
+              type: string
+              example: 1
+            tottalQuantity:
+              type: number
+              example: 10
+            totalPrice:
+              type: number
+              example: 1000

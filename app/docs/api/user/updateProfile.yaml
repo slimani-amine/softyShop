@@ -20,7 +20,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     required:
                       - data
@@ -44,7 +44,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/UpdateProfileValidationError"
+                $ref: "#/components/schemas/UpdateProfile/ValidationError"
         500:
           description: Internal server error!
           content:

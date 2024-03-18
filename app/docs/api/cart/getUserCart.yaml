@@ -7,13 +7,6 @@ paths:
       security:
         - BearerAuth: []
       description: Get all carts for a specific user.
-      parameters:
-        - in: path
-          name: userId
-          required: true
-          description: The ID of the user.
-          schema:
-            type: string
       responses:
         "200":
           description: carts retrieved successfully

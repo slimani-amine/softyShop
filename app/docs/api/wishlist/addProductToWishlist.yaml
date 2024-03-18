@@ -37,7 +37,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/WishlistValidationError"
+                $ref: "#/components/schemas/Wishlist/ValidationError"
         "500":
           description: Internal server error!
           content:

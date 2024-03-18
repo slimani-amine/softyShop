@@ -13,7 +13,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Success"
+                $ref: "#/components/schemas/SuccessMsg"
         401:
           description: Unauthorized
           content:

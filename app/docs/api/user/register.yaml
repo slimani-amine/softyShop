@@ -18,7 +18,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
@@ -33,7 +33,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RegisterValidationError"
+                $ref: "#/components/schemas/Register/ValidationError"
         500:
           description: Internal server error!
           content:

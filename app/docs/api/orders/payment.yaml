@@ -7,11 +7,13 @@ paths:
       security:
         - BearerAuth: []
       description: pay the order
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/orders"
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The ID of the order.
+          schema:
+            type: string
       responses:
         "201":
           description: Order updated successfully
@@ -29,7 +31,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ordersValidationError"
+                $ref: "#/components/schemas/orders/ValidationError"
         "500":
           description: Internal server error!
           content:

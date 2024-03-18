@@ -40,6 +40,7 @@ export class Store extends NumberId implements IStore {
     super(payload.id);
     this.name = payload.name;
     this.logo = payload.logo;
+    this.phoneNumber = payload.phoneNumber;
     this.isPublished = payload.isPublished;
     this.location = payload.location;
     this.address = payload.address;

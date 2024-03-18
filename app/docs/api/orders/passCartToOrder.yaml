@@ -6,13 +6,30 @@ paths:
       summary: Add cart to order
       security:
         - BearerAuth: []
-      description: Add a cart to an order 
+      description: Add a cart to an order
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The ID of the order.
+          schema:
+            type: string
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/orders"
+              properties:
+                paymentMethod_id:
+                  type: string
+                  description: The ID of the payment method.
+                  example: 12
+                  required: true
+                address_id:
+                  type: string
+                  description: The ID of the address.
+                  example: 12
+                  required: true
       responses:
         "201":
           description: Order added to cart successfully
@@ -30,7 +47,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ordersValidationError"
+                $ref: "#/components/schemas/orders/ValidationError"
         "500":
           description: Internal server error!
           content:

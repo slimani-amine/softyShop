@@ -1,0 +1,11 @@
+components:
+  schemas:
+    SuccessMsg:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Success.
+          example: successfully
+      required:
+        - message

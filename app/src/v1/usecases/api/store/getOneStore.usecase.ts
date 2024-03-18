@@ -13,7 +13,13 @@ export const getOneStoreUseCaseBase =
   (dependencies: { storeRepo: IStoreRepository }) =>
   async (queryParams: { [id: string]: any }) => {
     const storesFound = await dependencies.storeRepo.findOne({
+      relations: {
+        user: true,
+      },
       where: { id: queryParams.id },
+      select: {
+        user: { id: true, email: true },
+      },
     });
     if (!storesFound) {
       exceptionService.notFoundException({

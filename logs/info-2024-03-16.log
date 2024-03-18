@@ -419,3 +419,64 @@
 {"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
 {"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
 {"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 6ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 1ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 3ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 1ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 4ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 0ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 2ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 0ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 4ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 1ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 1ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 1ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}
+{"level":"info","message":"[APP] SERVER IS NOW LISTENING AT PORT  3000"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/ in 4ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui.css"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-bundle.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-standalone-preset.js"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/swagger-ui-init.js"}
+{"level":"info","message":"[RESPONSE] Responded to GET request at /api-docs/swagger-ui-init.js in 0ms"}
+{"level":"info","message":"[REQUEST] Received GET request at /api-docs/favicon-32x32.png"}

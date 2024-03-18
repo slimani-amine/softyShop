@@ -1,18 +1,12 @@
 paths:
   /api/shopping/my-cart/my-orders:
-    post:
+    get:
       tags:
         - orders
       summary: get my orders
       security:
         - BearerAuth: []
       description: get my orders
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/orders"
       responses:
         "201":
           description: Order added to cart successfully
@@ -24,13 +18,15 @@ paths:
                   - type: object
                     properties:
                       data:
-                        $ref: "#/components/schemas/orders"
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/orders"
         "422":
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ordersValidationError"
+                $ref: "#/components/schemas/orders/ValidationError"
         "500":
           description: Internal server error!
           content:

@@ -1,6 +1,6 @@
 components:
   schemas:
-    StoreEntityValidationError:
+    StoreEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -31,7 +31,7 @@ components:
                 updatedAt:
                   type: string
 
-    ProductEntityValidationError:
+    ProductEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -66,7 +66,7 @@ components:
                 updatedAt:
                   type: string
 
-    BrandEntityValidationError:
+    BrandEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -91,7 +91,7 @@ components:
                 updatedAt:
                   type: string
 
-    ProductCreatorEntityValidationError:
+    ProductCreatorEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -116,7 +116,7 @@ components:
                 updatedAt:
                   type: string
 
-    ReviewsEntityValidationError:
+    ReviewsEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -141,7 +141,7 @@ components:
                 updatedAt:
                   type: string
 
-    UserEntityValidationError:
+    UserEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -190,7 +190,7 @@ components:
                 updatedAt:
                   type: string
 
-    ResetPasswordEntityValidationError:
+    ResetPasswordEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -215,7 +215,7 @@ components:
                 updatedAt:
                   type: string
 
-    AddressesEntityValidationError:
+    AddressesEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -246,7 +246,7 @@ components:
                 updatedAt:
                   type: string
 
-    WishlistEntityValidationError:
+    WishlistEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -267,7 +267,7 @@ components:
                 updatedAt:
                   type: string
 
-    CartEntityValidationError:
+    CartEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object

@@ -1,7 +1,15 @@
 components:
   schemas:
-    StoreEntity:
+    Store:
       type: object
+      required:
+        - name
+        - phoneNumber
+        - logo
+        - location
+        - address
+        - socialMediaLinks
+        - vendor_id
       properties:
         id:
           type: string
@@ -17,20 +25,20 @@ components:
           type: string
         socialMediaLinks:
           type: string
-        products:
-          type: array
-          items:
-            $ref: "#/components/schemas/ProductEntity"
-        brands:
-          type: array
-          items:
-            $ref: "#/components/schemas/BrandEntity"
-        productCreators:
-          type: array
-          items:
-            $ref: "#/components/schemas/ProductCreatorEntity"
-        user:
-          $ref: "#/components/schemas/UserEntity"
+        # products:
+        #   type: array
+        #   items:
+        #     $ref: "#/components/schemas/ProductEntity"
+        # brands:
+        #   type: array
+        #   items:
+        #     $ref: "#/components/schemas/BrandEntity"
+        # productCreators:
+        #   type: array
+        #   items:
+        #     $ref: "#/components/schemas/ProductCreatorEntity"
+        # user:
+        #   $ref: "#/components/schemas/UserEntity"
         deletedAt:
           type: string
           format: date-time
@@ -40,3 +48,69 @@ components:
         updatedAt:
           type: string
           format: date-time
+    CreateStoreInput:
+      type: object
+      required:
+        - name
+        - phoneNumber
+        - logo
+        - location
+        - address
+        - socialMediaLinks
+        - vendor_id
+      properties:
+        name:
+          type: string
+          example: SoftyBook
+        phoneNumber:
+          type: string
+          example: 987654321
+        logo:
+          type: string
+          example: https://sofybook.com/images/logo.png
+        location:
+          type: array
+          example: ["123.123", "105.99"]
+          items:
+            type: string
+        address:
+          type: string
+          example: 123 Main Street
+        socialMediaLinks:
+          type: array
+          example: ["facebook.com", "instagram.com"]
+          items:
+            type: string
+    UpdateStoreInput:
+      type: object
+      required:
+        - name
+        - phoneNumber
+        - logo
+        - location
+        - address
+        - socialMediaLinks
+        - vendor_id
+      properties:
+        name:
+          type: string
+          example: SoftyBook
+        phoneNumber:
+          type: string
+          example: 987654321
+        logo:
+          type: string
+          example: https://sofybook.com/images/logo.png
+        location:
+          type: array
+          example: ["123.123", "105.99"]
+          items:
+            type: string
+        address:
+          type: string
+          example: 123 Main Street
+        socialMediaLinks:
+          type: array
+          example: ["facebook.com", "instagram.com"]
+          items:
+            type: string

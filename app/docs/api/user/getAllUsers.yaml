@@ -1,0 +1,39 @@
+paths:
+  /api/users:
+    get:
+      security:
+        - BearerAuth: []
+      tags:
+        - Users
+      summary: get all users
+      description: get all users information
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/SuccessMsg"
+                  - type: object
+                    required:
+                      - data
+                    properties:
+                      docs:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/User"
+                      meta:
+                        $ref: "#/components/schemas/Meta"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        500:
+          description: Internal server error!
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"

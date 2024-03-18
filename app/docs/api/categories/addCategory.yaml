@@ -1,5 +1,5 @@
 paths:
-  /api/admin/category:
+  /api/admin/categories:
     post:
       summary: Create a category
       description: Create a category (only for admin).
@@ -21,7 +21,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:

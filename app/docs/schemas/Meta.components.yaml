@@ -1,0 +1,26 @@
+components:
+  schemas:
+    Meta:
+      type: object
+      required:
+        - currentPage
+        - prevPage
+        - nextPage
+        - totalPages
+        - totalRecords
+      properties:
+        currentPage:
+          type: number
+          example: 1
+        prevPage:
+          type: number
+          example: 1
+        nextPage:
+          type: number
+          example: 1
+        totalPages:
+          type: number
+          example: 1
+        totalRecords:
+          type: number
+          example: 1

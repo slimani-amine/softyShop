@@ -3,12 +3,37 @@ components:
     cart:
       type: object
       required:
-        - userId
-        - productId
+        - id
+        - totalQuantity
+        - totalAmount
       properties:
-        productId:
+        id:
           type: string
           description: The ID of the product in the cart
+          example: 1
+        totalQuantity:
+          type: integer
+          description: The total number of items in the cart
+          example: 1
+        totalAmount:
+          type: number
+          description: The total amount of items in the cart
+          example: 100
+
+    AddProductToCart:
+      type: object
+      required:
+        - quantity
+        - productId
+      properties:
+        quantity:
+          type: integer
+          description: The number of items to add to the cart
+          example: 1
+        productId:
+          type: string
+          description: The ID of the product to add to the cart
+          example: 1
 
   securitySchemes:
     BearerAuth:

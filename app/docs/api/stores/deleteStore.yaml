@@ -1,49 +1,41 @@
 paths:
-  /api/store/{id}:
-    patch:
+  /api/stores/{id}:
+    delete:
       tags:
         - Store
-      summary: Update a store
-      description: Update a store.
+      summary: Delete a store
+      description: Delete a store.
       security:
         - BearerAuth: []
       parameters:
         - name: id
           in: path
           required: true
-          description: ID of the store to update
+          description: ID of the store to delete
           schema:
             type: string
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/UpdateStoreInput"
       responses:
-        "201":
-          description: Store updated successfully
+        "200":
+          description: Success
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
-                        $ref: "#/components/schemas/Store"
+                        type: object
+                        properties:
+                          success:
+                            type: boolean
+                            description: Indicates if the deletion was successful
         "404":
           description: Store not found
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/NotFoundError"
-        "422":
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ValidationError"
         "500":
           description: Internal server error!
           content:

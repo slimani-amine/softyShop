@@ -1,6 +1,6 @@
 components:
   schemas:
-    StoreEntityValidationError:
+    StoreEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object

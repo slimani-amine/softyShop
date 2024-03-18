@@ -20,7 +20,8 @@ const createOrderControllerBase =
           cartProducts: true,
         },
       });
-      if ((cart[0].cartProducts.length)  === 0) {
+
+      if (cart[0].totalQuantity === 0) {
         exceptionService.notFoundException({
           message: "Empty Cart",
         });

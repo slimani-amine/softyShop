@@ -41,7 +41,7 @@ components:
           type: string
           format: date-time
 
-    StoreEntityValidationError:
+    StoreEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -107,7 +107,7 @@ components:
           type: string
           format: date-time
 
-    ProductEntityValidationError:
+    ProductEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -167,7 +167,7 @@ components:
           type: string
           format: date-time
 
-    BrandEntityValidationError:
+    BrandEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -217,7 +217,7 @@ components:
           type: string
           format: date-time
 
-    ProductCreatorEntityValidationError:
+    ProductCreatorEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -265,7 +265,7 @@ components:
           type: string
           format: date-time
 
-    ReviewsEntityValidationError:
+    ReviewsEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -347,7 +347,7 @@ components:
           type: string
           format: date-time
 
-    UserEntityValidationError:
+    UserEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -420,7 +420,7 @@ components:
           type: string
           format: date-time
 
-    ResetPasswordEntityValidationError:
+    ResetPasswordEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -474,7 +474,7 @@ components:
           type: string
           format: date-time
 
-    AddressesEntityValidationError:
+    AddressesEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -526,7 +526,7 @@ components:
           type: string
           format: date-time
 
-    WishlistEntityValidationError:
+    WishlistEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object
@@ -568,7 +568,7 @@ components:
           type: string
           format: date-time
 
-    CartEntityValidationError:
+    CartEntity/ValidationError:
       allOf:
         - $ref: "#/components/schemas/ValidationErrorBase"
         - type: object

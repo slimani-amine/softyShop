@@ -5,6 +5,7 @@ components:
       required:
         - name
         - icon
+        - isPublished
       properties:
         name:
           type: string
@@ -12,3 +13,6 @@ components:
         icon:
           type: string
           description: The icon representing the category
+        isPublished:
+          type: boolean
+          description: Whether or not the category is published

@@ -12,28 +12,28 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateAddressInput'
+              $ref: "#/components/schemas/CreateAddressInput"
       responses:
-        '201':
+        "201":
           description: Address created successfully
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/SuccessMsg'
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
-                        $ref: '#/components/schemas/Address'
-        '422':
+                        $ref: "#/components/schemas/Address"
+        "422":
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddressValidationError'
-        '500':
+                $ref: "#/components/schemas/Address/ValidationError"
+        "500":
           description: Internal server error!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"

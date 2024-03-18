@@ -9,7 +9,7 @@ export const myStoreMiddleware = async (
   const storeId = req.params.id;
   const userId = req.user.id;
   const role = req.user?.role;
-
+  if (role !== "vendor") next();
   try {
     const myStores = await getVendorStoresUseCase({ userId });
     const isStoreInMyStores = myStores.some((store) => {

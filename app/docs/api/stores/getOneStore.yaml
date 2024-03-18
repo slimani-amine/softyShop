@@ -1,17 +1,17 @@
 paths:
-  /api/store/{id}:
-    delete:
+  /api/stores/{id}:
+    get:
       tags:
         - Store
-      summary: Delete a store
-      description: Delete a store.
+      summary: Get one store
+      description: Get one store.
       security:
         - BearerAuth: []
       parameters:
         - name: id
           in: path
           required: true
-          description: ID of the store to delete
+          description: ID of the store to retrieve
           schema:
             type: string
       responses:
@@ -21,15 +21,11 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
-                        type: object
-                        properties:
-                          success:
-                            type: boolean
-                            description: Indicates if the deletion was successful
+                        $ref: "#/components/schemas/Store"
         "404":
           description: Store not found
           content:

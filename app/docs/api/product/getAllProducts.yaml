@@ -14,13 +14,18 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:
-                        type: array
-                        items:
-                          $ref: "#/components/schemas/Product"
+                        type: object
+                        properties:
+                          docs:
+                            type: array
+                            items:
+                            $ref: "#/components/schemas/Product"
+                          meta:
+                            $ref: "#/components/schemas/Meta"
         "500":
           description: Internal server error!
           content:

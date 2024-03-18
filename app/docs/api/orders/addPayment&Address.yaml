@@ -1,6 +1,6 @@
 paths:
   /api/shopping/my-cart/orders/{id}:
-    post:
+    patch:
       tags:
         - orders
       summary: add Payment and Address
@@ -12,7 +12,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/orders"
+              $ref: "#/components/schemas/AddProductToCart"
       responses:
         "201":
           description: Order updated successfully
@@ -30,7 +30,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ordersValidationError"
+                $ref: "#/components/schemas/orders/ValidationError"
         "500":
           description: Internal server error!
           content:

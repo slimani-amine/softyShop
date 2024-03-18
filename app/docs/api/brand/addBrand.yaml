@@ -1,5 +1,5 @@
 paths:
-  /api/store/{id}/brand:
+  /api/stores/{id}/brands:
     post:
       tags:
         - Brands
@@ -20,7 +20,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/Success"
+                  - $ref: "#/components/schemas/SuccessMsg"
                   - type: object
                     properties:
                       data:

@@ -49,7 +49,7 @@ export function getAdminApiRouter(
     .delete(restrictToMiddleware("admin"), controllers.deleteCategory); // delete a category (only for admin)
 
   router
-    .route("/payment-method")
+    .route("/payment-methods")
     .post(restrictToMiddleware("admin"), controllers.createPaymentMethod) // create a payment method (only for admin)
     .get(
       restrictToMiddleware("admin", "vendor"),
@@ -57,7 +57,7 @@ export function getAdminApiRouter(
     ); // get payment methods (only for admin or vendor)
 
   router
-    .route("/payment-method/:id")
+    .route("/payment-methods/:id")
     .delete(restrictToMiddleware("admin"), controllers.deletePaymentMethod) // delete payment method (only for admin)
     .patch(
       restrictToMiddleware("admin", "vendor"),
