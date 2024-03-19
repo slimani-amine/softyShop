@@ -16,19 +16,23 @@ export const isAuthentictedMiddleware = async (
   next: NextFunction
 ) => {
   try {
-    let accessToken;
+    let accessToken = "";
     if (
-      req.headers.authorization &&
-      req.headers.authorization.startsWith("Bearer")
+      req?.headers?.authorization &&
+      req?.headers?.authorization.startsWith("Bearer")
     ) {
-      accessToken = req.headers.authorization.split(" ")[1];
+      accessToken = req?.headers?.authorization.split(" ")[1];
     }
 
     // const accessToken = req.cookies[TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME] ;
+
     if (!accessToken) {
-      exceptionService.unauthorizedException({
+      return res.status(201).json({
         message: LOGIN_REQUIRED_ERROR_MESSAGE,
       });
+      // return exceptionService.unauthorizedException({
+      //   message: LOGIN_REQUIRED_ERROR_MESSAGE,
+      // });
     }
     const accessTokenPayload = jwtService.verify(
       accessToken,
@@ -76,7 +80,7 @@ export const isAuthentictedMiddlewareNoVerificationNeeded = (
   next: NextFunction
 ) => {
   try {
-    let token;
+    let token = "";
     if (
       req.headers.authorization &&
       req.headers.authorization.startsWith("Bearer")
@@ -87,7 +91,7 @@ export const isAuthentictedMiddlewareNoVerificationNeeded = (
     // const accessToken = req.cookies[TOKENS_INFO.ACCESS_TOKEN_COOKIE_NAME];
 
     if (!token) {
-      exceptionService.unauthorizedException({
+      return exceptionService.unauthorizedException({
         message: LOGIN_REQUIRED_ERROR_MESSAGE,
       });
     }

@@ -30,6 +30,7 @@ export const loginControllerBase =
         data: {
           user: result.user,
           accessToken: result.accessToken,
+          refreshToken: result.refreshToken,
         },
       });
     } catch (err) {

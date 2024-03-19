@@ -54,7 +54,6 @@ export const storeRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   },
 
   async updateStore(store: IStore, payload: Partial<any>): Promise<IStore> {
-    console.log("🚀 ~ storeRepoBase ~ payload:", payload);
     await this.manager.update(
       StoreEntity,
       {

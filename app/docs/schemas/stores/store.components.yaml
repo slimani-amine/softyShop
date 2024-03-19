@@ -13,32 +13,30 @@ components:
       properties:
         id:
           type: string
+          example: 2
         name:
           type: string
+          example: SoftyBook
         phoneNumber:
           type: string
+          example: 25234567
         logo:
           type: string
+          example: https://cdn.pixabay.com/photo/2017/
         isPublished:
           type: boolean
+          description: false by default
+          example: false
         location:
-          type: string
+          type: array
+          example: ["123.123", "105.99"]
+          items:
+            type: string
         socialMediaLinks:
-          type: string
-        # products:
-        #   type: array
-        #   items:
-        #     $ref: "#/components/schemas/ProductEntity"
-        # brands:
-        #   type: array
-        #   items:
-        #     $ref: "#/components/schemas/BrandEntity"
-        # productCreators:
-        #   type: array
-        #   items:
-        #     $ref: "#/components/schemas/ProductCreatorEntity"
-        # user:
-        #   $ref: "#/components/schemas/UserEntity"
+          type: array
+          example: ["facebook.com", "instagram.com"]
+          items:
+            type: string
         deletedAt:
           type: string
           format: date-time
@@ -48,6 +46,15 @@ components:
         updatedAt:
           type: string
           format: date-time
+    PublishStore:
+      type: object
+      required:
+        - isPublished
+      properties:
+        isPublished:
+          type: boolean
+          example: true
+          description: Whether the store is published or not
     CreateStoreInput:
       type: object
       required:

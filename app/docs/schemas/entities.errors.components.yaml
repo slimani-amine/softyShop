@@ -19,7 +19,10 @@ components:
                 isPublished:
                   type: string
                 location:
-                  type: string
+                  type: array
+                  example: ["123.123", "105.99"]
+                  items:
+                    type: string
                 socialMediaLinks:
                   type: string
                 user:

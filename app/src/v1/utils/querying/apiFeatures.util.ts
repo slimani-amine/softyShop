@@ -79,12 +79,14 @@ export const concatenateTableAndFields = (
 export const Keys = (interfaceName: string): [string, string][] => {
   const project = new Project();
   const sourceFile = project.addSourceFileAtPath(
-    `./src/models/${interfaceName}Model.ts`
+    `./app/src//v1/data/orm_models/${interfaceName}.entity.ts`
   );
   interfaceName =
-    interfaceName.charAt(0).toUpperCase() + interfaceName.slice(1);
+    interfaceName.charAt(0).toUpperCase() + interfaceName.slice(1)
+  console.log("🚀 ~ Keys ~ interfaceName:", interfaceName);
 
   const node = sourceFile.getInterface(interfaceName)!;
+  console.log("🚀 ~ Keys ~ node:", node)
 
   const allKeysWithTypes = node.getProperties().map((p) => {
     const name = p.getName();
@@ -92,6 +94,7 @@ export const Keys = (interfaceName: string): [string, string][] => {
     const type = typeNode ? typeNode.getText() : p.getType().getText();
     return [name, type] as [string, string];
   });
+  console.log("🚀 ~ allKeysWithTypes ~ allKeysWithTypes:", allKeysWithTypes)
 
   return allKeysWithTypes;
 };
@@ -344,7 +347,8 @@ export abstract class ApiFeatures {
           ? primaryTable
           : joinInfo?.[joinTables[index - 1]]?.tableAlias ??
             joinTables[index - 1];
-      const conditionField = joinInfo?.[table]?.conditionField ?? `${table}Id`;
+      // const conditionField = joinInfo?.[table]?.conditionField ?? `${table}Id`;
+      const conditionField = joinInfo?.[table]?.conditionField ?? `id`;
       const joinType = joinInfo?.joinType ?? "LEFT JOIN";
       const foreignConditionField =
         joinInfo?.[table]?.foreignConditionField ?? "id";
@@ -555,6 +559,7 @@ export abstract class ApiFeatures {
       },
       apiOptions
     );
+    console.log("🚀 ~ ApiFeatures ~ sqlStatement:", sqlStatement);
     const rows: any = await dbConnection.query(sqlStatement);
     const count = rows.length > 0 && apiOptions.isPaging ? rows[0].count : 0;
     const meta = apiOptions.isPaging

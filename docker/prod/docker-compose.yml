@@ -1,27 +1,22 @@
-version: "2"
-
-networks:
-  app-tier:
-    driver: bridge
+version: "3.8"
 
 services:
   starterproddb:
-    image: bitnami/mysql:latest
+    image: bitnami/mysql:8.1.0
     container_name: starterproddb
     restart: always
     env_file:
       - .env.db.docker
     volumes:
-      - ../../initdb/:/docker-entrypoint-initdb.d
-      - mysqlstarterprod-data:/var/lib/mysql
+      - softyshop-db:/bitnami/mysql/data
+      - ./initdb/dump.sql:/docker-entrypoint-initdb.d/init.sql:ro
     ports:
       - "3306:3306"
     healthcheck:
-      test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
-      start_period: 5s
-      interval: 5s
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3306"]
+      interval: 10s
       timeout: 5s
-      retries: 55
+      retries: 3
   starterprodapi:
     build:
       context: ../../

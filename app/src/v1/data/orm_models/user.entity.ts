@@ -17,7 +17,7 @@ import {
 } from "../../../types/repos";
 import { StoreEntity } from "./store.entity";
 import { AddressesEntity } from "./addresses.entity";
-import { ReviewsEntity } from "./reviews.entity";
+import ReviewsEntity from "./reviews.entity";
 import { WishlistEntity } from "./wishlist.entity";
 import { CartEntity } from "./cart.entity";
 import { ResetPasswordEntity } from "./resetpassword.entity";

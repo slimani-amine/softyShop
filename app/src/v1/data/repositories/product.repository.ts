@@ -17,6 +17,7 @@ import {
 import dataSource from "../connection";
 import {
   ApiFeatures,
+  JoinInfo,
   QueryResult,
 } from "../../utils/querying/apiFeatures.util";
 import { BrandEntity } from "../orm_models/productBrand.entity";
@@ -128,6 +129,16 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
   async findByQuery(queryParams: {
     [key: string]: string;
   }): Promise<QueryResult<IProduct>> {
+    const joinInfo: Record<string, JoinInfo> = {
+      reviews: {
+        selectedFields: ["id", "content", "rating", "productId"],
+        joinType: "LEFT JOIN", // Adjust join type as needed
+        conditionField: "product_id",
+        foreignTable: "products",
+        foreignConditionField: "id",
+        asTableAlias: true, // Optionally, alias the reviews table
+      },
+    };
     const result = await ApiFeatures.generateSqlQuery(
       dataSource,
       "products",
@@ -148,12 +159,28 @@ export const productRepoBase = (dbConnection: DataSource | QueryRunner) => ({
         stockNumber: {
           operator: "gte",
         },
-
+        // "reviews": {
+        //   operator: "injoin",
+        //   joinTables: {
+        //     Reviews: {
+        //       tableAlias: "product_id",
+        //       selectedFields: ["rating"],
+        //     },
+        //   },
+        // },
+        // "wishlist.id": {
+        //   operator: "injoin",
+        //   joinTables: {
+        //     Reviews: {
+        //       selectedFields: ["id"],
+        //     },
+        //   },
+        // },
       }
     );
 
     return {
-      docs: this.toDomainProducts(result.docs),
+      docs: result.docs,
       meta: result.meta,
     };
   },

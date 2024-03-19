@@ -27,9 +27,9 @@ export function getProductsApiRouter(
     updateReview: ControllerType;
   } = defaults
 ) {
-  router.use(isAuthentictedMiddleware);
-
   router.route("/").get(controllers.getAllProducts); //get all products
+
+  router.use(isAuthentictedMiddleware);
 
   router.route("/:id/reviews").get(controllers.productReviews); //get the product reviews
 

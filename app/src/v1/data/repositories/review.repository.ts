@@ -5,7 +5,7 @@ import {
   FindOneOptions,
   QueryRunner,
 } from "typeorm";
-import { ReviewsEntity } from "../orm_models/reviews.entity";
+import  ReviewsEntity  from "../orm_models/reviews.entity";
 import {
   ICreateReviewInput,
   IReview,

@@ -10,12 +10,12 @@ services:
     env_file:
       - .env.sqldb
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
       - softyshop-db:/bitnami/mysql/data
       - ./initdb/dump.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3306"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3000"]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -26,12 +26,12 @@ services:
     env_file:
       - .env.sqldb
     ports:
-      - "3001:3001"
+      - "3002:3002"
     volumes:
       - softyshop-db-test:/bitnami/mysql/data
       - ./initdb/dump.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3001"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3002"]
       interval: 10s
       timeout: 5s
       retries: 3
